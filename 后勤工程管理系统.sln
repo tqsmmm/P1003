@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32210.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "后勤工程管理系统", "后勤工程管理系统\后勤工程管理系统.csproj", "{5E37C203-83BF-4AC2-9441-818F60CAE3EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E37C203-83BF-4AC2-9441-818F60CAE3EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E37C203-83BF-4AC2-9441-818F60CAE3EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E37C203-83BF-4AC2-9441-818F60CAE3EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E37C203-83BF-4AC2-9441-818F60CAE3EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E17C896-D040-4A49-921D-4855A2215254}
+	EndGlobalSection
+EndGlobal
