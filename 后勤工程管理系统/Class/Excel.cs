@@ -232,7 +232,10 @@ namespace 后勤工程管理系统.Class
 
             if (isHead)
             {
-                font.FontHeightInPoints = 12;                
+                font.FontHeightInPoints = 12;
+
+                cellStyle.FillForegroundColor = NPOI.HSSF.Util.HSSFColor.Yellow.Index;
+                cellStyle.FillPattern = FillPattern.SolidForeground;
             }
             else
             {

@@ -218,7 +218,7 @@ namespace 后勤工程管理系统
 
                 Class.DB_Works.ExecuteCmd($"INSERT INTO Logs(Users_id, Type, Detail, DateTime) VALUES({AppSetter.Current_User.id}, '导出', '【导出工程信息】导出工程数据【{dgvList.Rows.Count}】条', NOW())");
 
-                MessageBox.Show(sfd.FileName.ToString());
+                Class.Public.Sys_MsgBox(sfd.FileName.ToString());
             }
         }
 
