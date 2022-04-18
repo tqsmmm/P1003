@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System.Configuration;
 
 namespace 后勤工程管理系统
 {
@@ -6,7 +7,7 @@ namespace 后勤工程管理系统
     {
         public static string strApplicationName = "后勤工程管理系统";
 
-        public static string strConnect = "server=127.0.0.1; user id=root; password=LongXiu3; database=hq_mana;";
+        public static string strConnect = ConfigurationManager.ConnectionStrings["MySqlConn"].ConnectionString;
 
         public static MySqlConnection Connect = new MySqlConnection(strConnect);
 
