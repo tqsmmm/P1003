@@ -206,19 +206,15 @@ namespace 后勤工程管理系统
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
+            string strExcel = Class.Public.Sys_SaveExcelFile();
 
-            sfd.Filter = "Excel表格（*.xlsx）|*.xlsx";
-            sfd.FilterIndex = 1;
-            sfd.RestoreDirectory = true;
-
-            if (sfd.ShowDialog() == DialogResult.OK)
+            if (strExcel != null)
             {
-                Class.Excel.TableToExcel(Class.Excel.GetDgvToTable(dgvList), sfd.FileName);
+                Class.Excel.TableToExcel(Class.Excel.GetDgvToTable(dgvList), strExcel);
 
                 Class.DB_Works.ExecuteCmd($"INSERT INTO Logs(Users_id, Type, Detail, DateTime) VALUES({AppSetter.Current_User.id}, '导出', '【导出工程信息】导出工程数据【{dgvList.Rows.Count}】条', NOW())");
 
-                Class.Public.Sys_MsgBox(sfd.FileName.ToString());
+                Class.Public.Sys_MsgBox(strExcel);
             }
         }
 

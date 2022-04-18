@@ -41,20 +41,7 @@ namespace 后勤工程管理系统
 
         private void frmPremises_Import_Load(object sender, EventArgs e)
         {
-            string strExcel = null;
-
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "excel文件(*.xlsx,*.xls)|*.xlsx;*.xls";
-
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                strExcel = dialog.FileName;
-            }
-            else
-            {
-                //MessageBox.Show("返回文件路径失败");
-                strExcel = null;
-            }
+            string strExcel = Class.Public.Sys_OpenExcelFile();
 
             if (strExcel == null)
             {

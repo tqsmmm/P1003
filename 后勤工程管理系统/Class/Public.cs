@@ -20,5 +20,39 @@ namespace 后勤工程管理系统.Class
                 return false;
             }
         }
+
+        public static string Sys_OpenExcelFile()
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "excel文件(*.xlsx,*.xls)|*.xlsx;*.xls";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                return ofd.FileName;
+            }
+            else
+            {
+                //MessageBox.Show("返回文件路径失败");
+                return null;
+            }
+        }
+
+        public static string Sys_SaveExcelFile()
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+
+            sfd.Filter = "Excel表格（*.xlsx）|*.xlsx";
+            sfd.FilterIndex = 1;
+            sfd.RestoreDirectory = true;
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                return sfd.FileName;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
