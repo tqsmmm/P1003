@@ -127,12 +127,27 @@ namespace 后勤工程管理系统
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-            frmPremises_Import frm = new frmPremises_Import();
-            frm.ShowDialog();
+            string strExcel = Class.Public.Sys_OpenExcelFile();
 
-            if (frm.DialogResult == DialogResult.Yes)
+            if (strExcel != null)
             {
-                btnReload_Click(this, e);
+                DataTable dt = Class.Excel.ExcelToTable(strExcel);
+
+                if (dt.Columns.Count == 11)
+                {
+                    frmPremises_Import frm = new frmPremises_Import();
+                    frm.dt = dt;
+                    frm.ShowDialog();
+
+                    if (frm.DialogResult == DialogResult.Yes)
+                    {
+                        btnReload_Click(this, e);
+                    }
+                }
+            }
+            else
+            {
+                Class.Public.Sys_MsgBox("选择的导入文件错误！");
             }
         }
 

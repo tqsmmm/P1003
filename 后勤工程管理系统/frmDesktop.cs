@@ -225,25 +225,57 @@ namespace 后勤工程管理系统
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
+            string strExcel = Class.Public.Sys_SaveExcelFile();
 
-            sfd.Filter = "Excel表格（*.xlsx）|*.xlsx";
-            sfd.FilterIndex = 1;
-            sfd.RestoreDirectory = true;
-
-            if (sfd.ShowDialog() == DialogResult.OK)
+            if (strExcel != null)
             {
-                Class.Excel.TableToExcel(Class.Excel.GetDgvToTable(dgvList), sfd.FileName);
+                Class.Excel.TableToExcel(Class.Excel.GetDgvToTable(dgvList), strExcel);
 
                 Class.DB_Works.ExecuteCmd($"INSERT INTO Logs(Users_id, Type, Detail, DateTime) VALUES({AppSetter.Current_User.id}, '导出', '【导出概要信息】导出概要数据【{dgvList.Rows.Count}】条', NOW())");
 
-                Class.Public.Sys_MsgBox(sfd.FileName.ToString());
+                Class.Public.Sys_MsgBox(strExcel);
             }
         }
 
         private void btnImport_Click(object sender, EventArgs e)
         {
+            string strExcel = Class.Public.Sys_OpenExcelFile();
 
+            if (strExcel != null)
+            {
+                DataTable dt = Class.Excel.ExcelToTable(strExcel);
+
+                if (dt.Columns.Count == 11)
+                {
+                    frmPremises_Import frm = new frmPremises_Import();
+                    frm.dt = dt;
+                    frm.ShowDialog();
+
+                    if (frm.DialogResult == DialogResult.Yes)
+                    {
+                        btnReload_Click(this, e);
+                    }
+                }
+                else if (dt.Columns.Count == 14)
+                {
+                    frmProjects_Import frm = new frmProjects_Import();
+                    frm.dt = dt;
+                    frm.ShowDialog();
+
+                    if (frm.DialogResult == DialogResult.Yes)
+                    {
+                        btnReload_Click(this, e);
+                    }
+                }
+                else
+                {
+                    Class.Public.Sys_MsgBox("选择的导入文件错误！");
+                }
+            }
+            else
+            {
+                Class.Public.Sys_MsgBox("选择的导入文件错误！");
+            }
         }
     }
 }

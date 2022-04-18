@@ -7,6 +7,8 @@ namespace 后勤工程管理系统
 {
     public partial class frmPremises_Import : Form
     {
+        public DataTable dt = null;
+
         public frmPremises_Import()
         {
             InitializeComponent();
@@ -41,33 +43,15 @@ namespace 后勤工程管理系统
 
         private void frmPremises_Import_Load(object sender, EventArgs e)
         {
-            string strExcel = Class.Public.Sys_OpenExcelFile();
-
-            if (strExcel == null)
+            if (dt != null)
             {
-                Close();
+                dgvExcel.DataSource = dt;
+                
+                btnCheck_Click(this, e);
             }
             else
             {
-                DataTable dt = Class.Excel.ExcelToTable(strExcel);
-
-                if (dt != null)
-                {
-                    dgvExcel.DataSource = dt;
-
-                    if (dgvExcel.Columns.Count == 11)
-                    {
-                        btnCheck_Click(this, e);
-                    }
-                    else
-                    {
-                        Close();
-                    }
-                }
-                else
-                {
-                    Close();
-                }
+                Close();
             }
         }
 
