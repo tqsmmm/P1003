@@ -12,26 +12,26 @@ namespace 后勤工程管理系统
             InitializeComponent();
 
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle1.BackColor = Color.LightCyan;
 
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;//211, 223, 240
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(223)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(223)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle2.Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = Color.Navy;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
 
             dgvExcel.AllowUserToAddRows = true;
             dgvExcel.AllowUserToDeleteRows = true;
             dgvExcel.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvExcel.BackgroundColor = System.Drawing.Color.White;
+            dgvExcel.BackgroundColor = Color.White;
             dgvExcel.BorderStyle = BorderStyle.Fixed3D;
             dgvExcel.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgvExcel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvExcel.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvExcel.EnableHeadersVisualStyles = false;
-            dgvExcel.GridColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dgvExcel.GridColor = SystemColors.GradientInactiveCaption;
             dgvExcel.ReadOnly = false;
             dgvExcel.RowHeadersVisible = false;
             dgvExcel.RowTemplate.Height = 23;
