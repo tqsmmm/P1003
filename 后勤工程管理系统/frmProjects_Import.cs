@@ -13,16 +13,20 @@ namespace 后勤工程管理系统
         {
             InitializeComponent();
 
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            dataGridViewCellStyle1.BackColor = Color.LightCyan;
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle
+            {
+                BackColor = Color.LightCyan
+            };
 
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;//211, 223, 240
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(223)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = Color.Navy;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle
+            {
+                Alignment = DataGridViewContentAlignment.MiddleCenter,//211, 223, 240
+                BackColor = Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(223)))), ((int)(((byte)(240))))),
+                Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134))),
+                ForeColor = Color.Navy,
+                SelectionBackColor = SystemColors.Highlight,
+                SelectionForeColor = SystemColors.HighlightText
+            };
 
             dgvExcel.AllowUserToAddRows = true;
             dgvExcel.AllowUserToDeleteRows = true;
@@ -62,15 +66,11 @@ namespace 后勤工程管理系统
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-            int Types_id = 0;
-            int Tenders_id = 0;
-
             for (int i = 0; i < dgvExcel.Rows.Count - 1; i++)
             {
-                Types_id = Convert.ToInt16(Class.DB_Works.DataSetCmd($"SELECT id FROM Types WHERE Name = '{dgvExcel.Rows[i].Cells[1].Value}'").Tables[0].Rows[0][0]);
+                int Types_id = Convert.ToInt16(Class.DB_Works.DataSetCmd($"SELECT id FROM Types WHERE Name = '{dgvExcel.Rows[i].Cells[1].Value}'").Tables[0].Rows[0][0]);
 
-                Tenders_id = Convert.ToInt16(Class.DB_Works.DataSetCmd($"SELECT id FROM Tenders WHERE Name = '{dgvExcel.Rows[i].Cells[9].Value}'").Tables[0].Rows[0][0]);
-
+                int Tenders_id = Convert.ToInt16(Class.DB_Works.DataSetCmd($"SELECT id FROM Tenders WHERE Name = '{dgvExcel.Rows[i].Cells[9].Value}'").Tables[0].Rows[0][0]);
                 Class.DB_Works.ExecuteCmd($"INSERT INTO Projects(Name, Types_id, Detail, Amount, Developing_Reply, Initial_Reply, Plan_Code, Begin_Date, End_Date, Tenders_id, Progress, Collect_Tag, Check_Tag, Grade_Tag, Amount_Order, Amount_Reality, Warranty, Users_id, DateTime) VALUES('{dgvExcel.Rows[i].Cells[0].Value}', {Types_id}, '{dgvExcel.Rows[i].Cells[2].Value}', {dgvExcel.Rows[i].Cells[3].Value}, '{dgvExcel.Rows[i].Cells[4].Value}', '{dgvExcel.Rows[i].Cells[5].Value}', '{dgvExcel.Rows[i].Cells[6].Value}', '{dgvExcel.Rows[i].Cells[7].Value}', '{dgvExcel.Rows[i].Cells[8].Value}', {Tenders_id}, '{dgvExcel.Rows[i].Cells[10].Value}', '{dgvExcel.Rows[i].Cells[11].Value}', '{dgvExcel.Rows[i].Cells[12].Value}', '{dgvExcel.Rows[i].Cells[13].Value}', 0, 0, '1900-01-01', {AppSetter.Current_User.id}, NOW())");
             }
 

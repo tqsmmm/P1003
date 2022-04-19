@@ -14,72 +14,90 @@ namespace 后勤工程管理系统
         {
             Text = AppSetter.strApplicationName;
 
-            frmDesktop frm = new frmDesktop();
-            frm.TopLevel = false;
+            frmDesktop frm = new frmDesktop
+            {
+                TopLevel = false
+            };
             pal_Main.Controls.Add(frm);
             frm.Show();
         }
 
         private void 房产信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmPremises_List frm = new frmPremises_List();
-            frm.TopLevel = false;
+            frmPremises_List frm = new frmPremises_List
+            {
+                TopLevel = false
+            };
             pal_Main.Controls.Add(frm);
             frm.Show();
         }
 
         private void 工程信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmProjects_List frm = new frmProjects_List();
-            frm.TopLevel = false;
+            frmProjects_List frm = new frmProjects_List
+            {
+                TopLevel = false
+            };
             pal_Main.Controls.Add(frm);
             frm.Show();
         }
 
         private void 施工单位ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmConstructors_List frm = new frmConstructors_List();
-            frm.TopLevel = false;
+            frmConstructors_List frm = new frmConstructors_List
+            {
+                TopLevel = false
+            };
             pal_Main.Controls.Add(frm);
             frm.Show();
         }
 
         private void 中标单位ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmTenders_List frm = new frmTenders_List();
-            frm.TopLevel = false;
+            frmTenders_List frm = new frmTenders_List
+            {
+                TopLevel = false
+            };
             pal_Main.Controls.Add(frm);
             frm.Show();
         }
 
         private void 工程结算ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSettlements_List frm = new frmSettlements_List();
-            frm.TopLevel = false;
+            frmSettlements_List frm = new frmSettlements_List
+            {
+                TopLevel = false
+            };
             pal_Main.Controls.Add(frm);
             frm.Show();
         }
 
         private void 工程分包ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmPartitions_List frm = new frmPartitions_List();
-            frm.TopLevel = false;
+            frmPartitions_List frm = new frmPartitions_List
+            {
+                TopLevel = false
+            };
             pal_Main.Controls.Add(frm);
             frm.Show();
         }
 
         private void 工程类型ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmTypes_List frm = new frmTypes_List();
-            frm.TopLevel = false;
+            frmTypes_List frm = new frmTypes_List
+            {
+                TopLevel = false
+            };
             pal_Main.Controls.Add(frm);
             frm.Show();
         }
 
         private void 用户信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmUsers_List frm = new frmUsers_List();
-            frm.TopLevel = false;
+            frmUsers_List frm = new frmUsers_List
+            {
+                TopLevel = false
+            };
             pal_Main.Controls.Add(frm);
             frm.Show();
         }
@@ -103,16 +121,20 @@ namespace 后勤工程管理系统
 
         private void 操作日志ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmLogs frm = new frmLogs();
-            frm.TopLevel = false;
+            frmLogs frm = new frmLogs
+            {
+                TopLevel = false
+            };
             pal_Main.Controls.Add(frm);
             frm.Show();
         }
 
         private void 主界面ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDesktop frm = new frmDesktop();
-            frm.TopLevel = false;
+            frmDesktop frm = new frmDesktop
+            {
+                TopLevel = false
+            };
             pal_Main.Controls.Add(frm);
             frm.Show();
         }

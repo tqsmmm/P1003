@@ -11,16 +11,20 @@ namespace 后勤工程管理系统
         {
             InitializeComponent();
 
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            dataGridViewCellStyle1.BackColor = Color.LightCyan;
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle
+            {
+                BackColor = Color.LightCyan
+            };
 
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;//211, 223, 240
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(223)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = Color.Navy;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle
+            {
+                Alignment = DataGridViewContentAlignment.MiddleCenter,//211, 223, 240
+                BackColor = Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(223)))), ((int)(((byte)(240))))),
+                Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134))),
+                ForeColor = Color.Navy,
+                SelectionBackColor = SystemColors.Highlight,
+                SelectionForeColor = SystemColors.HighlightText
+            };
 
             dgvList.AllowUserToAddRows = false;
             dgvList.AllowUserToDeleteRows = false;
@@ -94,9 +98,11 @@ namespace 后勤工程管理系统
 
         private void 导出模版ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmModels frm = new frmModels();
-            frm.Text = "导出模版";
-            frm.Types = "主界面";
+            frmModels frm = new frmModels
+            {
+                Text = "导出模版",
+                Types = "主界面"
+            };
             frm.ShowDialog();
 
             if (frm.DialogResult == DialogResult.Yes)
@@ -112,9 +118,11 @@ namespace 后勤工程管理系统
 
         private void 导入模版ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmModels frm = new frmModels();
-            frm.Text = "导入模版";
-            frm.Types = "主界面";
+            frmModels frm = new frmModels
+            {
+                Text = "导入模版",
+                Types = "主界面"
+            };
             frm.ShowDialog();
 
             if (frm.DialogResult == DialogResult.Yes)
@@ -247,8 +255,10 @@ namespace 后勤工程管理系统
 
                 if (dt.Columns.Count == 11)
                 {
-                    frmPremises_Import frm = new frmPremises_Import();
-                    frm.dt = dt;
+                    frmPremises_Import frm = new frmPremises_Import
+                    {
+                        dt = dt
+                    };
                     frm.ShowDialog();
 
                     if (frm.DialogResult == DialogResult.Yes)
@@ -258,8 +268,10 @@ namespace 后勤工程管理系统
                 }
                 else if (dt.Columns.Count == 14)
                 {
-                    frmProjects_Import frm = new frmProjects_Import();
-                    frm.dt = dt;
+                    frmProjects_Import frm = new frmProjects_Import
+                    {
+                        dt = dt
+                    };
                     frm.ShowDialog();
 
                     if (frm.DialogResult == DialogResult.Yes)

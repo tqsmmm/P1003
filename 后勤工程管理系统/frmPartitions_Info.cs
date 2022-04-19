@@ -62,7 +62,7 @@ namespace 后勤工程管理系统
                 return;
             }
 
-            bool bAccount = false;
+            bool bAccount;
 
             if (rbnAccount_True.Checked)
             {

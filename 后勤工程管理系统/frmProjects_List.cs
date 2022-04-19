@@ -11,16 +11,20 @@ namespace 后勤工程管理系统
         {
             InitializeComponent();
 
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            dataGridViewCellStyle1.BackColor = Color.LightCyan;
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle
+            {
+                BackColor = Color.LightCyan
+            };
 
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;//211, 223, 240
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(223)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = Color.Navy;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle
+            {
+                Alignment = DataGridViewContentAlignment.MiddleCenter,//211, 223, 240
+                BackColor = Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(223)))), ((int)(((byte)(240))))),
+                Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134))),
+                ForeColor = Color.Navy,
+                SelectionBackColor = SystemColors.Highlight,
+                SelectionForeColor = SystemColors.HighlightText
+            };
 
             dgvList.AllowUserToAddRows = false;
             dgvList.AllowUserToDeleteRows = false;
@@ -36,22 +40,6 @@ namespace 后勤工程管理系统
             dgvList.RowTemplate.Height = 23;
             dgvList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvList.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-
-            dgvDetail.AllowUserToAddRows = false;
-            dgvDetail.AllowUserToDeleteRows = false;
-            dgvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvDetail.BackgroundColor = Color.White;
-            dgvDetail.BorderStyle = BorderStyle.Fixed3D;
-            dgvDetail.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvDetail.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDetail.EnableHeadersVisualStyles = false;
-            dgvDetail.GridColor = SystemColors.GradientInactiveCaption;
-            dgvDetail.ReadOnly = true;
-            dgvDetail.RowHeadersVisible = false;
-            dgvDetail.RowTemplate.Height = 23;
-            dgvDetail.RowTemplate.ReadOnly = true;
-            dgvDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void frmProjects_List_Load(object sender, EventArgs e)
@@ -132,8 +120,10 @@ namespace 后勤工程管理系统
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            frmProjects_Info frm = new frmProjects_Info();
-            frm.Text = "新建";
+            frmProjects_Info frm = new frmProjects_Info
+            {
+                Text = "新建"
+            };
             frm.ShowDialog();
 
             if (frm.DialogResult == DialogResult.Yes)
@@ -146,9 +136,11 @@ namespace 后勤工程管理系统
         {
             if (dgvList.SelectedRows.Count > 0)
             {
-                frmProjects_Info frm = new frmProjects_Info();
-                frm.Text = "修改";
-                frm.id = Convert.ToInt16(dgvList.SelectedRows[0].Cells[0].Value.ToString());
+                frmProjects_Info frm = new frmProjects_Info
+                {
+                    Text = "修改",
+                    id = Convert.ToInt16(dgvList.SelectedRows[0].Cells[1].Value.ToString())
+                };
                 frm.ShowDialog();
 
                 if (frm.DialogResult == DialogResult.Yes)
@@ -173,14 +165,6 @@ namespace 后勤工程管理系统
             }
         }
 
-        private void dgvList_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvList.SelectedRows.Count > 0)
-            {
-                dgvDetail.DataSource = Class.DB_Works.DataSetCmd($"SELECT Partitions.id AS 序号, Projects.Name AS 工程名称, Constructors.Name AS 施工单位, Partitions.Amount AS 分包金额, Partitions.Amount_Arrear AS 欠款金额, Partitions.Amount_Pay AS 付款金额, Management AS 管理费, Account AS 是否挂账 FROM Partitions LEFT JOIN Projects ON Projects.id = Partitions.Projects_id LEFT JOIN Constructors ON Constructors.id = Partitions.Constructors_id WHERE Partitions.Projects_id = {dgvList.SelectedRows[0].Cells[1].Value}").Tables[0];
-            }
-        }
-
         private void cmbTypes_SelectionChangeCommitted(object sender, EventArgs e)
         {
             btnReload_Click(this, e);
@@ -201,8 +185,10 @@ namespace 后勤工程管理系统
 
                 if (dt.Columns.Count == 11)
                 {
-                    frmPremises_Import frm = new frmPremises_Import();
-                    frm.dt = dt;
+                    frmPremises_Import frm = new frmPremises_Import
+                    {
+                        dt = dt
+                    };
                     frm.ShowDialog();
 
                     if (frm.DialogResult == DialogResult.Yes)
@@ -282,9 +268,11 @@ namespace 后勤工程管理系统
 
         private void 导入模版ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmModels frm = new frmModels();
-            frm.Text = "导入模版";
-            frm.Types = "工程项目";
+            frmModels frm = new frmModels
+            {
+                Text = "导入模版",
+                Types = "工程项目"
+            };
             frm.ShowDialog();
 
             if (frm.DialogResult == DialogResult.Yes)
@@ -310,9 +298,11 @@ namespace 后勤工程管理系统
 
         private void 导出模版ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmModels frm = new frmModels();
-            frm.Text = "导出模版";
-            frm.Types = "工程项目";
+            frmModels frm = new frmModels
+            {
+                Text = "导出模版",
+                Types = "工程项目"
+            };
             frm.ShowDialog();
 
             if (frm.DialogResult == DialogResult.Yes)

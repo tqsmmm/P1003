@@ -70,12 +70,9 @@ namespace 后勤工程管理系统
                     {
                         id = Convert.ToInt16(Class.DB_Works.DataSetCmd($"SELECT id FROM Users WHERE Name = '{txtName.Text}' AND Password = '{txtPassword.Text}'").Tables[0].Rows[0][0]);
 
-                        int Types_id = 0;
-
                         for (int i = 0; i < clbLimits.CheckedItems.Count; i++)
                         {
-                            Types_id = Convert.ToInt16(Class.DB_Works.DataSetCmd($"SELECT id FROM Types WHERE Name = '{clbLimits.CheckedItems[i].ToString()}'").Tables[0].Rows[0][0]);
-
+                            int Types_id = Convert.ToInt16(Class.DB_Works.DataSetCmd($"SELECT id FROM Types WHERE Name = '{clbLimits.CheckedItems[i]}'").Tables[0].Rows[0][0]);
                             Class.DB_Works.ExecuteCmd($"INSERT INTO Limits(Users_id, Types_id) VALUES({id}, {Types_id})");
                         }
                     }
@@ -95,12 +92,9 @@ namespace 后勤工程管理系统
                     {
                         Class.DB_Works.ExecuteCmd($"DELETE FROM Limits WHERE Users_id = {id}");
 
-                        int Types_id = 0;
-
                         for (int i = 0; i < clbLimits.CheckedItems.Count; i++)
                         {
-                            Types_id = Convert.ToInt16(Class.DB_Works.DataSetCmd($"SELECT id FROM Types WHERE Name = '{clbLimits.CheckedItems[i].ToString()}'").Tables[0].Rows[0][0]);
-
+                            int Types_id = Convert.ToInt16(Class.DB_Works.DataSetCmd($"SELECT id FROM Types WHERE Name = '{clbLimits.CheckedItems[i]}'").Tables[0].Rows[0][0]);
                             Class.DB_Works.ExecuteCmd($"INSERT INTO Limits(Users_id, Types_id) VALUES({id}, {Types_id})");
                         }
                     }
