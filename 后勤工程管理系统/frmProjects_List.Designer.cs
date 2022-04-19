@@ -32,21 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvList = new System.Windows.Forms.DataGridView();
-            this.序号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.工程名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.工程类型 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.工程内容 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.计划金额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.可研批复 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.初始批复 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.计划文号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.开工时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.竣工时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.中标单位 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.形象进度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.收集整理 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.立卷检查 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.验收合格 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmsList = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.编辑列ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -80,6 +65,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtYear = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.Checked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.序号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.工程名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.工程类型 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.工程内容 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.计划金额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.可研批复 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.初始批复 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.计划文号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.开工时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.竣工时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.中标单位 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.形象进度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.收集整理 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.立卷检查 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.验收合格 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.cmsList.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -92,6 +93,7 @@
             // 
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Checked,
             this.序号,
             this.工程名称,
             this.工程类型,
@@ -116,128 +118,6 @@
             this.dgvList.Size = new System.Drawing.Size(1249, 318);
             this.dgvList.TabIndex = 13;
             this.dgvList.SelectionChanged += new System.EventHandler(this.dgvList_SelectionChanged);
-            // 
-            // 序号
-            // 
-            this.序号.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.序号.DataPropertyName = "序号";
-            this.序号.HeaderText = "序号";
-            this.序号.Name = "序号";
-            this.序号.Width = 62;
-            // 
-            // 工程名称
-            // 
-            this.工程名称.DataPropertyName = "工程名称";
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.工程名称.DefaultCellStyle = dataGridViewCellStyle1;
-            this.工程名称.HeaderText = "工程名称";
-            this.工程名称.Name = "工程名称";
-            this.工程名称.Width = 300;
-            // 
-            // 工程类型
-            // 
-            this.工程类型.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.工程类型.DataPropertyName = "工程类型";
-            this.工程类型.HeaderText = "工程类型";
-            this.工程类型.Name = "工程类型";
-            this.工程类型.Width = 90;
-            // 
-            // 工程内容
-            // 
-            this.工程内容.DataPropertyName = "工程内容";
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.工程内容.DefaultCellStyle = dataGridViewCellStyle2;
-            this.工程内容.HeaderText = "工程内容";
-            this.工程内容.Name = "工程内容";
-            this.工程内容.Width = 500;
-            // 
-            // 计划金额
-            // 
-            this.计划金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.计划金额.DataPropertyName = "计划金额";
-            this.计划金额.HeaderText = "计划金额";
-            this.计划金额.Name = "计划金额";
-            this.计划金额.Width = 90;
-            // 
-            // 可研批复
-            // 
-            this.可研批复.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.可研批复.DataPropertyName = "可研批复";
-            this.可研批复.HeaderText = "可研批复";
-            this.可研批复.Name = "可研批复";
-            this.可研批复.Width = 90;
-            // 
-            // 初始批复
-            // 
-            this.初始批复.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.初始批复.DataPropertyName = "初始批复";
-            this.初始批复.HeaderText = "初始批复";
-            this.初始批复.Name = "初始批复";
-            this.初始批复.Width = 90;
-            // 
-            // 计划文号
-            // 
-            this.计划文号.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.计划文号.DataPropertyName = "计划文号";
-            this.计划文号.HeaderText = "计划文号";
-            this.计划文号.Name = "计划文号";
-            this.计划文号.Width = 90;
-            // 
-            // 开工时间
-            // 
-            this.开工时间.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.开工时间.DataPropertyName = "开工时间";
-            this.开工时间.HeaderText = "开工时间";
-            this.开工时间.Name = "开工时间";
-            this.开工时间.Width = 90;
-            // 
-            // 竣工时间
-            // 
-            this.竣工时间.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.竣工时间.DataPropertyName = "竣工时间";
-            this.竣工时间.HeaderText = "竣工时间";
-            this.竣工时间.Name = "竣工时间";
-            this.竣工时间.Width = 90;
-            // 
-            // 中标单位
-            // 
-            this.中标单位.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.中标单位.DataPropertyName = "中标单位";
-            this.中标单位.HeaderText = "中标单位";
-            this.中标单位.Name = "中标单位";
-            this.中标单位.Width = 90;
-            // 
-            // 形象进度
-            // 
-            this.形象进度.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.形象进度.DataPropertyName = "形象进度";
-            this.形象进度.HeaderText = "形象进度";
-            this.形象进度.Name = "形象进度";
-            this.形象进度.Width = 90;
-            // 
-            // 收集整理
-            // 
-            this.收集整理.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.收集整理.DataPropertyName = "收集整理";
-            this.收集整理.HeaderText = "收集整理";
-            this.收集整理.Name = "收集整理";
-            this.收集整理.Width = 90;
-            // 
-            // 立卷检查
-            // 
-            this.立卷检查.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.立卷检查.DataPropertyName = "立卷检查";
-            this.立卷检查.HeaderText = "立卷检查";
-            this.立卷检查.Name = "立卷检查";
-            this.立卷检查.Width = 90;
-            // 
-            // 验收合格
-            // 
-            this.验收合格.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.验收合格.DataPropertyName = "验收合格";
-            this.验收合格.HeaderText = "验收合格";
-            this.验收合格.Name = "验收合格";
-            this.验收合格.Width = 90;
             // 
             // cmsList
             // 
@@ -551,6 +431,152 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "工程年份：";
             // 
+            // Checked
+            // 
+            this.Checked.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Checked.HeaderText = "";
+            this.Checked.Name = "Checked";
+            this.Checked.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Checked.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Checked.Width = 21;
+            // 
+            // 序号
+            // 
+            this.序号.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.序号.DataPropertyName = "序号";
+            this.序号.HeaderText = "序号";
+            this.序号.Name = "序号";
+            this.序号.ReadOnly = true;
+            this.序号.Width = 62;
+            // 
+            // 工程名称
+            // 
+            this.工程名称.DataPropertyName = "工程名称";
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.工程名称.DefaultCellStyle = dataGridViewCellStyle1;
+            this.工程名称.HeaderText = "工程名称";
+            this.工程名称.Name = "工程名称";
+            this.工程名称.ReadOnly = true;
+            this.工程名称.Width = 300;
+            // 
+            // 工程类型
+            // 
+            this.工程类型.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.工程类型.DataPropertyName = "工程类型";
+            this.工程类型.HeaderText = "工程类型";
+            this.工程类型.Name = "工程类型";
+            this.工程类型.ReadOnly = true;
+            this.工程类型.Width = 90;
+            // 
+            // 工程内容
+            // 
+            this.工程内容.DataPropertyName = "工程内容";
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.工程内容.DefaultCellStyle = dataGridViewCellStyle2;
+            this.工程内容.HeaderText = "工程内容";
+            this.工程内容.Name = "工程内容";
+            this.工程内容.ReadOnly = true;
+            this.工程内容.Width = 500;
+            // 
+            // 计划金额
+            // 
+            this.计划金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.计划金额.DataPropertyName = "计划金额";
+            this.计划金额.HeaderText = "计划金额";
+            this.计划金额.Name = "计划金额";
+            this.计划金额.ReadOnly = true;
+            this.计划金额.Width = 90;
+            // 
+            // 可研批复
+            // 
+            this.可研批复.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.可研批复.DataPropertyName = "可研批复";
+            this.可研批复.HeaderText = "可研批复";
+            this.可研批复.Name = "可研批复";
+            this.可研批复.ReadOnly = true;
+            this.可研批复.Width = 90;
+            // 
+            // 初始批复
+            // 
+            this.初始批复.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.初始批复.DataPropertyName = "初始批复";
+            this.初始批复.HeaderText = "初始批复";
+            this.初始批复.Name = "初始批复";
+            this.初始批复.ReadOnly = true;
+            this.初始批复.Width = 90;
+            // 
+            // 计划文号
+            // 
+            this.计划文号.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.计划文号.DataPropertyName = "计划文号";
+            this.计划文号.HeaderText = "计划文号";
+            this.计划文号.Name = "计划文号";
+            this.计划文号.ReadOnly = true;
+            this.计划文号.Width = 90;
+            // 
+            // 开工时间
+            // 
+            this.开工时间.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.开工时间.DataPropertyName = "开工时间";
+            this.开工时间.HeaderText = "开工时间";
+            this.开工时间.Name = "开工时间";
+            this.开工时间.ReadOnly = true;
+            this.开工时间.Width = 90;
+            // 
+            // 竣工时间
+            // 
+            this.竣工时间.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.竣工时间.DataPropertyName = "竣工时间";
+            this.竣工时间.HeaderText = "竣工时间";
+            this.竣工时间.Name = "竣工时间";
+            this.竣工时间.ReadOnly = true;
+            this.竣工时间.Width = 90;
+            // 
+            // 中标单位
+            // 
+            this.中标单位.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.中标单位.DataPropertyName = "中标单位";
+            this.中标单位.HeaderText = "中标单位";
+            this.中标单位.Name = "中标单位";
+            this.中标单位.ReadOnly = true;
+            this.中标单位.Width = 90;
+            // 
+            // 形象进度
+            // 
+            this.形象进度.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.形象进度.DataPropertyName = "形象进度";
+            this.形象进度.HeaderText = "形象进度";
+            this.形象进度.Name = "形象进度";
+            this.形象进度.ReadOnly = true;
+            this.形象进度.Width = 90;
+            // 
+            // 收集整理
+            // 
+            this.收集整理.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.收集整理.DataPropertyName = "收集整理";
+            this.收集整理.HeaderText = "收集整理";
+            this.收集整理.Name = "收集整理";
+            this.收集整理.ReadOnly = true;
+            this.收集整理.Width = 90;
+            // 
+            // 立卷检查
+            // 
+            this.立卷检查.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.立卷检查.DataPropertyName = "立卷检查";
+            this.立卷检查.HeaderText = "立卷检查";
+            this.立卷检查.Name = "立卷检查";
+            this.立卷检查.ReadOnly = true;
+            this.立卷检查.Width = 90;
+            // 
+            // 验收合格
+            // 
+            this.验收合格.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.验收合格.DataPropertyName = "验收合格";
+            this.验收合格.HeaderText = "验收合格";
+            this.验收合格.Name = "验收合格";
+            this.验收合格.ReadOnly = true;
+            this.验收合格.Width = 90;
+            // 
             // frmProjects_List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -614,6 +640,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 付款金额;
         private System.Windows.Forms.DataGridViewTextBoxColumn 管理费;
         private System.Windows.Forms.DataGridViewCheckBoxColumn 是否挂账;
+        private System.Windows.Forms.ContextMenuStrip cmsList;
+        private System.Windows.Forms.ToolStripMenuItem 编辑列ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 导入模版ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 导出模版ToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Checked;
         private System.Windows.Forms.DataGridViewTextBoxColumn 序号;
         private System.Windows.Forms.DataGridViewTextBoxColumn 工程名称;
         private System.Windows.Forms.DataGridViewTextBoxColumn 工程类型;
@@ -629,10 +661,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 收集整理;
         private System.Windows.Forms.DataGridViewTextBoxColumn 立卷检查;
         private System.Windows.Forms.DataGridViewTextBoxColumn 验收合格;
-        private System.Windows.Forms.ContextMenuStrip cmsList;
-        private System.Windows.Forms.ToolStripMenuItem 编辑列ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 导入模版ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 导出模版ToolStripMenuItem;
     }
 }

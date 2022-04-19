@@ -30,19 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new System.Windows.Forms.DataGridView();
-            this.序号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.房产名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.房产编号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.房产地址 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.建筑年代 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.建筑层数 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.建筑结构 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.建筑面积 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.建筑用途 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.资产原值 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.资产编码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.设备编码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.地区 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmsList = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.编辑列ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -62,6 +49,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.Checked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.序号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.房产名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.房产编号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.房产地址 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.建筑年代 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.建筑层数 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.建筑结构 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.建筑面积 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.建筑用途 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.资产原值 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.资产编码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.设备编码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.地区 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.cmsList.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -72,6 +73,7 @@
             // 
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Checked,
             this.序号,
             this.房产名称,
             this.房产编号,
@@ -93,110 +95,6 @@
             this.dgvList.Size = new System.Drawing.Size(957, 453);
             this.dgvList.TabIndex = 13;
             // 
-            // 序号
-            // 
-            this.序号.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.序号.DataPropertyName = "序号";
-            this.序号.HeaderText = "序号";
-            this.序号.Name = "序号";
-            this.序号.Width = 62;
-            // 
-            // 房产名称
-            // 
-            this.房产名称.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.房产名称.DataPropertyName = "房产名称";
-            this.房产名称.HeaderText = "房产名称";
-            this.房产名称.Name = "房产名称";
-            this.房产名称.Width = 90;
-            // 
-            // 房产编号
-            // 
-            this.房产编号.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.房产编号.DataPropertyName = "房产编号";
-            this.房产编号.HeaderText = "房产编号";
-            this.房产编号.Name = "房产编号";
-            this.房产编号.Width = 90;
-            // 
-            // 房产地址
-            // 
-            this.房产地址.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.房产地址.DataPropertyName = "房产地址";
-            this.房产地址.HeaderText = "房产地址";
-            this.房产地址.Name = "房产地址";
-            this.房产地址.Width = 90;
-            // 
-            // 建筑年代
-            // 
-            this.建筑年代.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.建筑年代.DataPropertyName = "建筑年代";
-            this.建筑年代.HeaderText = "建筑年代";
-            this.建筑年代.Name = "建筑年代";
-            this.建筑年代.Width = 90;
-            // 
-            // 建筑层数
-            // 
-            this.建筑层数.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.建筑层数.DataPropertyName = "建筑层数";
-            this.建筑层数.HeaderText = "建筑层数";
-            this.建筑层数.Name = "建筑层数";
-            this.建筑层数.Width = 90;
-            // 
-            // 建筑结构
-            // 
-            this.建筑结构.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.建筑结构.DataPropertyName = "建筑结构";
-            this.建筑结构.HeaderText = "建筑结构";
-            this.建筑结构.Name = "建筑结构";
-            this.建筑结构.Width = 90;
-            // 
-            // 建筑面积
-            // 
-            this.建筑面积.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.建筑面积.DataPropertyName = "建筑面积";
-            this.建筑面积.HeaderText = "建筑面积";
-            this.建筑面积.Name = "建筑面积";
-            this.建筑面积.Width = 90;
-            // 
-            // 建筑用途
-            // 
-            this.建筑用途.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.建筑用途.DataPropertyName = "建筑用途";
-            this.建筑用途.HeaderText = "建筑用途";
-            this.建筑用途.Name = "建筑用途";
-            this.建筑用途.Width = 90;
-            // 
-            // 资产原值
-            // 
-            this.资产原值.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.资产原值.DataPropertyName = "资产原值";
-            this.资产原值.HeaderText = "资产原值";
-            this.资产原值.Name = "资产原值";
-            this.资产原值.Width = 90;
-            // 
-            // 资产编码
-            // 
-            this.资产编码.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.资产编码.DataPropertyName = "资产编码";
-            this.资产编码.HeaderText = "资产编码";
-            this.资产编码.Name = "资产编码";
-            this.资产编码.Width = 90;
-            // 
-            // 设备编码
-            // 
-            this.设备编码.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.设备编码.DataPropertyName = "设备编码";
-            this.设备编码.HeaderText = "设备编码";
-            this.设备编码.Name = "设备编码";
-            this.设备编码.Width = 90;
-            // 
-            // 地区
-            // 
-            this.地区.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.地区.DataPropertyName = "地区";
-            this.地区.HeaderText = "地区";
-            this.地区.Name = "地区";
-            this.地区.Width = 62;
-            // 
             // cmsList
             // 
             this.cmsList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -205,31 +103,31 @@
             this.导入模版ToolStripMenuItem,
             this.导出模版ToolStripMenuItem});
             this.cmsList.Name = "cmsList";
-            this.cmsList.Size = new System.Drawing.Size(181, 98);
+            this.cmsList.Size = new System.Drawing.Size(125, 76);
             // 
             // 编辑列ToolStripMenuItem
             // 
             this.编辑列ToolStripMenuItem.Name = "编辑列ToolStripMenuItem";
-            this.编辑列ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.编辑列ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.编辑列ToolStripMenuItem.Text = "编辑列";
             this.编辑列ToolStripMenuItem.Click += new System.EventHandler(this.编辑列ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(121, 6);
             // 
             // 导入模版ToolStripMenuItem
             // 
             this.导入模版ToolStripMenuItem.Name = "导入模版ToolStripMenuItem";
-            this.导入模版ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.导入模版ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.导入模版ToolStripMenuItem.Text = "导入模版";
             this.导入模版ToolStripMenuItem.Click += new System.EventHandler(this.导入模版ToolStripMenuItem_Click);
             // 
             // 导出模版ToolStripMenuItem
             // 
             this.导出模版ToolStripMenuItem.Name = "导出模版ToolStripMenuItem";
-            this.导出模版ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.导出模版ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.导出模版ToolStripMenuItem.Text = "导出模版";
             this.导出模版ToolStripMenuItem.Click += new System.EventHandler(this.导出模版ToolStripMenuItem_Click);
             // 
@@ -371,6 +269,130 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "房产名称：";
             // 
+            // Checked
+            // 
+            this.Checked.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Checked.HeaderText = "";
+            this.Checked.Name = "Checked";
+            this.Checked.Width = 21;
+            // 
+            // 序号
+            // 
+            this.序号.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.序号.DataPropertyName = "序号";
+            this.序号.HeaderText = "序号";
+            this.序号.Name = "序号";
+            this.序号.ReadOnly = true;
+            this.序号.Width = 62;
+            // 
+            // 房产名称
+            // 
+            this.房产名称.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.房产名称.DataPropertyName = "房产名称";
+            this.房产名称.HeaderText = "房产名称";
+            this.房产名称.Name = "房产名称";
+            this.房产名称.ReadOnly = true;
+            this.房产名称.Width = 90;
+            // 
+            // 房产编号
+            // 
+            this.房产编号.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.房产编号.DataPropertyName = "房产编号";
+            this.房产编号.HeaderText = "房产编号";
+            this.房产编号.Name = "房产编号";
+            this.房产编号.ReadOnly = true;
+            this.房产编号.Width = 90;
+            // 
+            // 房产地址
+            // 
+            this.房产地址.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.房产地址.DataPropertyName = "房产地址";
+            this.房产地址.HeaderText = "房产地址";
+            this.房产地址.Name = "房产地址";
+            this.房产地址.ReadOnly = true;
+            this.房产地址.Width = 90;
+            // 
+            // 建筑年代
+            // 
+            this.建筑年代.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.建筑年代.DataPropertyName = "建筑年代";
+            this.建筑年代.HeaderText = "建筑年代";
+            this.建筑年代.Name = "建筑年代";
+            this.建筑年代.ReadOnly = true;
+            this.建筑年代.Width = 90;
+            // 
+            // 建筑层数
+            // 
+            this.建筑层数.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.建筑层数.DataPropertyName = "建筑层数";
+            this.建筑层数.HeaderText = "建筑层数";
+            this.建筑层数.Name = "建筑层数";
+            this.建筑层数.ReadOnly = true;
+            this.建筑层数.Width = 90;
+            // 
+            // 建筑结构
+            // 
+            this.建筑结构.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.建筑结构.DataPropertyName = "建筑结构";
+            this.建筑结构.HeaderText = "建筑结构";
+            this.建筑结构.Name = "建筑结构";
+            this.建筑结构.ReadOnly = true;
+            this.建筑结构.Width = 90;
+            // 
+            // 建筑面积
+            // 
+            this.建筑面积.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.建筑面积.DataPropertyName = "建筑面积";
+            this.建筑面积.HeaderText = "建筑面积";
+            this.建筑面积.Name = "建筑面积";
+            this.建筑面积.ReadOnly = true;
+            this.建筑面积.Width = 90;
+            // 
+            // 建筑用途
+            // 
+            this.建筑用途.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.建筑用途.DataPropertyName = "建筑用途";
+            this.建筑用途.HeaderText = "建筑用途";
+            this.建筑用途.Name = "建筑用途";
+            this.建筑用途.ReadOnly = true;
+            this.建筑用途.Width = 90;
+            // 
+            // 资产原值
+            // 
+            this.资产原值.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.资产原值.DataPropertyName = "资产原值";
+            this.资产原值.HeaderText = "资产原值";
+            this.资产原值.Name = "资产原值";
+            this.资产原值.ReadOnly = true;
+            this.资产原值.Width = 90;
+            // 
+            // 资产编码
+            // 
+            this.资产编码.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.资产编码.DataPropertyName = "资产编码";
+            this.资产编码.HeaderText = "资产编码";
+            this.资产编码.Name = "资产编码";
+            this.资产编码.ReadOnly = true;
+            this.资产编码.Width = 90;
+            // 
+            // 设备编码
+            // 
+            this.设备编码.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.设备编码.DataPropertyName = "设备编码";
+            this.设备编码.HeaderText = "设备编码";
+            this.设备编码.Name = "设备编码";
+            this.设备编码.ReadOnly = true;
+            this.设备编码.Width = 90;
+            // 
+            // 地区
+            // 
+            this.地区.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.地区.DataPropertyName = "地区";
+            this.地区.HeaderText = "地区";
+            this.地区.Name = "地区";
+            this.地区.ReadOnly = true;
+            this.地区.Width = 62;
+            // 
             // frmPremises_List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -419,6 +441,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ContextMenuStrip cmsList;
+        private System.Windows.Forms.ToolStripMenuItem 编辑列ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 导入模版ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 导出模版ToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Checked;
         private System.Windows.Forms.DataGridViewTextBoxColumn 序号;
         private System.Windows.Forms.DataGridViewTextBoxColumn 房产名称;
         private System.Windows.Forms.DataGridViewTextBoxColumn 房产编号;
@@ -432,10 +460,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 资产编码;
         private System.Windows.Forms.DataGridViewTextBoxColumn 设备编码;
         private System.Windows.Forms.DataGridViewTextBoxColumn 地区;
-        private System.Windows.Forms.ContextMenuStrip cmsList;
-        private System.Windows.Forms.ToolStripMenuItem 编辑列ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 导入模版ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 导出模版ToolStripMenuItem;
     }
 }

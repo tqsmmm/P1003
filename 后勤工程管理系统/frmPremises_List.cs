@@ -32,10 +32,8 @@ namespace 后勤工程管理系统
             dgvList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvList.EnableHeadersVisualStyles = false;
             dgvList.GridColor = SystemColors.GradientInactiveCaption;
-            dgvList.ReadOnly = true;
             dgvList.RowHeadersVisible = false;
             dgvList.RowTemplate.Height = 23;
-            dgvList.RowTemplate.ReadOnly = true;
             dgvList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
@@ -157,7 +155,21 @@ namespace 后勤工程管理系统
 
             if (strExcel != null)
             {
-                Class.Excel.TableToExcel(Class.Excel.GetDgvToTable(dgvList), strExcel);
+                DataTable dt = Class.Excel.GetDgvToTable(dgvList);
+
+                DataRow[] rows = dt.Select("Checked = 'True'");
+
+                DataTable dt_new = dt.Clone();
+
+                foreach (DataRow row in rows)
+                {
+                    dt_new.Rows.Add(row.ItemArray);
+                }
+
+                dt_new.Columns.Remove("Checked");
+                dt_new.Columns.Remove("序号");
+
+                Class.Excel.TableToExcel(dt_new, strExcel);
 
                 Class.DB_Works.ExecuteCmd($"INSERT INTO Logs(Users_id, Type, Detail, DateTime) VALUES({AppSetter.Current_User.id}, '导出', '【导出房产信息】导出房产数据【{dgvList.Rows.Count}】条', NOW())");
 

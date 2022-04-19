@@ -32,10 +32,8 @@ namespace 后勤工程管理系统
             dgvList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvList.EnableHeadersVisualStyles = false;
             dgvList.GridColor = SystemColors.GradientInactiveCaption;
-            dgvList.ReadOnly = true;
             dgvList.RowHeadersVisible = false;
             dgvList.RowTemplate.Height = 23;
-            dgvList.RowTemplate.ReadOnly = true;
             dgvList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvList.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
@@ -179,7 +177,7 @@ namespace 后勤工程管理系统
         {
             if (dgvList.SelectedRows.Count > 0)
             {
-                dgvDetail.DataSource = Class.DB_Works.DataSetCmd($"SELECT Partitions.id AS 序号, Projects.Name AS 工程名称, Constructors.Name AS 施工单位, Partitions.Amount AS 分包金额, Partitions.Amount_Arrear AS 欠款金额, Partitions.Amount_Pay AS 付款金额, Management AS 管理费, Account AS 是否挂账 FROM Partitions LEFT JOIN Projects ON Projects.id = Partitions.Projects_id LEFT JOIN Constructors ON Constructors.id = Partitions.Constructors_id WHERE Partitions.Projects_id = {dgvList.SelectedRows[0].Cells[0].Value}").Tables[0];
+                dgvDetail.DataSource = Class.DB_Works.DataSetCmd($"SELECT Partitions.id AS 序号, Projects.Name AS 工程名称, Constructors.Name AS 施工单位, Partitions.Amount AS 分包金额, Partitions.Amount_Arrear AS 欠款金额, Partitions.Amount_Pay AS 付款金额, Management AS 管理费, Account AS 是否挂账 FROM Partitions LEFT JOIN Projects ON Projects.id = Partitions.Projects_id LEFT JOIN Constructors ON Constructors.id = Partitions.Constructors_id WHERE Partitions.Projects_id = {dgvList.SelectedRows[0].Cells[1].Value}").Tables[0];
             }
         }
 
@@ -225,7 +223,21 @@ namespace 后勤工程管理系统
 
             if (strExcel != null)
             {
-                Class.Excel.TableToExcel(Class.Excel.GetDgvToTable(dgvList), strExcel);
+                DataTable dt = Class.Excel.GetDgvToTable(dgvList);
+
+                DataRow[] rows = dt.Select("Checked = 'True'");
+
+                DataTable dt_new = dt.Clone();
+
+                foreach (DataRow row in rows)
+                {
+                    dt_new.Rows.Add(row.ItemArray);
+                }
+
+                dt_new.Columns.Remove("Checked");
+                dt_new.Columns.Remove("序号");
+
+                Class.Excel.TableToExcel(dt_new, strExcel);
 
                 Class.DB_Works.ExecuteCmd($"INSERT INTO Logs(Users_id, Type, Detail, DateTime) VALUES({AppSetter.Current_User.id}, '导出', '【导出工程信息】导出工程数据【{dgvList.Rows.Count}】条', NOW())");
 
