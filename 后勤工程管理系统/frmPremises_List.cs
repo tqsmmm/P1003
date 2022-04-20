@@ -105,7 +105,7 @@ namespace 后勤工程管理系统
                 frmPremises_Info frm = new frmPremises_Info
                 {
                     Text = "修改",
-                    id = Convert.ToInt16(dgvList.SelectedRows[0].Cells[0].Value.ToString())
+                    id = Convert.ToInt16(dgvList.SelectedRows[0].Cells[1].Value.ToString())
                 };
                 frm.ShowDialog();
 

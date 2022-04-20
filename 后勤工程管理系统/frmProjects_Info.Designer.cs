@@ -56,7 +56,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.txtPremises = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtRemark = new System.Windows.Forms.TextBox();
             this.dtpEnd_Date = new System.Windows.Forms.DateTimePicker();
             this.cmbGrade_Tag = new System.Windows.Forms.ComboBox();
             this.cmbCheck_Tag = new System.Windows.Forms.ComboBox();
@@ -108,6 +108,7 @@
             this.dgvPartitions = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.序号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.工程名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.施工单位 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.分包金额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -336,7 +337,7 @@
             this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.txtPremises);
             this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtRemark);
             this.groupBox1.Controls.Add(this.dtpEnd_Date);
             this.groupBox1.Controls.Add(this.cmbGrade_Tag);
             this.groupBox1.Controls.Add(this.cmbCheck_Tag);
@@ -398,14 +399,14 @@
             this.label20.TabIndex = 37;
             this.label20.Text = "备注：";
             // 
-            // textBox1
+            // txtRemark
             // 
-            this.textBox1.Location = new System.Drawing.Point(91, 385);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(843, 92);
-            this.textBox1.TabIndex = 38;
+            this.txtRemark.Location = new System.Drawing.Point(91, 385);
+            this.txtRemark.Multiline = true;
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtRemark.Size = new System.Drawing.Size(843, 92);
+            this.txtRemark.TabIndex = 38;
             // 
             // dtpEnd_Date
             // 
@@ -890,6 +891,7 @@
             // 
             this.dgvPartitions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPartitions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.序号,
             this.工程名称,
             this.施工单位,
             this.分包金额,
@@ -928,6 +930,15 @@
             this.groupBox3.TabIndex = 34;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "结算明细";
+            // 
+            // 序号
+            // 
+            this.序号.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.序号.DataPropertyName = "序号";
+            this.序号.HeaderText = "序号";
+            this.序号.Name = "序号";
+            this.序号.Visible = false;
+            this.序号.Width = 62;
             // 
             // 工程名称
             // 
@@ -1074,7 +1085,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dgvPartitions;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtRemark;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtPremises;
         private System.Windows.Forms.TabPage tabPage4;
@@ -1103,6 +1114,7 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtPurpose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 序号;
         private System.Windows.Forms.DataGridViewTextBoxColumn 工程名称;
         private System.Windows.Forms.DataGridViewTextBoxColumn 施工单位;
         private System.Windows.Forms.DataGridViewTextBoxColumn 分包金额;
