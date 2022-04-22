@@ -35,7 +35,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnAnonymous = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +72,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(56, 157);
+            this.btnLogin.Location = new System.Drawing.Point(119, 157);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(120, 50);
             this.btnLogin.TabIndex = 4;
@@ -84,24 +83,13 @@
             // btnExit
             // 
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Location = new System.Drawing.Point(182, 157);
+            this.btnExit.Location = new System.Drawing.Point(245, 157);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(120, 50);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "退出";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnAnonymous
-            // 
-            this.btnAnonymous.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAnonymous.Location = new System.Drawing.Point(308, 157);
-            this.btnAnonymous.Name = "btnAnonymous";
-            this.btnAnonymous.Size = new System.Drawing.Size(120, 50);
-            this.btnAnonymous.TabIndex = 6;
-            this.btnAnonymous.Text = "匿名登录";
-            this.btnAnonymous.UseVisualStyleBackColor = true;
-            this.btnAnonymous.Click += new System.EventHandler(this.btnAnonymous_Click);
             // 
             // frmLogin
             // 
@@ -110,7 +98,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(484, 261);
-            this.Controls.Add(this.btnAnonymous);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
@@ -140,6 +127,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnAnonymous;
     }
 }

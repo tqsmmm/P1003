@@ -96,10 +96,10 @@
     <Compile Include="frmConstructors_Info.Designer.cs">
       <DependentUpon>frmConstructors_Info.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConstructors_List.cs">
+    <Compile Include="Repeal\frmConstructors_List.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConstructors_List.Designer.cs">
+    <Compile Include="Repeal\frmConstructors_List.Designer.cs">
       <DependentUpon>frmConstructors_List.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDesktop.cs">
@@ -132,10 +132,10 @@
     <Compile Include="frmModels.Designer.cs">
       <DependentUpon>frmModels.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPartitions_List.cs">
+    <Compile Include="Repeal\frmPartitions_List.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPartitions_List.Designer.cs">
+    <Compile Include="Repeal\frmPartitions_List.Designer.cs">
       <DependentUpon>frmPartitions_List.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPremises_Import.cs">
@@ -150,10 +150,10 @@
     <Compile Include="frmPremises_Info.Designer.cs">
       <DependentUpon>frmPremises_Info.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPremises_List.cs">
+    <Compile Include="Repeal\frmPremises_List.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPremises_List.Designer.cs">
+    <Compile Include="Repeal\frmPremises_List.Designer.cs">
       <DependentUpon>frmPremises_List.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProjects_Import.cs">
@@ -198,10 +198,10 @@
     <Compile Include="frmSettlements_Info.Designer.cs">
       <DependentUpon>frmSettlements_Info.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSettlements_List.cs">
+    <Compile Include="Repeal\frmSettlements_List.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSettlements_List.Designer.cs">
+    <Compile Include="Repeal\frmSettlements_List.Designer.cs">
       <DependentUpon>frmSettlements_List.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTenders_Info.cs">
@@ -210,16 +210,16 @@
     <Compile Include="frmTenders_Info.Designer.cs">
       <DependentUpon>frmTenders_Info.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTenders_List.cs">
+    <Compile Include="Repeal\frmTenders_List.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTenders_List.Designer.cs">
+    <Compile Include="Repeal\frmTenders_List.Designer.cs">
       <DependentUpon>frmTenders_List.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTypes_List.cs">
+    <Compile Include="Repeal\frmTypes_List.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTypes_List.Designer.cs">
+    <Compile Include="Repeal\frmTypes_List.Designer.cs">
       <DependentUpon>frmTypes_List.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUsers_Info.cs">
@@ -228,10 +228,10 @@
     <Compile Include="frmUsers_Info.Designer.cs">
       <DependentUpon>frmUsers_Info.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUsers_List.cs">
+    <Compile Include="Repeal\frmUsers_List.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUsers_List.Designer.cs">
+    <Compile Include="Repeal\frmUsers_List.Designer.cs">
       <DependentUpon>frmUsers_List.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -245,7 +245,7 @@
     <EmbeddedResource Include="frmConstructors_Info.resx">
       <DependentUpon>frmConstructors_Info.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConstructors_List.resx">
+    <EmbeddedResource Include="Repeal\frmConstructors_List.resx">
       <DependentUpon>frmConstructors_List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDesktop.resx">
@@ -263,7 +263,7 @@
     <EmbeddedResource Include="frmModels.resx">
       <DependentUpon>frmModels.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPartitions_List.resx">
+    <EmbeddedResource Include="Repeal\frmPartitions_List.resx">
       <DependentUpon>frmPartitions_List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPremises_Import.resx">
@@ -272,7 +272,7 @@
     <EmbeddedResource Include="frmPremises_Info.resx">
       <DependentUpon>frmPremises_Info.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPremises_List.resx">
+    <EmbeddedResource Include="Repeal\frmPremises_List.resx">
       <DependentUpon>frmPremises_List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProjects_Import.resx">
@@ -296,22 +296,22 @@
     <EmbeddedResource Include="frmSettlements_Info.resx">
       <DependentUpon>frmSettlements_Info.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSettlements_List.resx">
+    <EmbeddedResource Include="Repeal\frmSettlements_List.resx">
       <DependentUpon>frmSettlements_List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTenders_Info.resx">
       <DependentUpon>frmTenders_Info.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTenders_List.resx">
+    <EmbeddedResource Include="Repeal\frmTenders_List.resx">
       <DependentUpon>frmTenders_List.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTypes_List.resx">
+    <EmbeddedResource Include="Repeal\frmTypes_List.resx">
       <DependentUpon>frmTypes_List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsers_Info.resx">
       <DependentUpon>frmUsers_Info.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUsers_List.resx">
+    <EmbeddedResource Include="Repeal\frmUsers_List.resx">
       <DependentUpon>frmUsers_List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

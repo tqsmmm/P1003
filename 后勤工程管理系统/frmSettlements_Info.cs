@@ -90,7 +90,7 @@ namespace 后勤工程管理系统
 
             if (Text == "新建")
             {
-                var result = Class.DB_Works.ExecuteCmd($"INSERT INTO Settlements(Projects_id, Partitions, Amount, Users_id, DateTime) VALUES({cmbProjects.SelectedValue}, {ckbPartition.Checked}, {txtPay.Text}, {AppSetter.Current_User.id}, '{dtpDateTime.Value.ToString("yyyy-MM-dd")}')");
+                var result = Class.DB_Works.ExecuteCmd($"INSERT INTO Settlements(Projects_id, Partitions, Amount, Users_id, DateTime) VALUES({cmbProjects.SelectedValue}, {ckbPartition.Checked}, {txtPay.Text}, {AppSetter.Current_User.id}, '{dtpDateTime.Value:yyyy-MM-dd}')");
 
                 if (result)
                 {
@@ -103,7 +103,7 @@ namespace 后勤工程管理系统
             }
             else if (Text == "修改")
             {
-                var result = Class.DB_Works.ExecuteCmd($"UPDATE Settlements SET Amount = {txtPay.Text}, DateTime = '{dtpDateTime.Value.ToString("yyyy-MM-dd")}' WHERE id = {id}");
+                var result = Class.DB_Works.ExecuteCmd($"UPDATE Settlements SET Amount = {txtPay.Text}, DateTime = '{dtpDateTime.Value:yyyy-MM-dd}' WHERE id = {id}");
 
                 if (result)
                 {

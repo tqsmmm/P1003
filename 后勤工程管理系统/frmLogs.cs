@@ -43,6 +43,11 @@ namespace 后勤工程管理系统
 
         private void frmLogs_Load(object sender, EventArgs e)
         {
+            btnSearch_Click(this, e);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
             string strSQL = $"SELECT Logs.id AS 序号, Users.Name AS 用户名, Type AS 操作类型, Detail AS 详情, DateTime AS 操作时间 FROM Logs LEFT JOIN Users ON Users.id = Logs.Users_id WHERE DATE_FORMAT(DateTime, '%Y-%m-%d') = '{dtpDateTime.Value:yyyy-MM-dd}' ";
 
             if (txtUsers.Text.Trim() != string.Empty || cmbTypes.SelectedIndex != -1)

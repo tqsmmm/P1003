@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.房产名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,9 +111,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dgvList);
-            this.groupBox1.Location = new System.Drawing.Point(138, 148);
+            this.groupBox1.Location = new System.Drawing.Point(12, 148);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1220, 506);
+            this.groupBox1.Size = new System.Drawing.Size(1346, 450);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "综合数据";
@@ -164,7 +164,7 @@
             this.dgvList.Location = new System.Drawing.Point(3, 22);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(1214, 481);
+            this.dgvList.Size = new System.Drawing.Size(1340, 425);
             this.dgvList.TabIndex = 0;
             // 
             // 房产名称
@@ -250,8 +250,8 @@
             // 工程名称
             // 
             this.工程名称.DataPropertyName = "工程名称";
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.工程名称.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.工程名称.DefaultCellStyle = dataGridViewCellStyle9;
             this.工程名称.HeaderText = "工程名称";
             this.工程名称.Name = "工程名称";
             this.工程名称.Width = 300;
@@ -267,8 +267,8 @@
             // 工程内容
             // 
             this.工程内容.DataPropertyName = "工程内容";
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.工程内容.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.工程内容.DefaultCellStyle = dataGridViewCellStyle10;
             this.工程内容.HeaderText = "工程内容";
             this.工程内容.Name = "工程内容";
             this.工程内容.Width = 500;
@@ -505,7 +505,8 @@
             // 
             // btnReload
             // 
-            this.btnReload.Location = new System.Drawing.Point(12, 12);
+            this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnReload.Location = new System.Drawing.Point(12, 604);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(120, 50);
             this.btnReload.TabIndex = 1;
@@ -515,7 +516,8 @@
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(12, 68);
+            this.btnImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnImport.Location = new System.Drawing.Point(138, 604);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(120, 50);
             this.btnImport.TabIndex = 2;
@@ -525,7 +527,8 @@
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(12, 124);
+            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnExport.Location = new System.Drawing.Point(264, 604);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(120, 50);
             this.btnExport.TabIndex = 3;
@@ -557,9 +560,9 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtName);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(138, 12);
+            this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1220, 130);
+            this.groupBox2.Size = new System.Drawing.Size(1346, 130);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "筛选条件";
@@ -587,7 +590,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 20);
             this.label9.TabIndex = 30;
-            this.label9.Text = "负责人：";
+            this.label9.Text = "联系人：";
             // 
             // label10
             // 
@@ -805,10 +808,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbTenders;
-        private System.Windows.Forms.ComboBox cmbTypes;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPlan_Code;
         private System.Windows.Forms.Label label5;
@@ -817,7 +817,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtYear;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtManager;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ContextMenuStrip cmsList;
@@ -825,6 +824,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 导入模版ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 导出模版ToolStripMenuItem;
-        private System.Windows.Forms.ComboBox cmbConstructors;
+        public System.Windows.Forms.ComboBox cmbTypes;
+        public System.Windows.Forms.TextBox txtName;
+        public System.Windows.Forms.ComboBox cmbTenders;
+        public System.Windows.Forms.ComboBox cmbConstructors;
+        public System.Windows.Forms.TextBox txtManager;
     }
 }

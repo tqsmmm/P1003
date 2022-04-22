@@ -29,6 +29,27 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btnPremises_Export = new System.Windows.Forms.Button();
+            this.btnPremises_Import = new System.Windows.Forms.Button();
+            this.btnPremises_Reload = new System.Windows.Forms.Button();
+            this.btnPremises_Del = new System.Windows.Forms.Button();
+            this.btnPremises_Edit = new System.Windows.Forms.Button();
+            this.btnPremises_New = new System.Windows.Forms.Button();
+            this.dgvPremises = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.房产名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.房产编号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.房产地址 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.建筑年代 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.建筑层数 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.建筑结构 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.建筑面积 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.建筑用途 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.资产原值 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.资产编码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.设备编码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.地区 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnTenders_Reload = new System.Windows.Forms.Button();
             this.btnTenders_Del = new System.Windows.Forms.Button();
@@ -66,6 +87,8 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.用户名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPremises)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTenders)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -81,6 +104,7 @@
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -92,6 +116,232 @@
             this.tabControl1.Size = new System.Drawing.Size(1011, 638);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.btnPremises_Export);
+            this.tabPage5.Controls.Add(this.btnPremises_Import);
+            this.tabPage5.Controls.Add(this.btnPremises_Reload);
+            this.tabPage5.Controls.Add(this.btnPremises_Del);
+            this.tabPage5.Controls.Add(this.btnPremises_Edit);
+            this.tabPage5.Controls.Add(this.btnPremises_New);
+            this.tabPage5.Controls.Add(this.dgvPremises);
+            this.tabPage5.Location = new System.Drawing.Point(4, 34);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1003, 600);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "房产信息";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // btnPremises_Export
+            // 
+            this.btnPremises_Export.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPremises_Export.Location = new System.Drawing.Point(636, 544);
+            this.btnPremises_Export.Name = "btnPremises_Export";
+            this.btnPremises_Export.Size = new System.Drawing.Size(120, 50);
+            this.btnPremises_Export.TabIndex = 20;
+            this.btnPremises_Export.Text = "导出信息";
+            this.btnPremises_Export.UseVisualStyleBackColor = true;
+            this.btnPremises_Export.Click += new System.EventHandler(this.btnPremises_Export_Click);
+            // 
+            // btnPremises_Import
+            // 
+            this.btnPremises_Import.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPremises_Import.Location = new System.Drawing.Point(510, 544);
+            this.btnPremises_Import.Name = "btnPremises_Import";
+            this.btnPremises_Import.Size = new System.Drawing.Size(120, 50);
+            this.btnPremises_Import.TabIndex = 19;
+            this.btnPremises_Import.Text = "导入信息";
+            this.btnPremises_Import.UseVisualStyleBackColor = true;
+            this.btnPremises_Import.Click += new System.EventHandler(this.btnPremises_Import_Click);
+            // 
+            // btnPremises_Reload
+            // 
+            this.btnPremises_Reload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPremises_Reload.Location = new System.Drawing.Point(384, 544);
+            this.btnPremises_Reload.Name = "btnPremises_Reload";
+            this.btnPremises_Reload.Size = new System.Drawing.Size(120, 50);
+            this.btnPremises_Reload.TabIndex = 18;
+            this.btnPremises_Reload.Text = "刷新列表";
+            this.btnPremises_Reload.UseVisualStyleBackColor = true;
+            this.btnPremises_Reload.Click += new System.EventHandler(this.btnPremises_Reload_Click);
+            // 
+            // btnPremises_Del
+            // 
+            this.btnPremises_Del.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPremises_Del.Location = new System.Drawing.Point(258, 544);
+            this.btnPremises_Del.Name = "btnPremises_Del";
+            this.btnPremises_Del.Size = new System.Drawing.Size(120, 50);
+            this.btnPremises_Del.TabIndex = 17;
+            this.btnPremises_Del.Text = "删除房产信息";
+            this.btnPremises_Del.UseVisualStyleBackColor = true;
+            this.btnPremises_Del.Click += new System.EventHandler(this.btnPremises_Del_Click);
+            // 
+            // btnPremises_Edit
+            // 
+            this.btnPremises_Edit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPremises_Edit.Location = new System.Drawing.Point(132, 544);
+            this.btnPremises_Edit.Name = "btnPremises_Edit";
+            this.btnPremises_Edit.Size = new System.Drawing.Size(120, 50);
+            this.btnPremises_Edit.TabIndex = 16;
+            this.btnPremises_Edit.Text = "修改房产信息";
+            this.btnPremises_Edit.UseVisualStyleBackColor = true;
+            this.btnPremises_Edit.Click += new System.EventHandler(this.btnPremises_Edit_Click);
+            // 
+            // btnPremises_New
+            // 
+            this.btnPremises_New.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPremises_New.Location = new System.Drawing.Point(6, 544);
+            this.btnPremises_New.Name = "btnPremises_New";
+            this.btnPremises_New.Size = new System.Drawing.Size(120, 50);
+            this.btnPremises_New.TabIndex = 15;
+            this.btnPremises_New.Text = "新建房产信息";
+            this.btnPremises_New.UseVisualStyleBackColor = true;
+            this.btnPremises_New.Click += new System.EventHandler(this.btnPremises_New_Click);
+            // 
+            // dgvPremises
+            // 
+            this.dgvPremises.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPremises.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPremises.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.房产名称,
+            this.房产编号,
+            this.房产地址,
+            this.建筑年代,
+            this.建筑层数,
+            this.建筑结构,
+            this.建筑面积,
+            this.建筑用途,
+            this.资产原值,
+            this.资产编码,
+            this.设备编码,
+            this.地区});
+            this.dgvPremises.Location = new System.Drawing.Point(6, 6);
+            this.dgvPremises.Name = "dgvPremises";
+            this.dgvPremises.RowTemplate.Height = 23;
+            this.dgvPremises.Size = new System.Drawing.Size(991, 532);
+            this.dgvPremises.TabIndex = 14;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "序号";
+            this.dataGridViewTextBoxColumn6.HeaderText = "序号";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 62;
+            // 
+            // 房产名称
+            // 
+            this.房产名称.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.房产名称.DataPropertyName = "房产名称";
+            this.房产名称.HeaderText = "房产名称";
+            this.房产名称.Name = "房产名称";
+            this.房产名称.ReadOnly = true;
+            this.房产名称.Width = 90;
+            // 
+            // 房产编号
+            // 
+            this.房产编号.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.房产编号.DataPropertyName = "房产编号";
+            this.房产编号.HeaderText = "房产编号";
+            this.房产编号.Name = "房产编号";
+            this.房产编号.ReadOnly = true;
+            this.房产编号.Width = 90;
+            // 
+            // 房产地址
+            // 
+            this.房产地址.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.房产地址.DataPropertyName = "房产地址";
+            this.房产地址.HeaderText = "房产地址";
+            this.房产地址.Name = "房产地址";
+            this.房产地址.ReadOnly = true;
+            this.房产地址.Width = 90;
+            // 
+            // 建筑年代
+            // 
+            this.建筑年代.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.建筑年代.DataPropertyName = "建筑年代";
+            this.建筑年代.HeaderText = "建筑年代";
+            this.建筑年代.Name = "建筑年代";
+            this.建筑年代.ReadOnly = true;
+            this.建筑年代.Width = 90;
+            // 
+            // 建筑层数
+            // 
+            this.建筑层数.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.建筑层数.DataPropertyName = "建筑层数";
+            this.建筑层数.HeaderText = "建筑层数";
+            this.建筑层数.Name = "建筑层数";
+            this.建筑层数.ReadOnly = true;
+            this.建筑层数.Width = 90;
+            // 
+            // 建筑结构
+            // 
+            this.建筑结构.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.建筑结构.DataPropertyName = "建筑结构";
+            this.建筑结构.HeaderText = "建筑结构";
+            this.建筑结构.Name = "建筑结构";
+            this.建筑结构.ReadOnly = true;
+            this.建筑结构.Width = 90;
+            // 
+            // 建筑面积
+            // 
+            this.建筑面积.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.建筑面积.DataPropertyName = "建筑面积";
+            this.建筑面积.HeaderText = "建筑面积";
+            this.建筑面积.Name = "建筑面积";
+            this.建筑面积.ReadOnly = true;
+            this.建筑面积.Width = 90;
+            // 
+            // 建筑用途
+            // 
+            this.建筑用途.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.建筑用途.DataPropertyName = "建筑用途";
+            this.建筑用途.HeaderText = "建筑用途";
+            this.建筑用途.Name = "建筑用途";
+            this.建筑用途.ReadOnly = true;
+            this.建筑用途.Width = 90;
+            // 
+            // 资产原值
+            // 
+            this.资产原值.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.资产原值.DataPropertyName = "资产原值";
+            this.资产原值.HeaderText = "资产原值";
+            this.资产原值.Name = "资产原值";
+            this.资产原值.ReadOnly = true;
+            this.资产原值.Width = 90;
+            // 
+            // 资产编码
+            // 
+            this.资产编码.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.资产编码.DataPropertyName = "资产编码";
+            this.资产编码.HeaderText = "资产编码";
+            this.资产编码.Name = "资产编码";
+            this.资产编码.ReadOnly = true;
+            this.资产编码.Width = 90;
+            // 
+            // 设备编码
+            // 
+            this.设备编码.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.设备编码.DataPropertyName = "设备编码";
+            this.设备编码.HeaderText = "设备编码";
+            this.设备编码.Name = "设备编码";
+            this.设备编码.ReadOnly = true;
+            this.设备编码.Width = 90;
+            // 
+            // 地区
+            // 
+            this.地区.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.地区.DataPropertyName = "地区";
+            this.地区.HeaderText = "地区";
+            this.地区.Name = "地区";
+            this.地区.ReadOnly = true;
+            this.地区.Width = 62;
             // 
             // tabPage1
             // 
@@ -504,6 +754,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmBasic_Load);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPremises)).EndInit();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTenders)).EndInit();
             this.tabPage2.ResumeLayout(false);
@@ -555,5 +807,26 @@
         private System.Windows.Forms.Button btnUser_Del;
         private System.Windows.Forms.Button btnUsers_Edit;
         private System.Windows.Forms.Button btnUser_Add;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.DataGridView dgvPremises;
+        private System.Windows.Forms.Button btnPremises_Export;
+        private System.Windows.Forms.Button btnPremises_Import;
+        private System.Windows.Forms.Button btnPremises_Reload;
+        private System.Windows.Forms.Button btnPremises_Del;
+        private System.Windows.Forms.Button btnPremises_Edit;
+        private System.Windows.Forms.Button btnPremises_New;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 房产名称;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 房产编号;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 房产地址;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 建筑年代;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 建筑层数;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 建筑结构;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 建筑面积;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 建筑用途;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 资产原值;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 资产编码;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 设备编码;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 地区;
     }
 }

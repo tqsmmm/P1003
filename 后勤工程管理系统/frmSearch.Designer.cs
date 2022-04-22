@@ -28,90 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.txt = new System.Windows.Forms.TextBox();
+            this.ckbPremises_Name = new System.Windows.Forms.CheckBox();
+            this.ckbPremises_Date = new System.Windows.Forms.CheckBox();
+            this.txtPremises_Name = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.clbProjects_Types = new System.Windows.Forms.CheckedListBox();
+            this.txtPremises_Date = new System.Windows.Forms.TextBox();
+            this.ckbProjects_Types = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.ckbTenders = new System.Windows.Forms.CheckBox();
+            this.ckbConstructors = new System.Windows.Forms.CheckBox();
+            this.ckbContact = new System.Windows.Forms.CheckBox();
+            this.txtContact = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.ckbProjects_Amount = new System.Windows.Forms.CheckBox();
+            this.txtProjects_Amount = new System.Windows.Forms.TextBox();
+            this.ckbProjects_Amount_Reality = new System.Windows.Forms.CheckBox();
+            this.txtProjects_Amount_Reality = new System.Windows.Forms.TextBox();
+            this.ckbProjects_Amount_Pay = new System.Windows.Forms.CheckBox();
+            this.txtProjects_Amount_Pay = new System.Windows.Forms.TextBox();
+            this.ckbProjects_Amount_Arrear = new System.Windows.Forms.CheckBox();
+            this.txtProjects_Amount_Arrear = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.checkBox15 = new System.Windows.Forms.CheckBox();
-            this.checkBox16 = new System.Windows.Forms.CheckBox();
+            this.ckbPartitions_Amount = new System.Windows.Forms.CheckBox();
+            this.txtPartitions_Amount = new System.Windows.Forms.TextBox();
+            this.ckbPartitions_Amount_Pay = new System.Windows.Forms.CheckBox();
+            this.txtPartitions_Amount_Pay = new System.Windows.Forms.TextBox();
+            this.ckbPartitions_Amount_Arrear = new System.Windows.Forms.CheckBox();
+            this.txtPartitions_Amount_Arrear = new System.Windows.Forms.TextBox();
+            this.txtPartitions_Amount_Management = new System.Windows.Forms.TextBox();
+            this.ckbPartitions_Management = new System.Windows.Forms.CheckBox();
+            this.ckbPartitions_Account = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.checkBox17 = new System.Windows.Forms.CheckBox();
-            this.checkBox18 = new System.Windows.Forms.CheckBox();
-            this.checkBox19 = new System.Windows.Forms.CheckBox();
+            this.ckbProjects_Collect_Tag = new System.Windows.Forms.CheckBox();
+            this.ckbProjects_Check_Tag = new System.Windows.Forms.CheckBox();
+            this.ckbProjects_Grade_Tag = new System.Windows.Forms.CheckBox();
             this.cmbCollect_Tag = new System.Windows.Forms.ComboBox();
             this.cmbCheck_Tag = new System.Windows.Forms.ComboBox();
             this.cmbGrade_Tag = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbPartitions_Account = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnSelectAll = new System.Windows.Forms.Button();
+            this.btnSelectNone = new System.Windows.Forms.Button();
+            this.cmbTenders = new System.Windows.Forms.ComboBox();
+            this.cmbConstructors = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // checkBox1
+            // ckbPremises_Name
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox1.Location = new System.Drawing.Point(103, 3);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(114, 26);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "房产名称：";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckbPremises_Name.AutoSize = true;
+            this.ckbPremises_Name.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbPremises_Name.Location = new System.Drawing.Point(103, 3);
+            this.ckbPremises_Name.Name = "ckbPremises_Name";
+            this.ckbPremises_Name.Size = new System.Drawing.Size(114, 26);
+            this.ckbPremises_Name.TabIndex = 4;
+            this.ckbPremises_Name.Text = "房产名称：";
+            this.ckbPremises_Name.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // ckbPremises_Date
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox2.Location = new System.Drawing.Point(103, 135);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(114, 26);
-            this.checkBox2.TabIndex = 6;
-            this.checkBox2.Text = "房产日期：";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.ckbPremises_Date.AutoSize = true;
+            this.ckbPremises_Date.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbPremises_Date.Location = new System.Drawing.Point(103, 135);
+            this.ckbPremises_Date.Name = "ckbPremises_Date";
+            this.ckbPremises_Date.Size = new System.Drawing.Size(114, 26);
+            this.ckbPremises_Date.TabIndex = 6;
+            this.ckbPremises_Date.Text = "房产日期：";
+            this.ckbPremises_Date.UseVisualStyleBackColor = true;
             // 
-            // txt
+            // txtPremises_Name
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.txt, 5);
-            this.txt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt.Location = new System.Drawing.Point(223, 3);
-            this.txt.Name = "txt";
-            this.txt.Size = new System.Drawing.Size(684, 26);
-            this.txt.TabIndex = 7;
+            this.txtPremises_Name.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtPremises_Name.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.tableLayoutPanel1.SetColumnSpan(this.txtPremises_Name, 5);
+            this.txtPremises_Name.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPremises_Name.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtPremises_Name.Location = new System.Drawing.Point(223, 3);
+            this.txtPremises_Name.Name = "txtPremises_Name";
+            this.txtPremises_Name.Size = new System.Drawing.Size(684, 26);
+            this.txtPremises_Name.TabIndex = 7;
             // 
             // tableLayoutPanel1
             // 
@@ -125,51 +126,49 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.checkedListBox1, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txt, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox2, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox1, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox3, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.clbProjects_Types, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtPremises_Date, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtPremises_Name, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.ckbPremises_Date, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.ckbPremises_Name, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.ckbProjects_Types, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label3, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label4, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox4, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBox4, 5, 4);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox5, 4, 4);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox6, 6, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBox5, 7, 4);
+            this.tableLayoutPanel1.Controls.Add(this.ckbTenders, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.ckbConstructors, 4, 4);
+            this.tableLayoutPanel1.Controls.Add(this.ckbContact, 6, 4);
+            this.tableLayoutPanel1.Controls.Add(this.txtContact, 7, 4);
             this.tableLayoutPanel1.Controls.Add(this.label5, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox7, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.textBox6, 3, 5);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox8, 4, 5);
-            this.tableLayoutPanel1.Controls.Add(this.textBox7, 5, 5);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox9, 6, 5);
-            this.tableLayoutPanel1.Controls.Add(this.textBox8, 7, 5);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox10, 2, 6);
-            this.tableLayoutPanel1.Controls.Add(this.textBox9, 3, 6);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox11, 4, 6);
-            this.tableLayoutPanel1.Controls.Add(this.textBox10, 5, 6);
+            this.tableLayoutPanel1.Controls.Add(this.ckbProjects_Amount, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.txtProjects_Amount, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.ckbProjects_Amount_Reality, 4, 5);
+            this.tableLayoutPanel1.Controls.Add(this.txtProjects_Amount_Reality, 5, 5);
+            this.tableLayoutPanel1.Controls.Add(this.ckbProjects_Amount_Pay, 6, 5);
+            this.tableLayoutPanel1.Controls.Add(this.txtProjects_Amount_Pay, 7, 5);
+            this.tableLayoutPanel1.Controls.Add(this.ckbProjects_Amount_Arrear, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.txtProjects_Amount_Arrear, 3, 6);
             this.tableLayoutPanel1.Controls.Add(this.label6, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox12, 2, 8);
-            this.tableLayoutPanel1.Controls.Add(this.textBox11, 3, 8);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox13, 4, 8);
-            this.tableLayoutPanel1.Controls.Add(this.textBox12, 5, 8);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox14, 6, 8);
-            this.tableLayoutPanel1.Controls.Add(this.textBox13, 7, 8);
-            this.tableLayoutPanel1.Controls.Add(this.textBox14, 3, 9);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox15, 2, 9);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox16, 4, 9);
+            this.tableLayoutPanel1.Controls.Add(this.ckbPartitions_Amount, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.txtPartitions_Amount, 3, 8);
+            this.tableLayoutPanel1.Controls.Add(this.ckbPartitions_Amount_Pay, 4, 8);
+            this.tableLayoutPanel1.Controls.Add(this.txtPartitions_Amount_Pay, 5, 8);
+            this.tableLayoutPanel1.Controls.Add(this.ckbPartitions_Amount_Arrear, 6, 8);
+            this.tableLayoutPanel1.Controls.Add(this.txtPartitions_Amount_Arrear, 7, 8);
+            this.tableLayoutPanel1.Controls.Add(this.txtPartitions_Amount_Management, 3, 9);
+            this.tableLayoutPanel1.Controls.Add(this.ckbPartitions_Management, 2, 9);
+            this.tableLayoutPanel1.Controls.Add(this.ckbPartitions_Account, 4, 9);
             this.tableLayoutPanel1.Controls.Add(this.label7, 1, 10);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox17, 2, 10);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox18, 4, 10);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox19, 6, 10);
+            this.tableLayoutPanel1.Controls.Add(this.ckbProjects_Collect_Tag, 2, 10);
+            this.tableLayoutPanel1.Controls.Add(this.ckbProjects_Check_Tag, 4, 10);
+            this.tableLayoutPanel1.Controls.Add(this.ckbProjects_Grade_Tag, 6, 10);
             this.tableLayoutPanel1.Controls.Add(this.cmbCollect_Tag, 3, 10);
             this.tableLayoutPanel1.Controls.Add(this.cmbCheck_Tag, 5, 10);
             this.tableLayoutPanel1.Controls.Add(this.cmbGrade_Tag, 7, 10);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 5, 9);
+            this.tableLayoutPanel1.Controls.Add(this.cmbPartitions_Account, 5, 9);
+            this.tableLayoutPanel1.Controls.Add(this.cmbTenders, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.cmbConstructors, 5, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 22);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -187,38 +186,40 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1005, 373);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1005, 527);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
-            // checkedListBox1
+            // clbProjects_Types
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.checkedListBox1, 5);
-            this.checkedListBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(223, 35);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(684, 94);
-            this.checkedListBox1.TabIndex = 10;
+            this.tableLayoutPanel1.SetColumnSpan(this.clbProjects_Types, 5);
+            this.clbProjects_Types.ColumnWidth = 200;
+            this.clbProjects_Types.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.clbProjects_Types.FormattingEnabled = true;
+            this.clbProjects_Types.Location = new System.Drawing.Point(223, 35);
+            this.clbProjects_Types.MultiColumn = true;
+            this.clbProjects_Types.Name = "clbProjects_Types";
+            this.clbProjects_Types.Size = new System.Drawing.Size(684, 94);
+            this.clbProjects_Types.TabIndex = 10;
             // 
-            // checkBox3
+            // txtPremises_Date
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox3.Location = new System.Drawing.Point(103, 35);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(114, 94);
-            this.checkBox3.TabIndex = 9;
-            this.checkBox3.Text = "工程类型";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.txtPremises_Date.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPremises_Date.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtPremises_Date.Location = new System.Drawing.Point(223, 135);
+            this.txtPremises_Date.Name = "txtPremises_Date";
+            this.txtPremises_Date.Size = new System.Drawing.Size(144, 26);
+            this.txtPremises_Date.TabIndex = 5;
             // 
-            // textBox2
+            // ckbProjects_Types
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox2.Location = new System.Drawing.Point(223, 135);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(144, 26);
-            this.textBox2.TabIndex = 5;
+            this.ckbProjects_Types.AutoSize = true;
+            this.ckbProjects_Types.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbProjects_Types.Location = new System.Drawing.Point(103, 35);
+            this.ckbProjects_Types.Name = "ckbProjects_Types";
+            this.ckbProjects_Types.Size = new System.Drawing.Size(114, 94);
+            this.ckbProjects_Types.TabIndex = 9;
+            this.ckbProjects_Types.Text = "工程类型";
+            this.ckbProjects_Types.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -263,74 +264,58 @@
             this.label4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.Location = new System.Drawing.Point(3, 164);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 32);
+            this.label4.Size = new System.Drawing.Size(94, 34);
             this.label4.TabIndex = 14;
             this.label4.Text = "施工方信息";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // checkBox4
+            // ckbTenders
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox4.Location = new System.Drawing.Point(103, 167);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(114, 26);
-            this.checkBox4.TabIndex = 15;
-            this.checkBox4.Text = "中标单位：";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.ckbTenders.AutoSize = true;
+            this.ckbTenders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbTenders.Location = new System.Drawing.Point(103, 167);
+            this.ckbTenders.Name = "ckbTenders";
+            this.ckbTenders.Size = new System.Drawing.Size(114, 28);
+            this.ckbTenders.TabIndex = 15;
+            this.ckbTenders.Text = "中标单位：";
+            this.ckbTenders.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // ckbConstructors
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(223, 167);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(144, 26);
-            this.textBox1.TabIndex = 16;
+            this.ckbConstructors.AutoSize = true;
+            this.ckbConstructors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbConstructors.Location = new System.Drawing.Point(373, 167);
+            this.ckbConstructors.Name = "ckbConstructors";
+            this.ckbConstructors.Size = new System.Drawing.Size(114, 28);
+            this.ckbConstructors.TabIndex = 17;
+            this.ckbConstructors.Text = "施工单位：";
+            this.ckbConstructors.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // ckbContact
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox5.Location = new System.Drawing.Point(373, 167);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(114, 26);
-            this.checkBox5.TabIndex = 17;
-            this.checkBox5.Text = "施工单位：";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.ckbContact.AutoSize = true;
+            this.ckbContact.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbContact.Location = new System.Drawing.Point(643, 167);
+            this.ckbContact.Name = "ckbContact";
+            this.ckbContact.Size = new System.Drawing.Size(114, 28);
+            this.ckbContact.TabIndex = 19;
+            this.ckbContact.Text = "联系人：";
+            this.ckbContact.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // txtContact
             // 
-            this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox4.Location = new System.Drawing.Point(493, 167);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(144, 26);
-            this.textBox4.TabIndex = 18;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox6.Location = new System.Drawing.Point(643, 167);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(114, 26);
-            this.checkBox6.TabIndex = 19;
-            this.checkBox6.Text = "联系人：";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox5.Location = new System.Drawing.Point(763, 167);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(144, 26);
-            this.textBox5.TabIndex = 20;
+            this.txtContact.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtContact.Location = new System.Drawing.Point(763, 167);
+            this.txtContact.Name = "txtContact";
+            this.txtContact.Size = new System.Drawing.Size(144, 26);
+            this.txtContact.TabIndex = 20;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(3, 196);
+            this.label5.Location = new System.Drawing.Point(3, 198);
             this.label5.Name = "label5";
             this.tableLayoutPanel1.SetRowSpan(this.label5, 2);
             this.label5.Size = new System.Drawing.Size(94, 64);
@@ -338,200 +323,197 @@
             this.label5.Text = "结算信息";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // checkBox7
+            // ckbProjects_Amount
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox7.Location = new System.Drawing.Point(103, 199);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(114, 26);
-            this.checkBox7.TabIndex = 22;
-            this.checkBox7.Text = "计划金额：";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.ckbProjects_Amount.AutoSize = true;
+            this.ckbProjects_Amount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbProjects_Amount.Location = new System.Drawing.Point(103, 201);
+            this.ckbProjects_Amount.Name = "ckbProjects_Amount";
+            this.ckbProjects_Amount.Size = new System.Drawing.Size(114, 26);
+            this.ckbProjects_Amount.TabIndex = 22;
+            this.ckbProjects_Amount.Text = "计划金额：";
+            this.ckbProjects_Amount.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // txtProjects_Amount
             // 
-            this.textBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox6.Location = new System.Drawing.Point(223, 199);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(144, 26);
-            this.textBox6.TabIndex = 23;
+            this.txtProjects_Amount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtProjects_Amount.Location = new System.Drawing.Point(223, 201);
+            this.txtProjects_Amount.Name = "txtProjects_Amount";
+            this.txtProjects_Amount.Size = new System.Drawing.Size(144, 26);
+            this.txtProjects_Amount.TabIndex = 23;
+            this.txtProjects_Amount.Text = "0.00";
+            this.txtProjects_Amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // checkBox8
+            // ckbProjects_Amount_Reality
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox8.Location = new System.Drawing.Point(373, 199);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(114, 26);
-            this.checkBox8.TabIndex = 24;
-            this.checkBox8.Text = "计划金额：";
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.ckbProjects_Amount_Reality.AutoSize = true;
+            this.ckbProjects_Amount_Reality.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbProjects_Amount_Reality.Location = new System.Drawing.Point(373, 201);
+            this.ckbProjects_Amount_Reality.Name = "ckbProjects_Amount_Reality";
+            this.ckbProjects_Amount_Reality.Size = new System.Drawing.Size(114, 26);
+            this.ckbProjects_Amount_Reality.TabIndex = 24;
+            this.ckbProjects_Amount_Reality.Text = "实际发生额：";
+            this.ckbProjects_Amount_Reality.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // txtProjects_Amount_Reality
             // 
-            this.textBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox7.Location = new System.Drawing.Point(493, 199);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(144, 26);
-            this.textBox7.TabIndex = 25;
+            this.txtProjects_Amount_Reality.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtProjects_Amount_Reality.Location = new System.Drawing.Point(493, 201);
+            this.txtProjects_Amount_Reality.Name = "txtProjects_Amount_Reality";
+            this.txtProjects_Amount_Reality.Size = new System.Drawing.Size(144, 26);
+            this.txtProjects_Amount_Reality.TabIndex = 25;
+            this.txtProjects_Amount_Reality.Text = "0.00";
+            this.txtProjects_Amount_Reality.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // checkBox9
+            // ckbProjects_Amount_Pay
             // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox9.Location = new System.Drawing.Point(643, 199);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(114, 26);
-            this.checkBox9.TabIndex = 26;
-            this.checkBox9.Text = "支付金额：";
-            this.checkBox9.UseVisualStyleBackColor = true;
+            this.ckbProjects_Amount_Pay.AutoSize = true;
+            this.ckbProjects_Amount_Pay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbProjects_Amount_Pay.Location = new System.Drawing.Point(643, 201);
+            this.ckbProjects_Amount_Pay.Name = "ckbProjects_Amount_Pay";
+            this.ckbProjects_Amount_Pay.Size = new System.Drawing.Size(114, 26);
+            this.ckbProjects_Amount_Pay.TabIndex = 26;
+            this.ckbProjects_Amount_Pay.Text = "支付金额：";
+            this.ckbProjects_Amount_Pay.UseVisualStyleBackColor = true;
             // 
-            // textBox8
+            // txtProjects_Amount_Pay
             // 
-            this.textBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox8.Location = new System.Drawing.Point(763, 199);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(144, 26);
-            this.textBox8.TabIndex = 27;
+            this.txtProjects_Amount_Pay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtProjects_Amount_Pay.Location = new System.Drawing.Point(763, 201);
+            this.txtProjects_Amount_Pay.Name = "txtProjects_Amount_Pay";
+            this.txtProjects_Amount_Pay.Size = new System.Drawing.Size(144, 26);
+            this.txtProjects_Amount_Pay.TabIndex = 27;
+            this.txtProjects_Amount_Pay.Text = "0.00";
+            this.txtProjects_Amount_Pay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // checkBox10
+            // ckbProjects_Amount_Arrear
             // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox10.Location = new System.Drawing.Point(103, 231);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(114, 26);
-            this.checkBox10.TabIndex = 28;
-            this.checkBox10.Text = "欠款金额：";
-            this.checkBox10.UseVisualStyleBackColor = true;
+            this.ckbProjects_Amount_Arrear.AutoSize = true;
+            this.ckbProjects_Amount_Arrear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbProjects_Amount_Arrear.Location = new System.Drawing.Point(103, 233);
+            this.ckbProjects_Amount_Arrear.Name = "ckbProjects_Amount_Arrear";
+            this.ckbProjects_Amount_Arrear.Size = new System.Drawing.Size(114, 26);
+            this.ckbProjects_Amount_Arrear.TabIndex = 28;
+            this.ckbProjects_Amount_Arrear.Text = "欠款金额：";
+            this.ckbProjects_Amount_Arrear.UseVisualStyleBackColor = true;
             // 
-            // textBox9
+            // txtProjects_Amount_Arrear
             // 
-            this.textBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox9.Location = new System.Drawing.Point(223, 231);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(144, 26);
-            this.textBox9.TabIndex = 29;
-            // 
-            // checkBox11
-            // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox11.Location = new System.Drawing.Point(373, 231);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(114, 26);
-            this.checkBox11.TabIndex = 30;
-            this.checkBox11.Text = "资料归档：";
-            this.checkBox11.UseVisualStyleBackColor = true;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox10.Location = new System.Drawing.Point(493, 231);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(144, 26);
-            this.textBox10.TabIndex = 31;
+            this.txtProjects_Amount_Arrear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtProjects_Amount_Arrear.Location = new System.Drawing.Point(223, 233);
+            this.txtProjects_Amount_Arrear.Name = "txtProjects_Amount_Arrear";
+            this.txtProjects_Amount_Arrear.Size = new System.Drawing.Size(144, 26);
+            this.txtProjects_Amount_Arrear.TabIndex = 29;
+            this.txtProjects_Amount_Arrear.Text = "0.00";
+            this.txtProjects_Amount_Arrear.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(3, 260);
+            this.label6.Location = new System.Drawing.Point(3, 262);
             this.label6.Name = "label6";
             this.tableLayoutPanel1.SetRowSpan(this.label6, 2);
-            this.label6.Size = new System.Drawing.Size(94, 66);
+            this.label6.Size = new System.Drawing.Size(94, 64);
             this.label6.TabIndex = 32;
             this.label6.Text = "分包信息";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // checkBox12
+            // ckbPartitions_Amount
             // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox12.Location = new System.Drawing.Point(103, 263);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(114, 26);
-            this.checkBox12.TabIndex = 33;
-            this.checkBox12.Text = "分包金额：";
-            this.checkBox12.UseVisualStyleBackColor = true;
+            this.ckbPartitions_Amount.AutoSize = true;
+            this.ckbPartitions_Amount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbPartitions_Amount.Location = new System.Drawing.Point(103, 265);
+            this.ckbPartitions_Amount.Name = "ckbPartitions_Amount";
+            this.ckbPartitions_Amount.Size = new System.Drawing.Size(114, 26);
+            this.ckbPartitions_Amount.TabIndex = 33;
+            this.ckbPartitions_Amount.Text = "分包金额：";
+            this.ckbPartitions_Amount.UseVisualStyleBackColor = true;
             // 
-            // textBox11
+            // txtPartitions_Amount
             // 
-            this.textBox11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox11.Location = new System.Drawing.Point(223, 263);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(144, 26);
-            this.textBox11.TabIndex = 34;
+            this.txtPartitions_Amount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPartitions_Amount.Location = new System.Drawing.Point(223, 265);
+            this.txtPartitions_Amount.Name = "txtPartitions_Amount";
+            this.txtPartitions_Amount.Size = new System.Drawing.Size(144, 26);
+            this.txtPartitions_Amount.TabIndex = 34;
+            this.txtPartitions_Amount.Text = "0.00";
+            this.txtPartitions_Amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // checkBox13
+            // ckbPartitions_Amount_Pay
             // 
-            this.checkBox13.AutoSize = true;
-            this.checkBox13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox13.Location = new System.Drawing.Point(373, 263);
-            this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(114, 26);
-            this.checkBox13.TabIndex = 35;
-            this.checkBox13.Text = "付款金额：";
-            this.checkBox13.UseVisualStyleBackColor = true;
+            this.ckbPartitions_Amount_Pay.AutoSize = true;
+            this.ckbPartitions_Amount_Pay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbPartitions_Amount_Pay.Location = new System.Drawing.Point(373, 265);
+            this.ckbPartitions_Amount_Pay.Name = "ckbPartitions_Amount_Pay";
+            this.ckbPartitions_Amount_Pay.Size = new System.Drawing.Size(114, 26);
+            this.ckbPartitions_Amount_Pay.TabIndex = 35;
+            this.ckbPartitions_Amount_Pay.Text = "付款金额：";
+            this.ckbPartitions_Amount_Pay.UseVisualStyleBackColor = true;
             // 
-            // textBox12
+            // txtPartitions_Amount_Pay
             // 
-            this.textBox12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox12.Location = new System.Drawing.Point(493, 263);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(144, 26);
-            this.textBox12.TabIndex = 36;
+            this.txtPartitions_Amount_Pay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPartitions_Amount_Pay.Location = new System.Drawing.Point(493, 265);
+            this.txtPartitions_Amount_Pay.Name = "txtPartitions_Amount_Pay";
+            this.txtPartitions_Amount_Pay.Size = new System.Drawing.Size(144, 26);
+            this.txtPartitions_Amount_Pay.TabIndex = 36;
+            this.txtPartitions_Amount_Pay.Text = "0.00";
+            this.txtPartitions_Amount_Pay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // checkBox14
+            // ckbPartitions_Amount_Arrear
             // 
-            this.checkBox14.AutoSize = true;
-            this.checkBox14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox14.Location = new System.Drawing.Point(643, 263);
-            this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(114, 26);
-            this.checkBox14.TabIndex = 37;
-            this.checkBox14.Text = "欠款金额：";
-            this.checkBox14.UseVisualStyleBackColor = true;
+            this.ckbPartitions_Amount_Arrear.AutoSize = true;
+            this.ckbPartitions_Amount_Arrear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbPartitions_Amount_Arrear.Location = new System.Drawing.Point(643, 265);
+            this.ckbPartitions_Amount_Arrear.Name = "ckbPartitions_Amount_Arrear";
+            this.ckbPartitions_Amount_Arrear.Size = new System.Drawing.Size(114, 26);
+            this.ckbPartitions_Amount_Arrear.TabIndex = 37;
+            this.ckbPartitions_Amount_Arrear.Text = "欠款金额：";
+            this.ckbPartitions_Amount_Arrear.UseVisualStyleBackColor = true;
             // 
-            // textBox13
+            // txtPartitions_Amount_Arrear
             // 
-            this.textBox13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox13.Location = new System.Drawing.Point(763, 263);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(144, 26);
-            this.textBox13.TabIndex = 38;
+            this.txtPartitions_Amount_Arrear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPartitions_Amount_Arrear.Location = new System.Drawing.Point(763, 265);
+            this.txtPartitions_Amount_Arrear.Name = "txtPartitions_Amount_Arrear";
+            this.txtPartitions_Amount_Arrear.Size = new System.Drawing.Size(144, 26);
+            this.txtPartitions_Amount_Arrear.TabIndex = 38;
+            this.txtPartitions_Amount_Arrear.Text = "0.00";
+            this.txtPartitions_Amount_Arrear.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox14
+            // txtPartitions_Amount_Management
             // 
-            this.textBox14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox14.Location = new System.Drawing.Point(223, 295);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(144, 26);
-            this.textBox14.TabIndex = 39;
+            this.txtPartitions_Amount_Management.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPartitions_Amount_Management.Location = new System.Drawing.Point(223, 297);
+            this.txtPartitions_Amount_Management.Name = "txtPartitions_Amount_Management";
+            this.txtPartitions_Amount_Management.Size = new System.Drawing.Size(144, 26);
+            this.txtPartitions_Amount_Management.TabIndex = 39;
+            this.txtPartitions_Amount_Management.Text = "0.00";
+            this.txtPartitions_Amount_Management.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // checkBox15
+            // ckbPartitions_Management
             // 
-            this.checkBox15.AutoSize = true;
-            this.checkBox15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox15.Location = new System.Drawing.Point(103, 295);
-            this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(114, 28);
-            this.checkBox15.TabIndex = 41;
-            this.checkBox15.Text = "管理费：";
-            this.checkBox15.UseVisualStyleBackColor = true;
+            this.ckbPartitions_Management.AutoSize = true;
+            this.ckbPartitions_Management.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbPartitions_Management.Location = new System.Drawing.Point(103, 297);
+            this.ckbPartitions_Management.Name = "ckbPartitions_Management";
+            this.ckbPartitions_Management.Size = new System.Drawing.Size(114, 26);
+            this.ckbPartitions_Management.TabIndex = 41;
+            this.ckbPartitions_Management.Text = "管理费：";
+            this.ckbPartitions_Management.UseVisualStyleBackColor = true;
             // 
-            // checkBox16
+            // ckbPartitions_Account
             // 
-            this.checkBox16.AutoSize = true;
-            this.checkBox16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox16.Location = new System.Drawing.Point(373, 295);
-            this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(114, 28);
-            this.checkBox16.TabIndex = 42;
-            this.checkBox16.Text = "是否挂账：";
-            this.checkBox16.UseVisualStyleBackColor = true;
+            this.ckbPartitions_Account.AutoSize = true;
+            this.ckbPartitions_Account.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbPartitions_Account.Location = new System.Drawing.Point(373, 297);
+            this.ckbPartitions_Account.Name = "ckbPartitions_Account";
+            this.ckbPartitions_Account.Size = new System.Drawing.Size(114, 26);
+            this.ckbPartitions_Account.TabIndex = 42;
+            this.ckbPartitions_Account.Text = "是否挂账：";
+            this.ckbPartitions_Account.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -540,43 +522,43 @@
             this.label7.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.Location = new System.Drawing.Point(3, 326);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 34);
+            this.label7.Size = new System.Drawing.Size(94, 30);
             this.label7.TabIndex = 43;
             this.label7.Text = "资料归档";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // checkBox17
+            // ckbProjects_Collect_Tag
             // 
-            this.checkBox17.AutoSize = true;
-            this.checkBox17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox17.Location = new System.Drawing.Point(103, 329);
-            this.checkBox17.Name = "checkBox17";
-            this.checkBox17.Size = new System.Drawing.Size(114, 28);
-            this.checkBox17.TabIndex = 44;
-            this.checkBox17.Text = "收集整理：";
-            this.checkBox17.UseVisualStyleBackColor = true;
+            this.ckbProjects_Collect_Tag.AutoSize = true;
+            this.ckbProjects_Collect_Tag.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbProjects_Collect_Tag.Location = new System.Drawing.Point(103, 329);
+            this.ckbProjects_Collect_Tag.Name = "ckbProjects_Collect_Tag";
+            this.ckbProjects_Collect_Tag.Size = new System.Drawing.Size(114, 24);
+            this.ckbProjects_Collect_Tag.TabIndex = 44;
+            this.ckbProjects_Collect_Tag.Text = "收集整理：";
+            this.ckbProjects_Collect_Tag.UseVisualStyleBackColor = true;
             // 
-            // checkBox18
+            // ckbProjects_Check_Tag
             // 
-            this.checkBox18.AutoSize = true;
-            this.checkBox18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox18.Location = new System.Drawing.Point(373, 329);
-            this.checkBox18.Name = "checkBox18";
-            this.checkBox18.Size = new System.Drawing.Size(114, 28);
-            this.checkBox18.TabIndex = 45;
-            this.checkBox18.Text = "立卷检查：";
-            this.checkBox18.UseVisualStyleBackColor = true;
+            this.ckbProjects_Check_Tag.AutoSize = true;
+            this.ckbProjects_Check_Tag.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbProjects_Check_Tag.Location = new System.Drawing.Point(373, 329);
+            this.ckbProjects_Check_Tag.Name = "ckbProjects_Check_Tag";
+            this.ckbProjects_Check_Tag.Size = new System.Drawing.Size(114, 24);
+            this.ckbProjects_Check_Tag.TabIndex = 45;
+            this.ckbProjects_Check_Tag.Text = "立卷检查：";
+            this.ckbProjects_Check_Tag.UseVisualStyleBackColor = true;
             // 
-            // checkBox19
+            // ckbProjects_Grade_Tag
             // 
-            this.checkBox19.AutoSize = true;
-            this.checkBox19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox19.Location = new System.Drawing.Point(643, 329);
-            this.checkBox19.Name = "checkBox19";
-            this.checkBox19.Size = new System.Drawing.Size(114, 28);
-            this.checkBox19.TabIndex = 46;
-            this.checkBox19.Text = "验收合格：";
-            this.checkBox19.UseVisualStyleBackColor = true;
+            this.ckbProjects_Grade_Tag.AutoSize = true;
+            this.ckbProjects_Grade_Tag.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbProjects_Grade_Tag.Location = new System.Drawing.Point(643, 329);
+            this.ckbProjects_Grade_Tag.Name = "ckbProjects_Grade_Tag";
+            this.ckbProjects_Grade_Tag.Size = new System.Drawing.Size(114, 24);
+            this.ckbProjects_Grade_Tag.TabIndex = 46;
+            this.ckbProjects_Grade_Tag.Text = "验收合格：";
+            this.ckbProjects_Grade_Tag.UseVisualStyleBackColor = true;
             // 
             // cmbCollect_Tag
             // 
@@ -617,58 +599,93 @@
             this.cmbGrade_Tag.Size = new System.Drawing.Size(144, 28);
             this.cmbGrade_Tag.TabIndex = 49;
             // 
-            // comboBox1
+            // cmbPartitions_Account
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbPartitions_Account.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbPartitions_Account.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPartitions_Account.FormattingEnabled = true;
+            this.cmbPartitions_Account.Items.AddRange(new object[] {
             "是",
             "否"});
-            this.comboBox1.Location = new System.Drawing.Point(493, 295);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(144, 28);
-            this.comboBox1.TabIndex = 50;
+            this.cmbPartitions_Account.Location = new System.Drawing.Point(493, 297);
+            this.cmbPartitions_Account.Name = "cmbPartitions_Account";
+            this.cmbPartitions_Account.Size = new System.Drawing.Size(144, 28);
+            this.cmbPartitions_Account.TabIndex = 50;
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1011, 398);
+            this.groupBox1.Size = new System.Drawing.Size(1011, 552);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "查询条件";
             // 
-            // button1
+            // btnSearch
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(777, 416);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 50);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSearch.Location = new System.Drawing.Point(264, 570);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(120, 50);
+            this.btnSearch.TabIndex = 10;
+            this.btnSearch.Text = "查询";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // button2
+            // btnSelectAll
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(903, 416);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 50);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSelectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSelectAll.Location = new System.Drawing.Point(12, 570);
+            this.btnSelectAll.Name = "btnSelectAll";
+            this.btnSelectAll.Size = new System.Drawing.Size(120, 50);
+            this.btnSelectAll.TabIndex = 11;
+            this.btnSelectAll.Text = "全选";
+            this.btnSelectAll.UseVisualStyleBackColor = true;
+            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
+            // 
+            // btnSelectNone
+            // 
+            this.btnSelectNone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSelectNone.Location = new System.Drawing.Point(138, 570);
+            this.btnSelectNone.Name = "btnSelectNone";
+            this.btnSelectNone.Size = new System.Drawing.Size(120, 50);
+            this.btnSelectNone.TabIndex = 12;
+            this.btnSelectNone.Text = "全清";
+            this.btnSelectNone.UseVisualStyleBackColor = true;
+            this.btnSelectNone.Click += new System.EventHandler(this.btnSelectNone_Click);
+            // 
+            // cmbTenders
+            // 
+            this.cmbTenders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbTenders.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTenders.FormattingEnabled = true;
+            this.cmbTenders.Location = new System.Drawing.Point(223, 167);
+            this.cmbTenders.Name = "cmbTenders";
+            this.cmbTenders.Size = new System.Drawing.Size(144, 28);
+            this.cmbTenders.TabIndex = 51;
+            // 
+            // cmbConstructors
+            // 
+            this.cmbConstructors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbConstructors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbConstructors.FormattingEnabled = true;
+            this.cmbConstructors.Location = new System.Drawing.Point(493, 167);
+            this.cmbConstructors.Name = "cmbConstructors";
+            this.cmbConstructors.Size = new System.Drawing.Size(144, 28);
+            this.cmbConstructors.TabIndex = 52;
             // 
             // frmSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1035, 632);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSelectNone);
+            this.Controls.Add(this.btnSelectAll);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -686,54 +703,53 @@
         }
 
         #endregion
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.TextBox txt;
+        private System.Windows.Forms.CheckBox ckbPremises_Name;
+        private System.Windows.Forms.TextBox txtPremises_Name;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.CheckBox ckbProjects_Types;
+        private System.Windows.Forms.CheckedListBox clbProjects_Types;
+        private System.Windows.Forms.TextBox txtPremises_Date;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.CheckBox ckbTenders;
+        private System.Windows.Forms.CheckBox ckbConstructors;
+        private System.Windows.Forms.CheckBox ckbContact;
+        private System.Windows.Forms.TextBox txtContact;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.CheckBox checkBox11;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.CheckBox ckbProjects_Amount;
+        private System.Windows.Forms.TextBox txtProjects_Amount;
+        private System.Windows.Forms.CheckBox ckbProjects_Amount_Reality;
+        private System.Windows.Forms.TextBox txtProjects_Amount_Reality;
+        private System.Windows.Forms.CheckBox ckbProjects_Amount_Pay;
+        private System.Windows.Forms.TextBox txtProjects_Amount_Pay;
+        private System.Windows.Forms.CheckBox ckbProjects_Amount_Arrear;
+        private System.Windows.Forms.TextBox txtProjects_Amount_Arrear;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox checkBox12;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.CheckBox checkBox13;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.CheckBox checkBox14;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.CheckBox checkBox15;
-        private System.Windows.Forms.CheckBox checkBox16;
+        private System.Windows.Forms.CheckBox ckbPartitions_Amount;
+        private System.Windows.Forms.TextBox txtPartitions_Amount;
+        private System.Windows.Forms.CheckBox ckbPartitions_Amount_Pay;
+        private System.Windows.Forms.TextBox txtPartitions_Amount_Pay;
+        private System.Windows.Forms.CheckBox ckbPartitions_Amount_Arrear;
+        private System.Windows.Forms.TextBox txtPartitions_Amount_Arrear;
+        private System.Windows.Forms.TextBox txtPartitions_Amount_Management;
+        private System.Windows.Forms.CheckBox ckbPartitions_Management;
+        private System.Windows.Forms.CheckBox ckbPartitions_Account;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox checkBox17;
-        private System.Windows.Forms.CheckBox checkBox18;
-        private System.Windows.Forms.CheckBox checkBox19;
+        private System.Windows.Forms.CheckBox ckbProjects_Collect_Tag;
+        private System.Windows.Forms.CheckBox ckbProjects_Check_Tag;
+        private System.Windows.Forms.CheckBox ckbProjects_Grade_Tag;
         private System.Windows.Forms.ComboBox cmbCollect_Tag;
         private System.Windows.Forms.ComboBox cmbCheck_Tag;
         private System.Windows.Forms.ComboBox cmbGrade_Tag;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbPartitions_Account;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnSelectAll;
+        private System.Windows.Forms.Button btnSelectNone;
+        private System.Windows.Forms.CheckBox ckbPremises_Date;
+        private System.Windows.Forms.ComboBox cmbTenders;
+        private System.Windows.Forms.ComboBox cmbConstructors;
     }
 }
