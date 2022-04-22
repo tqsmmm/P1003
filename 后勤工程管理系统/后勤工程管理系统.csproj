@@ -78,6 +78,12 @@
     <Compile Include="Class\Excel.cs" />
     <Compile Include="Class\Public.cs" />
     <Compile Include="Class\Users_Info.cs" />
+    <Compile Include="frmBasic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBasic.Designer.cs">
+      <DependentUpon>frmBasic.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmColumns.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,12 @@
     <Compile Include="frmPartitions_Info.Designer.cs">
       <DependentUpon>frmPartitions_Info.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearch.Designer.cs">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTypes_Info.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +236,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBasic.resx">
+      <DependentUpon>frmBasic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmColumns.resx">
       <DependentUpon>frmColumns.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPartitions_Info.resx">
       <DependentUpon>frmPartitions_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearch.resx">
+      <DependentUpon>frmSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTypes_Info.resx">
       <DependentUpon>frmTypes_Info.cs</DependentUpon>

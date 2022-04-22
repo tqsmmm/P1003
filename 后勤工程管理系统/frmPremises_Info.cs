@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace 后勤工程管理系统
@@ -8,6 +9,38 @@ namespace 后勤工程管理系统
         public frmPremises_Info()
         {
             InitializeComponent();
+
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle
+            {
+                BackColor = Color.LightCyan
+            };
+
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle
+            {
+                Alignment = DataGridViewContentAlignment.MiddleCenter,//211, 223, 240
+                BackColor = Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(223)))), ((int)(((byte)(240))))),
+                Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134))),
+                ForeColor = Color.Navy,
+                SelectionBackColor = SystemColors.Highlight,
+                SelectionForeColor = SystemColors.HighlightText
+            };
+
+            dgvList.AllowUserToAddRows = false;
+            dgvList.AllowUserToDeleteRows = false;
+            dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvList.BackgroundColor = Color.White;
+            dgvList.BorderStyle = BorderStyle.Fixed3D;
+            dgvList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvList.EnableHeadersVisualStyles = false;
+            dgvList.GridColor = SystemColors.GradientInactiveCaption;
+            dgvList.ReadOnly = true;
+            dgvList.RowHeadersVisible = false;
+            dgvList.RowTemplate.Height = 23;
+            dgvList.RowTemplate.ReadOnly = true;
+            dgvList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvList.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         public int id = 0;
@@ -61,7 +94,7 @@ namespace 后勤工程管理系统
 
         private void frmPremises_Info_Load(object sender, EventArgs e)
         {
-            if (Text == "修改")
+            if (Text == "修改" && id != 0)
             {
                 var Ds = Class.DB_Works.DataSetCmd($"SELECT Name, Code, Address, Date, Levels, Structure, Dimension, Purpose, Assets_Amount, Assets_Code, Device_Code, Region FROM Premises WHERE id = {id}");
 
@@ -77,6 +110,10 @@ namespace 后勤工程管理系统
                 txtAssets_Code.Text = Ds.Tables[0].Rows[0][9].ToString();
                 txtDevice_Code.Text = Ds.Tables[0].Rows[0][10].ToString();
                 txtRegion.Text = Ds.Tables[0].Rows[0][11].ToString();
+
+                string strSQL = $"SELECT Projects.id AS 序号, Projects.Name AS 工程名称, Types.Name AS 工程类型, Detail AS 工程内容, Amount AS 计划金额, Developing_Reply AS 可研批复, Initial_Reply AS 初始批复, Plan_Code AS 计划文号, Begin_Date AS 开工时间, End_Date AS 竣工时间, Tenders.Name AS 中标单位, Progress AS 形象进度, Collect_Tag AS 收集整理, Check_Tag AS 立卷检查, Grade_Tag AS 验收合格, Amount_Order AS 合同金额, Amount_Reality AS 实际发生额, Amount_Pay AS 付款金额, Amount_Arrear AS 欠款金额, Warranty AS 质保金支付时间 FROM Projects LEFT JOIN Tenders ON Tenders.id = Projects.Tenders_id LEFT JOIN Types ON Types.id = Projects.Types_id WHERE Projects.Premises_id = {id}";
+
+                dgvList.DataSource = Class.DB_Works.DataSetCmd(strSQL).Tables[0];
             }
         }
     }

@@ -29,103 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.房产信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.工程信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.施工单位ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.中标单位ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.工程结算ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.工程分包ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.工程类型ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.用户信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.操作日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.pal_Main = new System.Windows.Forms.Panel();
-            this.主界面ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnMain = new System.Windows.Forms.Button();
+            this.lbTypes = new System.Windows.Forms.ListBox();
+            this.btnBasic = new System.Windows.Forms.Button();
+            this.btnLogs = new System.Windows.Forms.Button();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblApplication = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.主界面ToolStripMenuItem,
-            this.房产信息ToolStripMenuItem,
-            this.工程信息ToolStripMenuItem,
-            this.施工单位ToolStripMenuItem,
-            this.中标单位ToolStripMenuItem,
-            this.工程结算ToolStripMenuItem,
-            this.工程分包ToolStripMenuItem,
-            this.工程类型ToolStripMenuItem,
-            this.用户信息ToolStripMenuItem,
-            this.操作日志ToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1260, 25);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // 房产信息ToolStripMenuItem
-            // 
-            this.房产信息ToolStripMenuItem.Name = "房产信息ToolStripMenuItem";
-            this.房产信息ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.房产信息ToolStripMenuItem.Text = "房产信息";
-            this.房产信息ToolStripMenuItem.Click += new System.EventHandler(this.房产信息ToolStripMenuItem_Click);
-            // 
-            // 工程信息ToolStripMenuItem
-            // 
-            this.工程信息ToolStripMenuItem.Name = "工程信息ToolStripMenuItem";
-            this.工程信息ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.工程信息ToolStripMenuItem.Text = "工程信息";
-            this.工程信息ToolStripMenuItem.Click += new System.EventHandler(this.工程信息ToolStripMenuItem_Click);
-            // 
-            // 施工单位ToolStripMenuItem
-            // 
-            this.施工单位ToolStripMenuItem.Name = "施工单位ToolStripMenuItem";
-            this.施工单位ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.施工单位ToolStripMenuItem.Text = "施工单位";
-            this.施工单位ToolStripMenuItem.Click += new System.EventHandler(this.施工单位ToolStripMenuItem_Click);
-            // 
-            // 中标单位ToolStripMenuItem
-            // 
-            this.中标单位ToolStripMenuItem.Name = "中标单位ToolStripMenuItem";
-            this.中标单位ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.中标单位ToolStripMenuItem.Text = "中标单位";
-            this.中标单位ToolStripMenuItem.Click += new System.EventHandler(this.中标单位ToolStripMenuItem_Click);
-            // 
-            // 工程结算ToolStripMenuItem
-            // 
-            this.工程结算ToolStripMenuItem.Name = "工程结算ToolStripMenuItem";
-            this.工程结算ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.工程结算ToolStripMenuItem.Text = "工程结算";
-            this.工程结算ToolStripMenuItem.Click += new System.EventHandler(this.工程结算ToolStripMenuItem_Click);
-            // 
-            // 工程分包ToolStripMenuItem
-            // 
-            this.工程分包ToolStripMenuItem.Name = "工程分包ToolStripMenuItem";
-            this.工程分包ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.工程分包ToolStripMenuItem.Text = "工程分包";
-            this.工程分包ToolStripMenuItem.Click += new System.EventHandler(this.工程分包ToolStripMenuItem_Click);
-            // 
-            // 工程类型ToolStripMenuItem
-            // 
-            this.工程类型ToolStripMenuItem.Name = "工程类型ToolStripMenuItem";
-            this.工程类型ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.工程类型ToolStripMenuItem.Text = "工程类型";
-            this.工程类型ToolStripMenuItem.Click += new System.EventHandler(this.工程类型ToolStripMenuItem_Click);
-            // 
-            // 用户信息ToolStripMenuItem
-            // 
-            this.用户信息ToolStripMenuItem.Name = "用户信息ToolStripMenuItem";
-            this.用户信息ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.用户信息ToolStripMenuItem.Text = "用户信息";
-            this.用户信息ToolStripMenuItem.Click += new System.EventHandler(this.用户信息ToolStripMenuItem_Click);
-            // 
-            // 操作日志ToolStripMenuItem
-            // 
-            this.操作日志ToolStripMenuItem.Name = "操作日志ToolStripMenuItem";
-            this.操作日志ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.操作日志ToolStripMenuItem.Text = "操作日志";
-            this.操作日志ToolStripMenuItem.Click += new System.EventHandler(this.操作日志ToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -138,30 +65,154 @@
             // pal_Main
             // 
             this.pal_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pal_Main.Location = new System.Drawing.Point(0, 25);
+            this.pal_Main.Location = new System.Drawing.Point(0, 0);
             this.pal_Main.Name = "pal_Main";
-            this.pal_Main.Size = new System.Drawing.Size(1260, 649);
+            this.pal_Main.Padding = new System.Windows.Forms.Padding(3);
+            this.pal_Main.Size = new System.Drawing.Size(1056, 570);
             this.pal_Main.TabIndex = 2;
             // 
-            // 主界面ToolStripMenuItem
+            // splitContainer1
             // 
-            this.主界面ToolStripMenuItem.Name = "主界面ToolStripMenuItem";
-            this.主界面ToolStripMenuItem.Size = new System.Drawing.Size(56, 21);
-            this.主界面ToolStripMenuItem.Text = "主界面";
-            this.主界面ToolStripMenuItem.Click += new System.EventHandler(this.主界面ToolStripMenuItem_Click);
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.flowLayoutPanel1);
+            this.splitContainer1.Panel1MinSize = 200;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.pal_Main);
+            this.splitContainer1.Size = new System.Drawing.Size(1260, 570);
+            this.splitContainer1.SplitterDistance = 200;
+            this.splitContainer1.TabIndex = 3;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.Controls.Add(this.btnMain);
+            this.flowLayoutPanel1.Controls.Add(this.lbTypes);
+            this.flowLayoutPanel1.Controls.Add(this.btnBasic);
+            this.flowLayoutPanel1.Controls.Add(this.btnLogs);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(3);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 570);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // btnMain
+            // 
+            this.btnMain.Location = new System.Drawing.Point(6, 6);
+            this.btnMain.Name = "btnMain";
+            this.btnMain.Padding = new System.Windows.Forms.Padding(3);
+            this.btnMain.Size = new System.Drawing.Size(191, 50);
+            this.btnMain.TabIndex = 0;
+            this.btnMain.Text = "主界面";
+            this.btnMain.UseVisualStyleBackColor = true;
+            this.btnMain.Click += new System.EventHandler(this.btnMain_Click);
+            // 
+            // lbTypes
+            // 
+            this.lbTypes.FormattingEnabled = true;
+            this.lbTypes.ItemHeight = 20;
+            this.lbTypes.Location = new System.Drawing.Point(6, 62);
+            this.lbTypes.Name = "lbTypes";
+            this.lbTypes.Size = new System.Drawing.Size(191, 264);
+            this.lbTypes.TabIndex = 1;
+            // 
+            // btnBasic
+            // 
+            this.btnBasic.Location = new System.Drawing.Point(6, 332);
+            this.btnBasic.Name = "btnBasic";
+            this.btnBasic.Padding = new System.Windows.Forms.Padding(3);
+            this.btnBasic.Size = new System.Drawing.Size(191, 50);
+            this.btnBasic.TabIndex = 2;
+            this.btnBasic.Text = "基础数据管理";
+            this.btnBasic.UseVisualStyleBackColor = true;
+            this.btnBasic.Click += new System.EventHandler(this.btnBasic_Click);
+            // 
+            // btnLogs
+            // 
+            this.btnLogs.Location = new System.Drawing.Point(6, 388);
+            this.btnLogs.Name = "btnLogs";
+            this.btnLogs.Padding = new System.Windows.Forms.Padding(3);
+            this.btnLogs.Size = new System.Drawing.Size(191, 50);
+            this.btnLogs.TabIndex = 3;
+            this.btnLogs.Text = "日志信息";
+            this.btnLogs.UseVisualStyleBackColor = true;
+            this.btnLogs.Click += new System.EventHandler(this.btnLogs_Click);
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.flowLayoutPanel2);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.splitContainer1);
+            this.splitContainer2.Size = new System.Drawing.Size(1260, 674);
+            this.splitContainer2.SplitterDistance = 100;
+            this.splitContainer2.TabIndex = 4;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.pictureBox1);
+            this.flowLayoutPanel2.Controls.Add(this.lblApplication);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(3);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1260, 100);
+            this.flowLayoutPanel2.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 97);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblApplication
+            // 
+            this.lblApplication.AutoSize = true;
+            this.lblApplication.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblApplication.Font = new System.Drawing.Font("微软雅黑", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblApplication.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblApplication.Location = new System.Drawing.Point(106, 6);
+            this.lblApplication.Margin = new System.Windows.Forms.Padding(3);
+            this.lblApplication.Name = "lblApplication";
+            this.lblApplication.Padding = new System.Windows.Forms.Padding(3);
+            this.lblApplication.Size = new System.Drawing.Size(200, 91);
+            this.lblApplication.TabIndex = 1;
+            this.lblApplication.Text = "label1";
+            this.lblApplication.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 696);
-            this.Controls.Add(this.pal_Main);
+            this.Controls.Add(this.splitContainer2);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -169,28 +220,36 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.Panel pal_Main;
-        private System.Windows.Forms.ToolStripMenuItem 房产信息ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 工程信息ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 施工单位ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 中标单位ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 工程结算ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 工程分包ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 工程类型ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 用户信息ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 操作日志ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 主界面ToolStripMenuItem;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblApplication;
+        private System.Windows.Forms.Button btnMain;
+        private System.Windows.Forms.ListBox lbTypes;
+        private System.Windows.Forms.Button btnBasic;
+        private System.Windows.Forms.Button btnLogs;
     }
 }
 

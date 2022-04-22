@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace 后勤工程管理系统
@@ -12,94 +13,17 @@ namespace 后勤工程管理系统
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            lblApplication.Text = AppSetter.strApplicationName;
             Text = AppSetter.strApplicationName;
 
-            frmDesktop frm = new frmDesktop
-            {
-                TopLevel = false
-            };
-            pal_Main.Controls.Add(frm);
-            frm.Show();
-        }
+            DataSet ds = Class.DB_Works.DataSetCmd("SELECT Name FROM Types");
 
-        private void 房产信息ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmPremises_List frm = new frmPremises_List
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
-                TopLevel = false
-            };
-            pal_Main.Controls.Add(frm);
-            frm.Show();
-        }
+                lbTypes.Items.Add(ds.Tables[0].Rows[i][0]);
+            }
 
-        private void 工程信息ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmProjects_List frm = new frmProjects_List
-            {
-                TopLevel = false
-            };
-            pal_Main.Controls.Add(frm);
-            frm.Show();
-        }
-
-        private void 施工单位ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmConstructors_List frm = new frmConstructors_List
-            {
-                TopLevel = false
-            };
-            pal_Main.Controls.Add(frm);
-            frm.Show();
-        }
-
-        private void 中标单位ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmTenders_List frm = new frmTenders_List
-            {
-                TopLevel = false
-            };
-            pal_Main.Controls.Add(frm);
-            frm.Show();
-        }
-
-        private void 工程结算ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmSettlements_List frm = new frmSettlements_List
-            {
-                TopLevel = false
-            };
-            pal_Main.Controls.Add(frm);
-            frm.Show();
-        }
-
-        private void 工程分包ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmPartitions_List frm = new frmPartitions_List
-            {
-                TopLevel = false
-            };
-            pal_Main.Controls.Add(frm);
-            frm.Show();
-        }
-
-        private void 工程类型ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmTypes_List frm = new frmTypes_List
-            {
-                TopLevel = false
-            };
-            pal_Main.Controls.Add(frm);
-            frm.Show();
-        }
-
-        private void 用户信息ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmUsers_List frm = new frmUsers_List
-            {
-                TopLevel = false
-            };
-            pal_Main.Controls.Add(frm);
-            frm.Show();
+            btnMain_Click(this, e);
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -119,9 +43,9 @@ namespace 后勤工程管理系统
             Application.ExitThread();
         }
 
-        private void 操作日志ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnMain_Click(object sender, EventArgs e)
         {
-            frmLogs frm = new frmLogs
+            frmSearch frm = new frmSearch
             {
                 TopLevel = false
             };
@@ -129,9 +53,19 @@ namespace 后勤工程管理系统
             frm.Show();
         }
 
-        private void 主界面ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnBasic_Click(object sender, EventArgs e)
         {
-            frmDesktop frm = new frmDesktop
+            frmBasic frm = new frmBasic
+            {
+                TopLevel = false
+            };
+            pal_Main.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnLogs_Click(object sender, EventArgs e)
+        {
+            frmLogs frm = new frmLogs
             {
                 TopLevel = false
             };

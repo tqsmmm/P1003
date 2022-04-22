@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPremises_Info));
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -57,13 +59,31 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgvList = new System.Windows.Forms.DataGridView();
+            this.序号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.工程名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.工程类型 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.工程内容 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.计划金额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.可研批复 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.初始批复 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.计划文号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.开工时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.竣工时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.中标单位 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.形象进度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.收集整理 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.立卷检查 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.验收合格 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -306,17 +326,6 @@
             this.tabPage1.Text = "房产信息";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(952, 543);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "工程信息";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -353,14 +362,191 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "房产信息";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(952, 543);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "工程信息";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dgvList);
             this.groupBox2.Location = new System.Drawing.Point(6, 6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(940, 531);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "工程信息";
+            // 
+            // dgvList
+            // 
+            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.序号,
+            this.工程名称,
+            this.工程类型,
+            this.工程内容,
+            this.计划金额,
+            this.可研批复,
+            this.初始批复,
+            this.计划文号,
+            this.开工时间,
+            this.竣工时间,
+            this.中标单位,
+            this.形象进度,
+            this.收集整理,
+            this.立卷检查,
+            this.验收合格});
+            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvList.Location = new System.Drawing.Point(3, 22);
+            this.dgvList.Name = "dgvList";
+            this.dgvList.RowHeadersWidth = 51;
+            this.dgvList.RowTemplate.Height = 23;
+            this.dgvList.Size = new System.Drawing.Size(934, 506);
+            this.dgvList.TabIndex = 14;
+            // 
+            // 序号
+            // 
+            this.序号.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.序号.DataPropertyName = "序号";
+            this.序号.HeaderText = "序号";
+            this.序号.Name = "序号";
+            this.序号.ReadOnly = true;
+            this.序号.Visible = false;
+            this.序号.Width = 62;
+            // 
+            // 工程名称
+            // 
+            this.工程名称.DataPropertyName = "工程名称";
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.工程名称.DefaultCellStyle = dataGridViewCellStyle1;
+            this.工程名称.HeaderText = "工程名称";
+            this.工程名称.Name = "工程名称";
+            this.工程名称.ReadOnly = true;
+            this.工程名称.Width = 300;
+            // 
+            // 工程类型
+            // 
+            this.工程类型.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.工程类型.DataPropertyName = "工程类型";
+            this.工程类型.HeaderText = "工程类型";
+            this.工程类型.Name = "工程类型";
+            this.工程类型.ReadOnly = true;
+            this.工程类型.Width = 90;
+            // 
+            // 工程内容
+            // 
+            this.工程内容.DataPropertyName = "工程内容";
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.工程内容.DefaultCellStyle = dataGridViewCellStyle2;
+            this.工程内容.HeaderText = "工程内容";
+            this.工程内容.Name = "工程内容";
+            this.工程内容.ReadOnly = true;
+            this.工程内容.Width = 500;
+            // 
+            // 计划金额
+            // 
+            this.计划金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.计划金额.DataPropertyName = "计划金额";
+            this.计划金额.HeaderText = "计划金额";
+            this.计划金额.Name = "计划金额";
+            this.计划金额.ReadOnly = true;
+            this.计划金额.Width = 90;
+            // 
+            // 可研批复
+            // 
+            this.可研批复.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.可研批复.DataPropertyName = "可研批复";
+            this.可研批复.HeaderText = "可研批复";
+            this.可研批复.Name = "可研批复";
+            this.可研批复.ReadOnly = true;
+            this.可研批复.Width = 90;
+            // 
+            // 初始批复
+            // 
+            this.初始批复.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.初始批复.DataPropertyName = "初始批复";
+            this.初始批复.HeaderText = "初始批复";
+            this.初始批复.Name = "初始批复";
+            this.初始批复.ReadOnly = true;
+            this.初始批复.Width = 90;
+            // 
+            // 计划文号
+            // 
+            this.计划文号.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.计划文号.DataPropertyName = "计划文号";
+            this.计划文号.HeaderText = "计划文号";
+            this.计划文号.Name = "计划文号";
+            this.计划文号.ReadOnly = true;
+            this.计划文号.Width = 90;
+            // 
+            // 开工时间
+            // 
+            this.开工时间.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.开工时间.DataPropertyName = "开工时间";
+            this.开工时间.HeaderText = "开工时间";
+            this.开工时间.Name = "开工时间";
+            this.开工时间.ReadOnly = true;
+            this.开工时间.Width = 90;
+            // 
+            // 竣工时间
+            // 
+            this.竣工时间.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.竣工时间.DataPropertyName = "竣工时间";
+            this.竣工时间.HeaderText = "竣工时间";
+            this.竣工时间.Name = "竣工时间";
+            this.竣工时间.ReadOnly = true;
+            this.竣工时间.Width = 90;
+            // 
+            // 中标单位
+            // 
+            this.中标单位.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.中标单位.DataPropertyName = "中标单位";
+            this.中标单位.HeaderText = "中标单位";
+            this.中标单位.Name = "中标单位";
+            this.中标单位.ReadOnly = true;
+            this.中标单位.Width = 90;
+            // 
+            // 形象进度
+            // 
+            this.形象进度.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.形象进度.DataPropertyName = "形象进度";
+            this.形象进度.HeaderText = "形象进度";
+            this.形象进度.Name = "形象进度";
+            this.形象进度.ReadOnly = true;
+            this.形象进度.Width = 90;
+            // 
+            // 收集整理
+            // 
+            this.收集整理.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.收集整理.DataPropertyName = "收集整理";
+            this.收集整理.HeaderText = "收集整理";
+            this.收集整理.Name = "收集整理";
+            this.收集整理.ReadOnly = true;
+            this.收集整理.Width = 90;
+            // 
+            // 立卷检查
+            // 
+            this.立卷检查.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.立卷检查.DataPropertyName = "立卷检查";
+            this.立卷检查.HeaderText = "立卷检查";
+            this.立卷检查.Name = "立卷检查";
+            this.立卷检查.ReadOnly = true;
+            this.立卷检查.Width = 90;
+            // 
+            // 验收合格
+            // 
+            this.验收合格.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.验收合格.DataPropertyName = "验收合格";
+            this.验收合格.HeaderText = "验收合格";
+            this.验收合格.Name = "验收合格";
+            this.验收合格.ReadOnly = true;
+            this.验收合格.Width = 90;
             // 
             // frmPremises_Info
             // 
@@ -384,9 +570,11 @@
             this.Load += new System.EventHandler(this.frmPremises_Info_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -424,5 +612,21 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dgvList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 序号;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 工程名称;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 工程类型;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 工程内容;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 计划金额;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 可研批复;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 初始批复;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 计划文号;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 开工时间;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 竣工时间;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 中标单位;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 形象进度;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 收集整理;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 立卷检查;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 验收合格;
     }
 }
