@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvList = new System.Windows.Forms.DataGridView();
+            this.Checked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.序号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.房产名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.房产编号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.建筑年代 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +68,7 @@
             this.支付金额1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.欠款金额1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.管理费 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.是否挂账 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.是否挂账 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.收集整理 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.立卷检查 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.验收合格 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -129,6 +131,9 @@
             this.cmbTenders = new System.Windows.Forms.ComboBox();
             this.cmbConstructors = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.cmsList.SuspendLayout();
@@ -147,7 +152,7 @@
             this.groupBox1.Controls.Add(this.dgvList);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1350, 558);
+            this.groupBox1.Size = new System.Drawing.Size(1350, 560);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "查询结果";
@@ -156,6 +161,8 @@
             // 
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Checked,
+            this.序号,
             this.房产名称,
             this.房产编号,
             this.建筑年代,
@@ -198,8 +205,25 @@
             this.dgvList.Location = new System.Drawing.Point(3, 22);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(1344, 533);
+            this.dgvList.Size = new System.Drawing.Size(1344, 535);
             this.dgvList.TabIndex = 0;
+            // 
+            // Checked
+            // 
+            this.Checked.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Checked.HeaderText = "";
+            this.Checked.Name = "Checked";
+            this.Checked.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Checked.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Checked.Width = 21;
+            // 
+            // 序号
+            // 
+            this.序号.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.序号.DataPropertyName = "序号";
+            this.序号.HeaderText = "序号";
+            this.序号.Name = "序号";
+            this.序号.Visible = false;
             // 
             // 房产名称
             // 
@@ -284,8 +308,8 @@
             // 工程名称
             // 
             this.工程名称.DataPropertyName = "工程名称";
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.工程名称.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.工程名称.DefaultCellStyle = dataGridViewCellStyle1;
             this.工程名称.HeaderText = "工程名称";
             this.工程名称.Name = "工程名称";
             this.工程名称.Width = 300;
@@ -301,8 +325,8 @@
             // 工程内容
             // 
             this.工程内容.DataPropertyName = "工程内容";
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.工程内容.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.工程内容.DefaultCellStyle = dataGridViewCellStyle2;
             this.工程内容.HeaderText = "工程内容";
             this.工程内容.Name = "工程内容";
             this.工程内容.Width = 500;
@@ -474,7 +498,6 @@
             this.是否挂账.HeaderText = "是否挂账";
             this.是否挂账.Name = "是否挂账";
             this.是否挂账.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.是否挂账.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.是否挂账.Width = 90;
             // 
             // 收集整理
@@ -540,7 +563,7 @@
             // btnReload
             // 
             this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnReload.Location = new System.Drawing.Point(6, 570);
+            this.btnReload.Location = new System.Drawing.Point(384, 572);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(120, 50);
             this.btnReload.TabIndex = 1;
@@ -551,7 +574,7 @@
             // btnImport
             // 
             this.btnImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnImport.Location = new System.Drawing.Point(132, 570);
+            this.btnImport.Location = new System.Drawing.Point(510, 572);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(120, 50);
             this.btnImport.TabIndex = 2;
@@ -562,7 +585,7 @@
             // btnExport
             // 
             this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExport.Location = new System.Drawing.Point(258, 570);
+            this.btnExport.Location = new System.Drawing.Point(636, 572);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(120, 50);
             this.btnExport.TabIndex = 3;
@@ -600,7 +623,7 @@
             // btnSelectNone
             // 
             this.btnSelectNone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSelectNone.Location = new System.Drawing.Point(134, 564);
+            this.btnSelectNone.Location = new System.Drawing.Point(132, 572);
             this.btnSelectNone.Name = "btnSelectNone";
             this.btnSelectNone.Size = new System.Drawing.Size(120, 50);
             this.btnSelectNone.TabIndex = 16;
@@ -611,7 +634,7 @@
             // btnSelectAll
             // 
             this.btnSelectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSelectAll.Location = new System.Drawing.Point(8, 564);
+            this.btnSelectAll.Location = new System.Drawing.Point(6, 572);
             this.btnSelectAll.Name = "btnSelectAll";
             this.btnSelectAll.Size = new System.Drawing.Size(120, 50);
             this.btnSelectAll.TabIndex = 15;
@@ -622,7 +645,7 @@
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSearch.Location = new System.Drawing.Point(260, 564);
+            this.btnSearch.Location = new System.Drawing.Point(258, 572);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(120, 50);
             this.btnSearch.TabIndex = 14;
@@ -632,12 +655,13 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.tableLayoutPanel1);
             this.groupBox3.Location = new System.Drawing.Point(6, 6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1350, 552);
+            this.groupBox3.Size = new System.Drawing.Size(1350, 560);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "查询条件";
@@ -713,7 +737,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1344, 527);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1344, 535);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // clbProjects_Types
@@ -722,7 +746,7 @@
             this.clbProjects_Types.ColumnWidth = 200;
             this.clbProjects_Types.Dock = System.Windows.Forms.DockStyle.Fill;
             this.clbProjects_Types.FormattingEnabled = true;
-            this.clbProjects_Types.Location = new System.Drawing.Point(450, 121);
+            this.clbProjects_Types.Location = new System.Drawing.Point(450, 125);
             this.clbProjects_Types.MultiColumn = true;
             this.clbProjects_Types.Name = "clbProjects_Types";
             this.clbProjects_Types.Size = new System.Drawing.Size(744, 94);
@@ -732,7 +756,7 @@
             // 
             this.txtPremises_Date.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPremises_Date.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtPremises_Date.Location = new System.Drawing.Point(450, 221);
+            this.txtPremises_Date.Location = new System.Drawing.Point(450, 225);
             this.txtPremises_Date.Name = "txtPremises_Date";
             this.txtPremises_Date.Size = new System.Drawing.Size(144, 26);
             this.txtPremises_Date.TabIndex = 5;
@@ -744,7 +768,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.txtPremises_Name, 5);
             this.txtPremises_Name.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPremises_Name.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtPremises_Name.Location = new System.Drawing.Point(450, 89);
+            this.txtPremises_Name.Location = new System.Drawing.Point(450, 93);
             this.txtPremises_Name.Name = "txtPremises_Name";
             this.txtPremises_Name.Size = new System.Drawing.Size(744, 26);
             this.txtPremises_Name.TabIndex = 7;
@@ -753,7 +777,7 @@
             // 
             this.ckbPremises_Date.AutoSize = true;
             this.ckbPremises_Date.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbPremises_Date.Location = new System.Drawing.Point(300, 221);
+            this.ckbPremises_Date.Location = new System.Drawing.Point(300, 225);
             this.ckbPremises_Date.Name = "ckbPremises_Date";
             this.ckbPremises_Date.Size = new System.Drawing.Size(144, 26);
             this.ckbPremises_Date.TabIndex = 6;
@@ -764,7 +788,7 @@
             // 
             this.ckbPremises_Name.AutoSize = true;
             this.ckbPremises_Name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbPremises_Name.Location = new System.Drawing.Point(300, 89);
+            this.ckbPremises_Name.Location = new System.Drawing.Point(300, 93);
             this.ckbPremises_Name.Name = "ckbPremises_Name";
             this.ckbPremises_Name.Size = new System.Drawing.Size(144, 26);
             this.ckbPremises_Name.TabIndex = 4;
@@ -775,7 +799,7 @@
             // 
             this.ckbProjects_Types.AutoSize = true;
             this.ckbProjects_Types.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbProjects_Types.Location = new System.Drawing.Point(300, 121);
+            this.ckbProjects_Types.Location = new System.Drawing.Point(300, 125);
             this.ckbProjects_Types.Name = "ckbProjects_Types";
             this.ckbProjects_Types.Size = new System.Drawing.Size(144, 94);
             this.ckbProjects_Types.TabIndex = 9;
@@ -787,7 +811,7 @@
             this.label11.AutoSize = true;
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label11.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(150, 86);
+            this.label11.Location = new System.Drawing.Point(150, 90);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(144, 32);
             this.label11.TabIndex = 11;
@@ -799,7 +823,7 @@
             this.label12.AutoSize = true;
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label12.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(150, 118);
+            this.label12.Location = new System.Drawing.Point(150, 122);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(144, 100);
             this.label12.TabIndex = 12;
@@ -811,7 +835,7 @@
             this.label13.AutoSize = true;
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label13.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label13.Location = new System.Drawing.Point(150, 218);
+            this.label13.Location = new System.Drawing.Point(150, 222);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(144, 32);
             this.label13.TabIndex = 13;
@@ -823,7 +847,7 @@
             this.label14.AutoSize = true;
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label14.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(150, 250);
+            this.label14.Location = new System.Drawing.Point(150, 254);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(144, 32);
             this.label14.TabIndex = 14;
@@ -834,7 +858,7 @@
             // 
             this.ckbTenders.AutoSize = true;
             this.ckbTenders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbTenders.Location = new System.Drawing.Point(300, 253);
+            this.ckbTenders.Location = new System.Drawing.Point(300, 257);
             this.ckbTenders.Name = "ckbTenders";
             this.ckbTenders.Size = new System.Drawing.Size(144, 26);
             this.ckbTenders.TabIndex = 15;
@@ -845,7 +869,7 @@
             // 
             this.ckbConstructors.AutoSize = true;
             this.ckbConstructors.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbConstructors.Location = new System.Drawing.Point(600, 253);
+            this.ckbConstructors.Location = new System.Drawing.Point(600, 257);
             this.ckbConstructors.Name = "ckbConstructors";
             this.ckbConstructors.Size = new System.Drawing.Size(144, 26);
             this.ckbConstructors.TabIndex = 17;
@@ -856,7 +880,7 @@
             // 
             this.ckbContact.AutoSize = true;
             this.ckbContact.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbContact.Location = new System.Drawing.Point(900, 253);
+            this.ckbContact.Location = new System.Drawing.Point(900, 257);
             this.ckbContact.Name = "ckbContact";
             this.ckbContact.Size = new System.Drawing.Size(144, 26);
             this.ckbContact.TabIndex = 19;
@@ -866,7 +890,7 @@
             // txtContact
             // 
             this.txtContact.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtContact.Location = new System.Drawing.Point(1050, 253);
+            this.txtContact.Location = new System.Drawing.Point(1050, 257);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(144, 26);
             this.txtContact.TabIndex = 20;
@@ -876,7 +900,7 @@
             this.label15.AutoSize = true;
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label15.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label15.Location = new System.Drawing.Point(150, 282);
+            this.label15.Location = new System.Drawing.Point(150, 286);
             this.label15.Name = "label15";
             this.tableLayoutPanel1.SetRowSpan(this.label15, 2);
             this.label15.Size = new System.Drawing.Size(144, 64);
@@ -888,7 +912,7 @@
             // 
             this.ckbProjects_Amount.AutoSize = true;
             this.ckbProjects_Amount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbProjects_Amount.Location = new System.Drawing.Point(300, 285);
+            this.ckbProjects_Amount.Location = new System.Drawing.Point(300, 289);
             this.ckbProjects_Amount.Name = "ckbProjects_Amount";
             this.ckbProjects_Amount.Size = new System.Drawing.Size(144, 26);
             this.ckbProjects_Amount.TabIndex = 22;
@@ -898,7 +922,7 @@
             // txtProjects_Amount
             // 
             this.txtProjects_Amount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtProjects_Amount.Location = new System.Drawing.Point(450, 285);
+            this.txtProjects_Amount.Location = new System.Drawing.Point(450, 289);
             this.txtProjects_Amount.Name = "txtProjects_Amount";
             this.txtProjects_Amount.Size = new System.Drawing.Size(144, 26);
             this.txtProjects_Amount.TabIndex = 23;
@@ -909,7 +933,7 @@
             // 
             this.ckbProjects_Amount_Reality.AutoSize = true;
             this.ckbProjects_Amount_Reality.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbProjects_Amount_Reality.Location = new System.Drawing.Point(600, 285);
+            this.ckbProjects_Amount_Reality.Location = new System.Drawing.Point(600, 289);
             this.ckbProjects_Amount_Reality.Name = "ckbProjects_Amount_Reality";
             this.ckbProjects_Amount_Reality.Size = new System.Drawing.Size(144, 26);
             this.ckbProjects_Amount_Reality.TabIndex = 24;
@@ -919,7 +943,7 @@
             // txtProjects_Amount_Reality
             // 
             this.txtProjects_Amount_Reality.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtProjects_Amount_Reality.Location = new System.Drawing.Point(750, 285);
+            this.txtProjects_Amount_Reality.Location = new System.Drawing.Point(750, 289);
             this.txtProjects_Amount_Reality.Name = "txtProjects_Amount_Reality";
             this.txtProjects_Amount_Reality.Size = new System.Drawing.Size(144, 26);
             this.txtProjects_Amount_Reality.TabIndex = 25;
@@ -930,7 +954,7 @@
             // 
             this.ckbProjects_Amount_Pay.AutoSize = true;
             this.ckbProjects_Amount_Pay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbProjects_Amount_Pay.Location = new System.Drawing.Point(900, 285);
+            this.ckbProjects_Amount_Pay.Location = new System.Drawing.Point(900, 289);
             this.ckbProjects_Amount_Pay.Name = "ckbProjects_Amount_Pay";
             this.ckbProjects_Amount_Pay.Size = new System.Drawing.Size(144, 26);
             this.ckbProjects_Amount_Pay.TabIndex = 26;
@@ -940,7 +964,7 @@
             // txtProjects_Amount_Pay
             // 
             this.txtProjects_Amount_Pay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtProjects_Amount_Pay.Location = new System.Drawing.Point(1050, 285);
+            this.txtProjects_Amount_Pay.Location = new System.Drawing.Point(1050, 289);
             this.txtProjects_Amount_Pay.Name = "txtProjects_Amount_Pay";
             this.txtProjects_Amount_Pay.Size = new System.Drawing.Size(144, 26);
             this.txtProjects_Amount_Pay.TabIndex = 27;
@@ -951,7 +975,7 @@
             // 
             this.ckbProjects_Amount_Arrear.AutoSize = true;
             this.ckbProjects_Amount_Arrear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbProjects_Amount_Arrear.Location = new System.Drawing.Point(300, 317);
+            this.ckbProjects_Amount_Arrear.Location = new System.Drawing.Point(300, 321);
             this.ckbProjects_Amount_Arrear.Name = "ckbProjects_Amount_Arrear";
             this.ckbProjects_Amount_Arrear.Size = new System.Drawing.Size(144, 26);
             this.ckbProjects_Amount_Arrear.TabIndex = 28;
@@ -961,7 +985,7 @@
             // txtProjects_Amount_Arrear
             // 
             this.txtProjects_Amount_Arrear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtProjects_Amount_Arrear.Location = new System.Drawing.Point(450, 317);
+            this.txtProjects_Amount_Arrear.Location = new System.Drawing.Point(450, 321);
             this.txtProjects_Amount_Arrear.Name = "txtProjects_Amount_Arrear";
             this.txtProjects_Amount_Arrear.Size = new System.Drawing.Size(144, 26);
             this.txtProjects_Amount_Arrear.TabIndex = 29;
@@ -973,7 +997,7 @@
             this.label16.AutoSize = true;
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label16.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label16.Location = new System.Drawing.Point(150, 346);
+            this.label16.Location = new System.Drawing.Point(150, 350);
             this.label16.Name = "label16";
             this.tableLayoutPanel1.SetRowSpan(this.label16, 2);
             this.label16.Size = new System.Drawing.Size(144, 64);
@@ -985,7 +1009,7 @@
             // 
             this.ckbPartitions_Amount.AutoSize = true;
             this.ckbPartitions_Amount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbPartitions_Amount.Location = new System.Drawing.Point(300, 349);
+            this.ckbPartitions_Amount.Location = new System.Drawing.Point(300, 353);
             this.ckbPartitions_Amount.Name = "ckbPartitions_Amount";
             this.ckbPartitions_Amount.Size = new System.Drawing.Size(144, 26);
             this.ckbPartitions_Amount.TabIndex = 33;
@@ -995,7 +1019,7 @@
             // txtPartitions_Amount
             // 
             this.txtPartitions_Amount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPartitions_Amount.Location = new System.Drawing.Point(450, 349);
+            this.txtPartitions_Amount.Location = new System.Drawing.Point(450, 353);
             this.txtPartitions_Amount.Name = "txtPartitions_Amount";
             this.txtPartitions_Amount.Size = new System.Drawing.Size(144, 26);
             this.txtPartitions_Amount.TabIndex = 34;
@@ -1006,7 +1030,7 @@
             // 
             this.ckbPartitions_Amount_Pay.AutoSize = true;
             this.ckbPartitions_Amount_Pay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbPartitions_Amount_Pay.Location = new System.Drawing.Point(600, 349);
+            this.ckbPartitions_Amount_Pay.Location = new System.Drawing.Point(600, 353);
             this.ckbPartitions_Amount_Pay.Name = "ckbPartitions_Amount_Pay";
             this.ckbPartitions_Amount_Pay.Size = new System.Drawing.Size(144, 26);
             this.ckbPartitions_Amount_Pay.TabIndex = 35;
@@ -1016,7 +1040,7 @@
             // txtPartitions_Amount_Pay
             // 
             this.txtPartitions_Amount_Pay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPartitions_Amount_Pay.Location = new System.Drawing.Point(750, 349);
+            this.txtPartitions_Amount_Pay.Location = new System.Drawing.Point(750, 353);
             this.txtPartitions_Amount_Pay.Name = "txtPartitions_Amount_Pay";
             this.txtPartitions_Amount_Pay.Size = new System.Drawing.Size(144, 26);
             this.txtPartitions_Amount_Pay.TabIndex = 36;
@@ -1027,7 +1051,7 @@
             // 
             this.ckbPartitions_Amount_Arrear.AutoSize = true;
             this.ckbPartitions_Amount_Arrear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbPartitions_Amount_Arrear.Location = new System.Drawing.Point(900, 349);
+            this.ckbPartitions_Amount_Arrear.Location = new System.Drawing.Point(900, 353);
             this.ckbPartitions_Amount_Arrear.Name = "ckbPartitions_Amount_Arrear";
             this.ckbPartitions_Amount_Arrear.Size = new System.Drawing.Size(144, 26);
             this.ckbPartitions_Amount_Arrear.TabIndex = 37;
@@ -1037,7 +1061,7 @@
             // txtPartitions_Amount_Arrear
             // 
             this.txtPartitions_Amount_Arrear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPartitions_Amount_Arrear.Location = new System.Drawing.Point(1050, 349);
+            this.txtPartitions_Amount_Arrear.Location = new System.Drawing.Point(1050, 353);
             this.txtPartitions_Amount_Arrear.Name = "txtPartitions_Amount_Arrear";
             this.txtPartitions_Amount_Arrear.Size = new System.Drawing.Size(144, 26);
             this.txtPartitions_Amount_Arrear.TabIndex = 38;
@@ -1047,7 +1071,7 @@
             // txtPartitions_Amount_Management
             // 
             this.txtPartitions_Amount_Management.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPartitions_Amount_Management.Location = new System.Drawing.Point(450, 381);
+            this.txtPartitions_Amount_Management.Location = new System.Drawing.Point(450, 385);
             this.txtPartitions_Amount_Management.Name = "txtPartitions_Amount_Management";
             this.txtPartitions_Amount_Management.Size = new System.Drawing.Size(144, 26);
             this.txtPartitions_Amount_Management.TabIndex = 39;
@@ -1058,7 +1082,7 @@
             // 
             this.ckbPartitions_Management.AutoSize = true;
             this.ckbPartitions_Management.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbPartitions_Management.Location = new System.Drawing.Point(300, 381);
+            this.ckbPartitions_Management.Location = new System.Drawing.Point(300, 385);
             this.ckbPartitions_Management.Name = "ckbPartitions_Management";
             this.ckbPartitions_Management.Size = new System.Drawing.Size(144, 26);
             this.ckbPartitions_Management.TabIndex = 41;
@@ -1069,7 +1093,7 @@
             // 
             this.ckbPartitions_Account.AutoSize = true;
             this.ckbPartitions_Account.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbPartitions_Account.Location = new System.Drawing.Point(600, 381);
+            this.ckbPartitions_Account.Location = new System.Drawing.Point(600, 385);
             this.ckbPartitions_Account.Name = "ckbPartitions_Account";
             this.ckbPartitions_Account.Size = new System.Drawing.Size(144, 26);
             this.ckbPartitions_Account.TabIndex = 42;
@@ -1081,7 +1105,7 @@
             this.label17.AutoSize = true;
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label17.Location = new System.Drawing.Point(150, 410);
+            this.label17.Location = new System.Drawing.Point(150, 414);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(144, 30);
             this.label17.TabIndex = 43;
@@ -1092,7 +1116,7 @@
             // 
             this.ckbProjects_Collect_Tag.AutoSize = true;
             this.ckbProjects_Collect_Tag.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbProjects_Collect_Tag.Location = new System.Drawing.Point(300, 413);
+            this.ckbProjects_Collect_Tag.Location = new System.Drawing.Point(300, 417);
             this.ckbProjects_Collect_Tag.Name = "ckbProjects_Collect_Tag";
             this.ckbProjects_Collect_Tag.Size = new System.Drawing.Size(144, 24);
             this.ckbProjects_Collect_Tag.TabIndex = 44;
@@ -1103,7 +1127,7 @@
             // 
             this.ckbProjects_Check_Tag.AutoSize = true;
             this.ckbProjects_Check_Tag.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbProjects_Check_Tag.Location = new System.Drawing.Point(600, 413);
+            this.ckbProjects_Check_Tag.Location = new System.Drawing.Point(600, 417);
             this.ckbProjects_Check_Tag.Name = "ckbProjects_Check_Tag";
             this.ckbProjects_Check_Tag.Size = new System.Drawing.Size(144, 24);
             this.ckbProjects_Check_Tag.TabIndex = 45;
@@ -1114,7 +1138,7 @@
             // 
             this.ckbProjects_Grade_Tag.AutoSize = true;
             this.ckbProjects_Grade_Tag.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbProjects_Grade_Tag.Location = new System.Drawing.Point(900, 413);
+            this.ckbProjects_Grade_Tag.Location = new System.Drawing.Point(900, 417);
             this.ckbProjects_Grade_Tag.Name = "ckbProjects_Grade_Tag";
             this.ckbProjects_Grade_Tag.Size = new System.Drawing.Size(144, 24);
             this.ckbProjects_Grade_Tag.TabIndex = 46;
@@ -1129,7 +1153,7 @@
             this.cmbCollect_Tag.Items.AddRange(new object[] {
             "完成",
             "未完成"});
-            this.cmbCollect_Tag.Location = new System.Drawing.Point(450, 413);
+            this.cmbCollect_Tag.Location = new System.Drawing.Point(450, 417);
             this.cmbCollect_Tag.Name = "cmbCollect_Tag";
             this.cmbCollect_Tag.Size = new System.Drawing.Size(144, 28);
             this.cmbCollect_Tag.TabIndex = 47;
@@ -1142,7 +1166,7 @@
             this.cmbCheck_Tag.Items.AddRange(new object[] {
             "完成",
             "未完成"});
-            this.cmbCheck_Tag.Location = new System.Drawing.Point(750, 413);
+            this.cmbCheck_Tag.Location = new System.Drawing.Point(750, 417);
             this.cmbCheck_Tag.Name = "cmbCheck_Tag";
             this.cmbCheck_Tag.Size = new System.Drawing.Size(144, 28);
             this.cmbCheck_Tag.TabIndex = 48;
@@ -1155,7 +1179,7 @@
             this.cmbGrade_Tag.Items.AddRange(new object[] {
             "完成",
             "未完成"});
-            this.cmbGrade_Tag.Location = new System.Drawing.Point(1050, 413);
+            this.cmbGrade_Tag.Location = new System.Drawing.Point(1050, 417);
             this.cmbGrade_Tag.Name = "cmbGrade_Tag";
             this.cmbGrade_Tag.Size = new System.Drawing.Size(144, 28);
             this.cmbGrade_Tag.TabIndex = 49;
@@ -1168,7 +1192,7 @@
             this.cmbPartitions_Account.Items.AddRange(new object[] {
             "是",
             "否"});
-            this.cmbPartitions_Account.Location = new System.Drawing.Point(750, 381);
+            this.cmbPartitions_Account.Location = new System.Drawing.Point(750, 385);
             this.cmbPartitions_Account.Name = "cmbPartitions_Account";
             this.cmbPartitions_Account.Size = new System.Drawing.Size(144, 28);
             this.cmbPartitions_Account.TabIndex = 50;
@@ -1178,7 +1202,7 @@
             this.cmbTenders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbTenders.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTenders.FormattingEnabled = true;
-            this.cmbTenders.Location = new System.Drawing.Point(450, 253);
+            this.cmbTenders.Location = new System.Drawing.Point(450, 257);
             this.cmbTenders.Name = "cmbTenders";
             this.cmbTenders.Size = new System.Drawing.Size(144, 28);
             this.cmbTenders.TabIndex = 51;
@@ -1188,13 +1212,16 @@
             this.cmbConstructors.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbConstructors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbConstructors.FormattingEnabled = true;
-            this.cmbConstructors.Location = new System.Drawing.Point(750, 253);
+            this.cmbConstructors.Location = new System.Drawing.Point(750, 257);
             this.cmbConstructors.Name = "cmbConstructors";
             this.cmbConstructors.Size = new System.Drawing.Size(144, 28);
             this.cmbConstructors.TabIndex = 52;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnDel);
+            this.tabPage2.Controls.Add(this.btnEdit);
+            this.tabPage2.Controls.Add(this.btnNew);
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Controls.Add(this.btnReload);
             this.tabPage2.Controls.Add(this.btnExport);
@@ -1206,6 +1233,39 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "查询结果";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnDel
+            // 
+            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDel.Location = new System.Drawing.Point(258, 572);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(120, 50);
+            this.btnDel.TabIndex = 12;
+            this.btnDel.Text = "删除工程信息";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEdit.Location = new System.Drawing.Point(132, 572);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(120, 50);
+            this.btnEdit.TabIndex = 11;
+            this.btnEdit.Text = "修改工程信息";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnNew
+            // 
+            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNew.Location = new System.Drawing.Point(6, 572);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(120, 50);
+            this.btnNew.TabIndex = 10;
+            this.btnNew.Text = "新建工程信息";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // frmDesktop
             // 
@@ -1237,43 +1297,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 房产名称;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 房产编号;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 建筑年代;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 建筑层数;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 建筑结构;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 建筑用途;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 资产原值;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 资产编码;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 设备编码;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 地区;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 工程名称;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 工程类型;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 工程内容;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 计划金额;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 可研批复;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 初始批复;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 计划文号;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 开工时间;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 竣工时间;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 中标单位;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 形象进度;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 合同金额;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 实际发生额;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 支付金额;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 欠款金额;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 质保金支付时间;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 施工单位;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 负责人;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 联系方式;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 分包金额;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 支付金额1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 欠款金额1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 管理费;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn 是否挂账;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 收集整理;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 立卷检查;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 验收合格;
         private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnExport;
@@ -1333,5 +1356,47 @@
         private System.Windows.Forms.ComboBox cmbPartitions_Account;
         private System.Windows.Forms.ComboBox cmbTenders;
         private System.Windows.Forms.ComboBox cmbConstructors;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Checked;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 序号;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 房产名称;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 房产编号;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 建筑年代;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 建筑层数;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 建筑结构;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 建筑用途;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 资产原值;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 资产编码;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 设备编码;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 地区;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 工程名称;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 工程类型;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 工程内容;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 计划金额;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 可研批复;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 初始批复;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 计划文号;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 开工时间;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 竣工时间;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 中标单位;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 形象进度;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 合同金额;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 实际发生额;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 支付金额;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 欠款金额;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 质保金支付时间;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 施工单位;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 负责人;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 联系方式;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 分包金额;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 支付金额1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 欠款金额1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 管理费;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 是否挂账;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 收集整理;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 立卷检查;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 验收合格;
     }
 }

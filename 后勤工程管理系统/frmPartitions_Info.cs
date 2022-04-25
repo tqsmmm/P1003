@@ -22,6 +22,8 @@ namespace 后勤工程管理系统
             cmbConstructors.DisplayMember = "Name";
 
             cmbConstructors.SelectedIndex = -1;
+
+            cmbAccount.SelectedIndex = 0;
         }
 
         private void frmPartitions_Info_Load(object sender, EventArgs e)
@@ -36,15 +38,7 @@ namespace 后勤工程管理系统
                 txtAmount_Arear.Text = Ds.Tables[0].Rows[0][3].ToString();
                 txtAmount_Pay.Text = Ds.Tables[0].Rows[0][4].ToString();
                 txtManagement.Text = Ds.Tables[0].Rows[0][5].ToString();
-
-                if (Convert.ToBoolean(Ds.Tables[0].Rows[0][6]))
-                {
-                    rbnAccount_True.Checked = true;
-                }
-                else
-                {
-                    rbnAccount_False.Checked = true;
-                }
+                cmbAccount.Text = Ds.Tables[0].Rows[0][6].ToString();
             }
         }
 
@@ -62,20 +56,9 @@ namespace 后勤工程管理系统
                 return;
             }
 
-            bool bAccount;
-
-            if (rbnAccount_True.Checked)
-            {
-                bAccount = true;
-            }
-            else
-            {
-                bAccount = false;
-            }
-
             if (Text == "新建")
             {
-                var result = Class.DB_Works.ExecuteCmd($"INSERT INTO Partitions(Projects_id, Constructors_id, Amount, Amount_Arrear, Amount_Pay, Management, Account, Users_id, DateTime) VALUES({cmbProjects.SelectedValue}, {cmbConstructors.SelectedValue}, {txtAmount.Text}, {txtAmount_Arear.Text}, {txtAmount_Pay.Text}, {txtManagement.Text},{bAccount}, {AppSetter.Current_User.id}, NOW())");
+                var result = Class.DB_Works.ExecuteCmd($"INSERT INTO Partitions(Projects_id, Constructors_id, Amount, Amount_Arrear, Amount_Pay, Management, Account, Users_id, DateTime) VALUES({cmbProjects.SelectedValue}, {cmbConstructors.SelectedValue}, {txtAmount.Text}, {txtAmount_Arear.Text}, {txtAmount_Pay.Text}, {txtManagement.Text}, '{cmbAccount.Text}', {AppSetter.Current_User.id}, NOW())");
 
                 if (result)
                 {
@@ -88,7 +71,7 @@ namespace 后勤工程管理系统
             }
             else if (Text == "修改")
             {
-                var result = Class.DB_Works.ExecuteCmd($"UPDATE Partitions SET Projects_id = {cmbProjects.SelectedValue}, Constructors_id = {cmbConstructors.SelectedValue}, Amount = {txtAmount.Text}, Amount_Arrear = {txtAmount_Arear.Text}, Amount_Pay = {txtAmount_Pay.Text}, Management = {txtManagement.Text}, Account = {bAccount} WHERE id = {id}");
+                var result = Class.DB_Works.ExecuteCmd($"UPDATE Partitions SET Projects_id = {cmbProjects.SelectedValue}, Constructors_id = {cmbConstructors.SelectedValue}, Amount = {txtAmount.Text}, Amount_Arrear = {txtAmount_Arear.Text}, Amount_Pay = {txtAmount_Pay.Text}, Management = {txtManagement.Text}, Account = '{cmbAccount.Text}' WHERE id = {id}");
 
                 if (result)
                 {

@@ -34,16 +34,20 @@ namespace 后勤工程管理系统
 
             //构造树状结构
             tvwList.Nodes.Add("主界面");
-            TreeNode treeNode = new TreeNode();
-            treeNode.Text = "工程类型";
+            TreeNode treeNode = new TreeNode
+            {
+                Text = "工程类型"
+            };
             tvwList.Nodes.Add(treeNode);
 
             DataSet ds = Class.DB_Works.DataSetCmd("SELECT Name FROM Types");
 
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
-                TreeNode treeNode1 = new TreeNode();
-                treeNode1.Text = ds.Tables[0].Rows[i][0].ToString();
+                TreeNode treeNode1 = new TreeNode
+                {
+                    Text = ds.Tables[0].Rows[i][0].ToString()
+                };
                 treeNode.Nodes.Add(treeNode1);
             }
 
@@ -85,23 +89,36 @@ namespace 后勤工程管理系统
                         frm.Show();
                         break;
                     case "基础数据维护":
-                        frmBasic frm1 = new frmBasic
+                        if (AppSetter.Current_User.id == 1)
                         {
-                            TopLevel = false
-                        };
-                        pal_Main.Controls.Add(frm1);
-                        frm1.Show();
+                            frmBasic frm1 = new frmBasic
+                            {
+                                TopLevel = false
+                            };
+                            pal_Main.Controls.Add(frm1);
+                            frm1.Show();
+                        }
+                        else
+                        {
+                            Class.Public.Sys_MsgBox("权限不足！");
+                        }
                         break;
                     case "操作日志":
-                        frmLogs frm2 = new frmLogs
+                        if (AppSetter.Current_User.id == 1)
                         {
-                            TopLevel = false
-                        };
-                        pal_Main.Controls.Add(frm2);
-                        frm2.Show();
+                            frmLogs frm2 = new frmLogs
+                            {
+                                TopLevel = false
+                            };
+                            pal_Main.Controls.Add(frm2);
+                            frm2.Show();
+                        }
+                        else
+                        {
+                            Class.Public.Sys_MsgBox("权限不足！");
+                        }
                         break;
                     default:
-                        
                         break;
                 }
             }
@@ -109,6 +126,7 @@ namespace 后勤工程管理系统
             {
                 frmDesktop frm3 = new frmDesktop();
                 frm3.TopLevel = false;
+                frm3.strTypes = tvwList.SelectedNode.Text;
                 pal_Main.Controls.Add(frm3);
                 frm3.Show();
             }

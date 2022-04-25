@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace 后勤工程管理系统.Class
 {
@@ -7,7 +8,7 @@ namespace 后勤工程管理系统.Class
         public int id = 0;
         public string Name = "匿名";
         public string Password = string.Empty;
-        public string[] Limits = null;
+        public ArrayList Limits = new ArrayList();
 
         public static Users_Info Login(string Name, string Password)
         {
@@ -20,6 +21,13 @@ namespace 后勤工程管理系统.Class
                 obj.id = Convert.ToInt16(Ds.Tables[0].Rows[0][0]);
                 obj.Name = Ds.Tables[0].Rows[0][1].ToString();
                 obj.Password = Ds.Tables[0].Rows[0][2].ToString();
+
+                Ds = DB_Works.DataSetCmd($"SELECT Types.Name FROM Limits LEFT JOIN Types ON Limits.Types_id = Types.id");
+
+                for (int i = 0; i < Ds.Tables[0].Rows.Count; i++)
+                {
+                    obj.Limits.Add(Ds.Tables[0].Rows[i][0].ToString());
+                }
             }
 
             if (Name == obj.Name && Password == obj.Password)

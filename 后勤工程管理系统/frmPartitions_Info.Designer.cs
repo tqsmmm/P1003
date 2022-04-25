@@ -41,12 +41,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbnAccount_False = new System.Windows.Forms.RadioButton();
-            this.rbnAccount_True = new System.Windows.Forms.RadioButton();
             this.cmbConstructors = new System.Windows.Forms.ComboBox();
             this.cmbProjects = new System.Windows.Forms.ComboBox();
             this.btnAccept = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.cmbAccount = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -153,8 +152,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rbnAccount_False);
-            this.groupBox1.Controls.Add(this.rbnAccount_True);
+            this.groupBox1.Controls.Add(this.cmbAccount);
             this.groupBox1.Controls.Add(this.cmbConstructors);
             this.groupBox1.Controls.Add(this.cmbProjects);
             this.groupBox1.Controls.Add(this.label1);
@@ -174,28 +172,6 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "分包信息";
-            // 
-            // rbnAccount_False
-            // 
-            this.rbnAccount_False.AutoSize = true;
-            this.rbnAccount_False.Checked = true;
-            this.rbnAccount_False.Location = new System.Drawing.Point(169, 190);
-            this.rbnAccount_False.Name = "rbnAccount_False";
-            this.rbnAccount_False.Size = new System.Drawing.Size(41, 24);
-            this.rbnAccount_False.TabIndex = 17;
-            this.rbnAccount_False.TabStop = true;
-            this.rbnAccount_False.Text = "否";
-            this.rbnAccount_False.UseVisualStyleBackColor = true;
-            // 
-            // rbnAccount_True
-            // 
-            this.rbnAccount_True.AutoSize = true;
-            this.rbnAccount_True.Location = new System.Drawing.Point(122, 190);
-            this.rbnAccount_True.Name = "rbnAccount_True";
-            this.rbnAccount_True.Size = new System.Drawing.Size(41, 24);
-            this.rbnAccount_True.TabIndex = 16;
-            this.rbnAccount_True.Text = "是";
-            this.rbnAccount_True.UseVisualStyleBackColor = true;
             // 
             // cmbConstructors
             // 
@@ -236,6 +212,18 @@
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // cmbAccount
+            // 
+            this.cmbAccount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAccount.FormattingEnabled = true;
+            this.cmbAccount.Items.AddRange(new object[] {
+            "是",
+            "否"});
+            this.cmbAccount.Location = new System.Drawing.Point(122, 189);
+            this.cmbAccount.Name = "cmbAccount";
+            this.cmbAccount.Size = new System.Drawing.Size(200, 28);
+            this.cmbAccount.TabIndex = 16;
             // 
             // frmPartitions_Info
             // 
@@ -281,7 +269,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ComboBox cmbProjects;
         private System.Windows.Forms.ComboBox cmbConstructors;
-        private System.Windows.Forms.RadioButton rbnAccount_False;
-        private System.Windows.Forms.RadioButton rbnAccount_True;
+        private System.Windows.Forms.ComboBox cmbAccount;
     }
 }

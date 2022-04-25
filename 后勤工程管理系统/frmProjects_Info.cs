@@ -7,41 +7,15 @@ namespace 后勤工程管理系统
     public partial class frmProjects_Info : Form
     {
         public int id = 0;
+        public string strName = string.Empty;
 
         public frmProjects_Info()
         {
             InitializeComponent();
 
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle
-            {
-                BackColor = Color.LightCyan
-            };
+            dgvPartitions = Class.Public.SetDataGridViewStyle(dgvPartitions);
 
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle
-            {
-                Alignment = DataGridViewContentAlignment.MiddleCenter,//211, 223, 240
-                BackColor = Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(223)))), ((int)(((byte)(240))))),
-                Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134))),
-                ForeColor = Color.Navy,
-                SelectionBackColor = SystemColors.Highlight,
-                SelectionForeColor = SystemColors.HighlightText
-            };
-
-            dgvPartitions.AllowUserToAddRows = false;
-            dgvPartitions.AllowUserToDeleteRows = false;
-            dgvPartitions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvPartitions.BackgroundColor = Color.White;
-            dgvPartitions.BorderStyle = BorderStyle.Fixed3D;
-            dgvPartitions.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgvPartitions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvPartitions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPartitions.EnableHeadersVisualStyles = false;
-            dgvPartitions.GridColor = SystemColors.GradientInactiveCaption;
-            dgvPartitions.ReadOnly = true;
-            dgvPartitions.RowHeadersVisible = false;
-            dgvPartitions.RowTemplate.Height = 23;
-            dgvPartitions.RowTemplate.ReadOnly = true;
-            dgvPartitions.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvSettlements = Class.Public.SetDataGridViewStyle(dgvSettlements);
 
             cmbTenders.DataSource = Class.DB_Works.DataSetCmd("SELECT id, Name FROM Tenders").Tables[0];
             cmbTenders.ValueMember = "id";
@@ -58,7 +32,27 @@ namespace 后勤工程管理系统
 
         private void frmProjects_Info_Load(object sender, EventArgs e)
         {
-            if (Text == "修改" && id != 0)
+            if (Text == "新建" && strName != string.Empty)
+            {
+                //查询房产信息
+                var Ds = Class.DB_Works.DataSetCmd($"SELECT Name, Code, Address, Date, Levels, Structure, Dimension, Purpose, Assets_Amount, Assets_Code, Device_Code, Region FROM Premises WHERE Name = '{strName}'");
+
+                txtPremises.Text = Ds.Tables[0].Rows[0][0].ToString();
+
+                txtName.Text = Ds.Tables[0].Rows[0][0].ToString();
+                txtCode.Text = Ds.Tables[0].Rows[0][1].ToString();
+                txtAddress.Text = Ds.Tables[0].Rows[0][2].ToString();
+                txtDate.Text = Ds.Tables[0].Rows[0][3].ToString();
+                txtLevels.Text = Ds.Tables[0].Rows[0][4].ToString();
+                txtStructure.Text = Ds.Tables[0].Rows[0][5].ToString();
+                txtDimension.Text = Ds.Tables[0].Rows[0][6].ToString();
+                txtPurpose.Text = Ds.Tables[0].Rows[0][7].ToString();
+                txtAssets_Amount.Text = Ds.Tables[0].Rows[0][8].ToString();
+                txtAssets_Code.Text = Ds.Tables[0].Rows[0][9].ToString();
+                txtDevice_Code.Text = Ds.Tables[0].Rows[0][10].ToString();
+                txtRegion.Text = Ds.Tables[0].Rows[0][11].ToString();
+            }
+            else if (Text == "修改" && id != 0)
             {
                 //查询工程信息
                 var Ds = Class.DB_Works.DataSetCmd($"SELECT Name, Types_id, Detail, Amount, Developing_Reply, Initial_Reply, Plan_Code, Begin_Date, End_Date, Tenders_id, Progress, Collect_Tag, Check_Tag, Grade_Tag, Amount_Order, Amount_Reality, Amount_Pay, Amount_Arrear, Warranty, Premises_id FROM Projects WHERE id = {id}");
@@ -84,6 +78,8 @@ namespace 后勤工程管理系统
                 txtAmount_Pay.Text = Ds.Tables[0].Rows[0][16].ToString();
                 txtAmount_Arrear.Text = Ds.Tables[0].Rows[0][17].ToString();
                 dtpWarranty.Value = Convert.ToDateTime(Ds.Tables[0].Rows[0][18]);
+
+                dgvSettlements.DataSource = Class.DB_Works.DataSetCmd($"SELECT Settlements.id AS 序号, Projects.Name AS 工程名称, Partitions AS 是否分包, Settlements.Amount AS 支付金额, Settlements.DateTime AS 支付时间 FROM Settlements LEFT JOIN Projects ON Projects.id = Settlements.Projects_id WHERE Projects_id = {id}").Tables[0];
 
                 //查询房产信息
                 Ds = Class.DB_Works.DataSetCmd($"SELECT Name, Code, Address, Date, Levels, Structure, Dimension, Purpose, Assets_Amount, Assets_Code, Device_Code, Region FROM Premises WHERE id = {Ds.Tables[0].Rows[0][19]}");

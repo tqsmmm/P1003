@@ -13,36 +13,7 @@ namespace 后勤工程管理系统
         {
             InitializeComponent();
 
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle
-            {
-                BackColor = Color.LightCyan
-            };
-
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle
-            {
-                Alignment = DataGridViewContentAlignment.MiddleCenter,//211, 223, 240
-                BackColor = Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(223)))), ((int)(((byte)(240))))),
-                Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134))),
-                ForeColor = Color.Navy,
-                SelectionBackColor = SystemColors.Highlight,
-                SelectionForeColor = SystemColors.HighlightText
-            };
-
-            dgvExcel.AllowUserToAddRows = true;
-            dgvExcel.AllowUserToDeleteRows = true;
-            dgvExcel.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvExcel.BackgroundColor = Color.White;
-            dgvExcel.BorderStyle = BorderStyle.Fixed3D;
-            dgvExcel.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgvExcel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvExcel.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvExcel.EnableHeadersVisualStyles = false;
-            dgvExcel.GridColor = SystemColors.GradientInactiveCaption;
-            dgvExcel.ReadOnly = false;
-            dgvExcel.RowHeadersVisible = false;
-            dgvExcel.RowTemplate.Height = 23;
-            dgvExcel.RowTemplate.ReadOnly = false;
-            dgvExcel.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvExcel = Class.Public.SetDataGridViewStyle(dgvExcel);
         }
 
         private void frmPremises_Import_Load(object sender, EventArgs e)

@@ -106,8 +106,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvPartitions = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.序号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.工程名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.施工单位 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -115,7 +113,15 @@
             this.欠款金额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.付款金额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.管理费 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.是否挂账 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.是否挂账 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvSettlements = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.是否分包 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.支付金额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.支付时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -126,6 +132,8 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartitions)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSettlements)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAccept
@@ -907,30 +915,6 @@
             this.dgvPartitions.Size = new System.Drawing.Size(934, 506);
             this.dgvPartitions.TabIndex = 15;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.groupBox3);
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(952, 543);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "结算信息";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Location = new System.Drawing.Point(6, 143);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(940, 394);
-            this.groupBox3.TabIndex = 34;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "结算明细";
-            // 
             // 序号
             // 
             this.序号.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -938,7 +922,6 @@
             this.序号.HeaderText = "序号";
             this.序号.Name = "序号";
             this.序号.Visible = false;
-            this.序号.Width = 62;
             // 
             // 工程名称
             // 
@@ -994,7 +977,94 @@
             this.是否挂账.DataPropertyName = "是否挂账";
             this.是否挂账.HeaderText = "是否挂账";
             this.是否挂账.Name = "是否挂账";
+            this.是否挂账.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.是否挂账.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.是否挂账.Width = 71;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox3);
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(952, 543);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "结算信息";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.dgvSettlements);
+            this.groupBox3.Location = new System.Drawing.Point(6, 143);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(940, 394);
+            this.groupBox3.TabIndex = 34;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "结算明细";
+            // 
+            // dgvSettlements
+            // 
+            this.dgvSettlements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSettlements.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.是否分包,
+            this.支付金额,
+            this.支付时间});
+            this.dgvSettlements.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSettlements.Location = new System.Drawing.Point(3, 22);
+            this.dgvSettlements.Name = "dgvSettlements";
+            this.dgvSettlements.RowTemplate.Height = 23;
+            this.dgvSettlements.Size = new System.Drawing.Size(934, 369);
+            this.dgvSettlements.TabIndex = 15;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "序号";
+            this.dataGridViewTextBoxColumn1.HeaderText = "序号";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 62;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "工程名称";
+            this.dataGridViewTextBoxColumn2.HeaderText = "工程名称";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 90;
+            // 
+            // 是否分包
+            // 
+            this.是否分包.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.是否分包.DataPropertyName = "是否分包";
+            this.是否分包.HeaderText = "是否分包";
+            this.是否分包.Name = "是否分包";
+            this.是否分包.Width = 71;
+            // 
+            // 支付金额
+            // 
+            this.支付金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.支付金额.DataPropertyName = "支付金额";
+            this.支付金额.HeaderText = "支付金额";
+            this.支付金额.Name = "支付金额";
+            this.支付金额.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.支付金额.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.支付金额.Width = 71;
+            // 
+            // 支付时间
+            // 
+            this.支付时间.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.支付时间.DataPropertyName = "支付时间";
+            this.支付时间.HeaderText = "支付金额";
+            this.支付时间.Name = "支付时间";
+            this.支付时间.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.支付时间.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.支付时间.Width = 71;
             // 
             // frmProjects_Info
             // 
@@ -1029,6 +1099,8 @@
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartitions)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSettlements)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1121,6 +1193,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 欠款金额;
         private System.Windows.Forms.DataGridViewTextBoxColumn 付款金额;
         private System.Windows.Forms.DataGridViewTextBoxColumn 管理费;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn 是否挂账;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 是否挂账;
+        private System.Windows.Forms.DataGridView dgvSettlements;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn 是否分包;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 支付金额;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 支付时间;
     }
 }

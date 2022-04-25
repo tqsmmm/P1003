@@ -168,10 +168,10 @@
     <Compile Include="frmProjects_Info.Designer.cs">
       <DependentUpon>frmProjects_Info.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProjects_List.cs">
+    <Compile Include="Repeal\frmProjects_List.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProjects_List.Designer.cs">
+    <Compile Include="Repeal\frmProjects_List.Designer.cs">
       <DependentUpon>frmProjects_List.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPartitions_Info.cs">
@@ -250,6 +250,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDesktop.resx">
       <DependentUpon>frmDesktop.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -265,6 +266,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Repeal\frmPartitions_List.resx">
       <DependentUpon>frmPartitions_List.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPremises_Import.resx">
       <DependentUpon>frmPremises_Import.cs</DependentUpon>
@@ -280,8 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProjects_Info.resx">
       <DependentUpon>frmProjects_Info.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProjects_List.resx">
+    <EmbeddedResource Include="Repeal\frmProjects_List.resx">
       <DependentUpon>frmProjects_List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPartitions_Info.resx">
