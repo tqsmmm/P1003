@@ -7,8 +7,6 @@ namespace 后勤工程管理系统
 {
     public partial class frmDesktop : Form
     {
-        public string strSQL = string.Empty;
-
         public frmDesktop()
         {
             InitializeComponent();
@@ -19,13 +17,34 @@ namespace 后勤工程管理系统
             cmbTenders.DisplayMember = "Name";
             cmbTenders.ValueMember = "id";
 
-            cmbTenders.SelectedIndex = -1;
+            cmbConstructors.DataSource = Class.DB_Works.DataSetCmd("SELECT id, Name FROM Constructors").Tables[0];
+            cmbConstructors.DisplayMember = "Name";
+            cmbConstructors.ValueMember = "id";
 
-            cmbTypes.DataSource = Class.DB_Works.DataSetCmd("SELECT id, Name FROM Types").Tables[0];
-            cmbTypes.DisplayMember = "Name";
-            cmbTypes.ValueMember = "id";
+            cmbPartitions_Account.SelectedIndex = 0;
+            cmbCollect_Tag.SelectedIndex = 0;
+            cmbCheck_Tag.SelectedIndex = 0;
+            cmbGrade_Tag.SelectedIndex = 0;
 
-            cmbTypes.SelectedIndex = -1;
+            DataSet Ds = Class.DB_Works.DataSetCmd("SELECT Name FROM Premises");
+
+            AutoCompleteStringCollection filtervals = new AutoCompleteStringCollection();
+
+            foreach (DataRow dr in Ds.Tables[0].Rows)
+            {
+                filtervals.Add(dr["Name"].ToString());
+            }
+
+            txtPremises_Name.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtPremises_Name.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtPremises_Name.AutoCompleteCustomSource = filtervals;
+
+            Ds = Class.DB_Works.DataSetCmd("SELECT Name FROM Types");
+
+            for (int i = 0; i < Ds.Tables[0].Rows.Count; i++)
+            {
+                clbProjects_Types.Items.Add(Ds.Tables[0].Rows[i][0].ToString());
+            }
         }
 
         private void frmDesktop_Load(object sender, EventArgs e)
@@ -120,88 +139,37 @@ namespace 后勤工程管理系统
 
         private void btnReload_Click(object sender, EventArgs e)
         {
-            if (strSQL == string.Empty)
+            string strSQL = "SELECT Premises.Name AS 房产名称, Code AS 房产编号, Date AS 建筑年代, Levels AS 建筑层数, Structure AS 建筑结构, Purpose AS 建筑用途, Assets_Amount AS 资产原值, Assets_Code AS 资产编码, Device_Code AS 设备编码, Region AS 地区, Projects.Name AS 工程名称, Types.Name AS 工程类型, Projects.Detail AS 工程内容, Projects.Amount AS 计划金额, Projects.Developing_Reply AS 可研批复, Projects.Initial_Reply AS 初始批复, Projects.Plan_Code AS 计划文号, Projects.Begin_Date AS 开工时间, Projects.End_Date AS 竣工时间, Tenders.Name AS 中标单位, Projects.Progress AS 形象进度, Projects.Amount_Order AS 合同金额, Projects.Amount_Reality AS 实际发生额, Projects.Amount_Pay AS 支付金额, Projects.Amount_Arrear AS 欠款金额, Projects.Warranty AS 质保金支付时间, Constructors.Name AS 施工单位, Constructors.Manager AS 负责人, Constructors.Contact AS 联系方式, Partitions.Amount AS 分包金额, Partitions.Amount_Pay AS 支付金额1, Partitions.Amount_Arrear AS 欠款金额1, Partitions.Management AS 管理费, Partitions.Account AS 是否挂账, Projects.Collect_Tag AS 收集整理, Projects.Check_Tag AS 立卷检查, Projects.Grade_Tag AS 验收合格 FROM Premises LEFT JOIN Projects ON Projects.Premises_id = Premises.id LEFT JOIN Types ON Types.id = Projects.Types_id LEFT JOIN Tenders ON Tenders.id = Projects.Tenders_id LEFT JOIN Partitions ON Partitions.Projects_id = Projects.id LEFT JOIN Constructors ON Partitions.Constructors_id = Constructors.id";
+
+            bool bChecked = false;
+
+            foreach (Control item in tableLayoutPanel1.Controls)
             {
-                strSQL = "SELECT Premises.Name AS 房产名称, Code AS 房产编号, Date AS 建筑年代, Levels AS 建筑层数, Structure AS 建筑结构, Purpose AS 建筑用途, Assets_Amount AS 资产原值, Assets_Code AS 资产编码, Device_Code AS 设备编码, Region AS 地区, Projects.Name AS 工程名称, Types.Name AS 工程类型, Projects.Detail AS 工程内容, Projects.Amount AS 计划金额, Projects.Developing_Reply AS 可研批复, Projects.Initial_Reply AS 初始批复, Projects.Plan_Code AS 计划文号, Projects.Begin_Date AS 开工时间, Projects.End_Date AS 竣工时间, Tenders.Name AS 中标单位, Projects.Progress AS 形象进度, Projects.Amount_Order AS 合同金额, Projects.Amount_Reality AS 实际发生额, Projects.Amount_Pay AS 支付金额, Projects.Amount_Arrear AS 欠款金额, Projects.Warranty AS 质保金支付时间, Constructors.Name AS 施工单位, Constructors.Manager AS 负责人, Constructors.Contact AS 联系方式, Partitions.Amount AS 分包金额, Partitions.Amount_Pay AS 支付金额1, Partitions.Amount_Arrear AS 欠款金额1, Partitions.Management AS 管理费, Partitions.Account AS 是否挂账, Projects.Collect_Tag AS 收集整理, Projects.Check_Tag AS 立卷检查, Projects.Grade_Tag AS 验收合格 FROM Premises LEFT JOIN Projects ON Projects.Premises_id = Premises.id LEFT JOIN Types ON Types.id = Projects.Types_id LEFT JOIN Tenders ON Tenders.id = Projects.Tenders_id LEFT JOIN Partitions ON Partitions.Projects_id = Projects.id LEFT JOIN Constructors ON Partitions.Constructors_id = Constructors.id";
-
-                if (txtName.Text.Trim() != string.Empty || txtCode.Text.Trim() != string.Empty || txtRegion.Text.Trim() != string.Empty || txtYear.Text.Trim() != string.Empty || cmbTypes.SelectedIndex != -1 || txtDetail.Text.Trim() != string.Empty || txtPlan_Code.Text.Trim() != string.Empty || cmbTenders.SelectedIndex != -1 || cmbConstructors.SelectedIndex != -1 || txtManager.Text.Trim() != string.Empty)
+                if (item is CheckBox)
                 {
-                    strSQL = $"{strSQL} WHERE ";
-
-                    if (txtName.Text.Trim() != string.Empty)
+                    var comm = item as CheckBox;
+                    if (comm.Checked == true)
                     {
-                        strSQL = $"{strSQL} Premises.Name = '{txtName.Text}' AND ";
-
-                        dgvList.Columns[0].DefaultCellStyle.BackColor = Color.Yellow;
+                        bChecked = true;
                     }
+                }
+            }
 
-                    if (txtCode.Text.Trim() != string.Empty)
-                    {
-                        strSQL = $"{strSQL} Code ='{txtCode.Text}' AND ";
+            if (bChecked == true)
+            {
+                strSQL = $"{strSQL} WHERE ";
 
-                        dgvList.Columns[1].DefaultCellStyle.BackColor = Color.Yellow;
-                    }
+                if (ckbPremises_Name.Checked)
+                {
+                    strSQL = $"{strSQL} Premises.Name = '{txtPremises_Name.Text}' AND ";
 
-                    if (txtRegion.Text.Trim() != string.Empty)
-                    {
-                        strSQL = $"{strSQL} Code ='{txtRegion.Text}' AND ";
-
-                        dgvList.Columns[9].DefaultCellStyle.BackColor = Color.Yellow;
-                    }
-
-                    if (txtYear.Text.Trim() != string.Empty)
-                    {
-                        strSQL = $"{strSQL} Projects.Begin_Date >= '{txtYear.Text}-01-01' AND Projects.End_Date <= '{txtYear.Text}-12-31' AND ";
-
-                        dgvList.Columns[17].DefaultCellStyle.BackColor = Color.Yellow;
-                        dgvList.Columns[18].DefaultCellStyle.BackColor = Color.Yellow;
-                    }
-
-                    if (cmbTypes.SelectedIndex != -1)
-                    {
-                        strSQL = $"{strSQL} Types_id = {cmbTypes.SelectedValue} AND ";
-
-                        dgvList.Columns[11].DefaultCellStyle.BackColor = Color.Yellow;
-                    }
-
-                    if (txtDetail.Text.Trim() != string.Empty)
-                    {
-                        strSQL = $"{strSQL} Projects.Detail LIKE '%{txtDetail.Text}%' AND ";
-
-                        dgvList.Columns[12].DefaultCellStyle.BackColor = Color.Yellow;
-                    }
-
-                    if (txtPlan_Code.Text.Trim() != string.Empty)
-                    {
-                        strSQL = $"{strSQL} Plan_Code = '{txtPlan_Code.Text}' AND ";
-
-                        dgvList.Columns[16].DefaultCellStyle.BackColor = Color.Yellow;
-                    }
-
-                    if (cmbTenders.SelectedIndex != -1)
-                    {
-                    }
-                    strSQL = $"{strSQL} Tenders_id = {cmbTenders.SelectedValue} AND ";
-
-                    dgvList.Columns[19].DefaultCellStyle.BackColor = Color.Yellow;
+                    dgvList.Columns[0].DefaultCellStyle.BackColor = Color.Yellow;
                 }
 
-                if (cmbConstructors.SelectedIndex != -1)
-                {
-                    strSQL = $"{strSQL} Partitions.Constructors_id = {cmbConstructors.SelectedValue} AND ";
 
-                    dgvList.Columns[26].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-
-                if (txtManager.Text.Trim() != string.Empty)
-                {
-                    strSQL = $"{strSQL} (Constructors.Manager = '{txtManager.Text}' OR Tenders.Manager = '{txtManager.Text}') AND ";
-
-                    dgvList.Columns[27].DefaultCellStyle.BackColor = Color.Yellow;
-                }
 
                 strSQL = strSQL.Substring(0, strSQL.Length - 4);
-            }            
+            }
 
             dgvList.DataSource = Class.DB_Works.DataSetCmd(strSQL).Tables[0];
         }
@@ -263,6 +231,35 @@ namespace 后勤工程管理系统
             {
                 Class.Public.Sys_MsgBox("选择的导入文件错误！");
             }
+        }
+
+        private void btnSelectAll_Click(object sender, EventArgs e)
+        {
+            foreach (Control item in tableLayoutPanel1.Controls)
+            {
+                if (item is CheckBox)
+                {
+                    var comm = item as CheckBox;
+                    comm.Checked = true;
+                }
+            }
+        }
+
+        private void btnSelectNone_Click(object sender, EventArgs e)
+        {
+            foreach (Control item in tableLayoutPanel1.Controls)
+            {
+                if (item is CheckBox)
+                {
+                    var comm = item as CheckBox;
+                    comm.Checked = false;
+                }
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            btnReload_Click(this, e);
         }
     }
 }

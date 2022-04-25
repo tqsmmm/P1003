@@ -32,20 +32,16 @@
             this.pal_Main = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tvwList = new System.Windows.Forms.TreeView();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.lblUsers = new System.Windows.Forms.Label();
-            this.llbLogin = new System.Windows.Forms.LinkLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblApplication = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tsslApplication = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsddbUsers = new System.Windows.Forms.ToolStripDropDownButton();
+            this.登出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.登录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pal_Main
@@ -54,12 +50,14 @@
             this.pal_Main.Location = new System.Drawing.Point(0, 0);
             this.pal_Main.Name = "pal_Main";
             this.pal_Main.Padding = new System.Windows.Forms.Padding(3);
-            this.pal_Main.Size = new System.Drawing.Size(1056, 592);
+            this.pal_Main.Size = new System.Drawing.Size(1056, 668);
             this.pal_Main.TabIndex = 2;
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
@@ -72,7 +70,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.pal_Main);
-            this.splitContainer1.Size = new System.Drawing.Size(1260, 592);
+            this.splitContainer1.Size = new System.Drawing.Size(1260, 668);
             this.splitContainer1.SplitterDistance = 200;
             this.splitContainer1.TabIndex = 3;
             // 
@@ -81,87 +79,63 @@
             this.tvwList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tvwList.Location = new System.Drawing.Point(0, 0);
             this.tvwList.Name = "tvwList";
-            this.tvwList.Size = new System.Drawing.Size(200, 592);
+            this.tvwList.Size = new System.Drawing.Size(200, 668);
             this.tvwList.TabIndex = 0;
             this.tvwList.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwList_AfterSelect);
             // 
-            // splitContainer2
+            // statusStrip1
             // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslApplication,
+            this.tsddbUsers});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 671);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1260, 25);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 4;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // splitContainer2.Panel1
+            // tsslApplication
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.lblUsers);
-            this.splitContainer2.Panel1.Controls.Add(this.llbLogin);
-            this.splitContainer2.Panel1.Controls.Add(this.pictureBox1);
-            this.splitContainer2.Panel1.Controls.Add(this.lblApplication);
-            this.splitContainer2.Panel1.Margin = new System.Windows.Forms.Padding(3);
-            this.splitContainer2.Panel1.Padding = new System.Windows.Forms.Padding(3);
+            this.tsslApplication.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tsslApplication.Name = "tsslApplication";
+            this.tsslApplication.Size = new System.Drawing.Size(1201, 20);
+            this.tsslApplication.Spring = true;
+            this.tsslApplication.Text = "toolStripStatusLabel1";
             // 
-            // splitContainer2.Panel2
+            // tsddbUsers
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.splitContainer1);
-            this.splitContainer2.Size = new System.Drawing.Size(1260, 696);
-            this.splitContainer2.SplitterDistance = 100;
-            this.splitContainer2.TabIndex = 4;
+            this.tsddbUsers.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsddbUsers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.登出ToolStripMenuItem,
+            this.登录ToolStripMenuItem});
+            this.tsddbUsers.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tsddbUsers.Image = ((System.Drawing.Image)(resources.GetObject("tsddbUsers.Image")));
+            this.tsddbUsers.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddbUsers.Name = "tsddbUsers";
+            this.tsddbUsers.Size = new System.Drawing.Size(13, 23);
             // 
-            // lblUsers
+            // 登出ToolStripMenuItem
             // 
-            this.lblUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblUsers.Location = new System.Drawing.Point(672, 40);
-            this.lblUsers.Name = "lblUsers";
-            this.lblUsers.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblUsers.Size = new System.Drawing.Size(533, 20);
-            this.lblUsers.TabIndex = 5;
-            this.lblUsers.Text = "欢迎：admin";
+            this.登出ToolStripMenuItem.Name = "登出ToolStripMenuItem";
+            this.登出ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.登出ToolStripMenuItem.Text = "登出";
+            this.登出ToolStripMenuItem.Click += new System.EventHandler(this.登出ToolStripMenuItem_Click);
             // 
-            // llbLogin
+            // 登录ToolStripMenuItem
             // 
-            this.llbLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.llbLogin.AutoSize = true;
-            this.llbLogin.Location = new System.Drawing.Point(1211, 40);
-            this.llbLogin.Name = "llbLogin";
-            this.llbLogin.Size = new System.Drawing.Size(37, 20);
-            this.llbLogin.TabIndex = 4;
-            this.llbLogin.TabStop = true;
-            this.llbLogin.Text = "登录";
-            this.llbLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbLogin_LinkClicked);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(6, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Padding = new System.Windows.Forms.Padding(3);
-            this.pictureBox1.Size = new System.Drawing.Size(88, 88);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lblApplication
-            // 
-            this.lblApplication.AutoSize = true;
-            this.lblApplication.Font = new System.Drawing.Font("微软雅黑", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblApplication.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblApplication.Location = new System.Drawing.Point(100, 10);
-            this.lblApplication.Margin = new System.Windows.Forms.Padding(3);
-            this.lblApplication.Name = "lblApplication";
-            this.lblApplication.Padding = new System.Windows.Forms.Padding(3);
-            this.lblApplication.Size = new System.Drawing.Size(200, 81);
-            this.lblApplication.TabIndex = 3;
-            this.lblApplication.Text = "label1";
-            this.lblApplication.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.登录ToolStripMenuItem.Name = "登录ToolStripMenuItem";
+            this.登录ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.登录ToolStripMenuItem.Text = "登录";
+            this.登录ToolStripMenuItem.Click += new System.EventHandler(this.登录ToolStripMenuItem_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 696);
-            this.Controls.Add(this.splitContainer2);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
@@ -176,25 +150,22 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel1.PerformLayout();
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblApplication;
-        private System.Windows.Forms.Label lblUsers;
-        private System.Windows.Forms.LinkLabel llbLogin;
         private System.Windows.Forms.TreeView tvwList;
         public System.Windows.Forms.Panel pal_Main;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel tsslApplication;
+        private System.Windows.Forms.ToolStripDropDownButton tsddbUsers;
+        private System.Windows.Forms.ToolStripMenuItem 登出ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 登录ToolStripMenuItem;
     }
 }
 

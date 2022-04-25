@@ -15,19 +15,21 @@ namespace 后勤工程管理系统
         {
             AppSetter.Current_User = new Class.Users_Info();
 
-            lblApplication.Text = AppSetter.strApplicationName;
             Text = AppSetter.strApplicationName;
+            tsslApplication.Text = AppSetter.strApplicationName;
 
             //登录状态
-            lblUsers.Text = $"欢迎：{AppSetter.Current_User.Name}";
+            tsddbUsers.Text = $"欢迎：{AppSetter.Current_User.Name}";
 
             if (AppSetter.Current_User.id == 0)
             {
-                llbLogin.Text = "登录";
+                登出ToolStripMenuItem.Visible = false;
+                登录ToolStripMenuItem.Visible = true;
             }
             else
             {
-                llbLogin.Text = "登出";
+                登出ToolStripMenuItem.Visible = true;
+                登录ToolStripMenuItem.Visible = false;
             }
 
             //构造树状结构
@@ -68,26 +70,6 @@ namespace 后勤工程管理系统
             Application.ExitThread();
         }
 
-        private void llbLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            frmLogin frm = new frmLogin();
-            frm.ShowDialog();
-
-            if (frm.DialogResult==DialogResult.Yes)
-            {
-                lblUsers.Text = $"欢迎：{AppSetter.Current_User.Name}";
-
-                if (AppSetter.Current_User.id == 0)
-                {
-                    llbLogin.Text = "登录";
-                }
-                else
-                {
-                    llbLogin.Text = "登出";
-                }
-            }
-        }
-
         private void tvwList_AfterSelect(object sender, TreeViewEventArgs e)
         {
             if (tvwList.SelectedNode.Level == 0)
@@ -95,7 +77,7 @@ namespace 后勤工程管理系统
                 switch (tvwList.SelectedNode.Text)
                 {
                     case "主界面":
-                        frmSearch frm = new frmSearch
+                        frmDesktop frm = new frmDesktop
                         {
                             TopLevel = false
                         };
@@ -118,14 +100,6 @@ namespace 后勤工程管理系统
                         pal_Main.Controls.Add(frm2);
                         frm2.Show();
                         break;
-                    case "工程类型":
-                        frmDesktop frm3 = new frmDesktop
-                        {
-                            TopLevel = false
-                        };
-                        pal_Main.Controls.Add(frm3);
-                        frm3.Show();
-                        break;
                     default:
                         
                         break;
@@ -134,10 +108,49 @@ namespace 后勤工程管理系统
             else if (tvwList.SelectedNode.Level == 1)
             {
                 frmDesktop frm3 = new frmDesktop();
-                frm3.cmbTypes.Text = tvwList.SelectedNode.Text;
                 frm3.TopLevel = false;
                 pal_Main.Controls.Add(frm3);
                 frm3.Show();
+            }
+        }
+
+        private void 登录ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLogin frm = new frmLogin();
+            frm.ShowDialog();
+
+            if (frm.DialogResult == DialogResult.Yes)
+            {
+                tsddbUsers.Text = $"欢迎：{AppSetter.Current_User.Name}";
+
+                if (AppSetter.Current_User.id == 0)
+                {
+                    登出ToolStripMenuItem.Visible = false;
+                    登录ToolStripMenuItem.Visible = true;
+                }
+                else
+                {
+                    登出ToolStripMenuItem.Visible = true;
+                    登录ToolStripMenuItem.Visible = false;
+                }
+            }
+        }
+
+        private void 登出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AppSetter.Current_User = new Class.Users_Info();
+
+            tsddbUsers.Text = $"欢迎：{AppSetter.Current_User.Name}";
+
+            if (AppSetter.Current_User.id == 0)
+            {
+                登出ToolStripMenuItem.Visible = false;
+                登录ToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                登出ToolStripMenuItem.Visible = true;
+                登录ToolStripMenuItem.Visible = false;
             }
         }
     }

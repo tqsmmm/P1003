@@ -180,10 +180,10 @@
     <Compile Include="frmPartitions_Info.Designer.cs">
       <DependentUpon>frmPartitions_Info.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSearch.cs">
+    <Compile Include="Repeal\frmSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSearch.Designer.cs">
+    <Compile Include="Repeal\frmSearch.Designer.cs">
       <DependentUpon>frmSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTypes_Info.cs">
@@ -287,7 +287,7 @@
     <EmbeddedResource Include="frmPartitions_Info.resx">
       <DependentUpon>frmPartitions_Info.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSearch.resx">
+    <EmbeddedResource Include="Repeal\frmSearch.resx">
       <DependentUpon>frmSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTypes_Info.resx">

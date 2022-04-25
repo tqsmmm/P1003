@@ -70,12 +70,12 @@
             this.cmbCheck_Tag = new System.Windows.Forms.ComboBox();
             this.cmbGrade_Tag = new System.Windows.Forms.ComboBox();
             this.cmbPartitions_Account = new System.Windows.Forms.ComboBox();
+            this.cmbTenders = new System.Windows.Forms.ComboBox();
+            this.cmbConstructors = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnSelectAll = new System.Windows.Forms.Button();
             this.btnSelectNone = new System.Windows.Forms.Button();
-            this.cmbTenders = new System.Windows.Forms.ComboBox();
-            this.cmbConstructors = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -186,7 +186,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1005, 527);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1005, 359);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // clbProjects_Types
@@ -264,7 +264,7 @@
             this.label4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.Location = new System.Drawing.Point(3, 164);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 34);
+            this.label4.Size = new System.Drawing.Size(94, 32);
             this.label4.TabIndex = 14;
             this.label4.Text = "施工方信息";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -275,7 +275,7 @@
             this.ckbTenders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ckbTenders.Location = new System.Drawing.Point(103, 167);
             this.ckbTenders.Name = "ckbTenders";
-            this.ckbTenders.Size = new System.Drawing.Size(114, 28);
+            this.ckbTenders.Size = new System.Drawing.Size(114, 26);
             this.ckbTenders.TabIndex = 15;
             this.ckbTenders.Text = "中标单位：";
             this.ckbTenders.UseVisualStyleBackColor = true;
@@ -286,7 +286,7 @@
             this.ckbConstructors.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ckbConstructors.Location = new System.Drawing.Point(373, 167);
             this.ckbConstructors.Name = "ckbConstructors";
-            this.ckbConstructors.Size = new System.Drawing.Size(114, 28);
+            this.ckbConstructors.Size = new System.Drawing.Size(114, 26);
             this.ckbConstructors.TabIndex = 17;
             this.ckbConstructors.Text = "施工单位：";
             this.ckbConstructors.UseVisualStyleBackColor = true;
@@ -297,7 +297,7 @@
             this.ckbContact.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ckbContact.Location = new System.Drawing.Point(643, 167);
             this.ckbContact.Name = "ckbContact";
-            this.ckbContact.Size = new System.Drawing.Size(114, 28);
+            this.ckbContact.Size = new System.Drawing.Size(114, 26);
             this.ckbContact.TabIndex = 19;
             this.ckbContact.Text = "联系人：";
             this.ckbContact.UseVisualStyleBackColor = true;
@@ -315,7 +315,7 @@
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(3, 198);
+            this.label5.Location = new System.Drawing.Point(3, 196);
             this.label5.Name = "label5";
             this.tableLayoutPanel1.SetRowSpan(this.label5, 2);
             this.label5.Size = new System.Drawing.Size(94, 64);
@@ -327,7 +327,7 @@
             // 
             this.ckbProjects_Amount.AutoSize = true;
             this.ckbProjects_Amount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbProjects_Amount.Location = new System.Drawing.Point(103, 201);
+            this.ckbProjects_Amount.Location = new System.Drawing.Point(103, 199);
             this.ckbProjects_Amount.Name = "ckbProjects_Amount";
             this.ckbProjects_Amount.Size = new System.Drawing.Size(114, 26);
             this.ckbProjects_Amount.TabIndex = 22;
@@ -337,7 +337,7 @@
             // txtProjects_Amount
             // 
             this.txtProjects_Amount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtProjects_Amount.Location = new System.Drawing.Point(223, 201);
+            this.txtProjects_Amount.Location = new System.Drawing.Point(223, 199);
             this.txtProjects_Amount.Name = "txtProjects_Amount";
             this.txtProjects_Amount.Size = new System.Drawing.Size(144, 26);
             this.txtProjects_Amount.TabIndex = 23;
@@ -348,7 +348,7 @@
             // 
             this.ckbProjects_Amount_Reality.AutoSize = true;
             this.ckbProjects_Amount_Reality.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbProjects_Amount_Reality.Location = new System.Drawing.Point(373, 201);
+            this.ckbProjects_Amount_Reality.Location = new System.Drawing.Point(373, 199);
             this.ckbProjects_Amount_Reality.Name = "ckbProjects_Amount_Reality";
             this.ckbProjects_Amount_Reality.Size = new System.Drawing.Size(114, 26);
             this.ckbProjects_Amount_Reality.TabIndex = 24;
@@ -358,7 +358,7 @@
             // txtProjects_Amount_Reality
             // 
             this.txtProjects_Amount_Reality.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtProjects_Amount_Reality.Location = new System.Drawing.Point(493, 201);
+            this.txtProjects_Amount_Reality.Location = new System.Drawing.Point(493, 199);
             this.txtProjects_Amount_Reality.Name = "txtProjects_Amount_Reality";
             this.txtProjects_Amount_Reality.Size = new System.Drawing.Size(144, 26);
             this.txtProjects_Amount_Reality.TabIndex = 25;
@@ -369,7 +369,7 @@
             // 
             this.ckbProjects_Amount_Pay.AutoSize = true;
             this.ckbProjects_Amount_Pay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbProjects_Amount_Pay.Location = new System.Drawing.Point(643, 201);
+            this.ckbProjects_Amount_Pay.Location = new System.Drawing.Point(643, 199);
             this.ckbProjects_Amount_Pay.Name = "ckbProjects_Amount_Pay";
             this.ckbProjects_Amount_Pay.Size = new System.Drawing.Size(114, 26);
             this.ckbProjects_Amount_Pay.TabIndex = 26;
@@ -379,7 +379,7 @@
             // txtProjects_Amount_Pay
             // 
             this.txtProjects_Amount_Pay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtProjects_Amount_Pay.Location = new System.Drawing.Point(763, 201);
+            this.txtProjects_Amount_Pay.Location = new System.Drawing.Point(763, 199);
             this.txtProjects_Amount_Pay.Name = "txtProjects_Amount_Pay";
             this.txtProjects_Amount_Pay.Size = new System.Drawing.Size(144, 26);
             this.txtProjects_Amount_Pay.TabIndex = 27;
@@ -390,7 +390,7 @@
             // 
             this.ckbProjects_Amount_Arrear.AutoSize = true;
             this.ckbProjects_Amount_Arrear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbProjects_Amount_Arrear.Location = new System.Drawing.Point(103, 233);
+            this.ckbProjects_Amount_Arrear.Location = new System.Drawing.Point(103, 231);
             this.ckbProjects_Amount_Arrear.Name = "ckbProjects_Amount_Arrear";
             this.ckbProjects_Amount_Arrear.Size = new System.Drawing.Size(114, 26);
             this.ckbProjects_Amount_Arrear.TabIndex = 28;
@@ -400,7 +400,7 @@
             // txtProjects_Amount_Arrear
             // 
             this.txtProjects_Amount_Arrear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtProjects_Amount_Arrear.Location = new System.Drawing.Point(223, 233);
+            this.txtProjects_Amount_Arrear.Location = new System.Drawing.Point(223, 231);
             this.txtProjects_Amount_Arrear.Name = "txtProjects_Amount_Arrear";
             this.txtProjects_Amount_Arrear.Size = new System.Drawing.Size(144, 26);
             this.txtProjects_Amount_Arrear.TabIndex = 29;
@@ -412,7 +412,7 @@
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(3, 262);
+            this.label6.Location = new System.Drawing.Point(3, 260);
             this.label6.Name = "label6";
             this.tableLayoutPanel1.SetRowSpan(this.label6, 2);
             this.label6.Size = new System.Drawing.Size(94, 64);
@@ -424,7 +424,7 @@
             // 
             this.ckbPartitions_Amount.AutoSize = true;
             this.ckbPartitions_Amount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbPartitions_Amount.Location = new System.Drawing.Point(103, 265);
+            this.ckbPartitions_Amount.Location = new System.Drawing.Point(103, 263);
             this.ckbPartitions_Amount.Name = "ckbPartitions_Amount";
             this.ckbPartitions_Amount.Size = new System.Drawing.Size(114, 26);
             this.ckbPartitions_Amount.TabIndex = 33;
@@ -434,7 +434,7 @@
             // txtPartitions_Amount
             // 
             this.txtPartitions_Amount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPartitions_Amount.Location = new System.Drawing.Point(223, 265);
+            this.txtPartitions_Amount.Location = new System.Drawing.Point(223, 263);
             this.txtPartitions_Amount.Name = "txtPartitions_Amount";
             this.txtPartitions_Amount.Size = new System.Drawing.Size(144, 26);
             this.txtPartitions_Amount.TabIndex = 34;
@@ -445,7 +445,7 @@
             // 
             this.ckbPartitions_Amount_Pay.AutoSize = true;
             this.ckbPartitions_Amount_Pay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbPartitions_Amount_Pay.Location = new System.Drawing.Point(373, 265);
+            this.ckbPartitions_Amount_Pay.Location = new System.Drawing.Point(373, 263);
             this.ckbPartitions_Amount_Pay.Name = "ckbPartitions_Amount_Pay";
             this.ckbPartitions_Amount_Pay.Size = new System.Drawing.Size(114, 26);
             this.ckbPartitions_Amount_Pay.TabIndex = 35;
@@ -455,7 +455,7 @@
             // txtPartitions_Amount_Pay
             // 
             this.txtPartitions_Amount_Pay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPartitions_Amount_Pay.Location = new System.Drawing.Point(493, 265);
+            this.txtPartitions_Amount_Pay.Location = new System.Drawing.Point(493, 263);
             this.txtPartitions_Amount_Pay.Name = "txtPartitions_Amount_Pay";
             this.txtPartitions_Amount_Pay.Size = new System.Drawing.Size(144, 26);
             this.txtPartitions_Amount_Pay.TabIndex = 36;
@@ -466,7 +466,7 @@
             // 
             this.ckbPartitions_Amount_Arrear.AutoSize = true;
             this.ckbPartitions_Amount_Arrear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbPartitions_Amount_Arrear.Location = new System.Drawing.Point(643, 265);
+            this.ckbPartitions_Amount_Arrear.Location = new System.Drawing.Point(643, 263);
             this.ckbPartitions_Amount_Arrear.Name = "ckbPartitions_Amount_Arrear";
             this.ckbPartitions_Amount_Arrear.Size = new System.Drawing.Size(114, 26);
             this.ckbPartitions_Amount_Arrear.TabIndex = 37;
@@ -476,7 +476,7 @@
             // txtPartitions_Amount_Arrear
             // 
             this.txtPartitions_Amount_Arrear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPartitions_Amount_Arrear.Location = new System.Drawing.Point(763, 265);
+            this.txtPartitions_Amount_Arrear.Location = new System.Drawing.Point(763, 263);
             this.txtPartitions_Amount_Arrear.Name = "txtPartitions_Amount_Arrear";
             this.txtPartitions_Amount_Arrear.Size = new System.Drawing.Size(144, 26);
             this.txtPartitions_Amount_Arrear.TabIndex = 38;
@@ -486,7 +486,7 @@
             // txtPartitions_Amount_Management
             // 
             this.txtPartitions_Amount_Management.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPartitions_Amount_Management.Location = new System.Drawing.Point(223, 297);
+            this.txtPartitions_Amount_Management.Location = new System.Drawing.Point(223, 295);
             this.txtPartitions_Amount_Management.Name = "txtPartitions_Amount_Management";
             this.txtPartitions_Amount_Management.Size = new System.Drawing.Size(144, 26);
             this.txtPartitions_Amount_Management.TabIndex = 39;
@@ -497,7 +497,7 @@
             // 
             this.ckbPartitions_Management.AutoSize = true;
             this.ckbPartitions_Management.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbPartitions_Management.Location = new System.Drawing.Point(103, 297);
+            this.ckbPartitions_Management.Location = new System.Drawing.Point(103, 295);
             this.ckbPartitions_Management.Name = "ckbPartitions_Management";
             this.ckbPartitions_Management.Size = new System.Drawing.Size(114, 26);
             this.ckbPartitions_Management.TabIndex = 41;
@@ -508,7 +508,7 @@
             // 
             this.ckbPartitions_Account.AutoSize = true;
             this.ckbPartitions_Account.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbPartitions_Account.Location = new System.Drawing.Point(373, 297);
+            this.ckbPartitions_Account.Location = new System.Drawing.Point(373, 295);
             this.ckbPartitions_Account.Name = "ckbPartitions_Account";
             this.ckbPartitions_Account.Size = new System.Drawing.Size(114, 26);
             this.ckbPartitions_Account.TabIndex = 42;
@@ -520,7 +520,7 @@
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(3, 326);
+            this.label7.Location = new System.Drawing.Point(3, 324);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 30);
             this.label7.TabIndex = 43;
@@ -531,7 +531,7 @@
             // 
             this.ckbProjects_Collect_Tag.AutoSize = true;
             this.ckbProjects_Collect_Tag.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbProjects_Collect_Tag.Location = new System.Drawing.Point(103, 329);
+            this.ckbProjects_Collect_Tag.Location = new System.Drawing.Point(103, 327);
             this.ckbProjects_Collect_Tag.Name = "ckbProjects_Collect_Tag";
             this.ckbProjects_Collect_Tag.Size = new System.Drawing.Size(114, 24);
             this.ckbProjects_Collect_Tag.TabIndex = 44;
@@ -542,7 +542,7 @@
             // 
             this.ckbProjects_Check_Tag.AutoSize = true;
             this.ckbProjects_Check_Tag.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbProjects_Check_Tag.Location = new System.Drawing.Point(373, 329);
+            this.ckbProjects_Check_Tag.Location = new System.Drawing.Point(373, 327);
             this.ckbProjects_Check_Tag.Name = "ckbProjects_Check_Tag";
             this.ckbProjects_Check_Tag.Size = new System.Drawing.Size(114, 24);
             this.ckbProjects_Check_Tag.TabIndex = 45;
@@ -553,7 +553,7 @@
             // 
             this.ckbProjects_Grade_Tag.AutoSize = true;
             this.ckbProjects_Grade_Tag.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbProjects_Grade_Tag.Location = new System.Drawing.Point(643, 329);
+            this.ckbProjects_Grade_Tag.Location = new System.Drawing.Point(643, 327);
             this.ckbProjects_Grade_Tag.Name = "ckbProjects_Grade_Tag";
             this.ckbProjects_Grade_Tag.Size = new System.Drawing.Size(114, 24);
             this.ckbProjects_Grade_Tag.TabIndex = 46;
@@ -568,7 +568,7 @@
             this.cmbCollect_Tag.Items.AddRange(new object[] {
             "完成",
             "未完成"});
-            this.cmbCollect_Tag.Location = new System.Drawing.Point(223, 329);
+            this.cmbCollect_Tag.Location = new System.Drawing.Point(223, 327);
             this.cmbCollect_Tag.Name = "cmbCollect_Tag";
             this.cmbCollect_Tag.Size = new System.Drawing.Size(144, 28);
             this.cmbCollect_Tag.TabIndex = 47;
@@ -581,7 +581,7 @@
             this.cmbCheck_Tag.Items.AddRange(new object[] {
             "完成",
             "未完成"});
-            this.cmbCheck_Tag.Location = new System.Drawing.Point(493, 329);
+            this.cmbCheck_Tag.Location = new System.Drawing.Point(493, 327);
             this.cmbCheck_Tag.Name = "cmbCheck_Tag";
             this.cmbCheck_Tag.Size = new System.Drawing.Size(144, 28);
             this.cmbCheck_Tag.TabIndex = 48;
@@ -594,7 +594,7 @@
             this.cmbGrade_Tag.Items.AddRange(new object[] {
             "完成",
             "未完成"});
-            this.cmbGrade_Tag.Location = new System.Drawing.Point(763, 329);
+            this.cmbGrade_Tag.Location = new System.Drawing.Point(763, 327);
             this.cmbGrade_Tag.Name = "cmbGrade_Tag";
             this.cmbGrade_Tag.Size = new System.Drawing.Size(144, 28);
             this.cmbGrade_Tag.TabIndex = 49;
@@ -607,20 +607,39 @@
             this.cmbPartitions_Account.Items.AddRange(new object[] {
             "是",
             "否"});
-            this.cmbPartitions_Account.Location = new System.Drawing.Point(493, 297);
+            this.cmbPartitions_Account.Location = new System.Drawing.Point(493, 295);
             this.cmbPartitions_Account.Name = "cmbPartitions_Account";
             this.cmbPartitions_Account.Size = new System.Drawing.Size(144, 28);
             this.cmbPartitions_Account.TabIndex = 50;
             // 
+            // cmbTenders
+            // 
+            this.cmbTenders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbTenders.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTenders.FormattingEnabled = true;
+            this.cmbTenders.Location = new System.Drawing.Point(223, 167);
+            this.cmbTenders.Name = "cmbTenders";
+            this.cmbTenders.Size = new System.Drawing.Size(144, 28);
+            this.cmbTenders.TabIndex = 51;
+            // 
+            // cmbConstructors
+            // 
+            this.cmbConstructors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbConstructors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbConstructors.FormattingEnabled = true;
+            this.cmbConstructors.Location = new System.Drawing.Point(493, 167);
+            this.cmbConstructors.Name = "cmbConstructors";
+            this.cmbConstructors.Size = new System.Drawing.Size(144, 28);
+            this.cmbConstructors.TabIndex = 52;
+            // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1011, 552);
+            this.groupBox1.Size = new System.Drawing.Size(1011, 384);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "查询条件";
@@ -657,26 +676,6 @@
             this.btnSelectNone.Text = "全清";
             this.btnSelectNone.UseVisualStyleBackColor = true;
             this.btnSelectNone.Click += new System.EventHandler(this.btnSelectNone_Click);
-            // 
-            // cmbTenders
-            // 
-            this.cmbTenders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbTenders.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTenders.FormattingEnabled = true;
-            this.cmbTenders.Location = new System.Drawing.Point(223, 167);
-            this.cmbTenders.Name = "cmbTenders";
-            this.cmbTenders.Size = new System.Drawing.Size(144, 28);
-            this.cmbTenders.TabIndex = 51;
-            // 
-            // cmbConstructors
-            // 
-            this.cmbConstructors.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbConstructors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbConstructors.FormattingEnabled = true;
-            this.cmbConstructors.Location = new System.Drawing.Point(493, 167);
-            this.cmbConstructors.Name = "cmbConstructors";
-            this.cmbConstructors.Size = new System.Drawing.Size(144, 28);
-            this.cmbConstructors.TabIndex = 52;
             // 
             // frmSearch
             // 
