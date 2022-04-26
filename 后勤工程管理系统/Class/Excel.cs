@@ -263,11 +263,11 @@ namespace 后勤工程管理系统.Class
             // 列强制转换
             for (int i = 0; i < dgv.Columns.Count; i++)
             {
-                if (dgv.Columns[i].Visible)
-                {
-                    DataColumn dc = new DataColumn(dgv.Columns[i].Name.ToString());
-                    dt.Columns.Add(dc);
-                }
+                //if (dgv.Columns[i].Visible)
+                //{
+                DataColumn dc = new DataColumn(dgv.Columns[i].Name.ToString());
+                dt.Columns.Add(dc);
+                //}
             }
 
             // 循环行
@@ -277,10 +277,10 @@ namespace 后勤工程管理系统.Class
 
                 for (int j = 0; j < dgv.Columns.Count; j++)
                 {
-                    if (dgv.Columns[j].Visible)
-                    {
-                        dr[j] = Convert.ToString(dgv.Rows[i].Cells[j].Value);
-                    }
+                    //if (dgv.Columns[j].Visible)
+                    //{
+                    dr[j] = Convert.ToString(dgv.Rows[i].Cells[j].Value);
+                    //}
                 }
 
                 dt.Rows.Add(dr);

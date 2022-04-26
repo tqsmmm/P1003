@@ -397,10 +397,6 @@ namespace 后勤工程管理系统
                     Class.Public.Sys_MsgBox("选择的导入文件错误！");
                 }
             }
-            else
-            {
-                Class.Public.Sys_MsgBox("选择的导入文件错误！");
-            }
         }
 
         private void btnSelectAll_Click(object sender, EventArgs e)
@@ -436,51 +432,72 @@ namespace 后勤工程管理系统
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            if (dgvList.SelectedRows.Count > 0 && AppSetter.Current_User.Limits.IndexOf(dgvList.SelectedRows[0].Cells[13].Value) != -1)
+            if (dgvList.SelectedRows.Count > 0)
             {
-                frmProjects_Info frm = new frmProjects_Info
+                if (AppSetter.Current_User.Limits.IndexOf(dgvList.SelectedRows[0].Cells[13].Value) != -1)
                 {
-                    Text = "新建",
-                    strName = dgvList.SelectedRows[0].Cells[2].Value.ToString()
-                };
-                frm.ShowDialog();
+                    frmProjects_Info frm = new frmProjects_Info
+                    {
+                        Text = "新建",
+                        strName = dgvList.SelectedRows[0].Cells[2].Value.ToString()
+                    };
+                    frm.ShowDialog();
 
-                if (frm.DialogResult == DialogResult.Yes)
+                    if (frm.DialogResult == DialogResult.Yes)
+                    {
+                        btnReload_Click(this, e);
+                    }
+                }
+                else
                 {
-                    btnReload_Click(this, e);
+                    Class.Public.Sys_MsgBox("权限不足！");
                 }
             }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (dgvList.SelectedRows.Count > 0 && AppSetter.Current_User.Limits.IndexOf(dgvList.SelectedRows[0].Cells[13].Value) != -1)
+            if (dgvList.SelectedRows.Count > 0)
             {
-                frmProjects_Info frm = new frmProjects_Info
+                if (AppSetter.Current_User.Limits.IndexOf(dgvList.SelectedRows[0].Cells[13].Value) != -1)
                 {
-                    Text = "修改",
-                    id = Convert.ToInt16(dgvList.SelectedRows[0].Cells[1].Value.ToString())
-                };
-                frm.ShowDialog();
+                    frmProjects_Info frm = new frmProjects_Info
+                    {
+                        Text = "修改",
+                        id = Convert.ToInt16(dgvList.SelectedRows[0].Cells[1].Value.ToString())
+                    };
+                    frm.ShowDialog();
 
-                if (frm.DialogResult == DialogResult.Yes)
+                    if (frm.DialogResult == DialogResult.Yes)
+                    {
+                        btnReload_Click(this, e);
+                    }
+                }
+                else
                 {
-                    btnReload_Click(this, e);
+                    Class.Public.Sys_MsgBox("权限不足！");
                 }
             }
         }
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            if (dgvList.SelectedRows.Count > 0 && AppSetter.Current_User.Limits.IndexOf(dgvList.SelectedRows[0].Cells[13].Value) != -1 && Class.Public.Sys_MsgYN("是否确定删除？"))
+            if (dgvList.SelectedRows.Count > 0 && Class.Public.Sys_MsgYN("是否确定删除？"))
             {
-                var result = Class.DB_Works.ExecuteCmd($"DELETE FROM Prjects WHERE id = {dgvList.SelectedRows[0].Cells[1].Value}");
-
-                if (result)
+                if (AppSetter.Current_User.Limits.IndexOf(dgvList.SelectedRows[0].Cells[13].Value) != -1)
                 {
-                    Class.DB_Works.ExecuteCmd($"INSERT INTO Logs(Users_id, Type, Detail, DateTime) VALUES({AppSetter.Current_User.id}, '删除', '【删除工程信息】工程名称【{dgvList.SelectedRows[0].Cells[12].Value}】，工程类型【{dgvList.SelectedRows[0].Cells[13].Value}】，计划金额【{dgvList.SelectedRows[0].Cells[15].Value}】', NOW())");
+                    var result = Class.DB_Works.ExecuteCmd($"DELETE FROM Prjects WHERE id = {dgvList.SelectedRows[0].Cells[1].Value}");
 
-                    btnReload_Click(this, e);
+                    if (result)
+                    {
+                        Class.DB_Works.ExecuteCmd($"INSERT INTO Logs(Users_id, Type, Detail, DateTime) VALUES({AppSetter.Current_User.id}, '删除', '【删除工程信息】工程名称【{dgvList.SelectedRows[0].Cells[12].Value}】，工程类型【{dgvList.SelectedRows[0].Cells[13].Value}】，计划金额【{dgvList.SelectedRows[0].Cells[15].Value}】', NOW())");
+
+                        btnReload_Click(this, e);
+                    }
+                }
+                else
+                {
+                    Class.Public.Sys_MsgBox("权限不足！");
                 }
             }
         }

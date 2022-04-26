@@ -1,7 +1,7 @@
 -- --------------------------------------------------------
--- 主机:                           192.168.10.3
--- 服务器版本:                        8.0.26 - MySQL Community Server - GPL
--- 服务器操作系统:                      Linux
+-- 主机:                           127.0.0.1
+-- 服务器版本:                        8.0.28 - MySQL Community Server - GPL
+-- 服务器操作系统:                      Win64
 -- HeidiSQL 版本:                  11.3.0.6295
 -- --------------------------------------------------------
 
@@ -18,9 +18,9 @@ DROP DATABASE IF EXISTS `hq_mana`;
 CREATE DATABASE IF NOT EXISTS `hq_mana` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `hq_mana`;
 
--- 导出  表 hq_mana.Constructors 结构
-DROP TABLE IF EXISTS `Constructors`;
-CREATE TABLE IF NOT EXISTS `Constructors` (
+-- 导出  表 hq_mana.constructors 结构
+DROP TABLE IF EXISTS `constructors`;
+CREATE TABLE IF NOT EXISTS `constructors` (
   `id` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(50) NOT NULL DEFAULT '' COMMENT '施工单位',
   `Manager` varchar(50) NOT NULL DEFAULT '' COMMENT '负责人',
@@ -28,27 +28,27 @@ CREATE TABLE IF NOT EXISTS `Constructors` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COMMENT='施工单位';
 
--- 正在导出表  hq_mana.Constructors 的数据：~4 rows (大约)
-/*!40000 ALTER TABLE `Constructors` DISABLE KEYS */;
-REPLACE INTO `Constructors` (`id`, `Name`, `Manager`, `Contact`) VALUES
+-- 正在导出表  hq_mana.constructors 的数据：~4 rows (大约)
+/*!40000 ALTER TABLE `constructors` DISABLE KEYS */;
+REPLACE INTO `constructors` (`id`, `Name`, `Manager`, `Contact`) VALUES
 	(1, '辽宁恒禹电力工程有限公司', '闵春雨', ''),
 	(2, '海城市东马建筑工程有限公司', '郭士佩', ''),
 	(3, '海城市第四建筑工程有限公司', '黄金', ''),
 	(4, '辽宁农发建设工程有限公司', '翟铁', '');
-/*!40000 ALTER TABLE `Constructors` ENABLE KEYS */;
+/*!40000 ALTER TABLE `constructors` ENABLE KEYS */;
 
--- 导出  表 hq_mana.Limits 结构
-DROP TABLE IF EXISTS `Limits`;
-CREATE TABLE IF NOT EXISTS `Limits` (
+-- 导出  表 hq_mana.limits 结构
+DROP TABLE IF EXISTS `limits`;
+CREATE TABLE IF NOT EXISTS `limits` (
   `id` int NOT NULL AUTO_INCREMENT,
   `Users_id` int NOT NULL DEFAULT '0' COMMENT '用户编号',
   `Types_id` int NOT NULL DEFAULT '0' COMMENT '类型编号',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb3 COMMENT='权限';
 
--- 正在导出表  hq_mana.Limits 的数据：~11 rows (大约)
-/*!40000 ALTER TABLE `Limits` DISABLE KEYS */;
-REPLACE INTO `Limits` (`id`, `Users_id`, `Types_id`) VALUES
+-- 正在导出表  hq_mana.limits 的数据：~11 rows (大约)
+/*!40000 ALTER TABLE `limits` DISABLE KEYS */;
+REPLACE INTO `limits` (`id`, `Users_id`, `Types_id`) VALUES
 	(16, 3, 1),
 	(17, 3, 6),
 	(18, 1, 1),
@@ -60,22 +60,22 @@ REPLACE INTO `Limits` (`id`, `Users_id`, `Types_id`) VALUES
 	(24, 2, 1),
 	(25, 2, 2),
 	(26, 2, 4);
-/*!40000 ALTER TABLE `Limits` ENABLE KEYS */;
+/*!40000 ALTER TABLE `limits` ENABLE KEYS */;
 
--- 导出  表 hq_mana.Logs 结构
-DROP TABLE IF EXISTS `Logs`;
-CREATE TABLE IF NOT EXISTS `Logs` (
+-- 导出  表 hq_mana.logs 结构
+DROP TABLE IF EXISTS `logs`;
+CREATE TABLE IF NOT EXISTS `logs` (
   `id` int NOT NULL AUTO_INCREMENT,
   `Users_id` int NOT NULL DEFAULT '0' COMMENT '用户编号',
   `Type` varchar(50) NOT NULL DEFAULT '' COMMENT '操作类型',
   `Detail` varchar(50) NOT NULL DEFAULT '' COMMENT '详情',
   `DateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '操作时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8mb3 COMMENT='操作日志';
+) ENGINE=InnoDB AUTO_INCREMENT=187 DEFAULT CHARSET=utf8mb3 COMMENT='操作日志';
 
--- 正在导出表  hq_mana.Logs 的数据：~90 rows (大约)
-/*!40000 ALTER TABLE `Logs` DISABLE KEYS */;
-REPLACE INTO `Logs` (`id`, `Users_id`, `Type`, `Detail`, `DateTime`) VALUES
+-- 正在导出表  hq_mana.logs 的数据：~176 rows (大约)
+/*!40000 ALTER TABLE `logs` DISABLE KEYS */;
+REPLACE INTO `logs` (`id`, `Users_id`, `Type`, `Detail`, `DateTime`) VALUES
 	(1, 0, '删除', '【删除房产信息】房产名称【国网辽宁鞍山海城供电分公司八里供电所】，房产编码【5708572232】', '2022-03-25 02:41:50'),
 	(2, 0, '删除', '【删除房产信息】房产名称【原国网海城农电局办公楼】，房产编码【0800029919】', '2022-03-25 02:41:54'),
 	(3, 0, '删除', '【删除房产信息】房产名称【立山供电公司办公楼】，房产编码【0800032284】', '2022-03-25 02:41:57'),
@@ -165,12 +165,108 @@ REPLACE INTO `Logs` (`id`, `Users_id`, `Type`, `Detail`, `DateTime`) VALUES
 	(87, 0, '登录', '【登录信息】匿名', '2022-04-07 05:53:16'),
 	(88, 0, '导出', '【导出房产信息】导出房产数据【4】条', '2022-04-07 05:53:33'),
 	(89, 0, '登录', '【登录信息】匿名', '2022-04-07 05:55:27'),
-	(90, 0, '导出', '【导出房产信息】导出房产数据【4】条', '2022-04-07 05:55:32');
-/*!40000 ALTER TABLE `Logs` ENABLE KEYS */;
+	(90, 0, '导出', '【导出房产信息】导出房产数据【4】条', '2022-04-07 05:55:32'),
+	(91, 1, '登录', '【登录信息】admin', '2022-04-11 09:04:39'),
+	(92, 0, '登录', '【登录信息】匿名', '2022-04-11 14:09:38'),
+	(93, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-11 14:09:48'),
+	(94, 0, '登录', '【登录信息】匿名', '2022-04-11 14:15:28'),
+	(95, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-11 14:15:36'),
+	(96, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-11 14:16:02'),
+	(97, 1, '登录', '【登录信息】admin', '2022-04-11 14:17:57'),
+	(98, 1, '导出', '【导出房产信息】导出房产数据【4】条', '2022-04-11 14:23:32'),
+	(99, 0, '登录', '【登录信息】匿名', '2022-04-18 16:08:38'),
+	(100, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-18 16:08:59'),
+	(101, 0, '登录', '【登录信息】匿名', '2022-04-18 16:30:13'),
+	(102, 0, '登录', '【登录信息】匿名', '2022-04-19 13:40:00'),
+	(103, 0, '登录', '【登录信息】匿名', '2022-04-19 13:42:02'),
+	(104, 0, '登录', '【登录信息】匿名', '2022-04-19 13:42:27'),
+	(105, 0, '登录', '【登录信息】匿名', '2022-04-19 13:44:09'),
+	(106, 0, '导出', '【导出房产信息】导出房产数据【4】条', '2022-04-19 13:44:24'),
+	(107, 0, '登录', '【登录信息】匿名', '2022-04-19 13:56:30'),
+	(108, 0, '登录', '【登录信息】匿名', '2022-04-19 13:57:20'),
+	(109, 0, '导出', '【导出房产信息】导出房产数据【4】条', '2022-04-19 13:57:28'),
+	(110, 0, '登录', '【登录信息】匿名', '2022-04-19 14:05:12'),
+	(111, 0, '登录', '【登录信息】匿名', '2022-04-19 14:07:51'),
+	(112, 0, '登录', '【登录信息】匿名', '2022-04-19 14:13:42'),
+	(113, 0, '登录', '【登录信息】匿名', '2022-04-19 14:39:00'),
+	(114, 1, '登录', '【登录信息】admin', '2022-04-19 14:39:12'),
+	(115, 1, '登录', '【登录信息】admin', '2022-04-19 14:39:36'),
+	(116, 1, '登录', '【登录信息】admin', '2022-04-19 15:31:39'),
+	(117, 1, '登录', '【登录信息】admin', '2022-04-19 15:41:17'),
+	(118, 0, '登录', '【登录信息】匿名', '2022-04-19 15:55:15'),
+	(119, 1, '登录', '【登录信息】admin', '2022-04-19 15:55:26'),
+	(120, 1, '登录', '【登录信息】admin', '2022-04-19 16:17:08'),
+	(121, 1, '登录', '【登录信息】admin', '2022-04-19 16:23:49'),
+	(122, 1, '登录', '【登录信息】admin', '2022-04-20 08:45:03'),
+	(123, 1, '登录', '【登录信息】admin', '2022-04-20 09:19:04'),
+	(124, 1, '登录', '【登录信息】admin', '2022-04-20 09:20:05'),
+	(125, 1, '登录', '【登录信息】admin', '2022-04-20 09:30:01'),
+	(126, 1, '登录', '【登录信息】admin', '2022-04-20 09:41:04'),
+	(127, 0, '登录', '【登录信息】匿名', '2022-04-20 14:13:55'),
+	(128, 1, '登录', '【登录信息】admin', '2022-04-20 14:14:17'),
+	(129, 1, '登录', '【登录信息】admin', '2022-04-20 14:16:42'),
+	(130, 1, '登录', '【登录信息】admin', '2022-04-20 14:17:32'),
+	(131, 0, '登录', '【登录信息】匿名', '2022-04-20 15:58:40'),
+	(132, 1, '登录', '【登录信息】admin', '2022-04-21 09:01:26'),
+	(133, 1, '登录', '【登录信息】admin', '2022-04-21 09:09:24'),
+	(134, 0, '登录', '【登录信息】匿名', '2022-04-21 09:11:42'),
+	(135, 1, '登录', '【登录信息】admin', '2022-04-21 09:13:06'),
+	(136, 1, '登录', '【登录信息】admin', '2022-04-21 09:14:45'),
+	(137, 1, '登录', '【登录信息】admin', '2022-04-21 09:17:25'),
+	(138, 0, '登录', '【登录信息】匿名', '2022-04-21 09:30:08'),
+	(139, 1, '登录', '【登录信息】admin', '2022-04-21 09:31:17'),
+	(140, 0, '登录', '【登录信息】匿名', '2022-04-21 09:45:52'),
+	(141, 0, '登录', '【登录信息】匿名', '2022-04-21 09:46:46'),
+	(142, 0, '登录', '【登录信息】匿名', '2022-04-21 09:48:22'),
+	(143, 0, '登录', '【登录信息】匿名', '2022-04-21 09:50:46'),
+	(144, 0, '登录', '【登录信息】匿名', '2022-04-21 09:57:06'),
+	(145, 0, '登录', '【登录信息】匿名', '2022-04-21 10:00:05'),
+	(146, 0, '登录', '【登录信息】匿名', '2022-04-21 10:01:02'),
+	(147, 0, '登录', '【登录信息】匿名', '2022-04-21 10:03:50'),
+	(148, 0, '登录', '【登录信息】匿名', '2022-04-21 10:04:26'),
+	(149, 0, '登录', '【登录信息】匿名', '2022-04-21 10:40:08'),
+	(150, 0, '登录', '【登录信息】匿名', '2022-04-21 10:41:38'),
+	(151, 0, '登录', '【登录信息】匿名', '2022-04-21 10:52:58'),
+	(152, 0, '登录', '【登录信息】匿名', '2022-04-21 13:23:09'),
+	(153, 0, '登录', '【登录信息】匿名', '2022-04-21 13:28:10'),
+	(154, 0, '登录', '【登录信息】匿名', '2022-04-21 13:31:03'),
+	(155, 0, '登录', '【登录信息】匿名', '2022-04-21 13:41:36'),
+	(156, 0, '登录', '【登录信息】匿名', '2022-04-21 13:49:08'),
+	(157, 0, '登录', '【登录信息】匿名', '2022-04-21 13:49:27'),
+	(158, 0, '登录', '【登录信息】匿名', '2022-04-21 13:54:50'),
+	(159, 0, '登录', '【登录信息】匿名', '2022-04-21 13:59:13'),
+	(160, 0, '登录', '【登录信息】匿名', '2022-04-21 14:55:30'),
+	(161, 0, '登录', '【登录信息】匿名', '2022-04-21 14:58:14'),
+	(162, 0, '登录', '【登录信息】匿名', '2022-04-22 08:40:01'),
+	(163, 0, '登录', '【登录信息】匿名', '2022-04-22 08:44:21'),
+	(164, 0, '登录', '【登录信息】匿名', '2022-04-22 09:16:32'),
+	(165, 0, '登录', '【登录信息】匿名', '2022-04-22 09:17:02'),
+	(166, 1, '登录', '【登录信息】admin', '2022-04-22 09:23:52'),
+	(167, 1, '登录', '【登录信息】admin', '2022-04-22 09:28:27'),
+	(168, 1, '登录', '【登录信息】admin', '2022-04-25 09:09:06'),
+	(169, 1, '登录', '【登录信息】admin', '2022-04-25 09:10:16'),
+	(170, 1, '登录', '【登录信息】admin', '2022-04-25 14:40:22'),
+	(171, 1, '登录', '【登录信息】admin', '2022-04-25 14:43:33'),
+	(172, 1, '登录', '【登录信息】admin', '2022-04-25 14:46:18'),
+	(173, 1, '登录', '【登录信息】admin', '2022-04-25 14:51:53'),
+	(174, 1, '登录', '【登录信息】admin', '2022-04-26 09:26:11'),
+	(175, 1, '登录', '【登录信息】admin', '2022-04-26 09:27:41'),
+	(176, 1, '登录', '【登录信息】admin', '2022-04-26 09:28:27'),
+	(177, 1, '登录', '【登录信息】admin', '2022-04-26 13:20:22'),
+	(178, 1, '登录', '【登录信息】admin', '2022-04-26 13:22:19'),
+	(179, 1, '登录', '【登录信息】admin', '2022-04-26 13:23:58'),
+	(180, 1, '登录', '【登录信息】admin', '2022-04-26 13:26:29'),
+	(181, 1, '导出', '【导出房产信息】导出房产数据【4】条', '2022-04-26 13:26:37'),
+	(182, 1, '登录', '【登录信息】admin', '2022-04-26 13:35:39'),
+	(183, 1, '导出', '【导出房产信息】导出房产数据【4】条', '2022-04-26 13:35:45'),
+	(184, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-26 13:39:49'),
+	(185, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-26 13:45:34'),
+	(186, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-26 13:46:07');
+/*!40000 ALTER TABLE `logs` ENABLE KEYS */;
 
--- 导出  表 hq_mana.Models 结构
-DROP TABLE IF EXISTS `Models`;
-CREATE TABLE IF NOT EXISTS `Models` (
+-- 导出  表 hq_mana.models 结构
+DROP TABLE IF EXISTS `models`;
+CREATE TABLE IF NOT EXISTS `models` (
   `id` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(50) NOT NULL DEFAULT '',
   `Types` varchar(50) NOT NULL DEFAULT '',
@@ -178,9 +274,9 @@ CREATE TABLE IF NOT EXISTS `Models` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8mb3 COMMENT='模版';
 
--- 正在导出表  hq_mana.Models 的数据：~107 rows (大约)
-/*!40000 ALTER TABLE `Models` DISABLE KEYS */;
-REPLACE INTO `Models` (`id`, `Name`, `Types`, `Columns`) VALUES
+-- 正在导出表  hq_mana.models 的数据：~107 rows (大约)
+/*!40000 ALTER TABLE `models` DISABLE KEYS */;
+REPLACE INTO `models` (`id`, `Name`, `Types`, `Columns`) VALUES
 	(1, '111', '房产资源', '序号'),
 	(2, '111', '房产资源', '房产名称'),
 	(3, '111', '房产资源', '房产编号'),
@@ -288,11 +384,11 @@ REPLACE INTO `Models` (`id`, `Name`, `Types`, `Columns`) VALUES
 	(105, '3213', '主界面', '收集整理'),
 	(106, '3213', '主界面', '立卷检查'),
 	(107, '3213', '主界面', '验收合格');
-/*!40000 ALTER TABLE `Models` ENABLE KEYS */;
+/*!40000 ALTER TABLE `models` ENABLE KEYS */;
 
--- 导出  表 hq_mana.Partitions 结构
-DROP TABLE IF EXISTS `Partitions`;
-CREATE TABLE IF NOT EXISTS `Partitions` (
+-- 导出  表 hq_mana.partitions 结构
+DROP TABLE IF EXISTS `partitions`;
+CREATE TABLE IF NOT EXISTS `partitions` (
   `id` int NOT NULL AUTO_INCREMENT,
   `Projects_id` int NOT NULL DEFAULT '0' COMMENT '项目编码',
   `Constructors_id` int NOT NULL DEFAULT '0' COMMENT '施工单位编码',
@@ -300,21 +396,21 @@ CREATE TABLE IF NOT EXISTS `Partitions` (
   `Amount_Pay` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '付款金额',
   `Amount_Arrear` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '欠款金额',
   `Management` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '管理费',
-  `Account` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否挂账',
+  `Account` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '是否挂账',
   `Users_id` int NOT NULL DEFAULT '0' COMMENT '用户编号',
   `DateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '操作时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COMMENT='分包信息';
 
--- 正在导出表  hq_mana.Partitions 的数据：~1 rows (大约)
-/*!40000 ALTER TABLE `Partitions` DISABLE KEYS */;
-REPLACE INTO `Partitions` (`id`, `Projects_id`, `Constructors_id`, `Amount`, `Amount_Pay`, `Amount_Arrear`, `Management`, `Account`, `Users_id`, `DateTime`) VALUES
-	(1, 3, 1, 10000.00, 0.00, 0.00, 1.00, 0, 0, '2022-03-25 09:35:21');
-/*!40000 ALTER TABLE `Partitions` ENABLE KEYS */;
+-- 正在导出表  hq_mana.partitions 的数据：~0 rows (大约)
+/*!40000 ALTER TABLE `partitions` DISABLE KEYS */;
+REPLACE INTO `partitions` (`id`, `Projects_id`, `Constructors_id`, `Amount`, `Amount_Pay`, `Amount_Arrear`, `Management`, `Account`, `Users_id`, `DateTime`) VALUES
+	(1, 3, 1, 10000.00, 0.00, 0.00, 1.00, '否', 0, '2022-03-25 09:35:21');
+/*!40000 ALTER TABLE `partitions` ENABLE KEYS */;
 
--- 导出  表 hq_mana.Premises 结构
-DROP TABLE IF EXISTS `Premises`;
-CREATE TABLE IF NOT EXISTS `Premises` (
+-- 导出  表 hq_mana.premises 结构
+DROP TABLE IF EXISTS `premises`;
+CREATE TABLE IF NOT EXISTS `premises` (
   `id` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(50) NOT NULL DEFAULT '' COMMENT '房产名称',
   `Code` varchar(50) NOT NULL DEFAULT '' COMMENT '房产编号',
@@ -333,21 +429,21 @@ CREATE TABLE IF NOT EXISTS `Premises` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb3 COMMENT='房产资源';
 
--- 正在导出表  hq_mana.Premises 的数据：~4 rows (大约)
-/*!40000 ALTER TABLE `Premises` DISABLE KEYS */;
-REPLACE INTO `Premises` (`id`, `Name`, `Code`, `Address`, `Date`, `Levels`, `Structure`, `Dimension`, `Purpose`, `Assets_Amount`, `Assets_Code`, `Device_Code`, `Region`, `Users_id`, `DateTime`) VALUES
+-- 正在导出表  hq_mana.premises 的数据：~4 rows (大约)
+/*!40000 ALTER TABLE `premises` DISABLE KEYS */;
+REPLACE INTO `premises` (`id`, `Name`, `Code`, `Address`, `Date`, `Levels`, `Structure`, `Dimension`, `Purpose`, `Assets_Amount`, `Assets_Code`, `Device_Code`, `Region`, `Users_id`, `DateTime`) VALUES
 	(1, '变电运检二工区办公楼', '0800032807', '', '1999', '4层', '钢混', 12714.00, '办公用房', 2851939.91, '270100000039', '022100000000016342', '铁东', 0, '2022-03-25 09:36:15'),
 	(3, '国网辽宁鞍山海城供电分公司八里供电所', '5708572232', '', '2018', '2层', '钢混', 525.00, '乡镇供电所', 2260771.38, '270100001038', '022100000000546997', '海城', 0, '2022-03-25 09:36:16'),
 	(4, '原国网海城农电局办公楼', '0800029919', '', '1987', '5层', '砖混', 2394.00, '办公用房', 1778063.12, '270100000592', '022200000000018172', '海城', 0, '2022-03-25 09:36:17'),
 	(5, '立山供电公司办公楼', '0800032284', '', '1994', '5层', '砖混', 3399.00, '办公用房', 3583940.53, '270100000224', '022100000000016320', '立山', 0, '2022-03-25 09:36:18');
-/*!40000 ALTER TABLE `Premises` ENABLE KEYS */;
+/*!40000 ALTER TABLE `premises` ENABLE KEYS */;
 
--- 导出  表 hq_mana.Projects 结构
-DROP TABLE IF EXISTS `Projects`;
-CREATE TABLE IF NOT EXISTS `Projects` (
+-- 导出  表 hq_mana.projects 结构
+DROP TABLE IF EXISTS `projects`;
+CREATE TABLE IF NOT EXISTS `projects` (
   `id` int NOT NULL AUTO_INCREMENT,
   `Premises_id` int NOT NULL DEFAULT '0',
-  `Name` varchar(50) NOT NULL DEFAULT '' COMMENT '工程名称',
+  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '工程名称',
   `Types_id` int NOT NULL DEFAULT '0' COMMENT '工程类型',
   `Detail` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '工程内容',
   `Amount` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '计划金额',
@@ -368,18 +464,19 @@ CREATE TABLE IF NOT EXISTS `Projects` (
   `Warranty` date NOT NULL DEFAULT '1900-01-01' COMMENT '质保金支付时间',
   `Users_id` int NOT NULL DEFAULT '0' COMMENT '用户编号',
   `DateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '操作时间',
+  `Remark` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COMMENT='工程项目';
 
--- 正在导出表  hq_mana.Projects 的数据：~1 rows (大约)
-/*!40000 ALTER TABLE `Projects` DISABLE KEYS */;
-REPLACE INTO `Projects` (`id`, `Premises_id`, `Name`, `Types_id`, `Detail`, `Amount`, `Developing_Reply`, `Initial_Reply`, `Plan_Code`, `Begin_Date`, `End_Date`, `Tenders_id`, `Progress`, `Collect_Tag`, `Check_Tag`, `Grade_Tag`, `Amount_Order`, `Amount_Reality`, `Amount_Pay`, `Amount_Arrear`, `Warranty`, `Users_id`, `DateTime`) VALUES
-	(3, 1, '国网辽宁鞍山车辆运输服务部综合楼装饰装修分系统4层、5层停车场改造', 1, '该项目主要内容及工程量：根据使用单位需求利用现有停车场改为办公用房使用，并对该房间内进行重新装修，装修面积2752㎡。砌筑墙体130.8m³（200厚轻集料混凝土砌块）；地面铺砖2350㎡；橡胶板地面226平方米；重新刮大白、刷乳胶漆508㎡；室内墙砖铺贴546㎡；安装铝板吊顶2350㎡；安装内门65樘；喷淋支管（上喷改下喷）126米；喷淋头180个；感烟探测器38个；灯具130套；散热器更换65组；安装暖气罩215㎡；窗台板18.55㎡；更衣柜40米；肯德基门6㎡；楼内线路整体改造；增设电暖气40组等。', 0.00, '', '', '', '2022-04-22', '1990-01-01', 1, '', '未完成', '未完成', '未完成', 0.00, 0.00, 0.00, 0.00, '2022-03-22', 0, '2022-03-25 09:37:45');
-/*!40000 ALTER TABLE `Projects` ENABLE KEYS */;
+-- 正在导出表  hq_mana.projects 的数据：~1 rows (大约)
+/*!40000 ALTER TABLE `projects` DISABLE KEYS */;
+REPLACE INTO `projects` (`id`, `Premises_id`, `Name`, `Types_id`, `Detail`, `Amount`, `Developing_Reply`, `Initial_Reply`, `Plan_Code`, `Begin_Date`, `End_Date`, `Tenders_id`, `Progress`, `Collect_Tag`, `Check_Tag`, `Grade_Tag`, `Amount_Order`, `Amount_Reality`, `Amount_Pay`, `Amount_Arrear`, `Warranty`, `Users_id`, `DateTime`, `Remark`) VALUES
+	(3, 1, '国网辽宁鞍山车辆运输服务部综合楼装饰装修分系统4层、5层停车场改造', 1, '该项目主要内容及工程量：根据使用单位需求利用现有停车场改为办公用房使用，并对该房间内进行重新装修，装修面积2752㎡。砌筑墙体130.8m³（200厚轻集料混凝土砌块）；地面铺砖2350㎡；橡胶板地面226平方米；重新刮大白、刷乳胶漆508㎡；室内墙砖铺贴546㎡；安装铝板吊顶2350㎡；安装内门65樘；喷淋支管（上喷改下喷）126米；喷淋头180个；感烟探测器38个；灯具130套；散热器更换65组；安装暖气罩215㎡；窗台板18.55㎡；更衣柜40米；肯德基门6㎡；楼内线路整体改造；增设电暖气40组等。', 0.00, '', '', '', '2022-04-22', '1990-01-01', 1, '', '未完成', '未完成', '未完成', 0.00, 0.00, 0.00, 0.00, '2022-03-22', 0, '2022-03-25 09:37:45', '');
+/*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 
--- 导出  表 hq_mana.Settlements 结构
-DROP TABLE IF EXISTS `Settlements`;
-CREATE TABLE IF NOT EXISTS `Settlements` (
+-- 导出  表 hq_mana.settlements 结构
+DROP TABLE IF EXISTS `settlements`;
+CREATE TABLE IF NOT EXISTS `settlements` (
   `id` int NOT NULL AUTO_INCREMENT,
   `Projects_id` int NOT NULL DEFAULT '0' COMMENT '项目编码',
   `Partitions` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否分包',
@@ -389,15 +486,15 @@ CREATE TABLE IF NOT EXISTS `Settlements` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COMMENT='结算信息';
 
--- 正在导出表  hq_mana.Settlements 的数据：~1 rows (大约)
-/*!40000 ALTER TABLE `Settlements` DISABLE KEYS */;
-REPLACE INTO `Settlements` (`id`, `Projects_id`, `Partitions`, `Amount`, `DateTime`, `Users_id`) VALUES
+-- 正在导出表  hq_mana.settlements 的数据：~0 rows (大约)
+/*!40000 ALTER TABLE `settlements` DISABLE KEYS */;
+REPLACE INTO `settlements` (`id`, `Projects_id`, `Partitions`, `Amount`, `DateTime`, `Users_id`) VALUES
 	(3, 3, 0, 0.00, '2022-03-22 00:00:00', 0);
-/*!40000 ALTER TABLE `Settlements` ENABLE KEYS */;
+/*!40000 ALTER TABLE `settlements` ENABLE KEYS */;
 
--- 导出  表 hq_mana.Tenders 结构
-DROP TABLE IF EXISTS `Tenders`;
-CREATE TABLE IF NOT EXISTS `Tenders` (
+-- 导出  表 hq_mana.tenders 结构
+DROP TABLE IF EXISTS `tenders`;
+CREATE TABLE IF NOT EXISTS `tenders` (
   `id` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(50) NOT NULL DEFAULT '' COMMENT '中标单位',
   `Manager` varchar(50) NOT NULL DEFAULT '' COMMENT '负责人',
@@ -405,55 +502,55 @@ CREATE TABLE IF NOT EXISTS `Tenders` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COMMENT='中标单位';
 
--- 正在导出表  hq_mana.Tenders 的数据：~3 rows (大约)
-/*!40000 ALTER TABLE `Tenders` DISABLE KEYS */;
-REPLACE INTO `Tenders` (`id`, `Name`, `Manager`, `Contact`) VALUES
+-- 正在导出表  hq_mana.tenders 的数据：~3 rows (大约)
+/*!40000 ALTER TABLE `tenders` DISABLE KEYS */;
+REPLACE INTO `tenders` (`id`, `Name`, `Manager`, `Contact`) VALUES
 	(1, '鞍山电力实业有限公司', '', ''),
 	(2, '海城市东马建筑工程有限公司', '', ''),
 	(3, '海城市第四建筑工程有限公司', '', '');
-/*!40000 ALTER TABLE `Tenders` ENABLE KEYS */;
+/*!40000 ALTER TABLE `tenders` ENABLE KEYS */;
 
--- 导出  表 hq_mana.Types 结构
-DROP TABLE IF EXISTS `Types`;
-CREATE TABLE IF NOT EXISTS `Types` (
+-- 导出  表 hq_mana.types 结构
+DROP TABLE IF EXISTS `types`;
+CREATE TABLE IF NOT EXISTS `types` (
   `id` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(50) NOT NULL DEFAULT '' COMMENT '类型名称',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COMMENT='工程类型';
 
--- 正在导出表  hq_mana.Types 的数据：~6 rows (大约)
-/*!40000 ALTER TABLE `Types` DISABLE KEYS */;
-REPLACE INTO `Types` (`id`, `Name`) VALUES
+-- 正在导出表  hq_mana.types 的数据：~6 rows (大约)
+/*!40000 ALTER TABLE `types` DISABLE KEYS */;
+REPLACE INTO `types` (`id`, `Name`) VALUES
 	(1, '小型基建'),
 	(2, '国网大修'),
 	(3, '国网技改'),
 	(4, '房屋修缮（省大修）'),
 	(5, '日常零星维修'),
 	(6, '维保');
-/*!40000 ALTER TABLE `Types` ENABLE KEYS */;
+/*!40000 ALTER TABLE `types` ENABLE KEYS */;
 
--- 导出  表 hq_mana.Users 结构
-DROP TABLE IF EXISTS `Users`;
-CREATE TABLE IF NOT EXISTS `Users` (
+-- 导出  表 hq_mana.users 结构
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
   `id` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(50) NOT NULL DEFAULT '' COMMENT '用户名',
   `Password` varchar(50) NOT NULL DEFAULT '' COMMENT '密码',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COMMENT='用户';
 
--- 正在导出表  hq_mana.Users 的数据：~3 rows (大约)
-/*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-REPLACE INTO `Users` (`id`, `Name`, `Password`) VALUES
+-- 正在导出表  hq_mana.users 的数据：~3 rows (大约)
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+REPLACE INTO `users` (`id`, `Name`, `Password`) VALUES
 	(1, 'admin', '123'),
 	(2, '长得帅', '123'),
 	(3, '长得美', '123');
-/*!40000 ALTER TABLE `Users` ENABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- 导出  触发器 hq_mana.Settlements_after_delete 结构
 DROP TRIGGER IF EXISTS `Settlements_after_delete`;
 SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 DELIMITER //
-CREATE TRIGGER `Settlements_after_delete` AFTER DELETE ON `Settlements` FOR EACH ROW BEGIN
+CREATE TRIGGER `Settlements_after_delete` AFTER DELETE ON `settlements` FOR EACH ROW BEGIN
 	IF OLD.Partitions = 0 THEN
 		UPDATE Projects SET Amount_Pay = Amount_Pay -  OLD.Amount, Amount_Arrear = Amount_Arrear + OLD.Amount WHERE Projects.id = OLD.Projects_id;
 	ELSE
@@ -467,7 +564,7 @@ SET SQL_MODE=@OLDTMP_SQL_MODE;
 DROP TRIGGER IF EXISTS `Settlements_after_insert`;
 SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 DELIMITER //
-CREATE TRIGGER `Settlements_after_insert` AFTER INSERT ON `Settlements` FOR EACH ROW BEGIN
+CREATE TRIGGER `Settlements_after_insert` AFTER INSERT ON `settlements` FOR EACH ROW BEGIN
 	IF NEW.Partitions = 0 THEN
 		UPDATE Projects SET Amount_Pay = Amount_Pay + NEW.Amount, Amount_Arrear = Amount_Arrear - NEW.Amount WHERE Projects.id = NEW.Projects_id;
 	ELSE
@@ -481,7 +578,7 @@ SET SQL_MODE=@OLDTMP_SQL_MODE;
 DROP TRIGGER IF EXISTS `Settlements_after_update`;
 SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 DELIMITER //
-CREATE TRIGGER `Settlements_after_update` AFTER UPDATE ON `Settlements` FOR EACH ROW BEGIN
+CREATE TRIGGER `Settlements_after_update` AFTER UPDATE ON `settlements` FOR EACH ROW BEGIN
 	IF NEW.Partitions = 0 THEN
 		UPDATE Projects SET Amount_Pay = Amount_Pay - OLD.Amount + NEW.Amount, Amount_Arrear = Amount_Arrear + OLD.Amount - NEW.Amount WHERE Projects.id = NEW.Projects_id;
 	ELSE

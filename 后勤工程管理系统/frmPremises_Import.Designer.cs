@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPremises_Import));
             this.dgvExcel = new System.Windows.Forms.DataGridView();
             this.btnImport = new System.Windows.Forms.Button();
@@ -158,6 +159,9 @@
             // 
             this.资产原值.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.资产原值.DataPropertyName = "资产原值";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            this.资产原值.DefaultCellStyle = dataGridViewCellStyle1;
             this.资产原值.HeaderText = "资产原值";
             this.资产原值.Name = "资产原值";
             this.资产原值.Width = 90;

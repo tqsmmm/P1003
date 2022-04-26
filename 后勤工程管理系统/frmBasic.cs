@@ -255,7 +255,7 @@ namespace 后勤工程管理系统
                 frmPremises_Info frm = new frmPremises_Info
                 {
                     Text = "修改",
-                    id = Convert.ToInt16(dgvPremises.SelectedRows[0].Cells[1].Value.ToString())
+                    id = Convert.ToInt16(dgvPremises.SelectedRows[0].Cells[0].Value.ToString())
                 };
                 frm.ShowDialog();
 
@@ -308,10 +308,6 @@ namespace 后勤工程管理系统
                     }
                 }
             }
-            else
-            {
-                Class.Public.Sys_MsgBox("选择的导入文件错误！");
-            }
         }
 
         private void btnPremises_Export_Click(object sender, EventArgs e)
@@ -322,19 +318,9 @@ namespace 后勤工程管理系统
             {
                 DataTable dt = Class.Excel.GetDgvToTable(dgvPremises);
 
-                DataRow[] rows = dt.Select("Checked = 'True'");
+                dt.Columns.Remove(dgvPremises.Columns[0].Name);
 
-                DataTable dt_new = dt.Clone();
-
-                foreach (DataRow row in rows)
-                {
-                    dt_new.Rows.Add(row.ItemArray);
-                }
-
-                dt_new.Columns.Remove("Checked");
-                dt_new.Columns.Remove("序号");
-
-                Class.Excel.TableToExcel(dt_new, strExcel);
+                Class.Excel.TableToExcel(dt, strExcel);
 
                 Class.DB_Works.ExecuteCmd($"INSERT INTO Logs(Users_id, Type, Detail, DateTime) VALUES({AppSetter.Current_User.id}, '导出', '【导出房产信息】导出房产数据【{dgvPremises.Rows.Count}】条', NOW())");
 

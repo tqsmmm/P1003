@@ -24,8 +24,10 @@ namespace 后勤工程管理系统.Class
 
         public static string Sys_OpenExcelFile()
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "excel文件(*.xlsx,*.xls)|*.xlsx;*.xls";
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                Filter = "excel文件(*.xlsx,*.xls)|*.xlsx;*.xls"
+            };
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -40,11 +42,12 @@ namespace 后勤工程管理系统.Class
 
         public static string Sys_SaveExcelFile()
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-
-            sfd.Filter = "Excel表格（*.xlsx）|*.xlsx";
-            sfd.FilterIndex = 1;
-            sfd.RestoreDirectory = true;
+            SaveFileDialog sfd = new SaveFileDialog
+            {
+                Filter = "Excel表格（*.xlsx）|*.xlsx",
+                FilterIndex = 1,
+                RestoreDirectory = true
+            };
 
             if (sfd.ShowDialog() == DialogResult.OK)
             {
@@ -83,10 +86,8 @@ namespace 后勤工程管理系统.Class
             Dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             Dgv.EnableHeadersVisualStyles = false;
             Dgv.GridColor = SystemColors.GradientInactiveCaption;
-            Dgv.ReadOnly = true;
             Dgv.RowHeadersVisible = false;
             Dgv.RowTemplate.Height = 23;
-            Dgv.RowTemplate.ReadOnly = true;
             Dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             return Dgv;

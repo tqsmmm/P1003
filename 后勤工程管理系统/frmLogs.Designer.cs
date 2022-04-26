@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvLogs = new System.Windows.Forms.DataGridView();
-            this.序号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.用户名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.操作类型 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.详情 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.操作时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpDateTime = new System.Windows.Forms.DateTimePicker();
             this.cmbTypes = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtUsers = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.序号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.用户名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.操作类型 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.详情 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.操作时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -64,46 +65,6 @@
             this.dgvLogs.Size = new System.Drawing.Size(969, 401);
             this.dgvLogs.TabIndex = 0;
             // 
-            // 序号
-            // 
-            this.序号.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.序号.DataPropertyName = "序号";
-            this.序号.HeaderText = "序号";
-            this.序号.Name = "序号";
-            this.序号.Width = 62;
-            // 
-            // 用户名
-            // 
-            this.用户名.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.用户名.DataPropertyName = "用户名";
-            this.用户名.HeaderText = "用户名";
-            this.用户名.Name = "用户名";
-            this.用户名.Width = 76;
-            // 
-            // 操作类型
-            // 
-            this.操作类型.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.操作类型.DataPropertyName = "操作类型";
-            this.操作类型.HeaderText = "操作类型";
-            this.操作类型.Name = "操作类型";
-            this.操作类型.Width = 90;
-            // 
-            // 详情
-            // 
-            this.详情.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.详情.DataPropertyName = "详情";
-            this.详情.HeaderText = "详情";
-            this.详情.Name = "详情";
-            this.详情.Width = 62;
-            // 
-            // 操作时间
-            // 
-            this.操作时间.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.操作时间.DataPropertyName = "操作时间";
-            this.操作时间.HeaderText = "操作时间";
-            this.操作时间.Name = "操作时间";
-            this.操作时间.Width = 90;
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -121,6 +82,16 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "筛选条件";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(872, 25);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(120, 50);
+            this.btnSearch.TabIndex = 7;
+            this.btnSearch.Text = "查询";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label3
             // 
@@ -179,15 +150,48 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "用户名：";
             // 
-            // btnSearch
+            // 序号
             // 
-            this.btnSearch.Location = new System.Drawing.Point(872, 25);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(120, 50);
-            this.btnSearch.TabIndex = 7;
-            this.btnSearch.Text = "查询";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.序号.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.序号.DataPropertyName = "序号";
+            this.序号.HeaderText = "序号";
+            this.序号.Name = "序号";
+            this.序号.Width = 62;
+            // 
+            // 用户名
+            // 
+            this.用户名.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.用户名.DataPropertyName = "用户名";
+            this.用户名.HeaderText = "用户名";
+            this.用户名.Name = "用户名";
+            this.用户名.Width = 76;
+            // 
+            // 操作类型
+            // 
+            this.操作类型.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.操作类型.DataPropertyName = "操作类型";
+            this.操作类型.HeaderText = "操作类型";
+            this.操作类型.Name = "操作类型";
+            this.操作类型.Width = 90;
+            // 
+            // 详情
+            // 
+            this.详情.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.详情.DataPropertyName = "详情";
+            this.详情.HeaderText = "详情";
+            this.详情.Name = "详情";
+            this.详情.Width = 62;
+            // 
+            // 操作时间
+            // 
+            this.操作时间.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.操作时间.DataPropertyName = "操作时间";
+            dataGridViewCellStyle1.Format = "yyyy-MM-dd HH:mm";
+            dataGridViewCellStyle1.NullValue = "1900-01-01";
+            this.操作时间.DefaultCellStyle = dataGridViewCellStyle1;
+            this.操作时间.HeaderText = "操作时间";
+            this.操作时间.Name = "操作时间";
+            this.操作时间.Width = 90;
             // 
             // frmLogs
             // 
@@ -220,11 +224,11 @@
         private System.Windows.Forms.ComboBox cmbTypes;
         private System.Windows.Forms.DateTimePicker dtpDateTime;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn 序号;
         private System.Windows.Forms.DataGridViewTextBoxColumn 用户名;
         private System.Windows.Forms.DataGridViewTextBoxColumn 操作类型;
         private System.Windows.Forms.DataGridViewTextBoxColumn 详情;
         private System.Windows.Forms.DataGridViewTextBoxColumn 操作时间;
-        private System.Windows.Forms.Button btnSearch;
     }
 }

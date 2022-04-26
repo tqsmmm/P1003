@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace 后勤工程管理系统
@@ -10,36 +9,7 @@ namespace 后勤工程管理系统
         {
             InitializeComponent();
 
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle
-            {
-                BackColor = Color.LightCyan
-            };
-
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle
-            {
-                Alignment = DataGridViewContentAlignment.MiddleCenter,//211, 223, 240
-                BackColor = Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(223)))), ((int)(((byte)(240))))),
-                Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134))),
-                ForeColor = Color.Navy,
-                SelectionBackColor = SystemColors.Highlight,
-                SelectionForeColor = SystemColors.HighlightText
-            };
-
-            dgvList.AllowUserToAddRows = false;
-            dgvList.AllowUserToDeleteRows = false;
-            dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvList.BackgroundColor = Color.White;
-            dgvList.BorderStyle = BorderStyle.Fixed3D;
-            dgvList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvList.EnableHeadersVisualStyles = false;
-            dgvList.GridColor = SystemColors.GradientInactiveCaption;
-            dgvList.ReadOnly = true;
-            dgvList.RowHeadersVisible = false;
-            dgvList.RowTemplate.Height = 23;
-            dgvList.RowTemplate.ReadOnly = true;
-            dgvList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvList = Class.Public.SetDataGridViewStyle(dgvList);
         }
 
         private void frmSettlements_List_Load(object sender, EventArgs e)

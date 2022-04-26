@@ -30,6 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPremises_Info));
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -453,6 +456,9 @@
             // 
             this.计划金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.计划金额.DataPropertyName = "计划金额";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "C2";
+            this.计划金额.DefaultCellStyle = dataGridViewCellStyle3;
             this.计划金额.HeaderText = "计划金额";
             this.计划金额.Name = "计划金额";
             this.计划金额.ReadOnly = true;
@@ -489,6 +495,9 @@
             // 
             this.开工时间.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.开工时间.DataPropertyName = "开工时间";
+            dataGridViewCellStyle4.Format = "yyyy-MM-dd";
+            dataGridViewCellStyle4.NullValue = "1900-01-01";
+            this.开工时间.DefaultCellStyle = dataGridViewCellStyle4;
             this.开工时间.HeaderText = "开工时间";
             this.开工时间.Name = "开工时间";
             this.开工时间.ReadOnly = true;
@@ -498,6 +507,9 @@
             // 
             this.竣工时间.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.竣工时间.DataPropertyName = "竣工时间";
+            dataGridViewCellStyle5.Format = "yyyy-MM-dd";
+            dataGridViewCellStyle5.NullValue = "1900-01-01";
+            this.竣工时间.DefaultCellStyle = dataGridViewCellStyle5;
             this.竣工时间.HeaderText = "竣工时间";
             this.竣工时间.Name = "竣工时间";
             this.竣工时间.ReadOnly = true;
