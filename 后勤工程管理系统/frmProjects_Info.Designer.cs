@@ -112,9 +112,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvPartitions = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvSettlements = new System.Windows.Forms.DataGridView();
             this.序号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.工程名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.施工单位 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -123,11 +120,18 @@
             this.付款金额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.管理费 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.是否挂账 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvSettlements = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.是否分包 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.支付金额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.支付时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label34 = new System.Windows.Forms.Label();
+            this.txtOrderID = new System.Windows.Forms.TextBox();
+            this.txtProjects_Date = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -183,7 +187,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(549, 58);
+            this.label2.Location = new System.Drawing.Point(549, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 20);
             this.label2.TabIndex = 4;
@@ -191,7 +195,7 @@
             // 
             // txtPlan_Code
             // 
-            this.txtPlan_Code.Location = new System.Drawing.Point(634, 187);
+            this.txtPlan_Code.Location = new System.Drawing.Point(634, 219);
             this.txtPlan_Code.Name = "txtPlan_Code";
             this.txtPlan_Code.Size = new System.Drawing.Size(300, 26);
             this.txtPlan_Code.TabIndex = 9;
@@ -199,7 +203,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(549, 190);
+            this.label3.Location = new System.Drawing.Point(549, 222);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 20);
             this.label3.TabIndex = 8;
@@ -207,7 +211,7 @@
             // 
             // txtDetail
             // 
-            this.txtDetail.Location = new System.Drawing.Point(91, 89);
+            this.txtDetail.Location = new System.Drawing.Point(91, 121);
             this.txtDetail.Multiline = true;
             this.txtDetail.Name = "txtDetail";
             this.txtDetail.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -217,7 +221,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 92);
+            this.label4.Location = new System.Drawing.Point(6, 124);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 20);
             this.label4.TabIndex = 6;
@@ -226,7 +230,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(549, 256);
+            this.label5.Location = new System.Drawing.Point(549, 288);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 20);
             this.label5.TabIndex = 12;
@@ -235,7 +239,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 254);
+            this.label6.Location = new System.Drawing.Point(6, 286);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 20);
             this.label6.TabIndex = 10;
@@ -243,7 +247,7 @@
             // 
             // txtProgress
             // 
-            this.txtProgress.Location = new System.Drawing.Point(634, 285);
+            this.txtProgress.Location = new System.Drawing.Point(634, 317);
             this.txtProgress.Name = "txtProgress";
             this.txtProgress.Size = new System.Drawing.Size(300, 26);
             this.txtProgress.TabIndex = 17;
@@ -251,7 +255,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(549, 288);
+            this.label7.Location = new System.Drawing.Point(549, 320);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 20);
             this.label7.TabIndex = 16;
@@ -260,7 +264,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 286);
+            this.label8.Location = new System.Drawing.Point(6, 318);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(79, 20);
             this.label8.TabIndex = 14;
@@ -268,7 +272,7 @@
             // 
             // txtDeveloping_Reply
             // 
-            this.txtDeveloping_Reply.Location = new System.Drawing.Point(91, 219);
+            this.txtDeveloping_Reply.Location = new System.Drawing.Point(91, 251);
             this.txtDeveloping_Reply.Name = "txtDeveloping_Reply";
             this.txtDeveloping_Reply.Size = new System.Drawing.Size(300, 26);
             this.txtDeveloping_Reply.TabIndex = 21;
@@ -276,7 +280,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 222);
+            this.label9.Location = new System.Drawing.Point(6, 254);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(79, 20);
             this.label9.TabIndex = 20;
@@ -284,7 +288,7 @@
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(91, 187);
+            this.txtAmount.Location = new System.Drawing.Point(91, 219);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(300, 26);
             this.txtAmount.TabIndex = 19;
@@ -294,7 +298,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 190);
+            this.label10.Location = new System.Drawing.Point(6, 222);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(79, 20);
             this.label10.TabIndex = 18;
@@ -303,7 +307,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 320);
+            this.label11.Location = new System.Drawing.Point(6, 352);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(79, 20);
             this.label11.TabIndex = 24;
@@ -311,7 +315,7 @@
             // 
             // txtInitial_Reply
             // 
-            this.txtInitial_Reply.Location = new System.Drawing.Point(634, 219);
+            this.txtInitial_Reply.Location = new System.Drawing.Point(634, 251);
             this.txtInitial_Reply.Name = "txtInitial_Reply";
             this.txtInitial_Reply.Size = new System.Drawing.Size(300, 26);
             this.txtInitial_Reply.TabIndex = 23;
@@ -319,7 +323,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(549, 222);
+            this.label12.Location = new System.Drawing.Point(549, 254);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(79, 20);
             this.label12.TabIndex = 22;
@@ -328,7 +332,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 354);
+            this.label13.Location = new System.Drawing.Point(6, 386);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(79, 20);
             this.label13.TabIndex = 28;
@@ -337,7 +341,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(549, 320);
+            this.label14.Location = new System.Drawing.Point(549, 352);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(79, 20);
             this.label14.TabIndex = 26;
@@ -348,6 +352,10 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.txtProjects_Date);
+            this.groupBox1.Controls.Add(this.label35);
+            this.groupBox1.Controls.Add(this.txtOrderID);
+            this.groupBox1.Controls.Add(this.label34);
             this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.txtPremises);
             this.groupBox1.Controls.Add(this.label20);
@@ -390,7 +398,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 60);
+            this.label21.Location = new System.Drawing.Point(6, 92);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(79, 20);
             this.label21.TabIndex = 39;
@@ -398,7 +406,7 @@
             // 
             // txtPremises
             // 
-            this.txtPremises.Location = new System.Drawing.Point(91, 57);
+            this.txtPremises.Location = new System.Drawing.Point(91, 89);
             this.txtPremises.Name = "txtPremises";
             this.txtPremises.ReadOnly = true;
             this.txtPremises.Size = new System.Drawing.Size(300, 26);
@@ -407,7 +415,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(34, 388);
+            this.label20.Location = new System.Drawing.Point(34, 420);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(51, 20);
             this.label20.TabIndex = 37;
@@ -415,7 +423,7 @@
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(91, 385);
+            this.txtRemark.Location = new System.Drawing.Point(91, 417);
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -424,7 +432,7 @@
             // 
             // dtpEnd_Date
             // 
-            this.dtpEnd_Date.Location = new System.Drawing.Point(634, 251);
+            this.dtpEnd_Date.Location = new System.Drawing.Point(634, 283);
             this.dtpEnd_Date.Name = "dtpEnd_Date";
             this.dtpEnd_Date.Size = new System.Drawing.Size(300, 26);
             this.dtpEnd_Date.TabIndex = 36;
@@ -436,7 +444,7 @@
             this.cmbGrade_Tag.Items.AddRange(new object[] {
             "完成",
             "未完成"});
-            this.cmbGrade_Tag.Location = new System.Drawing.Point(91, 351);
+            this.cmbGrade_Tag.Location = new System.Drawing.Point(91, 383);
             this.cmbGrade_Tag.Name = "cmbGrade_Tag";
             this.cmbGrade_Tag.Size = new System.Drawing.Size(300, 28);
             this.cmbGrade_Tag.TabIndex = 34;
@@ -448,7 +456,7 @@
             this.cmbCheck_Tag.Items.AddRange(new object[] {
             "完成",
             "未完成"});
-            this.cmbCheck_Tag.Location = new System.Drawing.Point(634, 317);
+            this.cmbCheck_Tag.Location = new System.Drawing.Point(634, 349);
             this.cmbCheck_Tag.Name = "cmbCheck_Tag";
             this.cmbCheck_Tag.Size = new System.Drawing.Size(300, 28);
             this.cmbCheck_Tag.TabIndex = 33;
@@ -457,7 +465,7 @@
             // 
             this.cmbTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTypes.FormattingEnabled = true;
-            this.cmbTypes.Location = new System.Drawing.Point(634, 55);
+            this.cmbTypes.Location = new System.Drawing.Point(634, 87);
             this.cmbTypes.Name = "cmbTypes";
             this.cmbTypes.Size = new System.Drawing.Size(300, 28);
             this.cmbTypes.TabIndex = 31;
@@ -466,7 +474,7 @@
             // 
             this.cmbTenders.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTenders.FormattingEnabled = true;
-            this.cmbTenders.Location = new System.Drawing.Point(91, 283);
+            this.cmbTenders.Location = new System.Drawing.Point(91, 315);
             this.cmbTenders.Name = "cmbTenders";
             this.cmbTenders.Size = new System.Drawing.Size(300, 28);
             this.cmbTenders.TabIndex = 30;
@@ -478,14 +486,14 @@
             this.cmbCollect_Tag.Items.AddRange(new object[] {
             "完成",
             "未完成"});
-            this.cmbCollect_Tag.Location = new System.Drawing.Point(91, 317);
+            this.cmbCollect_Tag.Location = new System.Drawing.Point(91, 349);
             this.cmbCollect_Tag.Name = "cmbCollect_Tag";
             this.cmbCollect_Tag.Size = new System.Drawing.Size(300, 28);
             this.cmbCollect_Tag.TabIndex = 32;
             // 
             // dtpBegin_Date
             // 
-            this.dtpBegin_Date.Location = new System.Drawing.Point(91, 251);
+            this.dtpBegin_Date.Location = new System.Drawing.Point(91, 283);
             this.dtpBegin_Date.Name = "dtpBegin_Date";
             this.dtpBegin_Date.Size = new System.Drawing.Size(300, 26);
             this.dtpBegin_Date.TabIndex = 35;
@@ -921,47 +929,6 @@
             this.dgvPartitions.Size = new System.Drawing.Size(934, 506);
             this.dgvPartitions.TabIndex = 15;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.groupBox3);
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(952, 543);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "结算信息";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.dgvSettlements);
-            this.groupBox3.Location = new System.Drawing.Point(6, 143);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(940, 394);
-            this.groupBox3.TabIndex = 34;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "结算明细";
-            // 
-            // dgvSettlements
-            // 
-            this.dgvSettlements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSettlements.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.是否分包,
-            this.支付金额,
-            this.支付时间});
-            this.dgvSettlements.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSettlements.Location = new System.Drawing.Point(3, 22);
-            this.dgvSettlements.Name = "dgvSettlements";
-            this.dgvSettlements.RowTemplate.Height = 23;
-            this.dgvSettlements.Size = new System.Drawing.Size(934, 369);
-            this.dgvSettlements.TabIndex = 15;
-            // 
             // 序号
             // 
             this.序号.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -969,7 +936,6 @@
             this.序号.HeaderText = "序号";
             this.序号.Name = "序号";
             this.序号.Visible = false;
-            this.序号.Width = 62;
             // 
             // 工程名称
             // 
@@ -1041,6 +1007,47 @@
             this.是否挂账.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.是否挂账.Width = 71;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox3);
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(952, 543);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "结算信息";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.dgvSettlements);
+            this.groupBox3.Location = new System.Drawing.Point(6, 143);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(940, 394);
+            this.groupBox3.TabIndex = 34;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "结算明细";
+            // 
+            // dgvSettlements
+            // 
+            this.dgvSettlements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSettlements.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.是否分包,
+            this.支付金额,
+            this.支付时间});
+            this.dgvSettlements.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSettlements.Location = new System.Drawing.Point(3, 22);
+            this.dgvSettlements.Name = "dgvSettlements";
+            this.dgvSettlements.RowTemplate.Height = 23;
+            this.dgvSettlements.Size = new System.Drawing.Size(934, 369);
+            this.dgvSettlements.TabIndex = 15;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -1090,6 +1097,38 @@
             this.支付时间.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.支付时间.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.支付时间.Width = 86;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(6, 60);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(79, 20);
+            this.label34.TabIndex = 41;
+            this.label34.Text = "工程编号：";
+            // 
+            // txtOrderID
+            // 
+            this.txtOrderID.Location = new System.Drawing.Point(91, 57);
+            this.txtOrderID.Name = "txtOrderID";
+            this.txtOrderID.Size = new System.Drawing.Size(300, 26);
+            this.txtOrderID.TabIndex = 42;
+            // 
+            // txtProjects_Date
+            // 
+            this.txtProjects_Date.Location = new System.Drawing.Point(634, 57);
+            this.txtProjects_Date.Name = "txtProjects_Date";
+            this.txtProjects_Date.Size = new System.Drawing.Size(300, 26);
+            this.txtProjects_Date.TabIndex = 44;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(549, 60);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(79, 20);
+            this.label35.TabIndex = 43;
+            this.label35.Text = "工程年份：";
             // 
             // frmProjects_Info
             // 
@@ -1225,5 +1264,9 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn 是否分包;
         private System.Windows.Forms.DataGridViewTextBoxColumn 支付金额;
         private System.Windows.Forms.DataGridViewTextBoxColumn 支付时间;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox txtOrderID;
+        private System.Windows.Forms.TextBox txtProjects_Date;
+        private System.Windows.Forms.Label label35;
     }
 }

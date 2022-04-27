@@ -459,7 +459,7 @@ namespace 后勤工程管理系统
         {
             if (dgvList.SelectedRows.Count > 0)
             {
-                if (AppSetter.Current_User.Limits.IndexOf(dgvList.SelectedRows[0].Cells[13].Value) != -1)
+                if (AppSetter.Current_User.Limits.IndexOf(dgvList.SelectedRows[0].Cells[14].Value) != -1)
                 {
                     frmProjects_Info frm = new frmProjects_Info
                     {
@@ -484,7 +484,7 @@ namespace 后勤工程管理系统
         {
             if (dgvList.SelectedRows.Count > 0 && Class.Public.Sys_MsgYN("是否确定删除？"))
             {
-                if (AppSetter.Current_User.Limits.IndexOf(dgvList.SelectedRows[0].Cells[13].Value) != -1)
+                if (AppSetter.Current_User.Limits.IndexOf(dgvList.SelectedRows[0].Cells[14].Value) != -1)
                 {
                     var result = Class.DB_Works.ExecuteCmd($"DELETE FROM Prjects WHERE id = {dgvList.SelectedRows[0].Cells[1].Value}");
 
