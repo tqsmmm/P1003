@@ -90,6 +90,10 @@ namespace 后勤工程管理系统.Class
             Dgv.RowTemplate.Height = 23;
             Dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
+            Dgv.RowsDefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            Dgv.AllowUserToResizeRows = true;
+            Dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+
             return Dgv;
         }
     }

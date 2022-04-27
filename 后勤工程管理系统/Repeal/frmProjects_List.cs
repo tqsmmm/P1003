@@ -16,15 +16,6 @@ namespace 后勤工程管理系统
 
         private void frmProjects_List_Load(object sender, EventArgs e)
         {
-            if (AppSetter.Current_User.id == 0)
-            {
-                btnNew.Enabled = false;
-                btnEdit.Enabled = false;
-                btnDel.Enabled = false;
-
-                btnImport.Enabled = false;
-            }
-
             cmbTenders.DataSource = Class.DB_Works.DataSetCmd("SELECT id, Name FROM Tenders").Tables[0];
             cmbTenders.DisplayMember = "Name";
             cmbTenders.ValueMember = "id";

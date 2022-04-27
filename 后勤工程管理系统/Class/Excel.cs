@@ -147,7 +147,7 @@ namespace 后勤工程管理系统.Class
             for (int i = 0; i < dt.Columns.Count; i++)
             {
                 ICell cell = row.CreateCell(i);
-                cell.SetCellValue(dt.Columns[i].ColumnName);
+                cell.SetCellValue(dt.Columns[i].Caption);
 
                 sheet.GetRow(0).GetCell(i).CellStyle = headCellStyle;
 
@@ -266,6 +266,7 @@ namespace 后勤工程管理系统.Class
                 //if (dgv.Columns[i].Visible)
                 //{
                 DataColumn dc = new DataColumn(dgv.Columns[i].Name.ToString());
+                dc.Caption = dgv.Columns[i].HeaderText;
                 dt.Columns.Add(dc);
                 //}
             }
