@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Text;
 using BorderStyle = NPOI.SS.UserModel.BorderStyle;
 using HorizontalAlignment = NPOI.SS.UserModel.HorizontalAlignment;
+using NPOI.SS.Util;
 
 namespace 后勤工程管理系统.Class
 {
@@ -122,7 +123,7 @@ namespace 后勤工程管理系统.Class
         /// <param name="file">导出路径(包括文件名与扩展名)</param>
         public static void TableToExcel(DataTable dt, string file)
         {
-            IWorkbook workbook = new XSSFWorkbook();
+            IWorkbook workbook = new HSSFWorkbook();
 
             string fileExt = Path.GetExtension(file).ToLower();
 
@@ -132,6 +133,10 @@ namespace 后勤工程管理系统.Class
             }
 
             ISheet sheet = string.IsNullOrEmpty(dt.TableName) ? workbook.CreateSheet("sheet0") : workbook.CreateSheet(dt.TableName);
+
+            sheet.AddValidationData(SetColumnsComplete());
+            sheet.AddValidationData(SetColumnsTypes());
+            sheet.AddValidationData(SetColumnsYesNo());
 
             //表头  
             IRow row = sheet.CreateRow(0);
@@ -168,7 +173,7 @@ namespace 后勤工程管理系统.Class
                     cell.SetCellValue(dt.Rows[i][j].ToString());
 
                     cell.CellStyle = contentCellStyle;
-                    int length = Encoding.Default.GetBytes(cell.StringCellValue).Length * 256 + 200;
+                    int length = Encoding.Default.GetBytes(cell.StringCellValue).Length * 256 + 300;
                     length = length > 15000 ? 15000 : length;
 
                     // 若比已存在列宽更宽则替换，Excel限制最大宽度为15000
@@ -202,7 +207,7 @@ namespace 后勤工程管理系统.Class
                 }
                 catch (Exception Ex)
                 {
-                    Class.Public.Sys_MsgBox(Ex.Message);
+                    Public.Sys_MsgBox(Ex.Message);
                 }
             }
             else
@@ -265,8 +270,10 @@ namespace 后勤工程管理系统.Class
             {
                 //if (dgv.Columns[i].Visible)
                 //{
-                DataColumn dc = new DataColumn(dgv.Columns[i].Name.ToString());
-                dc.Caption = dgv.Columns[i].HeaderText;
+                DataColumn dc = new DataColumn(dgv.Columns[i].Name.ToString())
+                {
+                    Caption = dgv.Columns[i].HeaderText
+                };
                 dt.Columns.Add(dc);
                 //}
             }
@@ -287,6 +294,63 @@ namespace 后勤工程管理系统.Class
                 dt.Rows.Add(dr);
             }
             return dt;
+        }
+
+        private static HSSFDataValidation SetColumnsComplete()
+        {
+            //设置生成下拉框的行和列
+            CellRangeAddressList cellComplete = new CellRangeAddressList(0, 65535, 36, 38);
+
+            //设置 下拉框内容
+            DVConstraint constraint = DVConstraint.CreateExplicitListConstraint(new string[] { "完成", "未完成" });
+
+            //绑定下拉框和作用区域，并设置错误提示信息
+            HSSFDataValidation dataValidate = new HSSFDataValidation(cellComplete, constraint);
+            dataValidate.CreateErrorBox("输入不合法", "请输入下拉列表中的值！");
+            dataValidate.ShowPromptBox = true;
+
+            return dataValidate;
+        }
+
+        private static HSSFDataValidation SetColumnsYesNo()
+        {
+            //设置生成下拉框的行和列
+            CellRangeAddressList cellComplete = new CellRangeAddressList(0, 65535, 35, 35);
+
+            //设置 下拉框内容
+            DVConstraint constraint = DVConstraint.CreateExplicitListConstraint(new string[] { "是", "否" });
+
+            //绑定下拉框和作用区域，并设置错误提示信息
+            HSSFDataValidation dataValidate = new HSSFDataValidation(cellComplete, constraint);
+            dataValidate.CreateErrorBox("输入不合法", "请输入下拉列表中的值！");
+            dataValidate.ShowPromptBox = true;
+
+            return dataValidate;
+        }
+
+        private static HSSFDataValidation SetColumnsTypes()
+        {
+            DataSet Ds = Class.DB_Works.DataSetCmd("SELECT Name FROM Types");
+
+            string[] strTypes = new string[Ds.Tables[0].Rows.Count];
+
+            for (int i = 0; i < strTypes.Length; i++)
+            {
+                strTypes[i] = Ds.Tables[0].Rows[i][0].ToString();
+            }
+
+            //设置生成下拉框的行和列
+            CellRangeAddressList cellComplete = new CellRangeAddressList(0, 65535, 12, 12);
+
+            //设置 下拉框内容
+            DVConstraint constraint = DVConstraint.CreateExplicitListConstraint(strTypes);
+
+            //绑定下拉框和作用区域，并设置错误提示信息
+            HSSFDataValidation dataValidate = new HSSFDataValidation(cellComplete, constraint);
+            dataValidate.CreateErrorBox("输入不合法", "请输入下拉列表中的值！");
+            dataValidate.ShowPromptBox = true;
+
+            return dataValidate;
         }
     }
 }
