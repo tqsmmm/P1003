@@ -29,8 +29,12 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPremises_Import));
             this.dgvExcel = new System.Windows.Forms.DataGridView();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnCheck = new System.Windows.Forms.Button();
             this.房产名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.房产编码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.建筑年代 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,9 +46,6 @@
             this.资产编码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.设备编码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.地区 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnImport = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnCheck = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExcel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +69,37 @@
             this.dgvExcel.RowTemplate.Height = 23;
             this.dgvExcel.Size = new System.Drawing.Size(960, 581);
             this.dgvExcel.TabIndex = 0;
+            // 
+            // btnImport
+            // 
+            this.btnImport.Enabled = false;
+            this.btnImport.Location = new System.Drawing.Point(432, 599);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(120, 50);
+            this.btnImport.TabIndex = 1;
+            this.btnImport.Text = "导入";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(558, 599);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(120, 50);
+            this.btnCancel.TabIndex = 2;
+            this.btnCancel.Text = "取消";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.Location = new System.Drawing.Point(306, 599);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(120, 50);
+            this.btnCheck.TabIndex = 3;
+            this.btnCheck.Text = "检查";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // 房产名称
             // 
@@ -113,6 +145,9 @@
             // 
             this.建筑面积.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.建筑面积.DataPropertyName = "建筑面积";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.建筑面积.DefaultCellStyle = dataGridViewCellStyle1;
             this.建筑面积.HeaderText = "建筑面积";
             this.建筑面积.Name = "建筑面积";
             this.建筑面积.Width = 90;
@@ -129,9 +164,10 @@
             // 
             this.资产原值.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.资产原值.DataPropertyName = "资产原值";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            this.资产原值.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.资产原值.DefaultCellStyle = dataGridViewCellStyle2;
             this.资产原值.HeaderText = "资产原值";
             this.资产原值.Name = "资产原值";
             this.资产原值.Width = 90;
@@ -159,37 +195,6 @@
             this.地区.HeaderText = "地区";
             this.地区.Name = "地区";
             this.地区.Width = 62;
-            // 
-            // btnImport
-            // 
-            this.btnImport.Enabled = false;
-            this.btnImport.Location = new System.Drawing.Point(432, 599);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(120, 50);
-            this.btnImport.TabIndex = 1;
-            this.btnImport.Text = "导入";
-            this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(558, 599);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(120, 50);
-            this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "取消";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnCheck
-            // 
-            this.btnCheck.Location = new System.Drawing.Point(306, 599);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(120, 50);
-            this.btnCheck.TabIndex = 3;
-            this.btnCheck.Text = "检查";
-            this.btnCheck.UseVisualStyleBackColor = true;
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // frmPremises_Import
             // 

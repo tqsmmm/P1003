@@ -43,21 +43,21 @@ namespace 后勤工程管理系统
             {
                 dgvExcel.Rows[i].DefaultCellStyle.BackColor = Color.White;
 
-                //Name
+                //房产名称
                 if (dgvExcel.Rows[i].Cells[0].Value.ToString().Length > 50)
                 {
                     dgvExcel.Rows[i].Cells[0].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                //Code
+                //房产编号
                 if (dgvExcel.Rows[i].Cells[1].Value.ToString().Length > 50)
                 {
                     dgvExcel.Rows[i].Cells[1].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                //Date
+                //建筑年代
                 try
                 {
                     Convert.ToInt16(dgvExcel.Rows[i].Cells[2].Value);
@@ -68,21 +68,21 @@ namespace 后勤工程管理系统
                     btnImport.Enabled = false;
                 }
                 
-                //Levels
+                //建筑层数
                 if (dgvExcel.Rows[i].Cells[3].Value.ToString().Length > 50)
                 {
                     dgvExcel.Rows[i].Cells[3].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                //Structure
+                //建筑结构
                 if (dgvExcel.Rows[i].Cells[4].Value.ToString().Length > 50)
                 {
                     dgvExcel.Rows[i].Cells[4].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                //Dimenson
+                //建筑面积
                 try
                 {
                     Convert.ToDecimal(dgvExcel.Rows[i].Cells[5].Value);
@@ -93,14 +93,14 @@ namespace 后勤工程管理系统
                     btnImport.Enabled = false;
                 }
 
-                //Purpose
+                //建筑用途
                 if (dgvExcel.Rows[i].Cells[6].Value.ToString().Length > 50)
                 {
                     dgvExcel.Rows[i].Cells[6].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                //Assets_Amount
+                //资产原值
                 try
                 {
                     Convert.ToDecimal(dgvExcel.Rows[i].Cells[7].Value);
@@ -111,21 +111,21 @@ namespace 后勤工程管理系统
                     btnImport.Enabled = false;
                 }
 
-                //Assets_Code
+                //资产编码
                 if (dgvExcel.Rows[i].Cells[8].Value.ToString().Length > 50)
                 {
                     dgvExcel.Rows[i].Cells[8].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                //Device_Code
+                //设备编码
                 if (dgvExcel.Rows[i].Cells[9].Value.ToString().Length > 50)
                 {
                     dgvExcel.Rows[i].Cells[9].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                //Region
+                //地区
                 if (dgvExcel.Rows[i].Cells[10].Value.ToString().Length > 50)
                 {
                     dgvExcel.Rows[i].Cells[10].Style.BackColor = Color.Red;

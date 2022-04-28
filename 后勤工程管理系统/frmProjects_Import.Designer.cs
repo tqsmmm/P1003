@@ -33,14 +33,36 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProjects_Import));
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.dgvExcel = new System.Windows.Forms.DataGridView();
             this.btnCheck = new System.Windows.Forms.Button();
+            this.房产名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.房产编号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.建筑年代 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.建筑层数 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.建筑结构 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.建筑用途 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.资产原值 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.资产编码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.设备编码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.地区 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.工程编号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.工程名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.工程类型 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.工程内容 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.工程年份 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.计划金额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.可研批复 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.初始批复 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +71,19 @@
             this.竣工时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.中标单位 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.形象进度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.合同金额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.实际发生额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.支付金额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.欠款金额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.质保金支付时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.施工单位 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.负责人 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.联系方式 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.分包金额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.支付金额1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.欠款金额1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.管理费 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.是否挂账 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.收集整理 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.立卷检查 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.验收合格 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,7 +92,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(508, 499);
+            this.btnCancel.Location = new System.Drawing.Point(558, 599);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(120, 50);
             this.btnCancel.TabIndex = 5;
@@ -68,7 +103,7 @@
             // btnImport
             // 
             this.btnImport.Enabled = false;
-            this.btnImport.Location = new System.Drawing.Point(382, 499);
+            this.btnImport.Location = new System.Drawing.Point(432, 599);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(120, 50);
             this.btnImport.TabIndex = 4;
@@ -80,9 +115,21 @@
             // 
             this.dgvExcel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvExcel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.房产名称,
+            this.房产编号,
+            this.建筑年代,
+            this.建筑层数,
+            this.建筑结构,
+            this.建筑用途,
+            this.资产原值,
+            this.资产编码,
+            this.设备编码,
+            this.地区,
+            this.工程编号,
             this.工程名称,
             this.工程类型,
             this.工程内容,
+            this.工程年份,
             this.计划金额,
             this.可研批复,
             this.初始批复,
@@ -91,18 +138,31 @@
             this.竣工时间,
             this.中标单位,
             this.形象进度,
+            this.合同金额,
+            this.实际发生额,
+            this.支付金额,
+            this.欠款金额,
+            this.质保金支付时间,
+            this.施工单位,
+            this.负责人,
+            this.联系方式,
+            this.分包金额,
+            this.支付金额1,
+            this.欠款金额1,
+            this.管理费,
+            this.是否挂账,
             this.收集整理,
             this.立卷检查,
             this.验收合格});
             this.dgvExcel.Location = new System.Drawing.Point(12, 12);
             this.dgvExcel.Name = "dgvExcel";
             this.dgvExcel.RowTemplate.Height = 23;
-            this.dgvExcel.Size = new System.Drawing.Size(860, 481);
+            this.dgvExcel.Size = new System.Drawing.Size(960, 581);
             this.dgvExcel.TabIndex = 3;
             // 
             // btnCheck
             // 
-            this.btnCheck.Location = new System.Drawing.Point(256, 499);
+            this.btnCheck.Location = new System.Drawing.Point(306, 599);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(120, 50);
             this.btnCheck.TabIndex = 6;
@@ -110,11 +170,81 @@
             this.btnCheck.UseVisualStyleBackColor = true;
             this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
+            // 房产名称
+            // 
+            this.房产名称.DataPropertyName = "房产名称";
+            this.房产名称.HeaderText = "房产名称";
+            this.房产名称.Name = "房产名称";
+            // 
+            // 房产编号
+            // 
+            this.房产编号.DataPropertyName = "房产编号";
+            this.房产编号.HeaderText = "房产编号";
+            this.房产编号.Name = "房产编号";
+            // 
+            // 建筑年代
+            // 
+            this.建筑年代.DataPropertyName = "建筑年代";
+            this.建筑年代.HeaderText = "建筑年代";
+            this.建筑年代.Name = "建筑年代";
+            // 
+            // 建筑层数
+            // 
+            this.建筑层数.DataPropertyName = "建筑层数";
+            this.建筑层数.HeaderText = "建筑层数";
+            this.建筑层数.Name = "建筑层数";
+            // 
+            // 建筑结构
+            // 
+            this.建筑结构.DataPropertyName = "建筑结构";
+            this.建筑结构.HeaderText = "建筑结构";
+            this.建筑结构.Name = "建筑结构";
+            // 
+            // 建筑用途
+            // 
+            this.建筑用途.DataPropertyName = "建筑用途";
+            this.建筑用途.HeaderText = "建筑用途";
+            this.建筑用途.Name = "建筑用途";
+            // 
+            // 资产原值
+            // 
+            this.资产原值.DataPropertyName = "资产原值";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.资产原值.DefaultCellStyle = dataGridViewCellStyle1;
+            this.资产原值.HeaderText = "资产原值";
+            this.资产原值.Name = "资产原值";
+            // 
+            // 资产编码
+            // 
+            this.资产编码.DataPropertyName = "资产编码";
+            this.资产编码.HeaderText = "资产编码";
+            this.资产编码.Name = "资产编码";
+            // 
+            // 设备编码
+            // 
+            this.设备编码.DataPropertyName = "设备编码";
+            this.设备编码.HeaderText = "设备编码";
+            this.设备编码.Name = "设备编码";
+            // 
+            // 地区
+            // 
+            this.地区.DataPropertyName = "地区";
+            this.地区.HeaderText = "地区";
+            this.地区.Name = "地区";
+            // 
+            // 工程编号
+            // 
+            this.工程编号.DataPropertyName = "工程编号";
+            this.工程编号.HeaderText = "工程编号";
+            this.工程编号.Name = "工程编号";
+            // 
             // 工程名称
             // 
             this.工程名称.DataPropertyName = "工程名称";
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.工程名称.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.工程名称.DefaultCellStyle = dataGridViewCellStyle2;
             this.工程名称.HeaderText = "工程名称";
             this.工程名称.Name = "工程名称";
             this.工程名称.Width = 300;
@@ -130,19 +260,26 @@
             // 工程内容
             // 
             this.工程内容.DataPropertyName = "工程内容";
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.工程内容.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.工程内容.DefaultCellStyle = dataGridViewCellStyle3;
             this.工程内容.HeaderText = "工程内容";
             this.工程内容.Name = "工程内容";
             this.工程内容.Width = 500;
+            // 
+            // 工程年份
+            // 
+            this.工程年份.DataPropertyName = "工程年份";
+            this.工程年份.HeaderText = "工程年份";
+            this.工程年份.Name = "工程年份";
             // 
             // 计划金额
             // 
             this.计划金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.计划金额.DataPropertyName = "计划金额";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "C2";
-            this.计划金额.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = "0";
+            this.计划金额.DefaultCellStyle = dataGridViewCellStyle4;
             this.计划金额.HeaderText = "计划金额";
             this.计划金额.Name = "计划金额";
             this.计划金额.Width = 90;
@@ -175,9 +312,9 @@
             // 
             this.开工时间.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.开工时间.DataPropertyName = "开工时间";
-            dataGridViewCellStyle4.Format = "yyyy-MM-dd";
-            dataGridViewCellStyle4.NullValue = "1900-01-01";
-            this.开工时间.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Format = "yyyy-MM-dd";
+            dataGridViewCellStyle5.NullValue = "1900-01-01";
+            this.开工时间.DefaultCellStyle = dataGridViewCellStyle5;
             this.开工时间.HeaderText = "开工时间";
             this.开工时间.Name = "开工时间";
             this.开工时间.Width = 90;
@@ -186,9 +323,9 @@
             // 
             this.竣工时间.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.竣工时间.DataPropertyName = "竣工时间";
-            dataGridViewCellStyle5.Format = "yyyy-MM-dd";
-            dataGridViewCellStyle5.NullValue = "1900-01-01";
-            this.竣工时间.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Format = "yyyy-MM-dd";
+            dataGridViewCellStyle6.NullValue = "1900-01-01";
+            this.竣工时间.DefaultCellStyle = dataGridViewCellStyle6;
             this.竣工时间.HeaderText = "竣工时间";
             this.竣工时间.Name = "竣工时间";
             this.竣工时间.Width = 90;
@@ -209,13 +346,126 @@
             this.形象进度.Name = "形象进度";
             this.形象进度.Width = 90;
             // 
+            // 合同金额
+            // 
+            this.合同金额.DataPropertyName = "合同金额";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.NullValue = "0";
+            this.合同金额.DefaultCellStyle = dataGridViewCellStyle7;
+            this.合同金额.HeaderText = "合同金额";
+            this.合同金额.Name = "合同金额";
+            // 
+            // 实际发生额
+            // 
+            this.实际发生额.DataPropertyName = "实际发生额";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = "0";
+            this.实际发生额.DefaultCellStyle = dataGridViewCellStyle8;
+            this.实际发生额.HeaderText = "实际发生额";
+            this.实际发生额.Name = "实际发生额";
+            // 
+            // 支付金额
+            // 
+            this.支付金额.DataPropertyName = "支付金额";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = "0";
+            this.支付金额.DefaultCellStyle = dataGridViewCellStyle9;
+            this.支付金额.HeaderText = "支付金额";
+            this.支付金额.Name = "支付金额";
+            // 
+            // 欠款金额
+            // 
+            this.欠款金额.DataPropertyName = "欠款金额";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = "0";
+            this.欠款金额.DefaultCellStyle = dataGridViewCellStyle10;
+            this.欠款金额.HeaderText = "欠款金额";
+            this.欠款金额.Name = "欠款金额";
+            // 
+            // 质保金支付时间
+            // 
+            this.质保金支付时间.DataPropertyName = "质保金支付时间";
+            dataGridViewCellStyle11.Format = "yyyy-MM-dd";
+            dataGridViewCellStyle11.NullValue = "1900-01-01";
+            this.质保金支付时间.DefaultCellStyle = dataGridViewCellStyle11;
+            this.质保金支付时间.HeaderText = "质保金支付时间";
+            this.质保金支付时间.Name = "质保金支付时间";
+            // 
+            // 施工单位
+            // 
+            this.施工单位.DataPropertyName = "施工单位";
+            this.施工单位.HeaderText = "施工单位";
+            this.施工单位.Name = "施工单位";
+            // 
+            // 负责人
+            // 
+            this.负责人.DataPropertyName = "负责人";
+            this.负责人.HeaderText = "负责人";
+            this.负责人.Name = "负责人";
+            // 
+            // 联系方式
+            // 
+            this.联系方式.DataPropertyName = "联系方式";
+            this.联系方式.HeaderText = "联系方式";
+            this.联系方式.Name = "联系方式";
+            // 
+            // 分包金额
+            // 
+            this.分包金额.DataPropertyName = "分包金额";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.Format = "C2";
+            dataGridViewCellStyle12.NullValue = "0";
+            this.分包金额.DefaultCellStyle = dataGridViewCellStyle12;
+            this.分包金额.HeaderText = "分包金额";
+            this.分包金额.Name = "分包金额";
+            // 
+            // 支付金额1
+            // 
+            this.支付金额1.DataPropertyName = "支付金额1";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle13.Format = "C2";
+            dataGridViewCellStyle13.NullValue = "0";
+            this.支付金额1.DefaultCellStyle = dataGridViewCellStyle13;
+            this.支付金额1.HeaderText = "支付金额";
+            this.支付金额1.Name = "支付金额1";
+            // 
+            // 欠款金额1
+            // 
+            this.欠款金额1.DataPropertyName = "欠款金额1";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.Format = "C2";
+            dataGridViewCellStyle14.NullValue = "0";
+            this.欠款金额1.DefaultCellStyle = dataGridViewCellStyle14;
+            this.欠款金额1.HeaderText = "欠款金额";
+            this.欠款金额1.Name = "欠款金额1";
+            // 
+            // 管理费
+            // 
+            this.管理费.DataPropertyName = "管理费";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.Format = "C2";
+            dataGridViewCellStyle15.NullValue = "0";
+            this.管理费.DefaultCellStyle = dataGridViewCellStyle15;
+            this.管理费.HeaderText = "管理费";
+            this.管理费.Name = "管理费";
+            // 
+            // 是否挂账
+            // 
+            this.是否挂账.DataPropertyName = "是否挂账";
+            this.是否挂账.HeaderText = "是否挂账";
+            this.是否挂账.Name = "是否挂账";
+            // 
             // 收集整理
             // 
             this.收集整理.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.收集整理.DataPropertyName = "收集整理";
             this.收集整理.HeaderText = "收集整理";
             this.收集整理.Name = "收集整理";
-            this.收集整理.Width = 90;
+            this.收集整理.Width = 70;
             // 
             // 立卷检查
             // 
@@ -223,7 +473,7 @@
             this.立卷检查.DataPropertyName = "立卷检查";
             this.立卷检查.HeaderText = "立卷检查";
             this.立卷检查.Name = "立卷检查";
-            this.立卷检查.Width = 90;
+            this.立卷检查.Width = 70;
             // 
             // 验收合格
             // 
@@ -231,13 +481,13 @@
             this.验收合格.DataPropertyName = "验收合格";
             this.验收合格.HeaderText = "验收合格";
             this.验收合格.Name = "验收合格";
-            this.验收合格.Width = 90;
+            this.验收合格.Width = 70;
             // 
             // frmProjects_Import
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnImport);
@@ -263,9 +513,21 @@
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.DataGridView dgvExcel;
         private System.Windows.Forms.Button btnCheck;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 房产名称;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 房产编号;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 建筑年代;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 建筑层数;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 建筑结构;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 建筑用途;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 资产原值;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 资产编码;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 设备编码;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 地区;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 工程编号;
         private System.Windows.Forms.DataGridViewTextBoxColumn 工程名称;
         private System.Windows.Forms.DataGridViewTextBoxColumn 工程类型;
         private System.Windows.Forms.DataGridViewTextBoxColumn 工程内容;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 工程年份;
         private System.Windows.Forms.DataGridViewTextBoxColumn 计划金额;
         private System.Windows.Forms.DataGridViewTextBoxColumn 可研批复;
         private System.Windows.Forms.DataGridViewTextBoxColumn 初始批复;
@@ -274,6 +536,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 竣工时间;
         private System.Windows.Forms.DataGridViewTextBoxColumn 中标单位;
         private System.Windows.Forms.DataGridViewTextBoxColumn 形象进度;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 合同金额;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 实际发生额;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 支付金额;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 欠款金额;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 质保金支付时间;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 施工单位;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 负责人;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 联系方式;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 分包金额;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 支付金额1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 欠款金额1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 管理费;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 是否挂账;
         private System.Windows.Forms.DataGridViewTextBoxColumn 收集整理;
         private System.Windows.Forms.DataGridViewTextBoxColumn 立卷检查;
         private System.Windows.Forms.DataGridViewTextBoxColumn 验收合格;

@@ -61,112 +61,331 @@ namespace 后勤工程管理系统
             {
                 dgvExcel.Rows[i].DefaultCellStyle.BackColor = Color.White;
 
-                //Name
+                //房产名称
                 if (dgvExcel.Rows[i].Cells[0].Value.ToString().Length > 50)
                 {
                     dgvExcel.Rows[i].Cells[0].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                //Types_id
-                if (Class.DB_Works.DataSetCmd($"SELECT id FROM Types WHERE Name = '{dgvExcel.Rows[i].Cells[1].Value}'").Tables[0].Rows.Count == 0)
+                //房产编号
+                if (dgvExcel.Rows[i].Cells[1].Value.ToString().Length > 50)
                 {
                     dgvExcel.Rows[i].Cells[1].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                //Detail
-
-                //Amount
+                //建筑年代
                 try
                 {
-                    Convert.ToDecimal(dgvExcel.Rows[i].Cells[3].Value);
+                    Convert.ToInt16(dgvExcel.Rows[i].Cells[2].Value);
                 }
                 catch
+                {
+                    dgvExcel.Rows[i].Cells[2].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //建筑层数
+                if (dgvExcel.Rows[i].Cells[3].Value.ToString().Length > 50)
                 {
                     dgvExcel.Rows[i].Cells[3].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                //Developing_Reply
+                //建筑结构
                 if (dgvExcel.Rows[i].Cells[4].Value.ToString().Length > 50)
                 {
                     dgvExcel.Rows[i].Cells[4].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                //Initial_Reply
+                //建筑用途
                 if (dgvExcel.Rows[i].Cells[5].Value.ToString().Length > 50)
                 {
                     dgvExcel.Rows[i].Cells[5].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                //Plan_Code
-                if (dgvExcel.Rows[i].Cells[6].Value.ToString().Length > 50)
+                //资产原值
+                try
+                {
+                    Convert.ToDecimal(dgvExcel.Rows[i].Cells[6].Value);
+                }
+                catch
                 {
                     dgvExcel.Rows[i].Cells[6].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                //Begin_Date
-                try
-                {
-                    Convert.ToDateTime(dgvExcel.Rows[i].Cells[7].Value);
-                }
-                catch
+                //资产编码
+                if (dgvExcel.Rows[i].Cells[7].Value.ToString().Length > 50)
                 {
                     dgvExcel.Rows[i].Cells[7].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                //End_Date
-                try
-                {
-                    Convert.ToDateTime(dgvExcel.Rows[i].Cells[8].Value);
-                }
-                catch
+                //设备编码
+                if (dgvExcel.Rows[i].Cells[8].Value.ToString().Length > 50)
                 {
                     dgvExcel.Rows[i].Cells[8].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                //Tenders_id
-                if (Class.DB_Works.DataSetCmd($"SELECT id FROM Tenders WHERE Name ='{dgvExcel.Rows[i].Cells[9].Value}'").Tables[0].Rows.Count == 0)
+                //地区
+                if (dgvExcel.Rows[i].Cells[9].Value.ToString().Length > 50)
                 {
                     dgvExcel.Rows[i].Cells[9].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                //Progress
+                //工程编号
                 if (dgvExcel.Rows[i].Cells[10].Value.ToString().Length > 50)
                 {
                     dgvExcel.Rows[i].Cells[10].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                //Collect_Tag
+                //工程名称
                 if (dgvExcel.Rows[i].Cells[11].Value.ToString().Length > 50)
                 {
                     dgvExcel.Rows[i].Cells[11].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                //Check_Tag
-                if (dgvExcel.Rows[i].Cells[12].Value.ToString().Length > 50)
+                //工程类型
+                if (Class.DB_Works.DataSetCmd($"SELECT id FROM Types WHERE Name = '{dgvExcel.Rows[i].Cells[1].Value}'").Tables[0].Rows.Count == 0)
                 {
                     dgvExcel.Rows[i].Cells[12].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                //Grade_Tag
-                if (dgvExcel.Rows[i].Cells[13].Value.ToString().Length > 50)
+                //工程内容
+
+                //工程年份
+                if (dgvExcel.Rows[i].Cells[14].Value.ToString().Length > 50)
                 {
-                    dgvExcel.Rows[i].Cells[13].Style.BackColor = Color.Red;
+                    dgvExcel.Rows[i].Cells[14].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
 
-                if (Class.DB_Works.DataSetCmd($"SELECT Projects.id FROM Projects LEFT JOIN Types ON Types.id = Projects.Types_id WHERE Name = '{dgvExcel.Rows[i].Cells[0].Value}' AND Types.Name = '{dgvExcel.Rows[i].Cells[1].Value}' AND Projects_id IN (SELECT Types_id FROM Limits WHERE Users_id = {AppSetter.Current_User.id})").Tables[0].Rows.Count > 0)
+                //计划金额
+                try
+                {
+                    Convert.ToDecimal(dgvExcel.Rows[i].Cells[15].Value);
+                }
+                catch
+                {
+                    dgvExcel.Rows[i].Cells[15].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //可研批复
+                if (dgvExcel.Rows[i].Cells[16].Value.ToString().Length > 50)
+                {
+                    dgvExcel.Rows[i].Cells[16].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //初始批复
+                if (dgvExcel.Rows[i].Cells[17].Value.ToString().Length > 50)
+                {
+                    dgvExcel.Rows[i].Cells[17].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //计划文号
+                if (dgvExcel.Rows[i].Cells[18].Value.ToString().Length > 50)
+                {
+                    dgvExcel.Rows[i].Cells[18].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //开工时间
+                try
+                {
+                    Convert.ToDateTime(dgvExcel.Rows[i].Cells[19].Value);
+                }
+                catch
+                {
+                    dgvExcel.Rows[i].Cells[19].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //竣工时间
+                try
+                {
+                    Convert.ToDateTime(dgvExcel.Rows[i].Cells[20].Value);
+                }
+                catch
+                {
+                    dgvExcel.Rows[i].Cells[20].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //中标单位
+                if (Class.DB_Works.DataSetCmd($"SELECT id FROM Tenders WHERE Name ='{dgvExcel.Rows[i].Cells[21].Value}'").Tables[0].Rows.Count == 0)
+                {
+                    dgvExcel.Rows[i].Cells[21].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //形象进度
+                if (dgvExcel.Rows[i].Cells[22].Value.ToString().Length > 50)
+                {
+                    dgvExcel.Rows[i].Cells[22].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //合同金额
+                try
+                {
+                    Convert.ToDecimal(dgvExcel.Rows[i].Cells[23].Value);
+                }
+                catch
+                {
+                    dgvExcel.Rows[i].Cells[23].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //实际发生额
+                try
+                {
+                    Convert.ToDecimal(dgvExcel.Rows[i].Cells[24].Value);
+                }
+                catch
+                {
+                    dgvExcel.Rows[i].Cells[24].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //支付金额
+                try
+                {
+                    Convert.ToDecimal(dgvExcel.Rows[i].Cells[25].Value);
+                }
+                catch
+                {
+                    dgvExcel.Rows[i].Cells[25].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //欠款金额
+                try
+                {
+                    Convert.ToDecimal(dgvExcel.Rows[i].Cells[26].Value);
+                }
+                catch
+                {
+                    dgvExcel.Rows[i].Cells[26].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //质保金支付时间
+                try
+                {
+                    Convert.ToDateTime(dgvExcel.Rows[i].Cells[27].Value);
+                }
+                catch
+                {
+                    dgvExcel.Rows[i].Cells[27].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //施工单位
+                if (dgvExcel.Rows[i].Cells[28].Value.ToString().Length > 50)
+                {
+                    dgvExcel.Rows[i].Cells[28].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //负责人
+                if (dgvExcel.Rows[i].Cells[29].Value.ToString().Length > 50)
+                {
+                    dgvExcel.Rows[i].Cells[29].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //联系方式
+                if (dgvExcel.Rows[i].Cells[30].Value.ToString().Length > 50)
+                {
+                    dgvExcel.Rows[i].Cells[30].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //分包金额
+                try
+                {
+                    Convert.ToDecimal(dgvExcel.Rows[i].Cells[31].Value);
+                }
+                catch
+                {
+                    dgvExcel.Rows[i].Cells[31].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //支付金额1
+                try
+                {
+                    Convert.ToDecimal(dgvExcel.Rows[i].Cells[32].Value);
+                }
+                catch
+                {
+                    dgvExcel.Rows[i].Cells[32].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //欠款金额1
+                try
+                {
+                    Convert.ToDecimal(dgvExcel.Rows[i].Cells[33].Value);
+                }
+                catch
+                {
+                    dgvExcel.Rows[i].Cells[33].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //管理费
+                try
+                {
+                    Convert.ToDecimal(dgvExcel.Rows[i].Cells[34].Value);
+                }
+                catch
+                {
+                    dgvExcel.Rows[i].Cells[34].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //是否挂账
+                if (dgvExcel.Rows[i].Cells[35].Value.ToString().Length > 5)
+                {
+                    dgvExcel.Rows[i].Cells[35].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //收集整理
+                if (dgvExcel.Rows[i].Cells[36].Value.ToString().Length > 50)
+                {
+                    dgvExcel.Rows[i].Cells[36].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //立卷检查
+                if (dgvExcel.Rows[i].Cells[37].Value.ToString().Length > 50)
+                {
+                    dgvExcel.Rows[i].Cells[37].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                //验收合格
+                if (dgvExcel.Rows[i].Cells[38].Value.ToString().Length > 50)
+                {
+                    dgvExcel.Rows[i].Cells[38].Style.BackColor = Color.Red;
+                    btnImport.Enabled = false;
+                }
+
+                if (Class.DB_Works.DataSetCmd($"SELECT Projects.id FROM Projects LEFT JOIN Types ON Types.id = Projects.Types_id WHERE Projects.Name = '{dgvExcel.Rows[i].Cells[0].Value}' AND Types.Name = '{dgvExcel.Rows[i].Cells[1].Value}' AND Projects.id IN (SELECT Types_id FROM Limits WHERE Users_id = {AppSetter.Current_User.id})").Tables[0].Rows.Count > 0)
                 {
                     dgvExcel.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                     btnImport.Enabled = false;

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btnPremises_Export = new System.Windows.Forms.Button();
@@ -690,6 +691,9 @@
             // 
             this.建筑面积.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.建筑面积.DataPropertyName = "建筑面积";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.建筑面积.DefaultCellStyle = dataGridViewCellStyle1;
             this.建筑面积.HeaderText = "建筑面积";
             this.建筑面积.Name = "建筑面积";
             this.建筑面积.ReadOnly = true;
@@ -708,9 +712,10 @@
             // 
             this.资产原值.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.资产原值.DataPropertyName = "资产原值";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            this.资产原值.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.资产原值.DefaultCellStyle = dataGridViewCellStyle2;
             this.资产原值.HeaderText = "资产原值";
             this.资产原值.Name = "资产原值";
             this.资产原值.ReadOnly = true;

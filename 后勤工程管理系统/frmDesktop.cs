@@ -368,20 +368,7 @@ namespace 后勤工程管理系统
 
                 if (dt != null)
                 {
-                    if (dt.Columns.Count == 11)
-                    {
-                        frmPremises_Import frm = new frmPremises_Import
-                        {
-                            dt = dt
-                        };
-                        frm.ShowDialog();
-
-                        if (frm.DialogResult == DialogResult.Yes)
-                        {
-                            btnReload_Click(this, e);
-                        }
-                    }
-                    else if (dt.Columns.Count == 14)
+                    if (dt.Columns.Count == 39)
                     {
                         frmProjects_Import frm = new frmProjects_Import
                         {
