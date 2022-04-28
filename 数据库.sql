@@ -71,9 +71,9 @@ CREATE TABLE IF NOT EXISTS `logs` (
   `Detail` varchar(50) NOT NULL DEFAULT '' COMMENT '详情',
   `DateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '操作时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=187 DEFAULT CHARSET=utf8mb3 COMMENT='操作日志';
+) ENGINE=InnoDB AUTO_INCREMENT=206 DEFAULT CHARSET=utf8mb3 COMMENT='操作日志';
 
--- 正在导出表  hq_mana.logs 的数据：~176 rows (大约)
+-- 正在导出表  hq_mana.logs 的数据：~193 rows (大约)
 /*!40000 ALTER TABLE `logs` DISABLE KEYS */;
 REPLACE INTO `logs` (`id`, `Users_id`, `Type`, `Detail`, `DateTime`) VALUES
 	(1, 0, '删除', '【删除房产信息】房产名称【国网辽宁鞍山海城供电分公司八里供电所】，房产编码【5708572232】', '2022-03-25 02:41:50'),
@@ -261,7 +261,26 @@ REPLACE INTO `logs` (`id`, `Users_id`, `Type`, `Detail`, `DateTime`) VALUES
 	(183, 1, '导出', '【导出房产信息】导出房产数据【4】条', '2022-04-26 13:35:45'),
 	(184, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-26 13:39:49'),
 	(185, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-26 13:45:34'),
-	(186, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-26 13:46:07');
+	(186, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-26 13:46:07'),
+	(187, 0, '导出', '【导出概要信息】导出概要数据【0】条', '2022-04-27 13:37:40'),
+	(188, 0, '导出', '【导出概要信息】导出概要数据【0】条', '2022-04-27 13:39:08'),
+	(189, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-27 13:39:26'),
+	(190, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-27 13:40:14'),
+	(191, 1, '登录', '【登录信息】admin', '2022-04-27 13:48:53'),
+	(192, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-27 14:13:55'),
+	(193, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-27 14:14:02'),
+	(194, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-27 14:19:33'),
+	(195, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-27 15:08:15'),
+	(196, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-27 15:24:11'),
+	(197, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-27 15:34:23'),
+	(198, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-27 15:34:34'),
+	(199, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-27 15:38:28'),
+	(200, 0, '导出', '【导出概要信息】导出概要数据【4】条', '2022-04-27 15:48:59'),
+	(201, 1, '登录', '【登录信息】admin', '2022-04-27 16:04:10'),
+	(202, 1, '登录', '【登录信息】admin', '2022-04-27 16:05:56'),
+	(203, 1, '登录', '【登录信息】admin', '2022-04-27 16:06:55'),
+	(204, 1, '登录', '【登录信息】admin', '2022-04-27 16:07:32'),
+	(205, 1, '登录', '【登录信息】admin', '2022-04-27 16:08:33');
 /*!40000 ALTER TABLE `logs` ENABLE KEYS */;
 
 -- 导出  表 hq_mana.models 结构
@@ -443,9 +462,11 @@ DROP TABLE IF EXISTS `projects`;
 CREATE TABLE IF NOT EXISTS `projects` (
   `id` int NOT NULL AUTO_INCREMENT,
   `Premises_id` int NOT NULL DEFAULT '0',
+  `OrderID` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '工程名称',
   `Types_id` int NOT NULL DEFAULT '0' COMMENT '工程类型',
   `Detail` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '工程内容',
+  `Date` varchar(50) NOT NULL DEFAULT '',
   `Amount` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '计划金额',
   `Developing_Reply` varchar(50) NOT NULL DEFAULT '' COMMENT '可研批复',
   `Initial_Reply` varchar(50) NOT NULL DEFAULT '' COMMENT '初始批复',
@@ -457,6 +478,7 @@ CREATE TABLE IF NOT EXISTS `projects` (
   `Collect_Tag` varchar(50) NOT NULL DEFAULT '' COMMENT '收集整理',
   `Check_Tag` varchar(50) NOT NULL DEFAULT '' COMMENT '立卷检查',
   `Grade_Tag` varchar(50) NOT NULL DEFAULT '' COMMENT '验收合格',
+  `Remark` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `Amount_Order` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '合同金额',
   `Amount_Reality` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '实际发生金额',
   `Amount_Pay` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '支付金额',
@@ -464,14 +486,13 @@ CREATE TABLE IF NOT EXISTS `projects` (
   `Warranty` date NOT NULL DEFAULT '1900-01-01' COMMENT '质保金支付时间',
   `Users_id` int NOT NULL DEFAULT '0' COMMENT '用户编号',
   `DateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '操作时间',
-  `Remark` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COMMENT='工程项目';
 
 -- 正在导出表  hq_mana.projects 的数据：~1 rows (大约)
 /*!40000 ALTER TABLE `projects` DISABLE KEYS */;
-REPLACE INTO `projects` (`id`, `Premises_id`, `Name`, `Types_id`, `Detail`, `Amount`, `Developing_Reply`, `Initial_Reply`, `Plan_Code`, `Begin_Date`, `End_Date`, `Tenders_id`, `Progress`, `Collect_Tag`, `Check_Tag`, `Grade_Tag`, `Amount_Order`, `Amount_Reality`, `Amount_Pay`, `Amount_Arrear`, `Warranty`, `Users_id`, `DateTime`, `Remark`) VALUES
-	(3, 1, '国网辽宁鞍山车辆运输服务部综合楼装饰装修分系统4层、5层停车场改造', 1, '该项目主要内容及工程量：根据使用单位需求利用现有停车场改为办公用房使用，并对该房间内进行重新装修，装修面积2752㎡。砌筑墙体130.8m³（200厚轻集料混凝土砌块）；地面铺砖2350㎡；橡胶板地面226平方米；重新刮大白、刷乳胶漆508㎡；室内墙砖铺贴546㎡；安装铝板吊顶2350㎡；安装内门65樘；喷淋支管（上喷改下喷）126米；喷淋头180个；感烟探测器38个；灯具130套；散热器更换65组；安装暖气罩215㎡；窗台板18.55㎡；更衣柜40米；肯德基门6㎡；楼内线路整体改造；增设电暖气40组等。', 0.00, '', '', '', '2022-04-22', '1990-01-01', 1, '', '未完成', '未完成', '未完成', 0.00, 0.00, 0.00, 0.00, '2022-03-22', 0, '2022-03-25 09:37:45', '');
+REPLACE INTO `projects` (`id`, `Premises_id`, `OrderID`, `Name`, `Types_id`, `Detail`, `Date`, `Amount`, `Developing_Reply`, `Initial_Reply`, `Plan_Code`, `Begin_Date`, `End_Date`, `Tenders_id`, `Progress`, `Collect_Tag`, `Check_Tag`, `Grade_Tag`, `Remark`, `Amount_Order`, `Amount_Reality`, `Amount_Pay`, `Amount_Arrear`, `Warranty`, `Users_id`, `DateTime`) VALUES
+	(3, 1, '0', '国网辽宁鞍山车辆运输服务部综合楼装饰装修分系统4层、5层停车场改造', 1, '该项目主要内容及工程量：根据使用单位需求利用现有停车场改为办公用房使用，并对该房间内进行重新装修，装修面积2752㎡。砌筑墙体130.8m³（200厚轻集料混凝土砌块）；地面铺砖2350㎡；橡胶板地面226平方米；重新刮大白、刷乳胶漆508㎡；室内墙砖铺贴546㎡；安装铝板吊顶2350㎡；安装内门65樘；喷淋支管（上喷改下喷）126米；喷淋头180个；感烟探测器38个；灯具130套；散热器更换65组；安装暖气罩215㎡；窗台板18.55㎡；更衣柜40米；肯德基门6㎡；楼内线路整体改造；增设电暖气40组等。', '', 0.00, '', '', '', '2022-04-22', '1990-01-01', 1, '', '未完成', '未完成', '未完成', '', 0.00, 0.00, 0.00, 0.00, '2022-03-22', 0, '2022-03-25 09:37:45');
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 
 -- 导出  表 hq_mana.settlements 结构

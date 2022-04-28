@@ -39,8 +39,10 @@ namespace 后勤工程管理系统
         {
             btnImport.Enabled = true;
 
-            for (int i = 0; i < dgvExcel.Rows.Count - 1; i++)
+            for (int i = 0; i < dgvExcel.Rows.Count; i++)
             {
+                dgvExcel.Rows[i].DefaultCellStyle.BackColor = Color.White;
+
                 //Name
                 if (dgvExcel.Rows[i].Cells[0].Value.ToString().Length > 50)
                 {
@@ -58,7 +60,7 @@ namespace 后勤工程管理系统
                 //Date
                 try
                 {
-                    Convert.ToDateTime(dgvExcel.Rows[i].Cells[2].Value);
+                    Convert.ToInt16(dgvExcel.Rows[i].Cells[2].Value);
                 }
                 catch
                 {
@@ -140,7 +142,7 @@ namespace 后勤工程管理系统
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < dgvExcel.Rows.Count - 1; i++)
+            for (int i = 0; i < dgvExcel.Rows.Count; i++)
             {
                 Class.DB_Works.ExecuteCmd($"INSERT INTO Premises(Name, Code, Address, Date, Levels, Structure, Dimension, Purpose, Assets_Amount, Assets_Code, Device_Code, Region, Users_id, DateTime) VALUES('{dgvExcel.Rows[i].Cells[0].Value}', '{dgvExcel.Rows[i].Cells[1].Value}', '', '{dgvExcel.Rows[i].Cells[2].Value}', '{dgvExcel.Rows[i].Cells[3].Value}', '{dgvExcel.Rows[i].Cells[4].Value}', {dgvExcel.Rows[i].Cells[5].Value}, '{dgvExcel.Rows[i].Cells[6].Value}', {dgvExcel.Rows[i].Cells[7].Value}, '{dgvExcel.Rows[i].Cells[8].Value}', '{dgvExcel.Rows[i].Cells[9].Value}', '{dgvExcel.Rows[i].Cells[10].Value}', {AppSetter.Current_User.id}, NOW())");
             }

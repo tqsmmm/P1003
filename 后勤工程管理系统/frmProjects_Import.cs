@@ -37,7 +37,7 @@ namespace 后勤工程管理系统
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < dgvExcel.Rows.Count - 1; i++)
+            for (int i = 0; i < dgvExcel.Rows.Count; i++)
             {
                 int Types_id = Convert.ToInt16(Class.DB_Works.DataSetCmd($"SELECT id FROM Types WHERE Name = '{dgvExcel.Rows[i].Cells[1].Value}'").Tables[0].Rows[0][0]);
 
@@ -57,8 +57,10 @@ namespace 后勤工程管理系统
         {
             btnImport.Enabled = true;
 
-            for (int i = 0; i < dgvExcel.Rows.Count - 1; i++)
+            for (int i = 0; i < dgvExcel.Rows.Count; i++)
             {
+                dgvExcel.Rows[i].DefaultCellStyle.BackColor = Color.White;
+
                 //Name
                 if (dgvExcel.Rows[i].Cells[0].Value.ToString().Length > 50)
                 {

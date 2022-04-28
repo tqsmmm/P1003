@@ -35,7 +35,6 @@ namespace 后勤工程管理系统.Class
             }
             else
             {
-                //MessageBox.Show("返回文件路径失败");
                 return null;
             }
         }

@@ -294,17 +294,20 @@ namespace 后勤工程管理系统
             {
                 DataTable dt = Class.Excel.ExcelToTable(strExcel);
 
-                if (dt.Columns.Count == 11)
+                if (dt != null)
                 {
-                    frmPremises_Import frm = new frmPremises_Import
+                    if (dt.Columns.Count == 11)
                     {
-                        dt = dt
-                    };
-                    frm.ShowDialog();
+                        frmPremises_Import frm = new frmPremises_Import
+                        {
+                            dt = dt
+                        };
+                        frm.ShowDialog();
 
-                    if (frm.DialogResult == DialogResult.Yes)
-                    {
-                        btnPremises_Reload_Click(this, e);
+                        if (frm.DialogResult == DialogResult.Yes)
+                        {
+                            btnPremises_Reload_Click(this, e);
+                        }
                     }
                 }
             }

@@ -366,35 +366,38 @@ namespace 后勤工程管理系统
             {
                 DataTable dt = Class.Excel.ExcelToTable(strExcel);
 
-                if (dt.Columns.Count == 11)
+                if (dt != null)
                 {
-                    frmPremises_Import frm = new frmPremises_Import
+                    if (dt.Columns.Count == 11)
                     {
-                        dt = dt
-                    };
-                    frm.ShowDialog();
+                        frmPremises_Import frm = new frmPremises_Import
+                        {
+                            dt = dt
+                        };
+                        frm.ShowDialog();
 
-                    if (frm.DialogResult == DialogResult.Yes)
-                    {
-                        btnReload_Click(this, e);
+                        if (frm.DialogResult == DialogResult.Yes)
+                        {
+                            btnReload_Click(this, e);
+                        }
                     }
-                }
-                else if (dt.Columns.Count == 14)
-                {
-                    frmProjects_Import frm = new frmProjects_Import
+                    else if (dt.Columns.Count == 14)
                     {
-                        dt = dt
-                    };
-                    frm.ShowDialog();
+                        frmProjects_Import frm = new frmProjects_Import
+                        {
+                            dt = dt
+                        };
+                        frm.ShowDialog();
 
-                    if (frm.DialogResult == DialogResult.Yes)
-                    {
-                        btnReload_Click(this, e);
+                        if (frm.DialogResult == DialogResult.Yes)
+                        {
+                            btnReload_Click(this, e);
+                        }
                     }
-                }
-                else
-                {
-                    Class.Public.Sys_MsgBox("选择的导入文件错误！");
+                    else
+                    {
+                        Class.Public.Sys_MsgBox("选择的导入文件错误！");
+                    }
                 }
             }
         }

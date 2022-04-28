@@ -31,9 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPremises_Import));
             this.dgvExcel = new System.Windows.Forms.DataGridView();
-            this.btnImport = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnCheck = new System.Windows.Forms.Button();
             this.房产名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.房产编码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.建筑年代 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +42,9 @@
             this.资产编码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.设备编码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.地区 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnCheck = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExcel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,38 +66,8 @@
             this.dgvExcel.Location = new System.Drawing.Point(12, 12);
             this.dgvExcel.Name = "dgvExcel";
             this.dgvExcel.RowTemplate.Height = 23;
-            this.dgvExcel.Size = new System.Drawing.Size(860, 481);
+            this.dgvExcel.Size = new System.Drawing.Size(960, 581);
             this.dgvExcel.TabIndex = 0;
-            // 
-            // btnImport
-            // 
-            this.btnImport.Enabled = false;
-            this.btnImport.Location = new System.Drawing.Point(382, 499);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(120, 50);
-            this.btnImport.TabIndex = 1;
-            this.btnImport.Text = "导入";
-            this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(508, 499);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(120, 50);
-            this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "取消";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnCheck
-            // 
-            this.btnCheck.Location = new System.Drawing.Point(256, 499);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(120, 50);
-            this.btnCheck.TabIndex = 3;
-            this.btnCheck.Text = "检查";
-            this.btnCheck.UseVisualStyleBackColor = true;
             // 
             // 房产名称
             // 
@@ -190,11 +160,42 @@
             this.地区.Name = "地区";
             this.地区.Width = 62;
             // 
+            // btnImport
+            // 
+            this.btnImport.Enabled = false;
+            this.btnImport.Location = new System.Drawing.Point(432, 599);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(120, 50);
+            this.btnImport.TabIndex = 1;
+            this.btnImport.Text = "导入";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(558, 599);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(120, 50);
+            this.btnCancel.TabIndex = 2;
+            this.btnCancel.Text = "取消";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.Location = new System.Drawing.Point(306, 599);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(120, 50);
+            this.btnCheck.TabIndex = 3;
+            this.btnCheck.Text = "检查";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            // 
             // frmPremises_Import
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnImport);

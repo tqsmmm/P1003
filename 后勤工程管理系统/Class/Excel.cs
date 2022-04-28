@@ -17,73 +17,81 @@ namespace 后勤工程管理系统.Class
     {
         public static DataTable ExcelToTable(string file)
         {
-            DataTable dt = new DataTable();
-            IWorkbook workbook;
-            string fileExt = Path.GetExtension(file).ToLower();
-
-            using (FileStream fs = new FileStream(file, FileMode.Open, FileAccess.Read))
+            try
             {
-                switch (fileExt)
+                DataTable dt = new DataTable();
+                IWorkbook workbook;
+                string fileExt = Path.GetExtension(file).ToLower();
+
+                using (FileStream fs = new FileStream(file, FileMode.Open, FileAccess.Read))
                 {
-                    case ".xlsx":
-                        workbook = new XSSFWorkbook(fs); break;
-                    case ".xls":
-                        workbook = new HSSFWorkbook(fs); break;
-                    default:
-                        workbook = null; break;
-                }
-
-                if (workbook == null) 
-                {
-                    return null;
-                }
-
-                ISheet sheet = workbook.GetSheetAt(0);
-
-                //表头  
-                IRow header = sheet.GetRow(sheet.FirstRowNum);
-                List<int> columns = new List<int>();
-
-                for (int i = 0; i < header.LastCellNum; i++)
-                {
-                    object obj = GetValueType(header.GetCell(i));
-
-                    if (obj == null || obj.ToString() == string.Empty)
+                    switch (fileExt)
                     {
-                        dt.Columns.Add(new DataColumn("Columns" + i.ToString()));
+                        case ".xlsx":
+                            workbook = new XSSFWorkbook(fs); break;
+                        case ".xls":
+                            workbook = new HSSFWorkbook(fs); break;
+                        default:
+                            workbook = null; break;
                     }
-                    else
+
+                    if (workbook == null)
                     {
-                        dt.Columns.Add(new DataColumn(obj.ToString()));
-                    } 
+                        return null;
+                    }
 
-                    columns.Add(i);
-                }
+                    ISheet sheet = workbook.GetSheetAt(0);
 
-                //数据  
-                for (int i = sheet.FirstRowNum + 1; i <= sheet.LastRowNum; i++)
-                {
-                    DataRow dr = dt.NewRow();
-                    bool hasValue = false;
+                    //表头  
+                    IRow header = sheet.GetRow(sheet.FirstRowNum);
+                    List<int> columns = new List<int>();
 
-                    foreach (int j in columns)
+                    for (int i = 0; i < header.LastCellNum; i++)
                     {
-                        dr[j] = GetValueType(sheet.GetRow(i).GetCell(j));
+                        object obj = GetValueType(header.GetCell(i));
 
-                        if (dr[j] != null && dr[j].ToString() != string.Empty)
+                        if (obj == null || obj.ToString() == string.Empty)
                         {
-                            hasValue = true;
+                            dt.Columns.Add(new DataColumn("Columns" + i.ToString()));
+                        }
+                        else
+                        {
+                            dt.Columns.Add(new DataColumn(obj.ToString()));
+                        }
+
+                        columns.Add(i);
+                    }
+
+                    //数据  
+                    for (int i = sheet.FirstRowNum + 1; i <= sheet.LastRowNum; i++)
+                    {
+                        DataRow dr = dt.NewRow();
+                        bool hasValue = false;
+
+                        foreach (int j in columns)
+                        {
+                            dr[j] = GetValueType(sheet.GetRow(i).GetCell(j));
+
+                            if (dr[j] != null && dr[j].ToString() != string.Empty)
+                            {
+                                hasValue = true;
+                            }
+                        }
+
+                        if (hasValue)
+                        {
+                            dt.Rows.Add(dr);
                         }
                     }
-
-                    if (hasValue)
-                    {
-                        dt.Rows.Add(dr);
-                    }
                 }
-            }
 
-            return dt;
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                Public.Sys_MsgBox(ex.Message);
+                return null;
+            }
         }
 
         /// <summary>
