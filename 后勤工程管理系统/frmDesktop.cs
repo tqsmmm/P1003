@@ -350,11 +350,12 @@ namespace 后勤工程管理系统
                 dt_new.Columns.Remove("Checked");
                 dt_new.Columns.Remove("序号");
 
-                Class.Excel.TableToExcel(dt_new, strExcel);
+                if (Class.Excel.TableToExcel(dt_new, strExcel))
+                {
+                    Class.DB_Works.ExecuteCmd($"INSERT INTO Logs(Users_id, Type, Detail, DateTime) VALUES({AppSetter.Current_User.id}, '导出', '【导出概要信息】导出概要数据【{dgvList.Rows.Count}】条', NOW())");
 
-                Class.DB_Works.ExecuteCmd($"INSERT INTO Logs(Users_id, Type, Detail, DateTime) VALUES({AppSetter.Current_User.id}, '导出', '【导出概要信息】导出概要数据【{dgvList.Rows.Count}】条', NOW())");
-
-                Class.Public.Sys_MsgBox(strExcel);
+                    Class.Public.Sys_MsgBox(strExcel);
+                }
             }
         }
 
@@ -424,23 +425,16 @@ namespace 后勤工程管理系统
         {
             if (dgvList.SelectedRows.Count > 0)
             {
-                if (AppSetter.Current_User.Limits.IndexOf(dgvList.SelectedRows[0].Cells[13].Value) != -1)
+                frmProjects_Info frm = new frmProjects_Info
                 {
-                    frmProjects_Info frm = new frmProjects_Info
-                    {
-                        Text = "新建",
-                        strName = dgvList.SelectedRows[0].Cells[2].Value.ToString()
-                    };
-                    frm.ShowDialog();
+                    Text = "新建",
+                    strName = dgvList.SelectedRows[0].Cells[2].Value.ToString()
+                };
+                frm.ShowDialog();
 
-                    if (frm.DialogResult == DialogResult.Yes)
-                    {
-                        btnReload_Click(this, e);
-                    }
-                }
-                else
+                if (frm.DialogResult == DialogResult.Yes)
                 {
-                    Class.Public.Sys_MsgBox("权限不足！");
+                    btnReload_Click(this, e);
                 }
             }
         }

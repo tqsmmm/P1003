@@ -323,11 +323,12 @@ namespace 后勤工程管理系统
 
                 dt.Columns.Remove(dgvPremises.Columns[0].Name);
 
-                Class.Excel.TableToExcel(dt, strExcel);
+                if (Class.Excel.TableToExcel(dt, strExcel))
+                {
+                    Class.DB_Works.ExecuteCmd($"INSERT INTO Logs(Users_id, Type, Detail, DateTime) VALUES({AppSetter.Current_User.id}, '导出', '【导出房产信息】导出房产数据【{dgvPremises.Rows.Count}】条', NOW())");
 
-                Class.DB_Works.ExecuteCmd($"INSERT INTO Logs(Users_id, Type, Detail, DateTime) VALUES({AppSetter.Current_User.id}, '导出', '【导出房产信息】导出房产数据【{dgvPremises.Rows.Count}】条', NOW())");
-
-                Class.Public.Sys_MsgBox(strExcel);
+                    Class.Public.Sys_MsgBox(strExcel);
+                }
             }
         }
     }

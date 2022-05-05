@@ -20,7 +20,7 @@ namespace 后勤工程管理系统
         {
             if (dt != null)
             {
-                dgvExcel.DataSource = dt;
+                dgvExcel.DataSource = dt.DefaultView;
 
                 btnCheck_Click(this, e);
             }
@@ -154,10 +154,14 @@ namespace 后勤工程管理系统
                 }
 
                 //工程类型
-                if (Class.DB_Works.DataSetCmd($"SELECT id FROM Types WHERE Name = '{dgvExcel.Rows[i].Cells[1].Value}'").Tables[0].Rows.Count == 0)
+                if (Class.DB_Works.DataSetCmd($"SELECT id FROM Types WHERE Name = '{dgvExcel.Rows[i].Cells[12].Value}'").Tables[0].Rows.Count == 0)
                 {
                     dgvExcel.Rows[i].Cells[12].Style.BackColor = Color.Red;
                     btnImport.Enabled = false;
+                }
+                else
+                {
+                    dgvExcel.Rows[i].Cells[12].Style.BackColor = Color.White;
                 }
 
                 //工程内容
@@ -382,12 +386,6 @@ namespace 后勤工程管理系统
                 if (dgvExcel.Rows[i].Cells[38].Value.ToString().Length > 50)
                 {
                     dgvExcel.Rows[i].Cells[38].Style.BackColor = Color.Red;
-                    btnImport.Enabled = false;
-                }
-
-                if (Class.DB_Works.DataSetCmd($"SELECT Projects.id FROM Projects LEFT JOIN Types ON Types.id = Projects.Types_id WHERE Projects.Name = '{dgvExcel.Rows[i].Cells[0].Value}' AND Types.Name = '{dgvExcel.Rows[i].Cells[1].Value}' AND Projects.id IN (SELECT Types_id FROM Limits WHERE Users_id = {AppSetter.Current_User.id})").Tables[0].Rows.Count > 0)
-                {
-                    dgvExcel.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                     btnImport.Enabled = false;
                 }
             }

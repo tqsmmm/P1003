@@ -45,36 +45,24 @@
             this.btnTenders_Edit = new System.Windows.Forms.Button();
             this.btnTenders_New = new System.Windows.Forms.Button();
             this.dgvTenders = new System.Windows.Forms.DataGridView();
-            this.序号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.中标单位 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.负责人 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.联系方式 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnConstructors_Reload = new System.Windows.Forms.Button();
             this.btnConstructors_Del = new System.Windows.Forms.Button();
             this.btnConstructors_Edit = new System.Windows.Forms.Button();
             this.btnConstructors_New = new System.Windows.Forms.Button();
             this.dgvConstructors = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.施工单位 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnTypes_Reload = new System.Windows.Forms.Button();
             this.btnTypes_Del = new System.Windows.Forms.Button();
             this.btnTypes_Edit = new System.Windows.Forms.Button();
             this.btnTypes_Add = new System.Windows.Forms.Button();
             this.dgvTypes = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.类型名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.btnUser_Reload = new System.Windows.Forms.Button();
             this.btnUser_Del = new System.Windows.Forms.Button();
             this.btnUsers_Edit = new System.Windows.Forms.Button();
             this.btnUser_Add = new System.Windows.Forms.Button();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.用户名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.房产名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.房产编号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,6 +76,18 @@
             this.资产编码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.设备编码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.地区 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.序号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.中标单位 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.负责人 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.联系方式 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.施工单位 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.类型名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.用户名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPremises)).BeginInit();
@@ -304,38 +304,6 @@
             this.dgvTenders.Size = new System.Drawing.Size(991, 532);
             this.dgvTenders.TabIndex = 14;
             // 
-            // 序号
-            // 
-            this.序号.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.序号.DataPropertyName = "序号";
-            this.序号.HeaderText = "序号";
-            this.序号.Name = "序号";
-            this.序号.Width = 62;
-            // 
-            // 中标单位
-            // 
-            this.中标单位.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.中标单位.DataPropertyName = "中标单位";
-            this.中标单位.HeaderText = "中标单位";
-            this.中标单位.Name = "中标单位";
-            this.中标单位.Width = 90;
-            // 
-            // 负责人
-            // 
-            this.负责人.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.负责人.DataPropertyName = "负责人";
-            this.负责人.HeaderText = "负责人";
-            this.负责人.Name = "负责人";
-            this.负责人.Width = 76;
-            // 
-            // 联系方式
-            // 
-            this.联系方式.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.联系方式.DataPropertyName = "联系方式";
-            this.联系方式.HeaderText = "联系方式";
-            this.联系方式.Name = "联系方式";
-            this.联系方式.Width = 90;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.btnConstructors_Reload);
@@ -412,38 +380,6 @@
             this.dgvConstructors.Size = new System.Drawing.Size(991, 532);
             this.dgvConstructors.TabIndex = 7;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "序号";
-            this.dataGridViewTextBoxColumn1.HeaderText = "序号";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 62;
-            // 
-            // 施工单位
-            // 
-            this.施工单位.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.施工单位.DataPropertyName = "施工单位";
-            this.施工单位.HeaderText = "施工单位";
-            this.施工单位.Name = "施工单位";
-            this.施工单位.Width = 90;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "负责人";
-            this.dataGridViewTextBoxColumn2.HeaderText = "负责人";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 76;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "联系方式";
-            this.dataGridViewTextBoxColumn3.HeaderText = "联系方式";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 90;
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.btnTypes_Reload);
@@ -517,22 +453,6 @@
             this.dgvTypes.RowTemplate.Height = 23;
             this.dgvTypes.Size = new System.Drawing.Size(991, 532);
             this.dgvTypes.TabIndex = 7;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "序号";
-            this.dataGridViewTextBoxColumn4.HeaderText = "序号";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 62;
-            // 
-            // 类型名称
-            // 
-            this.类型名称.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.类型名称.DataPropertyName = "类型名称";
-            this.类型名称.HeaderText = "类型名称";
-            this.类型名称.Name = "类型名称";
-            this.类型名称.Width = 90;
             // 
             // tabPage4
             // 
@@ -608,22 +528,6 @@
             this.dgvUsers.Size = new System.Drawing.Size(991, 532);
             this.dgvUsers.TabIndex = 14;
             // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "序号";
-            this.dataGridViewTextBoxColumn5.HeaderText = "序号";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 62;
-            // 
-            // 用户名
-            // 
-            this.用户名.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.用户名.DataPropertyName = "用户名";
-            this.用户名.HeaderText = "用户名";
-            this.用户名.Name = "用户名";
-            this.用户名.Width = 76;
-            // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -631,6 +535,7 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "序号";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Visible = false;
             this.dataGridViewTextBoxColumn6.Width = 62;
             // 
             // 房产名称
@@ -748,6 +653,106 @@
             this.地区.ReadOnly = true;
             this.地区.Width = 62;
             // 
+            // 序号
+            // 
+            this.序号.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.序号.DataPropertyName = "序号";
+            this.序号.HeaderText = "序号";
+            this.序号.Name = "序号";
+            this.序号.Visible = false;
+            this.序号.Width = 62;
+            // 
+            // 中标单位
+            // 
+            this.中标单位.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.中标单位.DataPropertyName = "中标单位";
+            this.中标单位.HeaderText = "中标单位";
+            this.中标单位.Name = "中标单位";
+            this.中标单位.Width = 90;
+            // 
+            // 负责人
+            // 
+            this.负责人.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.负责人.DataPropertyName = "负责人";
+            this.负责人.HeaderText = "负责人";
+            this.负责人.Name = "负责人";
+            this.负责人.Width = 76;
+            // 
+            // 联系方式
+            // 
+            this.联系方式.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.联系方式.DataPropertyName = "联系方式";
+            this.联系方式.HeaderText = "联系方式";
+            this.联系方式.Name = "联系方式";
+            this.联系方式.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "序号";
+            this.dataGridViewTextBoxColumn1.HeaderText = "序号";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 62;
+            // 
+            // 施工单位
+            // 
+            this.施工单位.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.施工单位.DataPropertyName = "施工单位";
+            this.施工单位.HeaderText = "施工单位";
+            this.施工单位.Name = "施工单位";
+            this.施工单位.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "负责人";
+            this.dataGridViewTextBoxColumn2.HeaderText = "负责人";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 76;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "联系方式";
+            this.dataGridViewTextBoxColumn3.HeaderText = "联系方式";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "序号";
+            this.dataGridViewTextBoxColumn4.HeaderText = "序号";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            this.dataGridViewTextBoxColumn4.Width = 62;
+            // 
+            // 类型名称
+            // 
+            this.类型名称.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.类型名称.DataPropertyName = "类型名称";
+            this.类型名称.HeaderText = "类型名称";
+            this.类型名称.Name = "类型名称";
+            this.类型名称.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "序号";
+            this.dataGridViewTextBoxColumn5.HeaderText = "序号";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Visible = false;
+            this.dataGridViewTextBoxColumn5.Width = 62;
+            // 
+            // 用户名
+            // 
+            this.用户名.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.用户名.DataPropertyName = "用户名";
+            this.用户名.HeaderText = "用户名";
+            this.用户名.Name = "用户名";
+            this.用户名.Width = 76;
+            // 
             // frmBasic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -785,33 +790,21 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView dgvConstructors;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 序号;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 中标单位;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 负责人;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 联系方式;
         private System.Windows.Forms.Button btnTenders_Reload;
         private System.Windows.Forms.Button btnTenders_Del;
         private System.Windows.Forms.Button btnTenders_Edit;
         private System.Windows.Forms.Button btnTenders_New;
         private System.Windows.Forms.DataGridView dgvTenders;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 施工单位;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Button btnConstructors_Reload;
         private System.Windows.Forms.Button btnConstructors_Del;
         private System.Windows.Forms.Button btnConstructors_Edit;
         private System.Windows.Forms.Button btnConstructors_New;
         private System.Windows.Forms.DataGridView dgvTypes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 类型名称;
         private System.Windows.Forms.Button btnTypes_Reload;
         private System.Windows.Forms.Button btnTypes_Del;
         private System.Windows.Forms.Button btnTypes_Edit;
         private System.Windows.Forms.Button btnTypes_Add;
         private System.Windows.Forms.DataGridView dgvUsers;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 用户名;
         private System.Windows.Forms.Button btnUser_Reload;
         private System.Windows.Forms.Button btnUser_Del;
         private System.Windows.Forms.Button btnUsers_Edit;
@@ -837,5 +830,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 资产编码;
         private System.Windows.Forms.DataGridViewTextBoxColumn 设备编码;
         private System.Windows.Forms.DataGridViewTextBoxColumn 地区;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 序号;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 中标单位;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 负责人;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 联系方式;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 施工单位;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 类型名称;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 用户名;
     }
 }

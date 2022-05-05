@@ -20,7 +20,7 @@ namespace 后勤工程管理系统
         {
             if (dt != null)
             {
-                dgvExcel.DataSource = dt;
+                dgvExcel.DataSource = dt.DefaultView;
                 
                 btnCheck_Click(this, e);
             }
@@ -43,99 +43,136 @@ namespace 后勤工程管理系统
             {
                 dgvExcel.Rows[i].DefaultCellStyle.BackColor = Color.White;
 
-                //房产名称
-                if (dgvExcel.Rows[i].Cells[0].Value.ToString().Length > 50)
-                {
-                    dgvExcel.Rows[i].Cells[0].Style.BackColor = Color.Red;
-                    btnImport.Enabled = false;
-                }
-
-                //房产编号
-                if (dgvExcel.Rows[i].Cells[1].Value.ToString().Length > 50)
-                {
-                    dgvExcel.Rows[i].Cells[1].Style.BackColor = Color.Red;
-                    btnImport.Enabled = false;
-                }
-
-                //建筑年代
-                try
-                {
-                    Convert.ToInt16(dgvExcel.Rows[i].Cells[2].Value);
-                }
-                catch
-                {
-                    dgvExcel.Rows[i].Cells[2].Style.BackColor= Color.Red;
-                    btnImport.Enabled = false;
-                }
-                
-                //建筑层数
-                if (dgvExcel.Rows[i].Cells[3].Value.ToString().Length > 50)
-                {
-                    dgvExcel.Rows[i].Cells[3].Style.BackColor = Color.Red;
-                    btnImport.Enabled = false;
-                }
-
-                //建筑结构
-                if (dgvExcel.Rows[i].Cells[4].Value.ToString().Length > 50)
-                {
-                    dgvExcel.Rows[i].Cells[4].Style.BackColor = Color.Red;
-                    btnImport.Enabled = false;
-                }
-
-                //建筑面积
-                try
-                {
-                    Convert.ToDecimal(dgvExcel.Rows[i].Cells[5].Value);
-                }
-                catch
-                {
-                    dgvExcel.Rows[i].Cells[5].Style.BackColor = Color.Red;
-                    btnImport.Enabled = false;
-                }
-
-                //建筑用途
-                if (dgvExcel.Rows[i].Cells[6].Value.ToString().Length > 50)
-                {
-                    dgvExcel.Rows[i].Cells[6].Style.BackColor = Color.Red;
-                    btnImport.Enabled = false;
-                }
-
-                //资产原值
-                try
-                {
-                    Convert.ToDecimal(dgvExcel.Rows[i].Cells[7].Value);
-                }
-                catch
-                {
-                    dgvExcel.Rows[i].Cells[7].Style.BackColor = Color.Red;
-                    btnImport.Enabled = false;
-                }
-
-                //资产编码
-                if (dgvExcel.Rows[i].Cells[8].Value.ToString().Length > 50)
-                {
-                    dgvExcel.Rows[i].Cells[8].Style.BackColor = Color.Red;
-                    btnImport.Enabled = false;
-                }
-
-                //设备编码
-                if (dgvExcel.Rows[i].Cells[9].Value.ToString().Length > 50)
-                {
-                    dgvExcel.Rows[i].Cells[9].Style.BackColor = Color.Red;
-                    btnImport.Enabled = false;
-                }
-
-                //地区
-                if (dgvExcel.Rows[i].Cells[10].Value.ToString().Length > 50)
-                {
-                    dgvExcel.Rows[i].Cells[10].Style.BackColor = Color.Red;
-                    btnImport.Enabled = false;
-                }
-
                 if (Class.DB_Works.DataSetCmd($"SELECT id FROM Premises WHERE Name = '{dgvExcel.Rows[i].Cells[0].Value}'").Tables[0].Rows.Count > 0)
                 {
                     dgvExcel.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                     btnImport.Enabled = false;
+                }
+                else
+                {
+                    //房产名称
+                    if (dgvExcel.Rows[i].Cells[0].Value.ToString().Length > 50)
+                    {
+                        dgvExcel.Rows[i].Cells[0].Style.BackColor = Color.Red;
+                        btnImport.Enabled = false;
+                    }
+                    else
+                    {
+                        dgvExcel.Rows[i].Cells[0].Style.BackColor = Color.White;
+                    }
+
+                    //房产编号
+                    if (dgvExcel.Rows[i].Cells[1].Value.ToString().Length > 50)
+                    {
+                        dgvExcel.Rows[i].Cells[1].Style.BackColor = Color.Red;
+                        btnImport.Enabled = false;
+                    }
+                    else
+                    {
+                        dgvExcel.Rows[i].Cells[1].Style.BackColor = Color.White;
+                    }
+
+                    //建筑年代
+                    try
+                    {
+                        Convert.ToInt16(dgvExcel.Rows[i].Cells[2].Value);
+                        dgvExcel.Rows[i].Cells[2].Style.BackColor = Color.White;
+                    }
+                    catch
+                    {
+                        dgvExcel.Rows[i].Cells[2].Style.BackColor = Color.Red;
+                        btnImport.Enabled = false;
+                    }
+
+                    //建筑层数
+                    if (dgvExcel.Rows[i].Cells[3].Value.ToString().Length > 50)
+                    {
+                        dgvExcel.Rows[i].Cells[3].Style.BackColor = Color.Red;
+                        btnImport.Enabled = false;
+                    }
+                    else
+                    {
+                        dgvExcel.Rows[i].Cells[3].Style.BackColor = Color.White;
+                    }
+
+                    //建筑结构
+                    if (dgvExcel.Rows[i].Cells[4].Value.ToString().Length > 50)
+                    {
+                        dgvExcel.Rows[i].Cells[4].Style.BackColor = Color.Red;
+                        btnImport.Enabled = false;
+                    }
+                    else
+                    {
+                        dgvExcel.Rows[i].Cells[4].Style.BackColor = Color.White;
+                    }
+
+                    //建筑面积
+                    try
+                    {
+                        Convert.ToDecimal(dgvExcel.Rows[i].Cells[5].Value);
+                        dgvExcel.Rows[i].Cells[5].Style.BackColor = Color.White;
+                    }
+                    catch
+                    {
+                        dgvExcel.Rows[i].Cells[5].Style.BackColor = Color.Red;
+                        btnImport.Enabled = false;
+                    }
+
+                    //建筑用途
+                    if (dgvExcel.Rows[i].Cells[6].Value.ToString().Length > 50)
+                    {
+                        dgvExcel.Rows[i].Cells[6].Style.BackColor = Color.Red;
+                        btnImport.Enabled = false;
+                    }
+                    else
+                    {
+                        dgvExcel.Rows[i].Cells[6].Style.BackColor = Color.White;
+                    }
+
+                    //资产原值
+                    try
+                    {
+                        Convert.ToDecimal(dgvExcel.Rows[i].Cells[7].Value);
+                        dgvExcel.Rows[i].Cells[7].Style.BackColor = Color.White;
+                    }
+                    catch
+                    {
+                        dgvExcel.Rows[i].Cells[7].Style.BackColor = Color.Red;
+                        btnImport.Enabled = false;
+                    }
+
+                    //资产编码
+                    if (dgvExcel.Rows[i].Cells[8].Value.ToString().Length > 50)
+                    {
+                        dgvExcel.Rows[i].Cells[8].Style.BackColor = Color.Red;
+                        btnImport.Enabled = false;
+                    }
+                    else
+                    {
+                        dgvExcel.Rows[i].Cells[8].Style.BackColor = Color.White;
+                    }
+
+                    //设备编码
+                    if (dgvExcel.Rows[i].Cells[9].Value.ToString().Length > 50)
+                    {
+                        dgvExcel.Rows[i].Cells[9].Style.BackColor = Color.Red;
+                        btnImport.Enabled = false;
+                    }
+                    else
+                    {
+                        dgvExcel.Rows[i].Cells[9].Style.BackColor = Color.White;
+                    }
+
+                    //地区
+                    if (dgvExcel.Rows[i].Cells[10].Value.ToString().Length > 50)
+                    {
+                        dgvExcel.Rows[i].Cells[10].Style.BackColor = Color.Red;
+                        btnImport.Enabled = false;
+                    }
+                    else
+                    {
+                        dgvExcel.Rows[i].Cells[10].Style.BackColor = Color.White;
+                    }
                 }
             }
         }
