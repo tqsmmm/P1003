@@ -69,9 +69,36 @@ namespace 后勤工程管理系统.Class
 
                     foreach (int j in columns)
                     {
-                        if (columns.Count == 39)
+                        if (columns.Count == 40)
                         {
-                            dr[j] = GetValueType(sheet.GetRow(i).GetCell(j));
+                            //日期判断
+                            if (j == 20 || j == 21 || j == 28)
+                            {
+                                try
+                                {
+                                    dr[j] = sheet.GetRow(i).GetCell(j).DateCellValue.ToString("yyyy-MM-dd");
+                                }
+                                catch
+                                {
+                                    dr[j] = null;
+                                }
+                            }
+                            //货币判断
+                            else if (j == 5 || j == 7 || j == 16 || j == 24 || j == 25 || j == 26 || j == 27 || j == 32 || j == 33 || j == 34 || j == 35)
+                            {
+                                try
+                                {
+                                    dr[j] = sheet.GetRow(i).GetCell(j).NumericCellValue;
+                                }
+                                catch
+                                {
+                                    dr[j] = 0;
+                                }
+                            }
+                            else
+                            {
+                                dr[j] = GetValueType(sheet.GetRow(i).GetCell(j));
+                            }
                         }
                         else if (columns.Count == 11)
                         {
@@ -142,14 +169,7 @@ namespace 后勤工程管理系统.Class
                 case CellType.Boolean:
                     return cell.BooleanCellValue;
                 case CellType.Numeric:
-                    if (cell.ColumnIndex == 19 || cell.ColumnIndex == 20 || cell.ColumnIndex == 27)
-                    {
-                        return cell.DateCellValue;
-                    }
-                    else
-                    {
-                        return cell.NumericCellValue;
-                    }
+                    return cell.NumericCellValue;
                 case CellType.String:
                     return cell.StringCellValue;
                 case CellType.Error:

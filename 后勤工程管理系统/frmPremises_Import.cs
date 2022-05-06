@@ -20,7 +20,7 @@ namespace 后勤工程管理系统
         {
             if (dt != null)
             {
-                dgvExcel.DataSource = dt.DefaultView;
+                dgvExcel.DataSource = dt;
                 
                 btnCheck_Click(this, e);
             }
