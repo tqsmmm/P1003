@@ -22,103 +22,128 @@ namespace 后勤工程管理系统.Class
             IWorkbook workbook;
             string fileExt = Path.GetExtension(file).ToLower();
 
-            using (FileStream fs = new FileStream(file, FileMode.Open, FileAccess.Read))
+            try
             {
-                switch (fileExt)
+                using (FileStream fs = new FileStream(file, FileMode.Open, FileAccess.Read))
                 {
-                    case ".xlsx":
-                        workbook = new XSSFWorkbook(fs); break;
-                    case ".xls":
-                        workbook = new HSSFWorkbook(fs); break;
-                    default:
-                        workbook = null; break;
-                }
-
-                if (workbook == null)
-                {
-                    return null;
-                }
-
-                ISheet sheet = workbook.GetSheetAt(0);
-
-                //表头  
-                IRow header = sheet.GetRow(sheet.FirstRowNum);
-                List<int> columns = new List<int>();
-
-                for (int i = 0; i < header.LastCellNum; i++)
-                {
-                    object obj = GetValueType(header.GetCell(i));
-
-                    if (obj == null || obj.ToString() == string.Empty)
+                    switch (fileExt)
                     {
-                        dt.Columns.Add(new DataColumn("Columns" + i.ToString()));
-                    }
-                    else
-                    {
-                        dt.Columns.Add(new DataColumn(obj.ToString()));
+                        case ".xlsx":
+                            workbook = new XSSFWorkbook(fs); break;
+                        case ".xls":
+                            workbook = new HSSFWorkbook(fs); break;
+                        default:
+                            workbook = null; break;
                     }
 
-                    columns.Add(i);
-                }
-
-                //数据
-                for (int i = sheet.FirstRowNum + 1; i <= sheet.LastRowNum; i++)
-                {
-                    DataRow dr = dt.NewRow();
-                    bool hasValue = false;
-
-                    foreach (int j in columns)
+                    if (workbook == null)
                     {
-                        if (columns.Count == 40)
+                        return null;
+                    }
+
+                    ISheet sheet = workbook.GetSheetAt(0);
+
+                    //表头  
+                    IRow header = sheet.GetRow(sheet.FirstRowNum);
+                    List<int> columns = new List<int>();
+
+                    for (int i = 0; i < header.LastCellNum; i++)
+                    {
+                        object obj = GetValueType(header.GetCell(i));
+
+                        if (obj == null || obj.ToString() == string.Empty)
                         {
-                            //日期判断
-                            if (j == 20 || j == 21 || j == 28)
+                            dt.Columns.Add(new DataColumn("Columns" + i.ToString()));
+                        }
+                        else
+                        {
+                            dt.Columns.Add(new DataColumn(obj.ToString()));
+                        }
+
+                        columns.Add(i);
+                    }
+
+                    //数据
+                    for (int i = sheet.FirstRowNum + 1; i <= sheet.LastRowNum; i++)
+                    {
+                        DataRow dr = dt.NewRow();
+                        bool hasValue = false;
+
+                        foreach (int j in columns)
+                        {
+                            if (columns.Count == 40)
                             {
-                                try
+                                //日期判断
+                                if (j == 20 || j == 21 || j == 28)
                                 {
-                                    dr[j] = sheet.GetRow(i).GetCell(j).DateCellValue.ToString("yyyy-MM-dd");
+                                    try
+                                    {
+                                        dr[j] = sheet.GetRow(i).GetCell(j).DateCellValue.ToString("yyyy-MM-dd");
+                                    }
+                                    catch
+                                    {
+                                        dr[j] = "0001-01-01";
+                                    }
                                 }
-                                catch
+                                //货币判断
+                                else if (j == 5 || j == 7 || j == 16 || j == 24 || j == 25 || j == 26 || j == 27 || j == 32 || j == 33 || j == 34 || j == 35)
                                 {
-                                    dr[j] = null;
+                                    try
+                                    {
+                                        dr[j] = sheet.GetRow(i).GetCell(j).NumericCellValue;
+                                    }
+                                    catch
+                                    {
+                                        dr[j] = 0;
+                                    }
+                                }
+                                else
+                                {
+                                    dr[j] = GetValueType(sheet.GetRow(i).GetCell(j));
                                 }
                             }
-                            //货币判断
-                            else if (j == 5 || j == 7 || j == 16 || j == 24 || j == 25 || j == 26 || j == 27 || j == 32 || j == 33 || j == 34 || j == 35)
-                            {
-                                try
-                                {
-                                    dr[j] = sheet.GetRow(i).GetCell(j).NumericCellValue;
-                                }
-                                catch
-                                {
-                                    dr[j] = 0;
-                                }
-                            }
-                            else
+                            else if (columns.Count == 11)
                             {
                                 dr[j] = GetValueType(sheet.GetRow(i).GetCell(j));
                             }
-                        }
-                        else if (columns.Count == 11)
-                        {
-                            dr[j] = GetValueType(sheet.GetRow(i).GetCell(j));
+
+                            if (dr[j] != null && dr[j].ToString() != string.Empty)
+                            {
+                                if (dr[j].ToString().Substring(0, 1) == "=")
+                                {
+                                    switch (sheet.GetRow(i).GetCell(j).CachedFormulaResultType)
+                                    {
+                                        case CellType.String:
+                                            dr[j] = sheet.GetRow(i).GetCell(j).StringCellValue;
+                                            break;
+                                        case CellType.Numeric:
+                                            dr[j] = sheet.GetRow(i).GetCell(j).NumericCellValue;
+                                            break;
+                                        case CellType.Formula:
+                                            dr[j] = sheet.GetRow(i).GetCell(j).RichStringCellValue;
+                                            break;
+                                    }
+                                }
+
+                                hasValue = true;
+                            }
                         }
 
-                        if (dr[j] != null && dr[j].ToString() != string.Empty)
+                        if (hasValue)
                         {
-                            hasValue = true;
+                            dt.Rows.Add(dr);
                         }
-                    }
-
-                    if (hasValue)
-                    {
-                        dt.Rows.Add(dr);
                     }
                 }
-            }
 
-            return dt;
+                return dt;
+            }
+            catch (Exception Ex)
+            {
+                Public.Sys_MsgBox(Ex.Message);
+
+                return null;
+            }
         }
 
         private static ICellStyle DateStyle(IWorkbook workbook)

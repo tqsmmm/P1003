@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace 后勤工程管理系统.Class
@@ -20,6 +21,13 @@ namespace 后勤工程管理系统.Class
             {
                 return false;
             }
+        }
+
+        public static bool IsNumber(string number)
+        {
+            Regex regex = new Regex(@"^-?\d+$|^(-?\d+)(\.\d+)?$");
+
+            return regex.IsMatch(number);
         }
 
         public static string Sys_OpenExcelFile()

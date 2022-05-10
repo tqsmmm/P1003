@@ -44,11 +44,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProjects_Import));
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.dgvExcel = new System.Windows.Forms.DataGridView();
-            this.btnCheck = new System.Windows.Forms.Button();
             this.房产名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.房产编号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.建筑年代 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,12 +89,16 @@
             this.收集整理 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.立卷检查 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.验收合格 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCheck = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tspbImport = new System.Windows.Forms.ToolStripProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExcel)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(558, 599);
+            this.btnCancel.Location = new System.Drawing.Point(538, 586);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(120, 50);
             this.btnCancel.TabIndex = 5;
@@ -105,7 +109,7 @@
             // btnImport
             // 
             this.btnImport.Enabled = false;
-            this.btnImport.Location = new System.Drawing.Point(432, 599);
+            this.btnImport.Location = new System.Drawing.Point(412, 586);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(120, 50);
             this.btnImport.TabIndex = 4;
@@ -160,18 +164,8 @@
             this.dgvExcel.Location = new System.Drawing.Point(12, 12);
             this.dgvExcel.Name = "dgvExcel";
             this.dgvExcel.RowTemplate.Height = 23;
-            this.dgvExcel.Size = new System.Drawing.Size(960, 581);
+            this.dgvExcel.Size = new System.Drawing.Size(960, 568);
             this.dgvExcel.TabIndex = 3;
-            // 
-            // btnCheck
-            // 
-            this.btnCheck.Location = new System.Drawing.Point(306, 599);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(120, 50);
-            this.btnCheck.TabIndex = 6;
-            this.btnCheck.Text = "检查";
-            this.btnCheck.UseVisualStyleBackColor = true;
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // 房产名称
             // 
@@ -318,7 +312,7 @@
             this.计划金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.计划金额.DataPropertyName = "计划金额";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.Format = "C6";
             dataGridViewCellStyle5.NullValue = "0";
             this.计划金额.DefaultCellStyle = dataGridViewCellStyle5;
             this.计划金额.HeaderText = "计划金额";
@@ -383,6 +377,9 @@
             // 
             this.形象进度.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.形象进度.DataPropertyName = "形象进度";
+            dataGridViewCellStyle8.Format = "0%";
+            dataGridViewCellStyle8.NullValue = null;
+            this.形象进度.DefaultCellStyle = dataGridViewCellStyle8;
             this.形象进度.HeaderText = "形象进度";
             this.形象进度.Name = "形象进度";
             this.形象进度.Width = 90;
@@ -391,10 +388,10 @@
             // 
             this.合同金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.合同金额.DataPropertyName = "合同金额";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "C2";
-            dataGridViewCellStyle8.NullValue = "0";
-            this.合同金额.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "C6";
+            dataGridViewCellStyle9.NullValue = "0";
+            this.合同金额.DefaultCellStyle = dataGridViewCellStyle9;
             this.合同金额.HeaderText = "合同金额";
             this.合同金额.Name = "合同金额";
             this.合同金额.Width = 90;
@@ -403,10 +400,10 @@
             // 
             this.实际发生额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.实际发生额.DataPropertyName = "实际发生额";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "C2";
-            dataGridViewCellStyle9.NullValue = "0";
-            this.实际发生额.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "C6";
+            dataGridViewCellStyle10.NullValue = "0";
+            this.实际发生额.DefaultCellStyle = dataGridViewCellStyle10;
             this.实际发生额.HeaderText = "实际发生额";
             this.实际发生额.Name = "实际发生额";
             this.实际发生额.Width = 104;
@@ -415,10 +412,10 @@
             // 
             this.合同支付金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.合同支付金额.DataPropertyName = "合同支付金额";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "C2";
-            dataGridViewCellStyle10.NullValue = "0";
-            this.合同支付金额.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.Format = "C6";
+            dataGridViewCellStyle11.NullValue = "0";
+            this.合同支付金额.DefaultCellStyle = dataGridViewCellStyle11;
             this.合同支付金额.HeaderText = "合同支付金额";
             this.合同支付金额.Name = "合同支付金额";
             this.合同支付金额.Width = 118;
@@ -427,10 +424,10 @@
             // 
             this.合同欠款金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.合同欠款金额.DataPropertyName = "合同欠款金额";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.Format = "C2";
-            dataGridViewCellStyle11.NullValue = "0";
-            this.合同欠款金额.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.Format = "C6";
+            dataGridViewCellStyle12.NullValue = "0";
+            this.合同欠款金额.DefaultCellStyle = dataGridViewCellStyle12;
             this.合同欠款金额.HeaderText = "合同欠款金额";
             this.合同欠款金额.Name = "合同欠款金额";
             this.合同欠款金额.Width = 118;
@@ -439,9 +436,9 @@
             // 
             this.质保金支付时间.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.质保金支付时间.DataPropertyName = "质保金支付时间";
-            dataGridViewCellStyle12.Format = "yyyy-MM-dd";
-            dataGridViewCellStyle12.NullValue = "0000-01-01";
-            this.质保金支付时间.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle13.Format = "yyyy-MM-dd";
+            dataGridViewCellStyle13.NullValue = "0000-01-01";
+            this.质保金支付时间.DefaultCellStyle = dataGridViewCellStyle13;
             this.质保金支付时间.HeaderText = "质保金支付时间";
             this.质保金支付时间.Name = "质保金支付时间";
             this.质保金支付时间.Width = 132;
@@ -474,10 +471,10 @@
             // 
             this.分包金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.分包金额.DataPropertyName = "分包金额";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle13.Format = "C2";
-            dataGridViewCellStyle13.NullValue = "0";
-            this.分包金额.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.Format = "C6";
+            dataGridViewCellStyle14.NullValue = "0";
+            this.分包金额.DefaultCellStyle = dataGridViewCellStyle14;
             this.分包金额.HeaderText = "分包金额";
             this.分包金额.Name = "分包金额";
             this.分包金额.Width = 90;
@@ -486,10 +483,10 @@
             // 
             this.分包支付金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.分包支付金额.DataPropertyName = "分包支付金额";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Format = "C2";
-            dataGridViewCellStyle14.NullValue = "0";
-            this.分包支付金额.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.Format = "C6";
+            dataGridViewCellStyle15.NullValue = "0";
+            this.分包支付金额.DefaultCellStyle = dataGridViewCellStyle15;
             this.分包支付金额.HeaderText = "分包支付金额";
             this.分包支付金额.Name = "分包支付金额";
             this.分包支付金额.Width = 118;
@@ -498,10 +495,10 @@
             // 
             this.分包欠款金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.分包欠款金额.DataPropertyName = "分包欠款金额";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.Format = "C2";
-            dataGridViewCellStyle15.NullValue = "0";
-            this.分包欠款金额.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle16.Format = "C6";
+            dataGridViewCellStyle16.NullValue = "0";
+            this.分包欠款金额.DefaultCellStyle = dataGridViewCellStyle16;
             this.分包欠款金额.HeaderText = "分包欠款金额";
             this.分包欠款金额.Name = "分包欠款金额";
             this.分包欠款金额.Width = 118;
@@ -510,10 +507,10 @@
             // 
             this.管理费.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.管理费.DataPropertyName = "管理费";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle16.Format = "C2";
-            dataGridViewCellStyle16.NullValue = "0";
-            this.管理费.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle17.Format = "C6";
+            dataGridViewCellStyle17.NullValue = "0";
+            this.管理费.DefaultCellStyle = dataGridViewCellStyle17;
             this.管理费.HeaderText = "管理费";
             this.管理费.Name = "管理费";
             this.管理费.Width = 76;
@@ -550,11 +547,37 @@
             this.验收合格.Name = "验收合格";
             this.验收合格.Width = 90;
             // 
+            // btnCheck
+            // 
+            this.btnCheck.Location = new System.Drawing.Point(286, 586);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(120, 50);
+            this.btnCheck.TabIndex = 6;
+            this.btnCheck.Text = "检查";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tspbImport});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 639);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(984, 22);
+            this.statusStrip1.TabIndex = 7;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tspbImport
+            // 
+            this.tspbImport.Name = "tspbImport";
+            this.tspbImport.Size = new System.Drawing.Size(100, 16);
+            // 
             // frmProjects_Import
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnImport);
@@ -570,7 +593,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmProjects_Import_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvExcel)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -620,5 +646,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 收集整理;
         private System.Windows.Forms.DataGridViewTextBoxColumn 立卷检查;
         private System.Windows.Forms.DataGridViewTextBoxColumn 验收合格;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripProgressBar tspbImport;
     }
 }
