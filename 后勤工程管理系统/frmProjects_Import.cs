@@ -41,12 +41,16 @@ namespace 后勤工程管理系统
             tspbImport.Value = 1;
             tspbImport.Step = 1;
 
-            bool bFalse = true;
-            int intFalseRows = 0;
+            int intPremisesTrue = 0;
+            int intPremisesFalse = 0;
+            int intProjectsTrue = 0;
+            int intProjectsFalse = 0;
+            int intPartitionsTrue = 0;
+            int intPartitionsFalse = 0;
 
             for (int i = 0; i < dgvExcel.Rows.Count; i++)
             {
-                bFalse = true;
+                bool bFalse = true;
 
                 //基础数据导入
 
@@ -79,8 +83,9 @@ namespace 后勤工程管理系统
 
                 if (dgvExcel.Rows[i].Cells["房产名称"].Value.ToString() == string.Empty)
                 {
-                    bFalse = false;
-                    intFalseRows++;
+                    intPremisesFalse++;
+                    intProjectsFalse++;
+                    intPartitionsFalse++;
                 }
                 else
                 {
@@ -115,8 +120,16 @@ namespace 后勤工程管理系统
                         $"{AppSetter.Current_User.id}, NOW())"))
                         {
                             bFalse = false;
-                            intFalseRows++;
+                            intPremisesFalse++;
                         }
+                        else
+                        {
+                            intPremisesTrue++;
+                        }
+                    }
+                    else
+                    {
+                        intPremisesFalse++;
                     }
 
                     if (bFalse)
@@ -161,13 +174,22 @@ namespace 后勤工程管理系统
                                 $"{AppSetter.Current_User.id}, NOW())"))
                             {
                                 bFalse = false;
+                                intProjectsFalse++;
                             }
+                            else
+                            {
+                                intProjectsTrue++;
+                            }
+                        }
+                        else
+                        {
+                            intProjectsFalse++;
                         }
 
                         if (bFalse)
                         {
                             //分包数据
-                            ds = Class.DB_Works.DataSetCmd($"SELECT partitions.id FROM partitions LEFT JOIN projects ON projects.id = partitions.Projects_id WHERE projects.Name = '{dgvExcel.Rows[i].Cells["工程名称"].Value}'");
+                            ds = Class.DB_Works.DataSetCmd($"SELECT Partitions.id FROM Partitions LEFT JOIN Projects ON Projects.id = Partitions.Projects_id WHERE Projects.Name = '{dgvExcel.Rows[i].Cells["工程名称"].Value}'");
 
                             if (ds.Tables[0].Rows.Count == 0)
                             {
@@ -182,8 +204,16 @@ namespace 后勤工程管理系统
                                 $"'{dgvExcel.Rows[i].Cells["是否挂账"].Value}', " +
                                 $"{AppSetter.Current_User.id}, NOW())"))
                                 {
-                                    bFalse = false;
+                                    intPartitionsFalse++;
                                 }
+                                else
+                                {
+                                    intPartitionsTrue++;
+                                }
+                            }
+                            else
+                            {
+                                intPartitionsFalse++;
                             }
                         }
                     }
@@ -192,9 +222,11 @@ namespace 后勤工程管理系统
                 tspbImport.PerformStep();
             }
 
-            Class.DB_Works.ExecuteCmd($"INSERT INTO Logs(Users_id, Type, Detail, DateTime) VALUES({AppSetter.Current_User.id}, '导入', '【导入工程信息】导入工程数据【{dgvExcel.RowCount - intFalseRows}】条', NOW())");
+            Class.DB_Works.ExecuteCmd($"INSERT INTO Logs(Users_id, Type, Detail, DateTime) VALUES({AppSetter.Current_User.id}, '导入', '【导入信息】导入成功房产数据【{intPremisesTrue}】条，导入失败房产数据【{intPremisesFalse}】条，导入成功工程数据【{intProjectsTrue}】条，导入失败工程数据【{intProjectsFalse}】条，导入成功分包数据【{intPartitionsTrue}】条，导入失败分包数据【{intPartitionsFalse}】条。', NOW())");
 
-            Class.Public.Sys_MsgBox($"导入工程数据【{dgvExcel.RowCount - intFalseRows}】条");
+            Class.Public.Sys_MsgBox($"导入成功房产数据【{intPremisesTrue}】条，导入失败房产数据【{intPremisesFalse}】条。\r导入成功工程数据【{intProjectsTrue}】条，导入失败工程数据【{intProjectsFalse}】条。\r导入成功分包数据【{intPartitionsTrue}】条，导入失败分包数据【{intPartitionsFalse}】条。");
+
+            Close();
         }
 
         private void btnCheck_Click(object sender, EventArgs e)

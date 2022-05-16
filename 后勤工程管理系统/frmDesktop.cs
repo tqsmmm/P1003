@@ -182,6 +182,18 @@ namespace 后勤工程管理系统
                     dgvList.Columns[2].DefaultCellStyle.BackColor = Color.Yellow;
                 }
 
+                if (ckbDate.Checked)
+                {
+                    if (txtDate.Text.IndexOf("年") >= 0)
+                    {
+                        strSQL = $"{strSQL} LEFT(Premises.Date, 4) = '{txtDate.Text.Substring(txtDate.Text.IndexOf("年"), 1)}' AND ";
+                    }
+                    else
+                    {
+                        strSQL = $"{strSQL} LEFT(Premises.Date, 4) = '{txtDate.Text}' AND ";
+                    }
+                }
+
                 if (ckbProjects_Types.Checked)
                 {
                     if (clbProjects_Types.CheckedItems.Count > 0)
@@ -240,11 +252,18 @@ namespace 后勤工程管理系统
                     dgvList.Columns[15].DefaultCellStyle.BackColor = Color.Yellow;
                 }
 
+                if (ckbProjects_Amount_Order.Checked)
+                {
+                    strSQL = $"{strSQL} Projects.Amount_Order = {txtProjects_Amount_Order.Text} AND ";
+
+                    dgvList.Columns["合同金额"].DefaultCellStyle.BackColor = Color.Yellow;
+                }
+
                 if (ckbProjects_Amount_Reality.Checked)
                 {
                     strSQL = $"{strSQL} Projects.Amount_Reality = {txtProjects_Amount_Reality.Text} AND ";
 
-                    dgvList.Columns[24].DefaultCellStyle.BackColor = Color.Yellow;
+                    dgvList.Columns["实际发生额"].DefaultCellStyle.BackColor = Color.Yellow;
                 }
 
                 if (ckbProjects_Amount_Pay.Checked)
@@ -328,6 +347,19 @@ namespace 后勤工程管理系统
             }
 
             dgvList.DataSource = Class.DB_Works.DataSetCmd(strSQL).Tables[0];
+
+            for (int i = 0; i < dgvList.RowCount; i++)
+            {
+                txtSum_Partitions_Amount.Text = (Convert.ToDecimal(txtSum_Partitions_Amount.Text) + Convert.ToDecimal(dgvList.Rows[i].Cells["分包金额"].Value)).ToString();
+                txtSum_Partitions_Amount_Arrear.Text = (Convert.ToDecimal(txtSum_Partitions_Amount_Arrear.Text) + Convert.ToDecimal(dgvList.Rows[i].Cells["分包欠款金额"].Value)).ToString();
+                txtSum_Partitions_Amount_Management.Text = (Convert.ToDecimal(txtSum_Partitions_Amount_Management.Text) + Convert.ToDecimal(dgvList.Rows[i].Cells["管理费"].Value)).ToString();
+                txtSum_Partitions_Amount_Pay.Text = (Convert.ToDecimal(txtSum_Partitions_Amount_Pay.Text) + Convert.ToDecimal(dgvList.Rows[i].Cells["分包支付金额"].Value)).ToString();
+                txtSum_Projects_Amount.Text = (Convert.ToDecimal(txtSum_Projects_Amount.Text) + Convert.ToDecimal(dgvList.Rows[i].Cells["计划金额"].Value)).ToString();
+                txtSum_Projects_Amount_Arrear.Text = (Convert.ToDecimal(txtSum_Projects_Amount_Arrear.Text) + Convert.ToDecimal(dgvList.Rows[i].Cells["合同欠款金额"].Value)).ToString();
+                txtSum_Projects_Amount_Order.Text = (Convert.ToDecimal(txtSum_Projects_Amount_Order.Text) + Convert.ToDecimal(dgvList.Rows[i].Cells["合同金额"].Value)).ToString();
+                txtSum_Projects_Amount_Pay.Text = (Convert.ToDecimal(txtSum_Projects_Amount_Pay.Text) + Convert.ToDecimal(dgvList.Rows[i].Cells["合同支付金额"].Value)).ToString();
+                txtSum_Projects_Amount_Reality.Text = (Convert.ToDecimal(txtSum_Projects_Amount_Reality.Text) + Convert.ToDecimal(dgvList.Rows[i].Cells["实际发生额"].Value)).ToString();
+            }
         }
 
         private void btnExport_Click(object sender, EventArgs e)
