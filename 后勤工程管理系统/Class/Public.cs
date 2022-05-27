@@ -1,5 +1,4 @@
-﻿using System.Drawing;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace 后勤工程管理系统.Class
@@ -68,38 +67,10 @@ namespace 后勤工程管理系统.Class
 
         public static DataGridView SetDataGridViewStyle(DataGridView Dgv)
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle
-            {
-                BackColor = Color.LightCyan
-            };
-
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle
-            {
-                Alignment = DataGridViewContentAlignment.MiddleCenter,//211, 223, 240
-                BackColor = Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(223)))), ((int)(((byte)(240))))),
-                Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134))),
-                ForeColor = Color.Navy,
-                SelectionBackColor = SystemColors.Highlight,
-                SelectionForeColor = SystemColors.HighlightText
-            };
-
             Dgv.AllowUserToAddRows = false;
             Dgv.AllowUserToDeleteRows = false;
-            Dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            Dgv.BackgroundColor = Color.White;
-            Dgv.BorderStyle = BorderStyle.Fixed3D;
-            Dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            Dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            Dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Dgv.EnableHeadersVisualStyles = false;
-            Dgv.GridColor = SystemColors.GradientInactiveCaption;
-            Dgv.RowHeadersVisible = false;
-            Dgv.RowTemplate.Height = 23;
-            Dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-            Dgv.RowsDefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            Dgv.AllowUserToResizeRows = true;
-            Dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            Dgv.ColumnHeadersHeight = 30;
+            Dgv.RowTemplate.Height = 30;
 
             return Dgv;
         }

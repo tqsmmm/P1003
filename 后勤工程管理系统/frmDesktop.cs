@@ -15,6 +15,8 @@ namespace 后勤工程管理系统
 
             dgvList = Class.Public.SetDataGridViewStyle(dgvList);
 
+            dgvList.Columns["工程内容"].Width = 600;
+
             cmbTenders.DataSource = Class.DB_Works.DataSetCmd("SELECT id, Name FROM Tenders").Tables[0];
             cmbTenders.DisplayMember = "Name";
             cmbTenders.ValueMember = "id";
@@ -153,50 +155,49 @@ namespace 后勤工程管理系统
                 strSQL = $"{strSQL} WHERE Types.Name = '{strTypes}'";
 
                 dgvList.DataSource = Class.DB_Works.DataSetCmd(strSQL).Tables[0];
-
-                return;
             }
-
-            bool bChecked = false;
-
-            foreach (Control item in tableLayoutPanel1.Controls)
+            else
             {
-                if (item is CheckBox)
+                bool bChecked = false;
+
+                foreach (Control item in tableLayoutPanel1.Controls)
                 {
-                    var comm = item as CheckBox;
-                    if (comm.Checked == true)
+                    if (item is CheckBox)
                     {
-                        bChecked = true;
-                    }
-                }
-            }
-
-            if (bChecked == true)
-            {
-                strSQL = $"{strSQL} WHERE ";
-
-                if (ckbPremises_Name.Checked)
-                {
-                    strSQL = $"{strSQL} Premises.Name = '{txtPremises_Name.Text}' AND ";
-
-                    dgvList.Columns[2].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-
-                if (ckbDate.Checked)
-                {
-                    if (txtDate.Text.IndexOf("年") >= 0)
-                    {
-                        strSQL = $"{strSQL} LEFT(Premises.Date, 4) = '{txtDate.Text.Substring(txtDate.Text.IndexOf("年"), 1)}' AND ";
-                    }
-                    else
-                    {
-                        strSQL = $"{strSQL} LEFT(Premises.Date, 4) = '{txtDate.Text}' AND ";
+                        var comm = item as CheckBox;
+                        if (comm.Checked == true)
+                        {
+                            bChecked = true;
+                        }
                     }
                 }
 
-                if (ckbProjects_Types.Checked)
+                if (bChecked == true)
                 {
-                    if (clbProjects_Types.CheckedItems.Count > 0)
+                    strSQL = $"{strSQL} WHERE ";
+
+                    if (ckbPremises_Name.Checked && !string.IsNullOrEmpty(txtPremises_Name.Text))
+                    {
+                        strSQL = $"{strSQL} Premises.Name = '{txtPremises_Name.Text}' AND ";
+
+                        dgvList.Columns["房产名称"].DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+
+                    if (ckbDate.Checked && !string.IsNullOrEmpty(ckbDate.Text))
+                    {
+                        if (txtDate.Text.IndexOf("年") >= 0)
+                        {
+                            strSQL = $"{strSQL} LEFT(Premises.Date, 4) = '{txtDate.Text.Substring(txtDate.Text.IndexOf("年"), 1)}' AND ";
+                        }
+                        else
+                        {
+                            strSQL = $"{strSQL} LEFT(Premises.Date, 4) = '{txtDate.Text}' AND ";
+                        }
+
+                        dgvList.Columns["建筑年代"].DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+
+                    if (ckbProjects_Types.Checked && clbProjects_Types.CheckedItems.Count > 0)
                     {
                         string strTypes = "'";
 
@@ -209,147 +210,168 @@ namespace 后勤工程管理系统
 
                         strSQL = $"{strSQL} Types.Name IN ({strTypes}) AND ";
 
-                        dgvList.Columns[13].DefaultCellStyle.BackColor = Color.Yellow;
+                        dgvList.Columns["工程类型"].DefaultCellStyle.BackColor = Color.Yellow;
                     }
-                }
 
-                if (ckbPremises_Date.Checked)
-                {
-                    if (txtPremises_Date_From.Text != string.Empty)
+                    if (ckbPremises_Date.Checked)
                     {
-                        strSQL = $"{strSQL} Projects.Begin_Date >= '{txtPremises_Date_From.Text}-01-01' AND Projects.End_Date <= '{txtPremises_Date_From.Text}-12-31' AND ";
+                        if (!string.IsNullOrEmpty(txtPremises_Date_From.Text) && !string.IsNullOrEmpty(txtPremises_Date_To.Text))
+                        {
+                            strSQL = $"{strSQL} (Projects.Begin_Date = '0001-01-01' OR Projects.End_Date = '0001-01-01') AND ";
 
-                        dgvList.Columns[19].DefaultCellStyle.BackColor = Color.Yellow;
-                        dgvList.Columns[20].DefaultCellStyle.BackColor = Color.Yellow;
+                            dgvList.Columns["开工时间"].DefaultCellStyle.BackColor = Color.Yellow;
+                            dgvList.Columns["竣工时间"].DefaultCellStyle.BackColor = Color.Yellow;
+                        }
+                        else
+                        {
+                            if (!string.IsNullOrEmpty(txtPremises_Date_From.Text))
+                            {
+                                strSQL = $"{strSQL} Projects.Begin_Date >= '{txtPremises_Date_From.Text}-01-01' AND ";
+
+                                dgvList.Columns["开工时间"].DefaultCellStyle.BackColor = Color.Yellow;
+                            }
+
+                            if (!string.IsNullOrEmpty(txtPremises_Date_To.Text))
+                            {
+                                strSQL = $"Projects.End_Date <= '{txtPremises_Date_From.Text}-12-31' AND ";
+
+                                dgvList.Columns["竣工时间"].DefaultCellStyle.BackColor = Color.Yellow;
+                            }
+                        }
                     }
-                }
 
-                if (ckbTenders.Checked)
-                {
-                    strSQL = $"{strSQL} Tenders_id = {cmbTenders.SelectedValue} AND ";
-
-                    dgvList.Columns[21].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-
-                if (ckbConstructors.Checked)
-                {
-                    strSQL = $"{strSQL} Partitions.Constructors_id = {cmbConstructors.SelectedValue} AND ";
-
-                    dgvList.Columns[28].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-
-                if (ckbContact.Checked)
-                {
-                    strSQL = $"{strSQL} (Constructors.Manager = '{txtContact.Text}' OR Tenders.Manager = '{txtContact.Text}') AND ";
-
-                    dgvList.Columns[29].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-
-                if (ckbProjects_Amount.Checked)
-                {
-                    strSQL = $"{strSQL} Projects.Amount = {txtProjects_Amount.Text} AND ";
-
-                    dgvList.Columns[15].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-
-                if (ckbProjects_Amount_Order.Checked)
-                {
-                    strSQL = $"{strSQL} Projects.Amount_Order = {txtProjects_Amount_Order.Text} AND ";
-
-                    dgvList.Columns["合同金额"].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-
-                if (ckbProjects_Amount_Reality.Checked)
-                {
-                    strSQL = $"{strSQL} Projects.Amount_Reality = {txtProjects_Amount_Reality.Text} AND ";
-
-                    dgvList.Columns["实际发生额"].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-
-                if (ckbProjects_Amount_Pay.Checked)
-                {
-                    strSQL = $"{strSQL} Projects.Amount_Pay = {txtProjects_Amount_Pay.Text} AND ";
-
-                    dgvList.Columns[25].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-
-                if (ckbProjects_Amount_Arrear.Checked)
-                {
-                    strSQL = $"{strSQL} Projects.Amount_Arrear = {txtProjects_Amount_Arrear.Text} AND ";
-
-                    dgvList.Columns[26].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-
-                if (ckbPartitions_Amount.Checked)
-                {
-                    strSQL = $"{strSQL} Partitions.Amount = {txtPartitions_Amount.Text} AND ";
-
-                    dgvList.Columns[31].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-
-                if (ckbPartitions_Amount_Pay.Checked)
-                {
-                    strSQL = $"{strSQL} Partitions.Amount_Pay = {txtPartitions_Amount_Pay.Text} AND ";
-
-                    dgvList.Columns[32].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-
-                if (ckbPartitions_Amount_Arrear.Checked)
-                {
-                    strSQL = $"{strSQL} Partitions.Amount_Arrear = {txtPartitions_Amount_Arrear.Text} AND ";
-
-                    dgvList.Columns[33].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-
-                if (ckbPartitions_Management.Checked)
-                {
-                    strSQL = $"{strSQL} Partitions.Management = {txtPartitions_Amount_Management.Text} AND ";
-
-                    dgvList.Columns[34].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-
-                if (ckbPartitions_Account.Checked)
-                {
-                    if (cmbPartitions_Account.Text == "是")
+                    if (ckbTenders.Checked)
                     {
-                        strSQL = $"{strSQL} Partitions.Account = 1 AND ";
+                        strSQL = $"{strSQL} Tenders_id = {cmbTenders.SelectedValue} AND ";
+
+                        dgvList.Columns["中标单位"].DefaultCellStyle.BackColor = Color.Yellow;
                     }
-                    else
+
+                    if (ckbConstructors.Checked)
                     {
-                        strSQL = $"{strSQL} Partitions.Account = 0 AND ";
+                        strSQL = $"{strSQL} Partitions.Constructors_id = {cmbConstructors.SelectedValue} AND ";
+
+                        dgvList.Columns["施工单位"].DefaultCellStyle.BackColor = Color.Yellow;
                     }
 
-                    dgvList.Columns[35].DefaultCellStyle.BackColor = Color.Yellow;
+                    if (ckbContact.Checked)
+                    {
+                        strSQL = $"{strSQL} (Constructors.Manager = '{txtContact.Text}' OR Tenders.Manager = '{txtContact.Text}') AND ";
+
+                        dgvList.Columns["负责人"].DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+
+                    if (ckbProjects_Amount.Checked)
+                    {
+                        strSQL = $"{strSQL} Projects.Amount = {txtProjects_Amount.Text} AND ";
+
+                        dgvList.Columns["计划金额"].DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+
+                    if (ckbProjects_Amount_Order.Checked)
+                    {
+                        strSQL = $"{strSQL} Projects.Amount_Order = {txtProjects_Amount_Order.Text} AND ";
+
+                        dgvList.Columns["合同金额"].DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+
+                    if (ckbProjects_Amount_Reality.Checked)
+                    {
+                        strSQL = $"{strSQL} Projects.Amount_Reality = {txtProjects_Amount_Reality.Text} AND ";
+
+                        dgvList.Columns["实际发生额"].DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+
+                    if (ckbProjects_Amount_Pay.Checked)
+                    {
+                        strSQL = $"{strSQL} Projects.Amount_Pay = {txtProjects_Amount_Pay.Text} AND ";
+
+                        dgvList.Columns["合同支付金额"].DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+
+                    if (ckbProjects_Amount_Arrear.Checked)
+                    {
+                        strSQL = $"{strSQL} Projects.Amount_Arrear = {txtProjects_Amount_Arrear.Text} AND ";
+
+                        dgvList.Columns["合同欠款金额"].DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+
+                    if (ckbPartitions_Amount.Checked)
+                    {
+                        strSQL = $"{strSQL} Partitions.Amount = {txtPartitions_Amount.Text} AND ";
+
+                        dgvList.Columns["分包金额"].DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+
+                    if (ckbPartitions_Amount_Pay.Checked)
+                    {
+                        strSQL = $"{strSQL} Partitions.Amount_Pay = {txtPartitions_Amount_Pay.Text} AND ";
+
+                        dgvList.Columns["分包支付金额"].DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+
+                    if (ckbPartitions_Amount_Arrear.Checked)
+                    {
+                        strSQL = $"{strSQL} Partitions.Amount_Arrear = {txtPartitions_Amount_Arrear.Text} AND ";
+
+                        dgvList.Columns["分包欠款金额"].DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+
+                    if (ckbPartitions_Management.Checked)
+                    {
+                        strSQL = $"{strSQL} Partitions.Management = {txtPartitions_Amount_Management.Text} AND ";
+
+                        dgvList.Columns["管理费"].DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+
+                    if (ckbPartitions_Account.Checked)
+                    {
+                        if (cmbPartitions_Account.Text == "是")
+                        {
+                            strSQL = $"{strSQL} Partitions.Account = 1 AND ";
+                        }
+                        else
+                        {
+                            strSQL = $"{strSQL} Partitions.Account = 0 AND ";
+                        }
+
+                        dgvList.Columns["是否挂账"].DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+
+                    if (ckbProjects_Collect_Tag.Checked)
+                    {
+                        strSQL = $"{strSQL} Projects.Collect_Tag = '{cmbCollect_Tag.Text}' AND ";
+
+                        dgvList.Columns["收集整理"].DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+
+                    if (ckbProjects_Check_Tag.Checked)
+                    {
+                        strSQL = $"{strSQL} Projects.Check_Tag = '{cmbCheck_Tag.Text}' AND ";
+
+                        dgvList.Columns["立卷检查"].DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+
+                    if (ckbProjects_Grade_Tag.Checked)
+                    {
+                        strSQL = $"{strSQL} Projects.Grade_Tag = '{cmbGrade_Tag.Text}' AND ";
+
+                        dgvList.Columns["验收合格"].DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+
+                    strSQL = strSQL.Substring(0, strSQL.Length - 4);
                 }
 
-                if (ckbProjects_Collect_Tag.Checked)
-                {
-                    strSQL = $"{strSQL} Projects.Collect_Tag = '{cmbCollect_Tag.Text}' AND ";
-
-                    dgvList.Columns[36].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-
-                if (ckbProjects_Check_Tag.Checked)
-                {
-                    strSQL = $"{strSQL} Projects.Check_Tag = '{cmbCheck_Tag.Text}' AND ";
-
-                    dgvList.Columns[37].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-
-                if (ckbProjects_Grade_Tag.Checked)
-                {
-                    strSQL = $"{strSQL} Projects.Grade_Tag = '{cmbGrade_Tag.Text}' AND ";
-
-                    dgvList.Columns[38].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-
-                strSQL = strSQL.Substring(0, strSQL.Length - 4);
+                dgvList.DataSource = Class.DB_Works.DataSetCmd(strSQL).Tables[0];
             }
-
-            dgvList.DataSource = Class.DB_Works.DataSetCmd(strSQL).Tables[0];
 
             for (int i = 0; i < dgvList.RowCount; i++)
             {
+                if (dgvList.Rows[i].Cells["工程内容"].Value.ToString().Length > 0)
+                {
+                    dgvList.AutoResizeRow(i, DataGridViewAutoSizeRowMode.AllCells);
+                }
+
                 txtSum_Partitions_Amount.Text = (Convert.ToDecimal(txtSum_Partitions_Amount.Text) + Convert.ToDecimal(dgvList.Rows[i].Cells["分包金额"].Value)).ToString();
                 txtSum_Partitions_Amount_Arrear.Text = (Convert.ToDecimal(txtSum_Partitions_Amount_Arrear.Text) + Convert.ToDecimal(dgvList.Rows[i].Cells["分包欠款金额"].Value)).ToString();
                 txtSum_Partitions_Amount_Management.Text = (Convert.ToDecimal(txtSum_Partitions_Amount_Management.Text) + Convert.ToDecimal(dgvList.Rows[i].Cells["管理费"].Value)).ToString();

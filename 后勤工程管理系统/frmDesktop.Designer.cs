@@ -152,32 +152,32 @@
             this.txtPremises_Date_To = new System.Windows.Forms.TextBox();
             this.ckbDate = new System.Windows.Forms.CheckBox();
             this.txtDate = new System.Windows.Forms.TextBox();
+            this.ckbProjects_Amount_Order = new System.Windows.Forms.CheckBox();
+            this.txtProjects_Amount_Order = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtSum_Projects_Amount_Order = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtSum_Projects_Amount = new System.Windows.Forms.TextBox();
-            this.txtSum_Projects_Amount_Order = new System.Windows.Forms.TextBox();
-            this.txtSum_Partitions_Amount_Management = new System.Windows.Forms.TextBox();
             this.txtSum_Projects_Amount_Reality = new System.Windows.Forms.TextBox();
             this.txtSum_Projects_Amount_Arrear = new System.Windows.Forms.TextBox();
             this.txtSum_Partitions_Amount = new System.Windows.Forms.TextBox();
             this.txtSum_Partitions_Amount_Pay = new System.Windows.Forms.TextBox();
             this.txtSum_Partitions_Amount_Arrear = new System.Windows.Forms.TextBox();
+            this.txtSum_Partitions_Amount_Management = new System.Windows.Forms.TextBox();
             this.txtSum_Projects_Amount_Pay = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.ckbProjects_Amount_Order = new System.Windows.Forms.CheckBox();
-            this.txtProjects_Amount_Order = new System.Windows.Forms.TextBox();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.cmsList.SuspendLayout();
@@ -205,7 +205,6 @@
             // 
             // dgvList
             // 
-            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Checked,
             this.序号,
@@ -253,7 +252,6 @@
             this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvList.Location = new System.Drawing.Point(3, 22);
             this.dgvList.Name = "dgvList";
-            this.dgvList.RowTemplate.Height = 23;
             this.dgvList.Size = new System.Drawing.Size(1344, 409);
             this.dgvList.TabIndex = 0;
             // 
@@ -396,7 +394,6 @@
             // 
             // 工程内容
             // 
-            this.工程内容.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.工程内容.DataPropertyName = "工程内容";
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.工程内容.DefaultCellStyle = dataGridViewCellStyle4;
@@ -1395,6 +1392,25 @@
             this.txtDate.Size = new System.Drawing.Size(144, 26);
             this.txtDate.TabIndex = 56;
             // 
+            // ckbProjects_Amount_Order
+            // 
+            this.ckbProjects_Amount_Order.AutoSize = true;
+            this.ckbProjects_Amount_Order.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbProjects_Amount_Order.Location = new System.Drawing.Point(600, 334);
+            this.ckbProjects_Amount_Order.Name = "ckbProjects_Amount_Order";
+            this.ckbProjects_Amount_Order.Size = new System.Drawing.Size(144, 26);
+            this.ckbProjects_Amount_Order.TabIndex = 57;
+            this.ckbProjects_Amount_Order.Text = "合同金额：";
+            this.ckbProjects_Amount_Order.UseVisualStyleBackColor = true;
+            // 
+            // txtProjects_Amount_Order
+            // 
+            this.txtProjects_Amount_Order.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtProjects_Amount_Order.Location = new System.Drawing.Point(750, 334);
+            this.txtProjects_Amount_Order.Name = "txtProjects_Amount_Order";
+            this.txtProjects_Amount_Order.Size = new System.Drawing.Size(144, 26);
+            this.txtProjects_Amount_Order.TabIndex = 58;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.groupBox2);
@@ -1412,39 +1428,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "查询结果";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // btnDel
-            // 
-            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDel.Location = new System.Drawing.Point(258, 572);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(120, 50);
-            this.btnDel.TabIndex = 12;
-            this.btnDel.Text = "删除工程信息";
-            this.btnDel.UseVisualStyleBackColor = true;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEdit.Location = new System.Drawing.Point(132, 572);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(120, 50);
-            this.btnEdit.TabIndex = 11;
-            this.btnEdit.Text = "修改工程信息";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnNew
-            // 
-            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNew.Location = new System.Drawing.Point(6, 572);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(120, 50);
-            this.btnNew.TabIndex = 10;
-            this.btnNew.Text = "新建工程信息";
-            this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // groupBox2
             // 
@@ -1497,6 +1480,16 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1344, 95);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
+            // txtSum_Projects_Amount_Order
+            // 
+            this.txtSum_Projects_Amount_Order.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSum_Projects_Amount_Order.Location = new System.Drawing.Point(675, 3);
+            this.txtSum_Projects_Amount_Order.Name = "txtSum_Projects_Amount_Order";
+            this.txtSum_Projects_Amount_Order.Size = new System.Drawing.Size(144, 26);
+            this.txtSum_Projects_Amount_Order.TabIndex = 9;
+            this.txtSum_Projects_Amount_Order.Text = "0.000000";
+            this.txtSum_Projects_Amount_Order.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -1507,6 +1500,61 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "计划金额：";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Location = new System.Drawing.Point(525, 62);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(144, 33);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "分包欠款金额：";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Location = new System.Drawing.Point(225, 62);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(144, 33);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "分包支付金额：";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Location = new System.Drawing.Point(825, 31);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(144, 31);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "分包金额：";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Location = new System.Drawing.Point(525, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(144, 31);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "合同欠款金额：";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Location = new System.Drawing.Point(225, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(144, 31);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "合同支付金额：";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
@@ -1530,61 +1578,6 @@
             this.label4.Text = "合同金额：";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Location = new System.Drawing.Point(225, 31);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(144, 31);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "合同支付金额：";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Location = new System.Drawing.Point(525, 31);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 31);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "合同欠款金额：";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Location = new System.Drawing.Point(825, 31);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(144, 31);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "分包金额：";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Location = new System.Drawing.Point(225, 62);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(144, 33);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "分包支付金额：";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Location = new System.Drawing.Point(525, 62);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(144, 33);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "分包欠款金额：";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // txtSum_Projects_Amount
             // 
             this.txtSum_Projects_Amount.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1594,26 +1587,6 @@
             this.txtSum_Projects_Amount.TabIndex = 8;
             this.txtSum_Projects_Amount.Text = "0.000000";
             this.txtSum_Projects_Amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtSum_Projects_Amount_Order
-            // 
-            this.txtSum_Projects_Amount_Order.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSum_Projects_Amount_Order.Location = new System.Drawing.Point(675, 3);
-            this.txtSum_Projects_Amount_Order.Name = "txtSum_Projects_Amount_Order";
-            this.txtSum_Projects_Amount_Order.Size = new System.Drawing.Size(144, 26);
-            this.txtSum_Projects_Amount_Order.TabIndex = 9;
-            this.txtSum_Projects_Amount_Order.Text = "0.000000";
-            this.txtSum_Projects_Amount_Order.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtSum_Partitions_Amount_Management
-            // 
-            this.txtSum_Partitions_Amount_Management.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSum_Partitions_Amount_Management.Location = new System.Drawing.Point(975, 65);
-            this.txtSum_Partitions_Amount_Management.Name = "txtSum_Partitions_Amount_Management";
-            this.txtSum_Partitions_Amount_Management.Size = new System.Drawing.Size(144, 26);
-            this.txtSum_Partitions_Amount_Management.TabIndex = 10;
-            this.txtSum_Partitions_Amount_Management.Text = "0.000000";
-            this.txtSum_Partitions_Amount_Management.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtSum_Projects_Amount_Reality
             // 
@@ -1665,6 +1638,16 @@
             this.txtSum_Partitions_Amount_Arrear.Text = "0.000000";
             this.txtSum_Partitions_Amount_Arrear.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // txtSum_Partitions_Amount_Management
+            // 
+            this.txtSum_Partitions_Amount_Management.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSum_Partitions_Amount_Management.Location = new System.Drawing.Point(975, 65);
+            this.txtSum_Partitions_Amount_Management.Name = "txtSum_Partitions_Amount_Management";
+            this.txtSum_Partitions_Amount_Management.Size = new System.Drawing.Size(144, 26);
+            this.txtSum_Partitions_Amount_Management.TabIndex = 10;
+            this.txtSum_Partitions_Amount_Management.Text = "0.000000";
+            this.txtSum_Partitions_Amount_Management.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // txtSum_Projects_Amount_Pay
             // 
             this.txtSum_Projects_Amount_Pay.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1686,24 +1669,38 @@
             this.label10.Text = "管理费：";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // ckbProjects_Amount_Order
+            // btnDel
             // 
-            this.ckbProjects_Amount_Order.AutoSize = true;
-            this.ckbProjects_Amount_Order.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckbProjects_Amount_Order.Location = new System.Drawing.Point(600, 334);
-            this.ckbProjects_Amount_Order.Name = "ckbProjects_Amount_Order";
-            this.ckbProjects_Amount_Order.Size = new System.Drawing.Size(144, 26);
-            this.ckbProjects_Amount_Order.TabIndex = 57;
-            this.ckbProjects_Amount_Order.Text = "合同金额：";
-            this.ckbProjects_Amount_Order.UseVisualStyleBackColor = true;
+            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDel.Location = new System.Drawing.Point(258, 572);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(120, 50);
+            this.btnDel.TabIndex = 12;
+            this.btnDel.Text = "删除工程信息";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
-            // txtProjects_Amount_Order
+            // btnEdit
             // 
-            this.txtProjects_Amount_Order.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtProjects_Amount_Order.Location = new System.Drawing.Point(750, 334);
-            this.txtProjects_Amount_Order.Name = "txtProjects_Amount_Order";
-            this.txtProjects_Amount_Order.Size = new System.Drawing.Size(144, 26);
-            this.txtProjects_Amount_Order.TabIndex = 58;
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEdit.Location = new System.Drawing.Point(132, 572);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(120, 50);
+            this.btnEdit.TabIndex = 11;
+            this.btnEdit.Text = "修改工程信息";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnNew
+            // 
+            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNew.Location = new System.Drawing.Point(6, 572);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(120, 50);
+            this.btnNew.TabIndex = 10;
+            this.btnNew.Text = "新建工程信息";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // frmDesktop
             // 
@@ -1802,6 +1799,30 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPremises_Date_To;
+        private System.Windows.Forms.CheckBox ckbDate;
+        private System.Windows.Forms.TextBox txtDate;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtSum_Projects_Amount_Order;
+        private System.Windows.Forms.TextBox txtSum_Projects_Amount;
+        private System.Windows.Forms.TextBox txtSum_Projects_Amount_Reality;
+        private System.Windows.Forms.TextBox txtSum_Projects_Amount_Arrear;
+        private System.Windows.Forms.TextBox txtSum_Partitions_Amount;
+        private System.Windows.Forms.TextBox txtSum_Partitions_Amount_Pay;
+        private System.Windows.Forms.TextBox txtSum_Partitions_Amount_Arrear;
+        private System.Windows.Forms.TextBox txtSum_Partitions_Amount_Management;
+        private System.Windows.Forms.TextBox txtSum_Projects_Amount_Pay;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckBox ckbProjects_Amount_Order;
+        private System.Windows.Forms.TextBox txtProjects_Amount_Order;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Checked;
         private System.Windows.Forms.DataGridViewTextBoxColumn 序号;
         private System.Windows.Forms.DataGridViewTextBoxColumn 房产名称;
@@ -1844,29 +1865,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 收集整理;
         private System.Windows.Forms.DataGridViewTextBoxColumn 立卷检查;
         private System.Windows.Forms.DataGridViewTextBoxColumn 验收合格;
-        private System.Windows.Forms.CheckBox ckbDate;
-        private System.Windows.Forms.TextBox txtDate;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtSum_Projects_Amount_Order;
-        private System.Windows.Forms.TextBox txtSum_Projects_Amount;
-        private System.Windows.Forms.TextBox txtSum_Projects_Amount_Reality;
-        private System.Windows.Forms.TextBox txtSum_Projects_Amount_Arrear;
-        private System.Windows.Forms.TextBox txtSum_Partitions_Amount;
-        private System.Windows.Forms.TextBox txtSum_Partitions_Amount_Pay;
-        private System.Windows.Forms.TextBox txtSum_Partitions_Amount_Arrear;
-        private System.Windows.Forms.TextBox txtSum_Partitions_Amount_Management;
-        private System.Windows.Forms.TextBox txtSum_Projects_Amount_Pay;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.CheckBox ckbProjects_Amount_Order;
-        private System.Windows.Forms.TextBox txtProjects_Amount_Order;
     }
 }
