@@ -31,7 +31,7 @@ namespace 后勤工程管理系统
 
         private void frmProjects_Info_Load(object sender, EventArgs e)
         {
-            if (Text == "新建" && strName != string.Empty)
+            if (Text == "新建" && !string.IsNullOrEmpty(strName))
             {
                 //查询房产信息
                 var Ds = Class.DB_Works.DataSetCmd($"SELECT Name, Code, Address, Date, Levels, Structure, Dimension, Purpose, Assets_Amount, Assets_Code, Device_Code, Region FROM Premises WHERE Name = '{strName}'");
@@ -107,7 +107,7 @@ namespace 后勤工程管理系统
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            if (txtProjects.Text.Trim() == string.Empty)
+            if (string.IsNullOrEmpty(txtProjects.Text))
             {
                 Class.Public.Sys_MsgBox("工程名称不能为空！");
                 return;

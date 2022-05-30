@@ -42,7 +42,7 @@ namespace 后勤工程管理系统
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            if (txtName.Text.Trim() == string.Empty)
+            if (string.IsNullOrEmpty(txtName.Text))
             {
                 Class.Public.Sys_MsgBox("用户名不允许为空！");
                 return;

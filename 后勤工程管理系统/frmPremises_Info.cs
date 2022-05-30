@@ -21,7 +21,7 @@ namespace 后勤工程管理系统
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            if (txtName.Text.Trim() == string.Empty)
+            if (string.IsNullOrEmpty(txtName.Text))
             {
                 Class.Public.Sys_MsgBox("房产名称不能为空！");
                 return;

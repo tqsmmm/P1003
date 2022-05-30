@@ -55,7 +55,7 @@ namespace 后勤工程管理系统
                 //基础数据导入
 
                 //工程类型
-                if (dgvExcel.Rows[i].Cells["工程类型"].Value.ToString() != string.Empty)
+                if (!string.IsNullOrEmpty(dgvExcel.Rows[i].Cells["工程类型"].Value.ToString()))
                 {
                     if (Class.DB_Works.DataSetCmd($"SELECT id FROM Types WHERE Name = '{dgvExcel.Rows[i].Cells["工程类型"].Value}'").Tables[0].Rows.Count == 0)
                     {
@@ -64,7 +64,7 @@ namespace 后勤工程管理系统
                 }
 
                 //中标单位
-                if (dgvExcel.Rows[i].Cells["中标单位"].Value.ToString() != string.Empty)
+                if (!string.IsNullOrEmpty(dgvExcel.Rows[i].Cells["中标单位"].Value.ToString()))
                 {
                     if (Class.DB_Works.DataSetCmd($"SELECT id FROM Tenders WHERE Name = '{dgvExcel.Rows[i].Cells["中标单位"].Value}'").Tables[0].Rows.Count == 0)
                     {
@@ -73,7 +73,7 @@ namespace 后勤工程管理系统
                 }
 
                 //施工单位
-                if (dgvExcel.Rows[i].Cells["施工单位"].Value.ToString() != string.Empty)
+                if (!string.IsNullOrEmpty(dgvExcel.Rows[i].Cells["施工单位"].Value.ToString()))
                 {
                     if (Class.DB_Works.DataSetCmd($"SELECT id FROM Constructors WHERE Name = '{dgvExcel.Rows[i].Cells["施工单位"].Value}'").Tables[0].Rows.Count == 0)
                     {
@@ -81,7 +81,7 @@ namespace 后勤工程管理系统
                     }
                 }
 
-                if (dgvExcel.Rows[i].Cells["房产名称"].Value.ToString() == string.Empty)
+                if (string.IsNullOrEmpty(dgvExcel.Rows[i].Cells["房产名称"].Value.ToString()))
                 {
                     intPremisesFalse++;
                     intProjectsFalse++;
@@ -89,10 +89,10 @@ namespace 后勤工程管理系统
                 }
                 else
                 {
-                    DataSet ds = null;
-                    
+                    DataSet ds;
+
                     //房产数据
-                    if (dgvExcel.Rows[i].Cells["房产编号"].Value.ToString() != string.Empty)
+                    if (!string.IsNullOrEmpty(dgvExcel.Rows[i].Cells["房产编号"].Value.ToString()))
                     {
                         ds = Class.DB_Works.DataSetCmd($"SELECT Code FROM Premises WHERE Code = '{dgvExcel.Rows[i].Cells["房产编号"].Value}'");
                     }
@@ -135,7 +135,7 @@ namespace 后勤工程管理系统
                     if (bFalse)
                     {
                         //工程数据
-                        if (dgvExcel.Rows[i].Cells["工程编号"].Value.ToString() != string.Empty)
+                        if (!string.IsNullOrEmpty(dgvExcel.Rows[i].Cells["工程编号"].Value.ToString()))
                         {
                             ds = Class.DB_Works.DataSetCmd($"SELECT OrderID FROM Projects WHERE OrderID = '{dgvExcel.Rows[i].Cells["工程编号"].Value}'");
                         }
@@ -428,7 +428,7 @@ namespace 后勤工程管理系统
                 //开工时间
                 try
                 {
-                    if (dgvExcel.Rows[i].Cells[20].Value.ToString() != string.Empty)
+                    if (!string.IsNullOrEmpty(dgvExcel.Rows[i].Cells[20].Value.ToString()))
                     {
                         Convert.ToDateTime(dgvExcel.Rows[i].Cells[20].Value);
                         
@@ -449,7 +449,7 @@ namespace 后勤工程管理系统
                 //竣工时间
                 try
                 {
-                    if (dgvExcel.Rows[i].Cells[21].Value.ToString() != string.Empty)
+                    if (!string.IsNullOrEmpty(dgvExcel.Rows[i].Cells[21].Value.ToString()))
                     {
                         Convert.ToDateTime(dgvExcel.Rows[i].Cells[21].Value);
                     }
@@ -508,7 +508,7 @@ namespace 后勤工程管理系统
                 }
 
                 //质保金支付时间
-                if (dgvExcel.Rows[i].Cells[28].Value.ToString() != string.Empty)
+                if (!string.IsNullOrEmpty(dgvExcel.Rows[i].Cells[28].Value.ToString()))
                 {
                     Convert.ToDateTime(dgvExcel.Rows[i].Cells[28].Value);
                 }

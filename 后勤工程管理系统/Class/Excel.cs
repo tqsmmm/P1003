@@ -51,7 +51,7 @@ namespace 后勤工程管理系统.Class
                     {
                         object obj = GetValueType(header.GetCell(i));
 
-                        if (obj == null || obj.ToString() == string.Empty)
+                        if (obj == null || string.IsNullOrEmpty(obj.ToString()))
                         {
                             dt.Columns.Add(new DataColumn("Columns" + i.ToString()));
                         }
@@ -107,7 +107,7 @@ namespace 后勤工程管理系统.Class
                                 dr[j] = GetValueType(sheet.GetRow(i).GetCell(j));
                             }
 
-                            if (dr[j] != null && dr[j].ToString() != string.Empty)
+                            if (dr[j] != null && !string.IsNullOrEmpty(dr[j].ToString()))
                             {
                                 if (dr[j].ToString().Substring(0, 1) == "=")
                                 {
@@ -263,9 +263,9 @@ namespace 后勤工程管理系统.Class
                 {
                     ICell cell = row1.CreateCell(j);
 
-                    if (dt.Columns.Count == 39)
+                    if (dt.Columns.Count == 40)
                     {
-                        if (j == 19 || j == 20 || j == 27)
+                        if (j == 20 || j == 21 || j == 28)
                         {
                             cell.SetCellValue(Convert.ToDateTime(dt.Rows[i][j]).ToString("yyyy-MM-dd"));
 
@@ -280,6 +280,8 @@ namespace 后勤工程管理系统.Class
                     }
                     else
                     {
+                        cell.SetCellValue(dt.Rows[i][j].ToString());
+
                         cell.CellStyle = contentCellStyle;
                     }
 

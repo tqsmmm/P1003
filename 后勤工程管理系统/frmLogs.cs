@@ -21,11 +21,11 @@ namespace 后勤工程管理系统
         {
             string strSQL = $"SELECT Logs.id AS 序号, Users.Name AS 用户名, Type AS 操作类型, Detail AS 详情, DateTime AS 操作时间 FROM Logs LEFT JOIN Users ON Users.id = Logs.Users_id WHERE DATE_FORMAT(DateTime, '%Y-%m-%d') = '{dtpDateTime.Value:yyyy-MM-dd}' ";
 
-            if (txtUsers.Text.Trim() != string.Empty || cmbTypes.SelectedIndex != -1)
+            if (!string.IsNullOrEmpty(txtUsers.Text) || cmbTypes.SelectedIndex != -1)
             {
                 strSQL = $"{strSQL} AND ";
 
-                if (txtUsers.Text.Trim() != string.Empty)
+                if (!string.IsNullOrEmpty(txtUsers.Text))
                 {
                     strSQL = $"{strSQL} Users.Name = '{txtUsers.Text}' AND ";
                 }
