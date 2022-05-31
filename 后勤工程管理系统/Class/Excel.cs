@@ -78,7 +78,14 @@ namespace 后勤工程管理系统.Class
                                 {
                                     try
                                     {
-                                        dr[j] = sheet.GetRow(i).GetCell(j).DateCellValue.ToString("yyyy-MM-dd");
+                                        if (sheet.GetRow(i).GetCell(j) != null)
+                                        {
+                                            dr[j] = sheet.GetRow(i).GetCell(j).DateCellValue.ToString("yyyy-MM-dd");
+                                        }
+                                        else
+                                        {
+                                            dr[j] = "0001-01-01";
+                                        } 
                                     }
                                     catch
                                     {
@@ -90,7 +97,14 @@ namespace 后勤工程管理系统.Class
                                 {
                                     try
                                     {
-                                        dr[j] = sheet.GetRow(i).GetCell(j).NumericCellValue;
+                                        if (sheet.GetRow(i).GetCell(j) != null)
+                                        {
+                                            dr[j] = sheet.GetRow(i).GetCell(j).NumericCellValue;
+                                        }
+                                        else
+                                        {
+                                            dr[j] = 0;
+                                        }
                                     }
                                     catch
                                     {

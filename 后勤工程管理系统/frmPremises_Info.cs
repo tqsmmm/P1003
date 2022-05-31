@@ -83,6 +83,14 @@ namespace 后勤工程管理系统
                 string strSQL = $"SELECT Projects.id AS 序号, Projects.Name AS 工程名称, Types.Name AS 工程类型, Detail AS 工程内容, Amount AS 计划金额, Developing_Reply AS 可研批复, Initial_Reply AS 初始批复, Plan_Code AS 计划文号, Begin_Date AS 开工时间, End_Date AS 竣工时间, Tenders.Name AS 中标单位, Progress AS 形象进度, Collect_Tag AS 收集整理, Check_Tag AS 立卷检查, Grade_Tag AS 验收合格 FROM Projects LEFT JOIN Tenders ON Tenders.id = Projects.Tenders_id LEFT JOIN Types ON Types.id = Projects.Types_id WHERE Projects.Premises_id = {id}";
 
                 dgvList.DataSource = Class.DB_Works.DataSetCmd(strSQL).Tables[0];
+
+                for (int i = 0; i < dgvList.RowCount; i++)
+                {
+                    if (dgvList.Rows[i].Cells["工程内容"].Value.ToString().Length > 0)
+                    {
+                        dgvList.AutoResizeRow(i, DataGridViewAutoSizeRowMode.AllCells);
+                    }
+                }
             }
         }
     }

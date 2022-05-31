@@ -49,6 +49,9 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.dgvExcel = new System.Windows.Forms.DataGridView();
+            this.btnCheck = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tspbImport = new System.Windows.Forms.ToolStripProgressBar();
             this.房产名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.房产编号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.建筑年代 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,9 +92,6 @@
             this.收集整理 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.立卷检查 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.验收合格 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCheck = new System.Windows.Forms.Button();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.tspbImport = new System.Windows.Forms.ToolStripProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExcel)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -119,7 +119,6 @@
             // 
             // dgvExcel
             // 
-            this.dgvExcel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvExcel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.房产名称,
             this.房产编号,
@@ -163,9 +162,33 @@
             this.验收合格});
             this.dgvExcel.Location = new System.Drawing.Point(12, 12);
             this.dgvExcel.Name = "dgvExcel";
-            this.dgvExcel.RowTemplate.Height = 23;
             this.dgvExcel.Size = new System.Drawing.Size(960, 568);
             this.dgvExcel.TabIndex = 3;
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.Location = new System.Drawing.Point(286, 586);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(120, 50);
+            this.btnCheck.TabIndex = 6;
+            this.btnCheck.Text = "检查";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tspbImport});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 639);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(984, 22);
+            this.statusStrip1.TabIndex = 7;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tspbImport
+            // 
+            this.tspbImport.Name = "tspbImport";
+            this.tspbImport.Size = new System.Drawing.Size(100, 16);
             // 
             // 房产名称
             // 
@@ -291,13 +314,12 @@
             // 
             // 工程内容
             // 
-            this.工程内容.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.工程内容.DataPropertyName = "工程内容";
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.工程内容.DefaultCellStyle = dataGridViewCellStyle4;
             this.工程内容.HeaderText = "工程内容";
             this.工程内容.Name = "工程内容";
-            this.工程内容.Width = 90;
+            this.工程内容.Width = 600;
             // 
             // 工程年份
             // 
@@ -547,31 +569,6 @@
             this.验收合格.Name = "验收合格";
             this.验收合格.Width = 90;
             // 
-            // btnCheck
-            // 
-            this.btnCheck.Location = new System.Drawing.Point(286, 586);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(120, 50);
-            this.btnCheck.TabIndex = 6;
-            this.btnCheck.Text = "检查";
-            this.btnCheck.UseVisualStyleBackColor = true;
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tspbImport});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 639);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(984, 22);
-            this.statusStrip1.TabIndex = 7;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // tspbImport
-            // 
-            this.tspbImport.Name = "tspbImport";
-            this.tspbImport.Size = new System.Drawing.Size(100, 16);
-            // 
             // frmProjects_Import
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -606,6 +603,8 @@
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.DataGridView dgvExcel;
         private System.Windows.Forms.Button btnCheck;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripProgressBar tspbImport;
         private System.Windows.Forms.DataGridViewTextBoxColumn 房产名称;
         private System.Windows.Forms.DataGridViewTextBoxColumn 房产编号;
         private System.Windows.Forms.DataGridViewTextBoxColumn 建筑年代;
@@ -646,7 +645,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 收集整理;
         private System.Windows.Forms.DataGridViewTextBoxColumn 立卷检查;
         private System.Windows.Forms.DataGridViewTextBoxColumn 验收合格;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripProgressBar tspbImport;
     }
 }

@@ -99,7 +99,7 @@
             // 
             this.tsslApplication.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tsslApplication.Name = "tsslApplication";
-            this.tsslApplication.Size = new System.Drawing.Size(1201, 20);
+            this.tsslApplication.Size = new System.Drawing.Size(1232, 20);
             this.tsslApplication.Spring = true;
             this.tsslApplication.Text = "toolStripStatusLabel1";
             // 
@@ -118,14 +118,14 @@
             // 登出ToolStripMenuItem
             // 
             this.登出ToolStripMenuItem.Name = "登出ToolStripMenuItem";
-            this.登出ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.登出ToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.登出ToolStripMenuItem.Text = "登出";
             this.登出ToolStripMenuItem.Click += new System.EventHandler(this.登出ToolStripMenuItem_Click);
             // 
             // 登录ToolStripMenuItem
             // 
             this.登录ToolStripMenuItem.Name = "登录ToolStripMenuItem";
-            this.登录ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.登录ToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.登录ToolStripMenuItem.Text = "登录";
             this.登录ToolStripMenuItem.Click += new System.EventHandler(this.登录ToolStripMenuItem_Click);
             // 

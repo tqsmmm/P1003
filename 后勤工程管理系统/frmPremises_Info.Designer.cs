@@ -388,7 +388,6 @@
             // 
             // dgvList
             // 
-            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.序号,
             this.工程名称,
@@ -408,8 +407,6 @@
             this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvList.Location = new System.Drawing.Point(3, 22);
             this.dgvList.Name = "dgvList";
-            this.dgvList.RowHeadersWidth = 51;
-            this.dgvList.RowTemplate.Height = 23;
             this.dgvList.Size = new System.Drawing.Size(934, 506);
             this.dgvList.TabIndex = 14;
             // 
@@ -419,19 +416,17 @@
             this.序号.DataPropertyName = "序号";
             this.序号.HeaderText = "序号";
             this.序号.Name = "序号";
-            this.序号.ReadOnly = true;
             this.序号.Visible = false;
-            this.序号.Width = 62;
             // 
             // 工程名称
             // 
+            this.工程名称.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.工程名称.DataPropertyName = "工程名称";
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.工程名称.DefaultCellStyle = dataGridViewCellStyle1;
             this.工程名称.HeaderText = "工程名称";
             this.工程名称.Name = "工程名称";
-            this.工程名称.ReadOnly = true;
-            this.工程名称.Width = 300;
+            this.工程名称.Width = 90;
             // 
             // 工程类型
             // 
@@ -439,7 +434,6 @@
             this.工程类型.DataPropertyName = "工程类型";
             this.工程类型.HeaderText = "工程类型";
             this.工程类型.Name = "工程类型";
-            this.工程类型.ReadOnly = true;
             this.工程类型.Width = 90;
             // 
             // 工程内容
@@ -449,8 +443,7 @@
             this.工程内容.DefaultCellStyle = dataGridViewCellStyle2;
             this.工程内容.HeaderText = "工程内容";
             this.工程内容.Name = "工程内容";
-            this.工程内容.ReadOnly = true;
-            this.工程内容.Width = 500;
+            this.工程内容.Width = 600;
             // 
             // 计划金额
             // 
@@ -461,7 +454,6 @@
             this.计划金额.DefaultCellStyle = dataGridViewCellStyle3;
             this.计划金额.HeaderText = "计划金额";
             this.计划金额.Name = "计划金额";
-            this.计划金额.ReadOnly = true;
             this.计划金额.Width = 90;
             // 
             // 可研批复
@@ -470,7 +462,6 @@
             this.可研批复.DataPropertyName = "可研批复";
             this.可研批复.HeaderText = "可研批复";
             this.可研批复.Name = "可研批复";
-            this.可研批复.ReadOnly = true;
             this.可研批复.Width = 90;
             // 
             // 初始批复
@@ -479,7 +470,6 @@
             this.初始批复.DataPropertyName = "初始批复";
             this.初始批复.HeaderText = "初始批复";
             this.初始批复.Name = "初始批复";
-            this.初始批复.ReadOnly = true;
             this.初始批复.Width = 90;
             // 
             // 计划文号
@@ -488,7 +478,6 @@
             this.计划文号.DataPropertyName = "计划文号";
             this.计划文号.HeaderText = "计划文号";
             this.计划文号.Name = "计划文号";
-            this.计划文号.ReadOnly = true;
             this.计划文号.Width = 90;
             // 
             // 开工时间
@@ -500,7 +489,6 @@
             this.开工时间.DefaultCellStyle = dataGridViewCellStyle4;
             this.开工时间.HeaderText = "开工时间";
             this.开工时间.Name = "开工时间";
-            this.开工时间.ReadOnly = true;
             this.开工时间.Width = 90;
             // 
             // 竣工时间
@@ -512,7 +500,6 @@
             this.竣工时间.DefaultCellStyle = dataGridViewCellStyle5;
             this.竣工时间.HeaderText = "竣工时间";
             this.竣工时间.Name = "竣工时间";
-            this.竣工时间.ReadOnly = true;
             this.竣工时间.Width = 90;
             // 
             // 中标单位
@@ -521,7 +508,6 @@
             this.中标单位.DataPropertyName = "中标单位";
             this.中标单位.HeaderText = "中标单位";
             this.中标单位.Name = "中标单位";
-            this.中标单位.ReadOnly = true;
             this.中标单位.Width = 90;
             // 
             // 形象进度
@@ -530,7 +516,6 @@
             this.形象进度.DataPropertyName = "形象进度";
             this.形象进度.HeaderText = "形象进度";
             this.形象进度.Name = "形象进度";
-            this.形象进度.ReadOnly = true;
             this.形象进度.Width = 90;
             // 
             // 收集整理
@@ -539,7 +524,6 @@
             this.收集整理.DataPropertyName = "收集整理";
             this.收集整理.HeaderText = "收集整理";
             this.收集整理.Name = "收集整理";
-            this.收集整理.ReadOnly = true;
             this.收集整理.Width = 90;
             // 
             // 立卷检查
@@ -548,7 +532,6 @@
             this.立卷检查.DataPropertyName = "立卷检查";
             this.立卷检查.HeaderText = "立卷检查";
             this.立卷检查.Name = "立卷检查";
-            this.立卷检查.ReadOnly = true;
             this.立卷检查.Width = 90;
             // 
             // 验收合格
@@ -557,7 +540,6 @@
             this.验收合格.DataPropertyName = "验收合格";
             this.验收合格.HeaderText = "验收合格";
             this.验收合格.Name = "验收合格";
-            this.验收合格.ReadOnly = true;
             this.验收合格.Width = 90;
             // 
             // frmPremises_Info

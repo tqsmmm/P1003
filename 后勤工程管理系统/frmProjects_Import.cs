@@ -22,6 +22,14 @@ namespace 后勤工程管理系统
             {
                 dgvExcel.DataSource = dt;
 
+                for (int i = 0; i < dgvExcel.RowCount; i++)
+                {
+                    if (dgvExcel.Rows[i].Cells["工程内容"].Value.ToString().Length > 0)
+                    {
+                        dgvExcel.AutoResizeRow(i, DataGridViewAutoSizeRowMode.AllCells);
+                    }
+                }
+
                 btnCheck_Click(this, e);
             }
             else

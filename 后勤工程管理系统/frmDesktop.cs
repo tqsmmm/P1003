@@ -15,8 +15,6 @@ namespace 后勤工程管理系统
 
             dgvList = Class.Public.SetDataGridViewStyle(dgvList);
 
-            dgvList.Columns["工程内容"].Width = 600;
-
             cmbTenders.DataSource = Class.DB_Works.DataSetCmd("SELECT id, Name FROM Tenders").Tables[0];
             cmbTenders.DisplayMember = "Name";
             cmbTenders.ValueMember = "id";

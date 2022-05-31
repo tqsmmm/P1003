@@ -71,6 +71,7 @@ namespace 后勤工程管理系统.Class
             Dgv.AllowUserToDeleteRows = false;
             Dgv.ColumnHeadersHeight = 30;
             Dgv.RowTemplate.Height = 30;
+            Dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             return Dgv;
         }
