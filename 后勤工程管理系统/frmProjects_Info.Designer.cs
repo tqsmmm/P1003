@@ -59,6 +59,10 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtProjects_Date = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.txtOrderID = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.txtPremises = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -128,10 +132,6 @@
             this.是否分包 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.支付金额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.支付时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label34 = new System.Windows.Forms.Label();
-            this.txtOrderID = new System.Windows.Forms.TextBox();
-            this.txtProjects_Date = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -394,6 +394,38 @@
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "工程信息";
+            // 
+            // txtProjects_Date
+            // 
+            this.txtProjects_Date.Location = new System.Drawing.Point(634, 57);
+            this.txtProjects_Date.Name = "txtProjects_Date";
+            this.txtProjects_Date.Size = new System.Drawing.Size(300, 26);
+            this.txtProjects_Date.TabIndex = 44;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(549, 60);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(79, 20);
+            this.label35.TabIndex = 43;
+            this.label35.Text = "工程年份：";
+            // 
+            // txtOrderID
+            // 
+            this.txtOrderID.Location = new System.Drawing.Point(91, 57);
+            this.txtOrderID.Name = "txtOrderID";
+            this.txtOrderID.Size = new System.Drawing.Size(300, 26);
+            this.txtOrderID.TabIndex = 42;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(6, 60);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(79, 20);
+            this.label34.TabIndex = 41;
+            this.label34.Text = "工程编号：";
             // 
             // label21
             // 
@@ -1097,38 +1129,6 @@
             this.支付时间.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.支付时间.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.支付时间.Width = 86;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(6, 60);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(79, 20);
-            this.label34.TabIndex = 41;
-            this.label34.Text = "工程编号：";
-            // 
-            // txtOrderID
-            // 
-            this.txtOrderID.Location = new System.Drawing.Point(91, 57);
-            this.txtOrderID.Name = "txtOrderID";
-            this.txtOrderID.Size = new System.Drawing.Size(300, 26);
-            this.txtOrderID.TabIndex = 42;
-            // 
-            // txtProjects_Date
-            // 
-            this.txtProjects_Date.Location = new System.Drawing.Point(634, 57);
-            this.txtProjects_Date.Name = "txtProjects_Date";
-            this.txtProjects_Date.Size = new System.Drawing.Size(300, 26);
-            this.txtProjects_Date.TabIndex = 44;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(549, 60);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(79, 20);
-            this.label35.TabIndex = 43;
-            this.label35.Text = "工程年份：";
             // 
             // frmProjects_Info
             // 

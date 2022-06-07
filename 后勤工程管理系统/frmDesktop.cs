@@ -218,7 +218,7 @@ namespace 后勤工程管理系统
                     {
                         if (!string.IsNullOrEmpty(txtPremises_Date_From.Text) && !string.IsNullOrEmpty(txtPremises_Date_To.Text))
                         {
-                            strSQL = $"{strSQL} (Projects.Begin_Date = '0001-01-01' OR Projects.End_Date = '0001-01-01') AND ";
+                            strSQL = $"{strSQL} (Projects.Begin_Date = '1900-01-01' OR Projects.End_Date = '1900-01-01') AND ";
 
                             dgvList.Columns["开工时间"].DefaultCellStyle.BackColor = Color.Yellow;
                             dgvList.Columns["竣工时间"].DefaultCellStyle.BackColor = Color.Yellow;
@@ -500,7 +500,7 @@ namespace 后勤工程管理系统
         {
             if (dgvList.SelectedRows.Count > 0)
             {
-                if (AppSetter.Current_User.Limits.IndexOf(dgvList.SelectedRows[0].Cells[14].Value) != -1)
+                if (AppSetter.Current_User.Limits.IndexOf(dgvList.SelectedRows[0].Cells["工程类型"].Value) != -1)
                 {
                     frmProjects_Info frm = new frmProjects_Info
                     {
@@ -516,7 +516,7 @@ namespace 后勤工程管理系统
                 }
                 else
                 {
-                    Class.Public.Sys_MsgBox("权限不足！");
+                    Class.Public.Sys_MsgBox("没有操作此工程类型权限！");
                 }
             }
         }
@@ -525,7 +525,7 @@ namespace 后勤工程管理系统
         {
             if (dgvList.SelectedRows.Count > 0 && Class.Public.Sys_MsgYN("是否确定删除？"))
             {
-                if (AppSetter.Current_User.Limits.IndexOf(dgvList.SelectedRows[0].Cells[14].Value) != -1)
+                if (AppSetter.Current_User.Limits.IndexOf(dgvList.SelectedRows[0].Cells["工程类型"].Value) != -1)
                 {
                     var result = Class.DB_Works.ExecuteCmd($"DELETE FROM Prjects WHERE id = {dgvList.SelectedRows[0].Cells[1].Value}");
 
@@ -538,7 +538,7 @@ namespace 后勤工程管理系统
                 }
                 else
                 {
-                    Class.Public.Sys_MsgBox("权限不足！");
+                    Class.Public.Sys_MsgBox("没有操作此工程类型权限！");
                 }
             }
         }

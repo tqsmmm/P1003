@@ -233,7 +233,6 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "序号";
             this.dataGridViewTextBoxColumn6.HeaderText = "序号";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Visible = false;
             // 
             // 房产名称
@@ -242,8 +241,6 @@
             this.房产名称.DataPropertyName = "房产名称";
             this.房产名称.HeaderText = "房产名称";
             this.房产名称.Name = "房产名称";
-            this.房产名称.ReadOnly = true;
-            this.房产名称.Width = 90;
             // 
             // 房产编号
             // 
@@ -251,8 +248,6 @@
             this.房产编号.DataPropertyName = "房产编号";
             this.房产编号.HeaderText = "房产编号";
             this.房产编号.Name = "房产编号";
-            this.房产编号.ReadOnly = true;
-            this.房产编号.Width = 90;
             // 
             // 房产地址
             // 
@@ -260,8 +255,6 @@
             this.房产地址.DataPropertyName = "房产地址";
             this.房产地址.HeaderText = "房产地址";
             this.房产地址.Name = "房产地址";
-            this.房产地址.ReadOnly = true;
-            this.房产地址.Width = 90;
             // 
             // 建筑年代
             // 
@@ -269,8 +262,6 @@
             this.建筑年代.DataPropertyName = "建筑年代";
             this.建筑年代.HeaderText = "建筑年代";
             this.建筑年代.Name = "建筑年代";
-            this.建筑年代.ReadOnly = true;
-            this.建筑年代.Width = 90;
             // 
             // 建筑层数
             // 
@@ -278,8 +269,6 @@
             this.建筑层数.DataPropertyName = "建筑层数";
             this.建筑层数.HeaderText = "建筑层数";
             this.建筑层数.Name = "建筑层数";
-            this.建筑层数.ReadOnly = true;
-            this.建筑层数.Width = 90;
             // 
             // 建筑结构
             // 
@@ -287,8 +276,6 @@
             this.建筑结构.DataPropertyName = "建筑结构";
             this.建筑结构.HeaderText = "建筑结构";
             this.建筑结构.Name = "建筑结构";
-            this.建筑结构.ReadOnly = true;
-            this.建筑结构.Width = 90;
             // 
             // 建筑面积
             // 
@@ -299,8 +286,6 @@
             this.建筑面积.DefaultCellStyle = dataGridViewCellStyle1;
             this.建筑面积.HeaderText = "建筑面积";
             this.建筑面积.Name = "建筑面积";
-            this.建筑面积.ReadOnly = true;
-            this.建筑面积.Width = 90;
             // 
             // 建筑用途
             // 
@@ -308,8 +293,6 @@
             this.建筑用途.DataPropertyName = "建筑用途";
             this.建筑用途.HeaderText = "建筑用途";
             this.建筑用途.Name = "建筑用途";
-            this.建筑用途.ReadOnly = true;
-            this.建筑用途.Width = 90;
             // 
             // 资产原值
             // 
@@ -321,8 +304,6 @@
             this.资产原值.DefaultCellStyle = dataGridViewCellStyle2;
             this.资产原值.HeaderText = "资产原值";
             this.资产原值.Name = "资产原值";
-            this.资产原值.ReadOnly = true;
-            this.资产原值.Width = 90;
             // 
             // 资产编码
             // 
@@ -330,8 +311,6 @@
             this.资产编码.DataPropertyName = "资产编码";
             this.资产编码.HeaderText = "资产编码";
             this.资产编码.Name = "资产编码";
-            this.资产编码.ReadOnly = true;
-            this.资产编码.Width = 90;
             // 
             // 设备编码
             // 
@@ -339,8 +318,6 @@
             this.设备编码.DataPropertyName = "设备编码";
             this.设备编码.HeaderText = "设备编码";
             this.设备编码.Name = "设备编码";
-            this.设备编码.ReadOnly = true;
-            this.设备编码.Width = 90;
             // 
             // 地区
             // 
@@ -348,8 +325,6 @@
             this.地区.DataPropertyName = "地区";
             this.地区.HeaderText = "地区";
             this.地区.Name = "地区";
-            this.地区.ReadOnly = true;
-            this.地区.Width = 62;
             // 
             // tabPage1
             // 
@@ -440,7 +415,6 @@
             this.中标单位.DataPropertyName = "中标单位";
             this.中标单位.HeaderText = "中标单位";
             this.中标单位.Name = "中标单位";
-            this.中标单位.Width = 90;
             // 
             // 负责人
             // 
@@ -448,7 +422,6 @@
             this.负责人.DataPropertyName = "负责人";
             this.负责人.HeaderText = "负责人";
             this.负责人.Name = "负责人";
-            this.负责人.Width = 76;
             // 
             // 联系方式
             // 
@@ -456,7 +429,6 @@
             this.联系方式.DataPropertyName = "联系方式";
             this.联系方式.HeaderText = "联系方式";
             this.联系方式.Name = "联系方式";
-            this.联系方式.Width = 90;
             // 
             // tabPage2
             // 
@@ -547,7 +519,6 @@
             this.施工单位.DataPropertyName = "施工单位";
             this.施工单位.HeaderText = "施工单位";
             this.施工单位.Name = "施工单位";
-            this.施工单位.Width = 90;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -555,7 +526,6 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "负责人";
             this.dataGridViewTextBoxColumn2.HeaderText = "负责人";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 76;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -563,7 +533,6 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "联系方式";
             this.dataGridViewTextBoxColumn3.HeaderText = "联系方式";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 90;
             // 
             // tabPage3
             // 
@@ -652,7 +621,6 @@
             this.类型名称.DataPropertyName = "类型名称";
             this.类型名称.HeaderText = "类型名称";
             this.类型名称.Name = "类型名称";
-            this.类型名称.Width = 90;
             // 
             // tabPage4
             // 

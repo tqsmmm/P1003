@@ -443,7 +443,7 @@ namespace 后勤工程管理系统
                     }
                     else
                     {
-                        dgvExcel.Rows[i].Cells[20].Value = "0001-01-01";
+                        dgvExcel.Rows[i].Cells[20].Value = "1900-01-01";
                     }
 
                     dgvExcel.Rows[i].Cells[20].Style.BackColor = Color.White;
@@ -463,7 +463,7 @@ namespace 后勤工程管理系统
                     }
                     else
                     {
-                        dgvExcel.Rows[i].Cells[21].Value = "0000-01-01";
+                        dgvExcel.Rows[i].Cells[21].Value = "1900-01-01";
                     }
 
                     dgvExcel.Rows[i].Cells[21].Style.BackColor = Color.White;
