@@ -50,7 +50,7 @@ namespace 后勤工程管理系统.Class
         {
             SaveFileDialog sfd = new SaveFileDialog
             {
-                Filter = "Excel表格（*.xlsx）|*.xlsx",
+                Filter = "Excel表格（*.xls）|*.xls",
                 FilterIndex = 1,
                 RestoreDirectory = true
             };
