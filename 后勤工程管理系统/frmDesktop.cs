@@ -380,6 +380,16 @@ namespace 后勤工程管理系统
                 dgvList.DataSource = Class.DB_Works.DataSetCmd(strSQL).Tables[0];
             }
 
+            txtSum_Partitions_Amount.Text = "0.000000";
+            txtSum_Partitions_Amount_Arrear.Text = "0.000000";
+            txtSum_Partitions_Amount_Management.Text = "0.000000";
+            txtSum_Partitions_Amount_Pay.Text = "0.000000";
+            txtSum_Projects_Amount.Text = "0.000000";
+            txtSum_Projects_Amount_Arrear.Text = "0.000000";
+            txtSum_Projects_Amount_Order.Text = "0.000000";
+            txtSum_Projects_Amount_Pay.Text = "0.000000";
+            txtSum_Projects_Amount_Reality.Text = "0.000000";
+
             for (int i = 0; i < dgvList.RowCount; i++)
             {
                 if (dgvList.Rows[i].Cells["工程内容"].Value.ToString().Length > 0)

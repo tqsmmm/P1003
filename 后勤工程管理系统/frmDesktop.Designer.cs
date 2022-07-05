@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.Checked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -323,10 +323,10 @@
             // 
             this.建筑面积.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.建筑面积.DataPropertyName = "建筑面积";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle18.Format = "N2";
-            dataGridViewCellStyle18.NullValue = "0";
-            this.建筑面积.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.建筑面积.DefaultCellStyle = dataGridViewCellStyle1;
             this.建筑面积.HeaderText = "建筑面积";
             this.建筑面积.Name = "建筑面积";
             this.建筑面积.Width = 90;
@@ -335,10 +335,10 @@
             // 
             this.资产原值.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.资产原值.DataPropertyName = "资产原值";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle19.Format = "C2";
-            dataGridViewCellStyle19.NullValue = "0";
-            this.资产原值.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.资产原值.DefaultCellStyle = dataGridViewCellStyle2;
             this.资产原值.HeaderText = "资产原值";
             this.资产原值.Name = "资产原值";
             this.资产原值.Width = 90;
@@ -379,8 +379,8 @@
             // 
             this.工程名称.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.工程名称.DataPropertyName = "工程名称";
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.工程名称.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.工程名称.DefaultCellStyle = dataGridViewCellStyle3;
             this.工程名称.HeaderText = "工程名称";
             this.工程名称.Name = "工程名称";
             this.工程名称.Width = 90;
@@ -396,8 +396,8 @@
             // 工程内容
             // 
             this.工程内容.DataPropertyName = "工程内容";
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.工程内容.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.工程内容.DefaultCellStyle = dataGridViewCellStyle4;
             this.工程内容.HeaderText = "工程内容";
             this.工程内容.Name = "工程内容";
             this.工程内容.Width = 600;
@@ -414,10 +414,10 @@
             // 
             this.计划金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.计划金额.DataPropertyName = "计划金额";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle22.Format = "C6";
-            dataGridViewCellStyle22.NullValue = "0";
-            this.计划金额.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "C6";
+            dataGridViewCellStyle5.NullValue = "0";
+            this.计划金额.DefaultCellStyle = dataGridViewCellStyle5;
             this.计划金额.HeaderText = "计划金额";
             this.计划金额.Name = "计划金额";
             this.计划金额.Width = 90;
@@ -450,9 +450,9 @@
             // 
             this.开工时间.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.开工时间.DataPropertyName = "开工时间";
-            dataGridViewCellStyle23.Format = "yyyy-MM-dd";
-            dataGridViewCellStyle23.NullValue = "0000-01-01";
-            this.开工时间.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle6.Format = "yyyy-MM-dd";
+            dataGridViewCellStyle6.NullValue = "0000-01-01";
+            this.开工时间.DefaultCellStyle = dataGridViewCellStyle6;
             this.开工时间.HeaderText = "开工时间";
             this.开工时间.Name = "开工时间";
             this.开工时间.Width = 90;
@@ -461,9 +461,9 @@
             // 
             this.竣工时间.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.竣工时间.DataPropertyName = "竣工时间";
-            dataGridViewCellStyle24.Format = "yyyy-MM-dd";
-            dataGridViewCellStyle24.NullValue = "0000-01-01";
-            this.竣工时间.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle7.Format = "yyyy-MM-dd";
+            dataGridViewCellStyle7.NullValue = "0000-01-01";
+            this.竣工时间.DefaultCellStyle = dataGridViewCellStyle7;
             this.竣工时间.HeaderText = "竣工时间";
             this.竣工时间.Name = "竣工时间";
             this.竣工时间.Width = 90;
@@ -480,8 +480,8 @@
             // 
             this.形象进度.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.形象进度.DataPropertyName = "形象进度";
-            dataGridViewCellStyle25.Format = "0%";
-            this.形象进度.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle8.Format = "0%";
+            this.形象进度.DefaultCellStyle = dataGridViewCellStyle8;
             this.形象进度.HeaderText = "形象进度";
             this.形象进度.Name = "形象进度";
             this.形象进度.Width = 90;
@@ -490,10 +490,10 @@
             // 
             this.合同金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.合同金额.DataPropertyName = "合同金额";
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle26.Format = "C6";
-            dataGridViewCellStyle26.NullValue = "0";
-            this.合同金额.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "C6";
+            dataGridViewCellStyle9.NullValue = "0";
+            this.合同金额.DefaultCellStyle = dataGridViewCellStyle9;
             this.合同金额.HeaderText = "合同金额";
             this.合同金额.Name = "合同金额";
             this.合同金额.Width = 90;
@@ -502,10 +502,10 @@
             // 
             this.实际发生额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.实际发生额.DataPropertyName = "实际发生额";
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle27.Format = "C6";
-            dataGridViewCellStyle27.NullValue = "0";
-            this.实际发生额.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "C6";
+            dataGridViewCellStyle10.NullValue = "0";
+            this.实际发生额.DefaultCellStyle = dataGridViewCellStyle10;
             this.实际发生额.HeaderText = "实际发生额";
             this.实际发生额.Name = "实际发生额";
             this.实际发生额.Width = 104;
@@ -514,10 +514,10 @@
             // 
             this.合同支付金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.合同支付金额.DataPropertyName = "合同支付金额";
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle28.Format = "C6";
-            dataGridViewCellStyle28.NullValue = "0";
-            this.合同支付金额.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.Format = "C6";
+            dataGridViewCellStyle11.NullValue = "0";
+            this.合同支付金额.DefaultCellStyle = dataGridViewCellStyle11;
             this.合同支付金额.HeaderText = "合同支付金额";
             this.合同支付金额.Name = "合同支付金额";
             this.合同支付金额.Width = 118;
@@ -526,10 +526,10 @@
             // 
             this.合同欠款金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.合同欠款金额.DataPropertyName = "合同欠款金额";
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle29.Format = "C6";
-            dataGridViewCellStyle29.NullValue = "0";
-            this.合同欠款金额.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.Format = "C6";
+            dataGridViewCellStyle12.NullValue = "0";
+            this.合同欠款金额.DefaultCellStyle = dataGridViewCellStyle12;
             this.合同欠款金额.HeaderText = "合同欠款金额";
             this.合同欠款金额.Name = "合同欠款金额";
             this.合同欠款金额.Width = 118;
@@ -538,9 +538,9 @@
             // 
             this.质保金支付时间.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.质保金支付时间.DataPropertyName = "质保金支付时间";
-            dataGridViewCellStyle30.Format = "yyyy-MM-dd";
-            dataGridViewCellStyle30.NullValue = "0000-01-01";
-            this.质保金支付时间.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle13.Format = "yyyy-MM-dd";
+            dataGridViewCellStyle13.NullValue = "0000-01-01";
+            this.质保金支付时间.DefaultCellStyle = dataGridViewCellStyle13;
             this.质保金支付时间.HeaderText = "质保金支付时间";
             this.质保金支付时间.Name = "质保金支付时间";
             this.质保金支付时间.Width = 132;
@@ -573,10 +573,10 @@
             // 
             this.分包金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.分包金额.DataPropertyName = "分包金额";
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle31.Format = "C6";
-            dataGridViewCellStyle31.NullValue = "0";
-            this.分包金额.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.Format = "C6";
+            dataGridViewCellStyle14.NullValue = "0";
+            this.分包金额.DefaultCellStyle = dataGridViewCellStyle14;
             this.分包金额.HeaderText = "分包金额";
             this.分包金额.Name = "分包金额";
             this.分包金额.Width = 90;
@@ -585,10 +585,10 @@
             // 
             this.分包支付金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.分包支付金额.DataPropertyName = "分包支付金额";
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle32.Format = "C6";
-            dataGridViewCellStyle32.NullValue = "0";
-            this.分包支付金额.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.Format = "C6";
+            dataGridViewCellStyle15.NullValue = "0";
+            this.分包支付金额.DefaultCellStyle = dataGridViewCellStyle15;
             this.分包支付金额.HeaderText = "分包支付金额";
             this.分包支付金额.Name = "分包支付金额";
             this.分包支付金额.Width = 118;
@@ -597,10 +597,10 @@
             // 
             this.分包欠款金额.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.分包欠款金额.DataPropertyName = "分包欠款金额";
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle33.Format = "C6";
-            dataGridViewCellStyle33.NullValue = "0";
-            this.分包欠款金额.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle16.Format = "C6";
+            dataGridViewCellStyle16.NullValue = "0";
+            this.分包欠款金额.DefaultCellStyle = dataGridViewCellStyle16;
             this.分包欠款金额.HeaderText = "分包欠款金额";
             this.分包欠款金额.Name = "分包欠款金额";
             this.分包欠款金额.Width = 118;
@@ -609,10 +609,10 @@
             // 
             this.管理费.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.管理费.DataPropertyName = "管理费";
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle34.Format = "C6";
-            dataGridViewCellStyle34.NullValue = "0";
-            this.管理费.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle17.Format = "C6";
+            dataGridViewCellStyle17.NullValue = "0";
+            this.管理费.DefaultCellStyle = dataGridViewCellStyle17;
             this.管理费.HeaderText = "管理费";
             this.管理费.Name = "管理费";
             this.管理费.Width = 76;
